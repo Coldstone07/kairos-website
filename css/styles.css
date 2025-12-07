@@ -1,0 +1,265 @@
+:root {
+    --moonlight-primary: #F7F3E9;
+    --moonlight-secondary: #EDE7D3;
+    --moonlight-muted: #D4CDB7;
+    --glass-primary: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-primary: #D4AF37;
+}
+
+body {
+    background: linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%);
+    background-attachment: fixed;
+    color: var(--moonlight-primary);
+}
+
+/* Glassmorphism */
+.glass-panel {
+    background: var(--glass-primary);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.glass-nav {
+    background: rgba(15, 12, 41, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* AQAL Mandala Styles */
+.mandala-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+.quadrant-wedge {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quadrant-wedge:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent-primary);
+}
+
+.q-ul {
+    top: 0;
+    left: 0;
+    border-radius: 100% 0 0 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.q-ur {
+    top: 0;
+    right: 0;
+    border-radius: 0 100% 0 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.q-ll {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0 100%;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.q-lr {
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 100% 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.center-self {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #0F0C29;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Nervous System Visualizer */
+.waveform-path {
+    fill: none;
+    stroke-width: 2;
+    transition: stroke 0.5s ease;
+}
+
+.state-btn.active {
+    background: var(--accent-primary);
+    color: #0F0C29;
+}
+
+/* Journey Map */
+.journey-track {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+}
+
+.journey-node {
+    min-width: 280px;
+    position: relative;
+}
+
+.journey-node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    width: 2rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.journey-node:last-child::after {
+    display: none;
+}
+
+/* Body Map */
+.body-zone {
+    fill: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.body-zone:hover,
+.body-zone.active {
+    fill: var(--accent-primary);
+    fill-opacity: 0.6;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-section {
+    display: none;
+    opacity: 0;
+}
+
+.page-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Particles */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Loading Spinner */
+.loader {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left-color: var(--accent-primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin-slow 1s linear infinite;
+}
+
+/* Labs Specific Styles */
+.lab-mode-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.lab-mode-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+.lab-mode-btn.active::after {
+    width: 100%;
+}
+
+.lab-mode-btn.active {
+    color: var(--accent-primary);
+}
+
+.lab-tool {
+    display: none;
+}
+
+.lab-tool.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}

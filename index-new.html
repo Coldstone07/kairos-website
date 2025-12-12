@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    <title>Kairos Path | Stop Repeating Your Patterns. Start Integrating Your Whole Self.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary hover:text-white uppercase transition-colors">Home</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">BETA</span></a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="apply.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Start
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-moonlight-muted"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Home</a>
+                <a href="methodology.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="labs.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Labs (Beta)</a>
+                <a href="about.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="apply.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Start Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- HERO SECTION -->
+        <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 text-center relative z-10 py-20">
+                <!-- Primary Headline -->
+                <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight fade-in-up">
+                    Stop Repeating Your Patterns.<br>
+                    <span class="text-accent-primary italic">Start Integrating Your Whole Self.</span>
+                </h1>
+
+                <!-- Sub-headline -->
+                <p class="text-2xl md:text-3xl text-moonlight-secondary font-light mb-12 max-w-4xl mx-auto leading-relaxed fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    Kairos AI is the self-sovereign intelligence that helps you see, understand, and integrate the
+                    beautiful fragments of your mind.
+                </p>
+
+                <!-- Primary CTA -->
+                <div class="flex flex-col sm:flex-row justify-center gap-6 fade-in-up" style="animation-delay: 0.2s;">
+                    <a href="apply.html"
+                        class="px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white hover:scale-105 transition-all rounded-sm text-lg shadow-2xl shadow-accent-primary/50">
+                        🔓 Start Your Integration Journey Now
+                    </a>
+                    <a href="labs.html"
+                        class="px-8 py-5 border-2 border-white/30 text-white hover:border-accent-primary hover:text-accent-primary transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                        Watch the 2-Minute AI Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section class="py-32 px-4 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <!-- Benefit 1: Integration & Wholeness -->
+                <div class="mb-32">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 class="font-serif text-5xl md:text-6xl text-white mb-6">Move from Fragmentation to
+                                Flow.</h2>
+                            <p class="text-xl md:text-2xl text-moonlight-secondary leading-relaxed mb-6">
+                                Stop being pulled in a dozen directions. Kairos AI identifies your core patterns and
+                                helps magnetize them toward a unified, purposeful self.
+                            </p>
+                            <p class="text-xl text-accent-primary font-bold">
+                                Experience true inner coherence.
+                            </p>
+                        </div>
+                        <div class="glass-panel p-12 rounded-2xl">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i data-lucide="compass" class="w-16 h-16 text-accent-primary"></i>
+                                </div>
+                                <p class="text-moonlight-muted italic text-lg">"I felt like I was made of conflicting
+                                    pieces. After a month with Kairos, I finally feel like a coherent whole."</p>
+                                <p class="text-accent-primary font-bold mt-4">— Dr. Elias V., Psychologist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 2: Self-Recognition -->
+                <div class="mb-32">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div class="order-2 lg:order-1 glass-panel p-12 rounded-2xl">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i data-lucide="eye" class="w-16 h-16 text-accent-primary"></i>
+                                </div>
+                                <p class="text-moonlight-muted italic text-lg">"For the first time, I could see my
+                                    patterns without judgment. The mirror analogy is real."</p>
+                                <p class="text-accent-primary font-bold mt-4">— Sarah M., Founder</p>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <h2 class="font-serif text-5xl md:text-6xl text-white mb-6">Finally See the Whole Story.</h2>
+                            <p class="text-xl md:text-2xl text-moonlight-secondary leading-relaxed mb-6">
+                                Kairos is your non-judgmental mirror. It reflects your emotional and behavioral data
+                                back to you, allowing you to recognize yourself—not just your struggles, but your
+                                strengths and your innate design.
+                            </p>
+                            <p class="text-xl text-accent-primary font-bold">
+                                True self-recognition for the first time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 3: Honoring Patterns -->
+                <div class="mb-32">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 class="font-serif text-5xl md:text-6xl text-white mb-6">The Patterns That Saved You,
+                                Now Guide You.</h2>
+                            <p class="text-xl md:text-2xl text-moonlight-secondary leading-relaxed mb-6">
+                                Your survival patterns served a purpose. Instead of fighting them, Kairos helps you
+                                honor their origin and transmute that energy into conscious choice and forward momentum.
+                            </p>
+                            <p class="text-xl text-accent-primary font-bold">
+                                From unconscious reaction to conscious evolution.
+                            </p>
+                        </div>
+                        <div class="glass-panel p-12 rounded-2xl">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i data-lucide="heart" class="w-16 h-16 text-accent-primary"></i>
+                                </div>
+                                <p class="text-moonlight-muted italic text-lg">"I stopped fighting my protective parts
+                                    and started working with them. Everything shifted."</p>
+                                <p class="text-accent-primary font-bold mt-4">— Marcus T., Executive Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST SECTION -->
+        <section class="py-24 px-4 bg-white/5 border-y border-white/5">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-12">Trusted by Practitioners & Seekers</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="glass-panel p-8 rounded-xl">
+                        <div class="text-accent-primary text-4xl font-bold mb-2">98%</div>
+                        <div class="text-moonlight-muted">Report increased self-awareness</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-xl">
+                        <div class="text-accent-primary text-4xl font-bold mb-2">10 weeks</div>
+                        <div class="text-moonlight-muted">Average time to breakthrough</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-xl">
+                        <div class="text-accent-primary text-4xl font-bold mb-2">100%</div>
+                        <div class="text-moonlight-muted">Data stays on your device</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8 text-moonlight-muted">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="text-accent-primary"></i>
+                        <span class="text-sm uppercase tracking-widest">Encrypted & Self-Sovereign</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="lock" class="text-accent-primary"></i>
+                        <span class="text-sm uppercase tracking-widest">Privacy-First Architecture</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="award" class="text-accent-primary"></i>
+                        <span class="text-sm uppercase tracking-widest">Science-Backed Methodology</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="py-32 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-serif text-6xl md:text-7xl text-white mb-8">Ready to Become Whole?</h2>
+                <p class="text-2xl text-moonlight-secondary mb-12 leading-relaxed">
+                    Join the next cohort and experience transformation that honors every part of you.
+                </p>
+                <a href="apply.html"
+                    class="inline-block px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white hover:scale-105 transition-all rounded-sm text-lg shadow-2xl shadow-accent-primary/50">
+                    🔓 Start Your Integration Journey Now
+                </a>
+                <p class="text-moonlight-muted text-sm mt-8">
+                    Next cohort starts <strong class="text-white">January 2026</strong><br>
+                    Limited to 12 participants per cohort
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 bg-[#0F0C29] text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="font-serif text-xl text-white tracking-widest block mb-4">KAIROS<span
+                    class="text-accent-primary">.</span>PATH</span>
+            <p class="text-xs text-moonlight-muted/50 mb-4">Privacy-First Platform for Integral Development</p>
+            <div class="flex justify-center gap-6 text-xs text-moonlight-muted">
+                <a href="methodology.html" class="hover:text-accent-primary transition-colors">Methodology</a>
+                <a href="technology.html" class="hover:text-accent-primary transition-colors">Technology</a>
+                <a href="about.html" class="hover:text-accent-primary transition-colors">About</a>
+                <a href="apply.html" class="hover:text-accent-primary transition-colors">Apply</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            container.innerHTML = '';
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+                particle.style.animationDelay = `-${Math.random() * 10}s`;
+                container.appendChild(particle);
+            }
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            createParticles();
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

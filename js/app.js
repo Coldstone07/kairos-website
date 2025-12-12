@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'show-details':
                 showDetails(target.dataset.quadrant); // ul, ur, ll, lr
                 break;
+            case 'reset-details':
+                resetDetails();
+                break;
             case 'set-wave':
                 setWave(target.dataset.state);
                 break;
@@ -499,8 +502,25 @@ function showDetails(quadrant) {
     panel.innerHTML = `
         <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">${data.subtitle}</span>
         <h3 class="text-3xl font-serif text-white mb-4">${data.title}</h3>
-        <p class="text-moonlight-secondary leading-relaxed mb-4 text-sm">${data.philosophy}</p>
         <p class="text-moonlight-muted leading-relaxed text-sm border-t border-white/10 pt-4 mt-4">${data.practice}</p>
+    `;
+}
+
+function resetDetails() {
+    const panel = document.getElementById('aqal-details');
+    if (!panel) return;
+    panel.innerHTML = `
+        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">System Overview</span>
+        <h3 class="text-3xl font-serif text-white mb-6">The Four Dimensions</h3>
+        <p class="text-moonlight-secondary leading-relaxed mb-4">
+            This map organizes human experience into two axes: <strong>Interior vs. Exterior</strong> (Subjective experience vs. Observable behavior) and <strong>Individual vs. Collective</strong> (Personal reality vs. Shared reality).
+        </p>
+        <div class="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 flex items-start gap-3">
+            <i data-lucide="mouse-pointer" class="text-accent-primary w-5 h-5 mt-0.5"></i>
+            <p class="text-moonlight-muted text-sm italic">
+                <strong>Interactive:</strong> Hover over any quadrant to explore the specific dimensions. Click the center "YOU" to reset.
+            </p>
+        </div>
     `;
 }
 

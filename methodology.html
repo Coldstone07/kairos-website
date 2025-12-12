@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: { primary: '#F7F3E9', secondary: '#EDE7D3', muted: '#D4CDB7', accent: '#A5968A' },
+                        cosmic: { base: '#0F0C29', mid: '#302B63', end: '#24243E' },
+                        accent: { primary: '#D4AF37', secondary: '#C5A028', interactive: '#F3E5AB' }
+                    },
+                    fontFamily: { serif: ['"Lora"', 'serif'], sans: ['"Manrope"', 'sans-serif'] },
+                    backgroundImage: { 'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+    <div id="particles"></div>
+
+    <!-- Navigation (same as index) -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Home</a>
+                        <a href="methodology.html" class="text-xs font-bold tracking-widest text-accent-primary hover:text-white uppercase transition-colors">Methodology</a>
+                        <a href="technology.html" class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html" class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs <span class="bg-white/10 px-1 rounded text-[10px] ml-1">BETA</span></a>
+                        <a href="about.html" class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="apply.html" class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Start Application</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        <!-- Hero -->
+        <div class="px-4 max-w-6xl mx-auto text-center mb-24">
+            <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Based on Beta Cohort Results</span>
+            <h1 class="font-serif text-6xl md:text-7xl text-white mt-4 mb-8">The 10-Week Journey That Works</h1>
+            <p class="text-moonlight-secondary text-2xl md:text-3xl max-w-4xl mx-auto leading-relaxed">
+                We analyzed hundreds of journal entries to find what actually moves the needle. It's not endless analysis—it's safety, somatic awareness, and consistent witnessing.
+            </p>
+        </div>
+
+        <!-- Core Discovery Grid -->
+        <div class="px-4 max-w-7xl mx-auto mb-24">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-xl hover:border-accent-primary/50 transition-colors text-center">
+                    <div class="text-accent-primary mb-2"><i data-lucide="user-check" class="w-8 h-8 mx-auto"></i></div>
+                    <strong class="text-accent-primary block mb-2 text-lg">Somatic Tracking</strong>
+                    <p class="text-moonlight-muted text-sm">Mapping where emotions live in the body</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl hover:border-accent-primary/50 transition-colors text-center">
+                    <div class="text-accent-primary mb-2"><i data-lucide="zap" class="w-8 h-8 mx-auto"></i></div>
+                    <strong class="text-accent-primary block mb-2 text-lg">Energy Work</strong>
+                    <p class="text-moonlight-muted text-sm">Releasing stored patterns via chakras</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl hover:border-accent-primary/50 transition-colors text-center">
+                    <div class="text-accent-primary mb-2"><i data-lucide="message-circle" class="w-8 h-8 mx-auto"></i></div>
+                    <strong class="text-accent-primary block mb-2 text-lg">Personalized Prompts</strong>
+                    <p class="text-moonlight-muted text-sm">Reflection based on your reality</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl hover:border-accent-primary/50 transition-colors text-center">
+                    <div class="text-accent-primary mb-2"><i data-lucide="eye" class="w-8 h-8 mx-auto"></i></div>
+                    <strong class="text-accent-primary block mb-2 text-lg">Witnessing</strong>
+                    <p class="text-moonlight-muted text-sm">Consistent observation without pathologizing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10-Week Journey Map -->
+        <div class="px-4 max-w-7xl mx-auto mb-32">
+            <h2 class="font-serif text-5xl md:text-6xl text-white text-center mb-16">The Journey Map</h2>
+            <div class="space-y-16 relative before:absolute before:inset-0 before:ml-6 before:w-0.5 before:bg-white/10 max-w-4xl mx-auto">
+
+                <!-- Phase 1 -->
+                <div class="relative pl-16">
+                    <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-blue-400 transform -translate-x-1/2"></div>
+                    <div class="glass-panel p-8 rounded-xl border-l-4 border-l-blue-400">
+                        <span class="text-xs font-bold text-blue-400 uppercase mb-2 block">Weeks 1-3</span>
+                        <h3 class="text-3xl font-serif text-white mb-4">Safety & Awareness</h3>
+                        <p class="text-moonlight-secondary text-xl mb-6 leading-relaxed">
+                            Noticing sensations without analyzing. Mapping where emotions live in the body.
+                        </p>
+                        <div class="bg-white/5 p-4 rounded border-l-2 border-blue-400">
+                            <strong class="text-blue-400 block mb-1 text-sm uppercase tracking-widest">Key Metric:</strong>
+                            <span class="text-white text-lg">100% develop body awareness by Week 3.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative pl-16">
+                    <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-purple-500 transform -translate-x-1/2"></div>
+                    <div class="glass-panel p-8 rounded-xl border-l-4 border-l-purple-500">
+                        <span class="text-xs font-bold text-purple-500 uppercase mb-2 block">Weeks 4-6</span>
+                        <h3 class="text-3xl font-serif text-white mb-4">The Breakthrough Zone</h3>
+                        <p class="text-moonlight-secondary text-xl mb-6 leading-relaxed">
+                            Weekly energy work & chakra clearing. Accessing core patterns (age 5-8).
+                        </p>
+                        <div class="bg-white/5 p-4 rounded border-l-2 border-purple-500">
+                            <strong class="text-purple-500 block mb-1 text-sm uppercase tracking-widest">Discovery:</strong>
+                            <span class="text-white text-lg">Anger often masks grief (universal finding).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative pl-16">
+                    <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2"></div>
+                    <div class="glass-panel p-8 rounded-xl border-l-4 border-l-accent-primary">
+                        <span class="text-xs font-bold text-accent-primary uppercase mb-2 block">Weeks 7-10</span>
+                        <h3 class="text-3xl font-serif text-white mb-4">Integration & Embodiment</h3>
+                        <p class="text-moonlight-secondary text-xl mb-6 leading-relaxed">
+                            Testing new responses in real life. Establishing sustainable daily practices.
+                        </p>
+                        <div class="bg-white/5 p-4 rounded border-l-2 border-accent-primary">
+                            <strong class="text-accent-primary block mb-1 text-sm uppercase tracking-widest">Result:</strong>
+                            <span class="text-white text-lg">Trigger recovery time drops from days to hours.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="px-4 max-w-4xl mx-auto text-center">
+            <div class="glass-panel p-12 rounded-2xl">
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Ready to Begin Your Journey?</h2>
+                <p class="text-moonlight-secondary text-xl mb-8">Join the next cohort and experience this proven methodology firsthand.</p>
+                <a href="apply.html" class="inline-block px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm text-lg">
+                    Apply Now
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 bg-[#0F0C29] text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="font-serif text-xl text-white tracking-widest block mb-4">KAIROS<span class="text-accent-primary">.</span>PATH</span>
+            <p class="text-xs text-moonlight-muted/50">Privacy-First Platform for Integral Development</p>
+        </div>
+    </footer>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+                particle.style.animationDelay = `-${Math.random() * 10}s`;
+                container.appendChild(particle);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            createParticles();
+        });
+    </script>
+</body>
+</html>

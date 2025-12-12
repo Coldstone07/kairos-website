@@ -263,3 +263,13 @@ body {
     display: block;
     animation: fadeIn 0.5s ease-out;
 }
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

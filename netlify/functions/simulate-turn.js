@@ -1,6 +1,5 @@
 
 exports.handler = async function (event, context) {
-    // Only allow POST
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
@@ -15,7 +14,23 @@ exports.handler = async function (event, context) {
     }
 
     try {
-        const requestBody = JSON.parse(event.body);
+        const checkBody = JSON.parse(event.body);
+        const { systemPrompt, userPrompt, context: prevContext } = checkBody;
+
+        // Construct the full prompt for Gemini
+        const contents = [];
+
+        if (prevContext) {
+            contents.push({ role: "user", parts: [{ text: `Context so far:\n${prevContext}` }] });
+            contents.push({ role: "model", parts: [{ text: "Understood." }] }); // Steering
+        }
+
+        contents.push({ role: "user", parts: [{ text: userPrompt }] });
+
+        const requestBody = {
+            contents: contents,
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
 
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
             method: 'POST',
@@ -32,17 +47,15 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 200,
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
         };
 
     } catch (error) {
-        console.error("Function Error:", error);
+        console.error("Simulation Function Error:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Failed to process request", details: error.message })
+            body: JSON.stringify({ error: "Failed to process simulation", details: error.message })
         };
     }
 };

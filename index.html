@@ -9,9 +9,8 @@
     <title>Kairos Path | Holistic Evolution of Consciousness</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"
-        integrity="sha512-H+rGLvrWZ2Cnu5HIlsIy4Rw1TZn4VgeSfvEdpI9RweqL+dXVEKIXS+YVzUq+IqICgKR3dZEQ8J7EtVpXZ/P7aA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -76,6 +75,97 @@
     <!-- Ambient Particles Background -->
     <div id="particles"></div>
 
+    <!-- Consciousness Dashboard (Hidden by default) -->
+    <div id="consciousness-dashboard"
+        class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-xl transition-opacity duration-300">
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="w-full max-w-6xl h-[90vh] glass-panel flex flex-col overflow-hidden relative">
+                <!-- Close Button -->
+                <button onclick="toggleDashboard()"
+                    class="absolute top-4 right-4 text-white hover:text-accent-primary z-50">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+
+                <!-- Header -->
+                <div class="p-6 border-b border-white/10 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-3xl font-playfair text-white mb-1">Consciousness Evolution Dashboard</h2>
+                        <p class="text-xs text-moonlight-muted uppercase tracking-widest">Digital Twin Memory &
+                            Transformation Tracker</p>
+                    </div>
+                    <div class="flex gap-8 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-accent-primary" id="dash-session-count">0</div>
+                            <div class="text-[10px] text-moonlight-muted uppercase tracking-widest">Sessions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-blue-400" id="dash-integration-score">0%</div>
+                            <div class="text-[10px] text-moonlight-muted uppercase tracking-widest">Integration</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="flex-1 overflow-y-auto p-6 grid grid-cols-12 gap-6">
+                    <!-- Left: Memory Timeline -->
+                    <div class="col-span-12 lg:col-span-4 space-y-6">
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10">
+                            <h3
+                                class="text-sm font-bold text-white uppercase tracking-widest mb-4 border-b border-white/10 pb-2">
+                                Top Themes</h3>
+                            <div id="dash-top-themes" class="flex flex-wrap gap-2">
+                                <span class="text-xs text-moonlight-muted italic">No data yet...</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10">
+                            <h3
+                                class="text-sm font-bold text-white uppercase tracking-widest mb-4 border-b border-white/10 pb-2">
+                                Recent Memory Traces</h3>
+                            <div id="dash-timeline" class="space-y-4 max-h-[400px] overflow-y-auto">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Transformation Map -->
+                    <div class="col-span-12 lg:col-span-8 space-y-6">
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10 h-full">
+                            <h3
+                                class="text-sm font-bold text-white uppercase tracking-widest mb-4 border-b border-white/10 pb-2">
+                                Transformation Map</h3>
+                            <div class="flex items-center justify-between px-12 py-8 relative">
+                                <!-- Connection Line -->
+                                <div class="absolute left-16 right-16 top-1/2 h-0.5 bg-white/10 -z-10"></div>
+
+                                <div id="dash-map" class="w-full">
+                                    <!-- Injected via JS -->
+                                </div>
+                            </div>
+
+                            <!-- Placeholder for detailed viz -->
+                            <div
+                                class="mt-8 h-[300px] border border-dashed border-white/20 rounded-lg flex items-center justify-center text-moonlight-muted text-sm">
+                                [Transformation Topology Visualization Placeholder]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Controls -->
+                <div class="p-4 border-t border-white/10 flex justify-between bg-black/20">
+                    <button onclick="clearConsciousnessData()"
+                        class="text-xs text-red-400 hover:text-red-300 uppercase tracking-widest">
+                        Reset All Data (Development)
+                    </button>
+                    <div class="text-xs text-moonlight-muted">
+                        v0.9.2 Alpha • Kairos Engine
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,20 +176,20 @@
                 </div>
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-8">
-                        <button data-action="navigate" data-target="home"
-                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</button>
-                        <button data-action="navigate" data-target="methodology"
-                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</button>
-                        <button data-action="navigate" data-target="tech"
-                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</button>
-                        <button data-action="navigate" data-target="labs"
+                        <a href="#home"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="#methodology"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="#tech"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="#labs"
                             class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors text-accent-primary">Labs
-                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">NEW</span></button>
-                        <button data-action="navigate" data-target="about"
-                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</button>
-                        <button data-action="navigate" data-target="begin"
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">NEW</span></a>
+                        <a href="#about"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="#begin"
                             class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
-                            Application</button>
+                            Application</a>
                     </div>
                 </div>
                 <div class="lg:hidden">
@@ -111,20 +201,17 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
             <div class="px-4 py-4 space-y-2">
-                <button data-action="navigate" data-target="home"
-                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</button>
-                <button data-action="navigate" data-target="methodology"
-                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</button>
-                <button data-action="navigate" data-target="tech"
-                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</button>
-                <button data-action="navigate" data-target="labs"
-                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Labs
-                    (Beta)</button>
-                <button data-action="navigate" data-target="about"
-                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</button>
-                <button data-action="navigate" data-target="begin"
+                <a href="#home" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="#methodology"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="#tech"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="#labs" class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Labs
+                    (Beta)</a>
+                <a href="#about" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="#begin"
                     class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
-                    Application</button>
+                    Application</a>
             </div>
         </div>
     </nav>
@@ -138,28 +225,37 @@
                     Holistic Evolution of Consciousness<br>
                     <span class="text-accent-primary italic">Across All Dimensions</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-moonlight-secondary font-light mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.1s;">
-                    We use an integrated framework to address the four dimensions of consciousness simultaneously. This is not poetry—it is the systematic movement from unconscious habit patterns to conscious choice.
+                <p class="text-xl md:text-2xl text-moonlight-secondary font-light mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    We use an integrated framework to address the four dimensions of consciousness simultaneously. This
+                    is not poetry—it is the systematic movement from unconscious habit patterns to conscious choice.
                 </p>
                 <div class="flex justify-center gap-6 fade-in-up" style="animation-delay: 0.2s;">
-                    <button data-action="navigate" data-target="begin" class="px-8 py-4 bg-accent-primary/10 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase">Start Application</button>
+                    <button data-action="navigate" data-target="begin"
+                        class="px-8 py-4 bg-accent-primary/10 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase">Start
+                        Application</button>
                 </div>
             </div>
 
             <!-- NEW: The Invitation (Problem Statement) -->
             <div class="px-4 max-w-6xl mx-auto pb-24">
-                <div class="glass-panel p-8 md:p-12 rounded-xl border-l-4 border-l-accent-primary/50 relative overflow-hidden">
+                <div
+                    class="glass-panel p-8 md:p-12 rounded-xl border-l-4 border-l-accent-primary/50 relative overflow-hidden">
                     <div class="absolute right-0 top-0 opacity-10 transform translate-x-1/3 -translate-y-1/2">
                         <div class="w-64 h-64 border border-white rounded-full"></div>
                     </div>
-                    <h2 class="font-serif text-4xl md:text-5xl text-white mb-6 relative z-10">The Silent Crisis of Success</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl text-white mb-6 relative z-10">The Silent Crisis of
+                        Success</h2>
                     <div class="grid md:grid-cols-2 gap-12 relative z-10">
                         <div>
                             <p class="text-moonlight-secondary text-xl leading-relaxed mb-4">
-                                You've achieved what you set out to achieve. The titles, the recognition, the stability—it's all there. Yet, something essential feels missing.
+                                You've achieved what you set out to achieve. The titles, the recognition, the
+                                stability—it's all there. Yet, something essential feels missing.
                             </p>
                             <p class="text-moonlight-secondary text-xl leading-relaxed">
-                                You might be experiencing a hollow success, brilliant performance masking deep exhaustion, or a disconnection from your body's wisdom. <strong>You are not broken. You are evolving.</strong>
+                                You might be experiencing a hollow success, brilliant performance masking deep
+                                exhaustion, or a disconnection from your body's wisdom. <strong>You are not broken. You
+                                    are evolving.</strong>
                             </p>
                         </div>
                         <div class="space-y-4">
@@ -187,59 +283,83 @@
             <!-- INTERACTIVE VISUALIZATION 1: AQAL MANDALA -->
             <div class="px-4 max-w-7xl mx-auto pb-24">
                 <div class="text-center mb-16 max-w-4xl mx-auto">
-                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">The Integral Framework</span>
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">The Integral
+                        Framework</span>
                     <h2 class="font-serif text-5xl md:text-6xl text-white mt-4 mb-6">The Multiplication Effect</h2>
                     <p class="text-moonlight-secondary text-xl md:text-2xl leading-relaxed mb-6">
-                        Transformation isn't linear; it's geometric. While fragmented methods isolate the mind or the body, we activate the entire system to create self-reinforcing change.
+                        Transformation isn't linear; it's geometric. While fragmented methods isolate the mind or the
+                        body, we activate the entire system to create self-reinforcing change.
                     </p>
                 </div>
-                
+
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <!-- The Mandala -->
                     <div class="mandala-container fade-in-up">
                         <!-- UL Quadrant -->
-                        <div class="quadrant-wedge q-ul flex items-center justify-center p-8 text-center group" data-hover-action="show-details" data-quadrant="ul">
+                        <div class="quadrant-wedge q-ul flex items-center justify-center p-8 text-center group"
+                            data-hover-action="show-details" data-quadrant="ul">
                             <div>
-                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">I</div>
-                                <div class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">Mind</div>
+                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">I
+                                </div>
+                                <div
+                                    class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">
+                                    Mind</div>
                             </div>
                         </div>
                         <!-- UR Quadrant -->
-                        <div class="quadrant-wedge q-ur flex items-center justify-center p-8 text-center group" data-hover-action="show-details" data-quadrant="ur">
+                        <div class="quadrant-wedge q-ur flex items-center justify-center p-8 text-center group"
+                            data-hover-action="show-details" data-quadrant="ur">
                             <div>
-                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">IT</div>
-                                <div class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">Body</div>
+                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">
+                                    IT</div>
+                                <div
+                                    class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">
+                                    Body</div>
                             </div>
                         </div>
                         <!-- LL Quadrant -->
-                        <div class="quadrant-wedge q-ll flex items-center justify-center p-8 text-center group" data-hover-action="show-details" data-quadrant="ll">
+                        <div class="quadrant-wedge q-ll flex items-center justify-center p-8 text-center group"
+                            data-hover-action="show-details" data-quadrant="ll">
                             <div>
-                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">WE</div>
-                                <div class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">Culture</div>
+                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">
+                                    WE</div>
+                                <div
+                                    class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">
+                                    Culture</div>
                             </div>
                         </div>
                         <!-- LR Quadrant -->
-                        <div class="quadrant-wedge q-lr flex items-center justify-center p-8 text-center group" data-hover-action="show-details" data-quadrant="lr">
+                        <div class="quadrant-wedge q-lr flex items-center justify-center p-8 text-center group"
+                            data-hover-action="show-details" data-quadrant="lr">
                             <div>
-                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">ITS</div>
-                                <div class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">System</div>
+                                <div class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">
+                                    ITS</div>
+                                <div
+                                    class="text-xs uppercase tracking-widest text-moonlight-muted mt-1 opacity-50 group-hover:opacity-100">
+                                    System</div>
                             </div>
                         </div>
                         <!-- Center -->
-                        <div class="center-self shadow-lg z-50 cursor-pointer hover:scale-110 transition-transform" data-action="reset-details">YOU</div>
+                        <div class="center-self shadow-lg z-50 cursor-pointer hover:scale-110 transition-transform"
+                            data-action="reset-details">YOU</div>
                     </div>
 
                     <!-- Dynamic Details Panel -->
-                    <div class="glass-panel p-8 md:p-12 rounded-xl min-h-[400px] flex flex-col justify-center transition-all duration-300" id="aqal-details">
-                        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">System Overview</span>
+                    <div class="glass-panel p-8 md:p-12 rounded-xl min-h-[400px] flex flex-col justify-center transition-all duration-300"
+                        id="aqal-details">
+                        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">System
+                            Overview</span>
                         <h3 class="text-3xl font-serif text-white mb-6">The Four Dimensions</h3>
                         <p class="text-moonlight-secondary leading-relaxed mb-4">
-                            This map organizes human experience into two axes: <strong>Interior vs. Exterior</strong> (Subjective experience vs. Observable behavior) and <strong>Individual vs. Collective</strong> (Personal reality vs. Shared reality).
+                            This map organizes human experience into two axes: <strong>Interior vs. Exterior</strong>
+                            (Subjective experience vs. Observable behavior) and <strong>Individual vs.
+                                Collective</strong> (Personal reality vs. Shared reality).
                         </p>
                         <div class="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 flex items-start gap-3">
                             <i data-lucide="mouse-pointer" class="text-accent-primary w-5 h-5 mt-0.5"></i>
                             <p class="text-moonlight-muted text-sm italic">
-                                <strong>Interactive:</strong> Hover over any quadrant to explore the specific dimensions. Click the center "YOU" to reset.
+                                <strong>Interactive:</strong> Hover over any quadrant to explore the specific
+                                dimensions. Click the center "YOU" to reset.
                             </p>
                         </div>
                     </div>
@@ -251,10 +371,12 @@
         <section id="methodology" class="page-section min-h-screen">
             <div class="py-24 px-4 max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Based on Beta Cohort Results</span>
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Based on Beta Cohort
+                        Results</span>
                     <h2 class="font-serif text-5xl md:text-6xl text-white mt-4 mb-6">The 10-Week Journey That Works</h2>
                     <p class="text-moonlight-secondary text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-                        We analyzed hundreds of journal entries to find what actually moves the needle. It's not endless analysis—it's safety, somatic awareness, and consistent witnessing.
+                        We analyzed hundreds of journal entries to find what actually moves the needle. It's not endless
+                        analysis—it's safety, somatic awareness, and consistent witnessing.
                     </p>
                 </div>
 
@@ -282,32 +404,38 @@
                 <div class="mb-24 overflow-x-auto pb-8">
                     <div class="journey-track px-4 justify-center md:justify-center">
                         <!-- Phase 1 -->
-                        <div class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-blue-400 w-80">
+                        <div
+                            class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-blue-400 w-80">
                             <span class="text-xs font-bold text-blue-400 uppercase mb-2 block">Weeks 1-3</span>
                             <h3 class="text-xl font-serif text-white mb-2">Safety & Awareness</h3>
-                            <p class="text-sm text-moonlight-secondary mb-4">Noticing sensations without analyzing. Mapping where emotions live in the body.</p>
+                            <p class="text-sm text-moonlight-secondary mb-4">Noticing sensations without analyzing.
+                                Mapping where emotions live in the body.</p>
                             <div class="text-xs bg-white/5 p-3 rounded border border-white/10">
-                                <strong class="text-accent-primary block mb-1">Key Metric:</strong> 
+                                <strong class="text-accent-primary block mb-1">Key Metric:</strong>
                                 100% develop body awareness by Week 3.
                             </div>
                         </div>
                         <!-- Phase 2 -->
-                        <div class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-purple-500 w-80">
+                        <div
+                            class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-purple-500 w-80">
                             <span class="text-xs font-bold text-purple-500 uppercase mb-2 block">Weeks 4-6</span>
                             <h3 class="text-xl font-serif text-white mb-2">The Breakthrough Zone</h3>
-                            <p class="text-sm text-moonlight-secondary mb-4">Weekly energy work & chakra clearing. Accessing core patterns (age 5-8).</p>
+                            <p class="text-sm text-moonlight-secondary mb-4">Weekly energy work & chakra clearing.
+                                Accessing core patterns (age 5-8).</p>
                             <div class="text-xs bg-white/5 p-3 rounded border border-white/10">
-                                <strong class="text-accent-primary block mb-1">Discovery:</strong> 
+                                <strong class="text-accent-primary block mb-1">Discovery:</strong>
                                 Anger often masks grief (universal finding).
                             </div>
                         </div>
                         <!-- Phase 3 -->
-                        <div class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-accent-primary w-80">
+                        <div
+                            class="journey-node glass-panel p-6 rounded-xl flex-shrink-0 border-l-4 border-l-accent-primary w-80">
                             <span class="text-xs font-bold text-accent-primary uppercase mb-2 block">Weeks 7-10</span>
                             <h3 class="text-xl font-serif text-white mb-2">Integration & Embodiment</h3>
-                            <p class="text-sm text-moonlight-secondary mb-4">Testing new responses in real life. Establishing sustainable daily practices.</p>
+                            <p class="text-sm text-moonlight-secondary mb-4">Testing new responses in real life.
+                                Establishing sustainable daily practices.</p>
                             <div class="text-xs bg-white/5 p-3 rounded border border-white/10">
-                                <strong class="text-accent-primary block mb-1">Result:</strong> 
+                                <strong class="text-accent-primary block mb-1">Result:</strong>
                                 Trigger recovery time drops from days to hours.
                             </div>
                         </div>
@@ -319,71 +447,98 @@
                     <div class="text-center mb-12">
                         <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">The Somatic Toolkit</h2>
                         <p class="text-moonlight-secondary text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                            We don't just talk about transformation; we map it. These are the primary diagnostic tools we use during your 10-week journey to track what's happening below the surface.
+                            We don't just talk about transformation; we map it. These are the primary diagnostic tools
+                            we use during your 10-week journey to track what's happening below the surface.
                         </p>
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-12">
-                        
+
                         <!-- TOOL 1: ENNEAGRAM BODY MAP (WEEKS 1-3) - SWAPPED TO FIRST -->
                         <div class="glass-panel p-8 rounded-xl flex flex-col h-full border-t-4 border-t-blue-400">
                             <div class="flex justify-between items-start mb-6">
                                 <div>
-                                    <span class="text-xs font-bold text-blue-400 uppercase mb-1 block">Weeks 1-3 • Assessment Phase</span>
+                                    <span class="text-xs font-bold text-blue-400 uppercase mb-1 block">Weeks 1-3 •
+                                        Assessment Phase</span>
                                     <h3 class="text-2xl font-serif text-white">Somatic Pattern Map</h3>
                                 </div>
-                                <div class="bg-blue-400/10 p-2 rounded-full"><i data-lucide="user" class="text-blue-400 w-5 h-5"></i></div>
+                                <div class="bg-blue-400/10 p-2 rounded-full"><i data-lucide="user"
+                                        class="text-blue-400 w-5 h-5"></i></div>
                             </div>
 
                             <p class="text-sm text-moonlight-muted mb-6">
-                                Your Enneagram type isn't just a mental concept; it's a physical armor structure. In the first 3 weeks, we locate exactly where your type holds tension to begin the release process.
+                                Your Enneagram type isn't just a mental concept; it's a physical armor structure. In the
+                                first 3 weeks, we locate exactly where your type holds tension to begin the release
+                                process.
                             </p>
-                            
+
                             <div class="grid grid-cols-3 gap-2 mb-6 w-full">
-                                <button data-action="highlight-body" data-target="head" class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Head (5,6,7)</button>
-                                <button data-action="highlight-body" data-target="heart" class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Heart (2,3,4)</button>
-                                <button data-action="highlight-body" data-target="gut" class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Gut (8,9,1)</button>
+                                <button data-action="highlight-body" data-target="head"
+                                    class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Head
+                                    (5,6,7)</button>
+                                <button data-action="highlight-body" data-target="heart"
+                                    class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Heart
+                                    (2,3,4)</button>
+                                <button data-action="highlight-body" data-target="gut"
+                                    class="p-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors center-btn">Gut
+                                    (8,9,1)</button>
                             </div>
 
                             <div class="flex-grow relative flex justify-center items-center">
                                 <!-- Refined Energy Center SVG -->
                                 <div class="relative h-64 w-40">
-                                    <svg viewBox="0 0 200 400" class="h-full w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                                    <svg viewBox="0 0 200 400"
+                                        class="h-full w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                                         <defs>
                                             <filter id="center-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                                <feGaussianBlur stdDeviation="8" result="blur"/>
-                                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                                <feGaussianBlur stdDeviation="8" result="blur" />
+                                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
                                             </filter>
                                             <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                                 <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)" />
                                                 <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)" />
                                             </linearGradient>
                                         </defs>
-                                        
-                                        <path d="M100 40 C 125 40 140 60 140 85 C 140 110 130 120 120 125 C 160 135 180 170 180 220 C 180 320 160 380 100 380 C 40 380 20 320 20 220 C 20 170 40 135 80 125 C 70 120 60 110 60 85 C 60 60 75 40 100 40 Z" 
-                                              fill="none" stroke="url(#bodyGradient)" stroke-width="2" />
-                                        <line x1="100" y1="90" x2="100" y2="280" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 4" />
+
+                                        <path
+                                            d="M100 40 C 125 40 140 60 140 85 C 140 110 130 120 120 125 C 160 135 180 170 180 220 C 180 320 160 380 100 380 C 40 380 20 320 20 220 C 20 170 40 135 80 125 C 70 120 60 110 60 85 C 60 60 75 40 100 40 Z"
+                                            fill="none" stroke="url(#bodyGradient)" stroke-width="2" />
+                                        <line x1="100" y1="90" x2="100" y2="280" stroke="rgba(255,255,255,0.05)"
+                                            stroke-width="1" stroke-dasharray="4 4" />
 
                                         <!-- Head Center -->
-                                        <g id="group-head" class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer" data-action="highlight-body" data-target="head">
-                                            <circle cx="100" cy="85" r="25" fill="var(--accent-primary)" fill-opacity="0.1" class="pulse-ring" />
-                                            <circle id="center-head" cx="100" cy="85" r="8" fill="rgba(255,255,255,0.5)" />
+                                        <g id="group-head"
+                                            class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer"
+                                            data-action="highlight-body" data-target="head">
+                                            <circle cx="100" cy="85" r="25" fill="var(--accent-primary)"
+                                                fill-opacity="0.1" class="pulse-ring" />
+                                            <circle id="center-head" cx="100" cy="85" r="8"
+                                                fill="rgba(255,255,255,0.5)" />
                                         </g>
                                         <!-- Heart Center -->
-                                        <g id="group-heart" class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer" data-action="highlight-body" data-target="heart">
-                                            <circle cx="100" cy="180" r="30" fill="var(--accent-primary)" fill-opacity="0.1" class="pulse-ring" />
-                                            <circle id="center-heart" cx="100" cy="180" r="10" fill="rgba(255,255,255,0.5)" />
+                                        <g id="group-heart"
+                                            class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer"
+                                            data-action="highlight-body" data-target="heart">
+                                            <circle cx="100" cy="180" r="30" fill="var(--accent-primary)"
+                                                fill-opacity="0.1" class="pulse-ring" />
+                                            <circle id="center-heart" cx="100" cy="180" r="10"
+                                                fill="rgba(255,255,255,0.5)" />
                                         </g>
                                         <!-- Gut Center -->
-                                        <g id="group-gut" class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer" data-action="highlight-body" data-target="gut">
-                                            <circle cx="100" cy="290" r="35" fill="var(--accent-primary)" fill-opacity="0.1" class="pulse-ring" />
-                                            <circle id="center-gut" cx="100" cy="290" r="12" fill="rgba(255,255,255,0.5)" />
+                                        <g id="group-gut"
+                                            class="energy-group transition-all duration-700 opacity-40 hover:opacity-100 cursor-pointer"
+                                            data-action="highlight-body" data-target="gut">
+                                            <circle cx="100" cy="290" r="35" fill="var(--accent-primary)"
+                                                fill-opacity="0.1" class="pulse-ring" />
+                                            <circle id="center-gut" cx="100" cy="290" r="12"
+                                                fill="rgba(255,255,255,0.5)" />
                                         </g>
                                     </svg>
                                 </div>
                             </div>
-                            
-                            <div id="body-desc" class="mt-4 text-xs text-center text-moonlight-secondary italic border-l-2 border-accent-primary pl-3 min-h-[3rem] flex items-center justify-center">
+
+                            <div id="body-desc"
+                                class="mt-4 text-xs text-center text-moonlight-secondary italic border-l-2 border-accent-primary pl-3 min-h-[3rem] flex items-center justify-center">
                                 Select a center to reveal where your type stores stress.
                             </div>
                         </div>
@@ -392,31 +547,47 @@
                         <div class="glass-panel p-8 rounded-xl flex flex-col h-full border-t-4 border-t-purple-500">
                             <div class="flex justify-between items-start mb-6">
                                 <div>
-                                    <span class="text-xs font-bold text-purple-500 uppercase mb-1 block">Weeks 4-8 • Regulation Phase</span>
+                                    <span class="text-xs font-bold text-purple-500 uppercase mb-1 block">Weeks 4-8 •
+                                        Regulation Phase</span>
                                     <h3 class="text-2xl font-serif text-white">Nervous System Tracker</h3>
                                 </div>
-                                <div class="bg-purple-500/10 p-2 rounded-full"><i data-lucide="activity" class="text-purple-500 w-5 h-5"></i></div>
+                                <div class="bg-purple-500/10 p-2 rounded-full"><i data-lucide="activity"
+                                        class="text-purple-500 w-5 h-5"></i></div>
                             </div>
-                            
+
                             <p class="text-sm text-moonlight-muted mb-6">
-                                Before we can release deep trauma, we must stabilize your physiology. We track your shift from <strong>Sympathetic</strong> (anxiety/action) to <strong>Ventral Vagal</strong> (safety/connection).
+                                Before we can release deep trauma, we must stabilize your physiology. We track your
+                                shift from <strong>Sympathetic</strong> (anxiety/action) to <strong>Ventral
+                                    Vagal</strong> (safety/connection).
                             </p>
 
                             <div class="flex gap-4 mb-8">
-                                <button data-action="set-wave" data-state="sympathetic" class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors text-center">Stress Mode</button>
-                                <button data-action="set-wave" data-state="dorsal" class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors text-center">Shutdown Mode</button>
-                                <button data-action="set-wave" data-state="ventral" class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors active text-center">Flow Mode</button>
+                                <button data-action="set-wave" data-state="sympathetic"
+                                    class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors text-center">Stress
+                                    Mode</button>
+                                <button data-action="set-wave" data-state="dorsal"
+                                    class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors text-center">Shutdown
+                                    Mode</button>
+                                <button data-action="set-wave" data-state="ventral"
+                                    class="state-btn flex-1 py-2 text-xs border border-white/20 rounded hover:bg-white/10 transition-colors active text-center">Flow
+                                    Mode</button>
                             </div>
-                            
+
                             <!-- SVG Waveform -->
-                            <div class="h-40 bg-black/20 rounded-lg overflow-hidden relative flex items-center justify-center mb-4">
+                            <div
+                                class="h-40 bg-black/20 rounded-lg overflow-hidden relative flex items-center justify-center mb-4">
                                 <svg width="100%" height="100%" viewBox="0 0 400 100" preserveAspectRatio="none">
-                                    <path id="wave-path" d="M0 50 Q 50 100 100 50 T 200 50 T 300 50 T 400 50" stroke="var(--accent-primary)" fill="none" class="waveform-path"></path>
+                                    <path id="wave-path" d="M0 50 Q 50 100 100 50 T 200 50 T 300 50 T 400 50"
+                                        stroke="var(--accent-primary)" fill="none" class="waveform-path"></path>
                                 </svg>
-                                <div class="absolute inset-0 bg-gradient-to-r from-[#0F0C29] via-transparent to-[#0F0C29]"></div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-[#0F0C29] via-transparent to-[#0F0C29]">
+                                </div>
                             </div>
-                            <p id="wave-desc" class="text-xs text-moonlight-secondary italic border-l-2 border-accent-primary pl-3 mt-auto">
-                                <strong>Ventral Vagal:</strong> Smooth, rhythmic, coherent. This is the state where healing and connection occur.
+                            <p id="wave-desc"
+                                class="text-xs text-moonlight-secondary italic border-l-2 border-accent-primary pl-3 mt-auto">
+                                <strong>Ventral Vagal:</strong> Smooth, rhythmic, coherent. This is the state where
+                                healing and connection occur.
                             </p>
                         </div>
 
@@ -430,18 +601,27 @@
             <!-- Hero: The Technology That Makes Itself Obsolete -->
             <div class="relative pt-32 pb-24 px-4 text-center max-w-5xl mx-auto overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
-                    <div class="w-[800px] h-[800px] border border-white/5 rounded-full animate-[spin_60s_linear_infinite]"></div>
-                    <div class="w-[600px] h-[600px] border border-white/10 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
-                    <div class="w-[400px] h-[400px] border border-accent-primary/20 rounded-full animate-pulse-slow"></div>
+                    <div
+                        class="w-[800px] h-[800px] border border-white/5 rounded-full animate-[spin_60s_linear_infinite]">
+                    </div>
+                    <div
+                        class="w-[600px] h-[600px] border border-white/10 rounded-full animate-[spin_40s_linear_infinite_reverse]">
+                    </div>
+                    <div class="w-[400px] h-[400px] border border-accent-primary/20 rounded-full animate-pulse-slow">
+                    </div>
                 </div>
-                
-                <span class="text-accent-primary tracking-[0.3em] text-xs uppercase font-bold relative z-10">Digital Sovereignty</span>
+
+                <span class="text-accent-primary tracking-[0.3em] text-xs uppercase font-bold relative z-10">Digital
+                    Sovereignty</span>
                 <h1 class="font-serif text-6xl md:text-8xl text-white mt-6 mb-8 relative z-10 leading-tight">
                     The Technology That <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Makes Itself Obsolete</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Makes Itself
+                        Obsolete</span>
                 </h1>
-                <p class="text-2xl md:text-3xl text-moonlight-secondary max-w-3xl mx-auto font-light leading-relaxed relative z-10">
-                    We're building AI that teaches you to trust yourself again. Technology that restores your inner authority, then celebrates when you don't need it anymore.
+                <p
+                    class="text-2xl md:text-3xl text-moonlight-secondary max-w-3xl mx-auto font-light leading-relaxed relative z-10">
+                    We're building AI that teaches you to trust yourself again. Technology that restores your inner
+                    authority, then celebrates when you don't need it anymore.
                 </p>
             </div>
 
@@ -460,18 +640,24 @@
                                 <div class="h-2 w-3/4 bg-white/10 rounded"></div>
                                 <div class="h-2 w-1/2 bg-white/10 rounded"></div>
                             </div>
-                            <div class="flex items-center justify-center h-32 border border-white/10 rounded border-dashed text-red-400/50 text-xs tracking-widest uppercase">
+                            <div
+                                class="flex items-center justify-center h-32 border border-white/10 rounded border-dashed text-red-400/50 text-xs tracking-widest uppercase">
                                 Data Harvesting in Progress
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Your Consciousness Has Become Currency</h2>
+                        <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Your Consciousness Has Become
+                            Currency</h2>
                         <p class="text-moonlight-secondary text-lg md:text-xl mb-6 leading-relaxed">
-                            Every journal entry. Every moment of vulnerability. Uploaded to servers you'll never see, analyzed by algorithms you'll never understand, monetized in ways you'll never know.
+                            Every journal entry. Every moment of vulnerability. Uploaded to servers you'll never see,
+                            analyzed by algorithms you'll never understand, monetized in ways you'll never know.
                         </p>
-                        <p class="text-moonlight-secondary text-lg md:text-xl leading-relaxed border-l-2 border-red-500/30 pl-4">
-                            The mental health tech industry promises healing while creating dependency. Wellness apps optimizing for daily opens, not genuine transformation. Your most intimate patterns becoming training data.
+                        <p
+                            class="text-moonlight-secondary text-lg md:text-xl leading-relaxed border-l-2 border-red-500/30 pl-4">
+                            The mental health tech industry promises healing while creating dependency. Wellness apps
+                            optimizing for daily opens, not genuine transformation. Your most intimate patterns becoming
+                            training data.
                         </p>
                     </div>
                 </div>
@@ -485,32 +671,39 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
                     <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
-                        <div class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i data-lucide="smartphone" class="text-accent-primary"></i>
                         </div>
                         <h3 class="text-xl font-serif text-white mb-4">Your Device, Your Data</h3>
                         <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
-                            Everything that matters stays with you. Your digital twin lives entirely on your phone. No cloud surveillance. Using breakthrough small language models (2.7B parameters), we run completely offline.
+                            Everything that matters stays with you. Your digital twin lives entirely on your phone. No
+                            cloud surveillance. Using breakthrough small language models (2.7B parameters), we run
+                            completely offline.
                         </p>
                     </div>
                     <!-- Card 2 -->
                     <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
-                        <div class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i data-lucide="network" class="text-accent-primary"></i>
                         </div>
                         <h3 class="text-xl font-serif text-white mb-4">Collective Wisdom Without Exposure</h3>
                         <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
-                            Through federated learning, only encrypted pattern signatures—never your actual data—contribute to collective intelligence. Learn from others without exposing yourself.
+                            Through federated learning, only encrypted pattern signatures—never your actual
+                            data—contribute to collective intelligence. Learn from others without exposing yourself.
                         </p>
                     </div>
                     <!-- Card 3 -->
                     <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
-                        <div class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i data-lucide="trending-up" class="text-accent-primary"></i>
                         </div>
                         <h3 class="text-xl font-serif text-white mb-4">Technology as Training Wheels</h3>
                         <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
-                            Our AI builds capacity, not dependency. Over 10 weeks, it gradually reduces its involvement as your awareness grows. Success is measured by independence.
+                            Our AI builds capacity, not dependency. Over 10 weeks, it gradually reduces its involvement
+                            as your awareness grows. Success is measured by independence.
                         </p>
                     </div>
                 </div>
@@ -521,15 +714,19 @@
                 <div class="text-center mb-16">
                     <h2 class="font-serif text-5xl md:text-6xl text-white mb-4">The Journey to Sovereignty</h2>
                 </div>
-                
-                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:w-0.5 before:bg-white/10">
+
+                <div
+                    class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:w-0.5 before:bg-white/10">
                     <!-- Phase 1 -->
                     <div class="relative pl-16">
-                        <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2"></div>
+                        <div
+                            class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2">
+                        </div>
                         <span class="text-xs font-bold text-accent-primary uppercase mb-2 block">Weeks 1-3</span>
                         <h3 class="text-2xl font-serif text-white mb-4">Recognition</h3>
                         <p class="text-moonlight-secondary text-lg leading-relaxed mb-6">
-                            Your digital twin learns your patterns through journaling—but not with endless questions. It witnesses, reflects, and offers perspectives.
+                            Your digital twin learns your patterns through journaling—but not with endless questions. It
+                            witnesses, reflects, and offers perspectives.
                         </p>
                         <div class="bg-white/5 border-l-2 border-white/20 p-4 italic text-moonlight-secondary text-sm">
                             "Yesterday you mentioned chest tightening around boundaries. What's present there today?"
@@ -538,25 +735,34 @@
 
                     <!-- Phase 2 -->
                     <div class="relative pl-16">
-                        <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2"></div>
+                        <div
+                            class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2">
+                        </div>
                         <span class="text-xs font-bold text-accent-primary uppercase mb-2 block">Weeks 4-6</span>
                         <h3 class="text-2xl font-serif text-white mb-4">The Breakthrough Zone</h3>
                         <p class="text-moonlight-secondary text-lg leading-relaxed mb-4">
-                            Your digital twin helps you recognize which "part" is speaking. The Protector? The Exile? Or your True Self?
+                            Your digital twin helps you recognize which "part" is speaking. The Protector? The Exile? Or
+                            your True Self?
                         </p>
                         <ul class="space-y-2 text-sm text-moonlight-muted">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-primary"></i> 73% accuracy in real-time voice analysis</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-primary"></i> Detects shifts from survival to wisdom</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check"
+                                    class="w-4 h-4 text-accent-primary"></i> 73% accuracy in real-time voice analysis
+                            </li>
+                            <li class="flex items-center gap-2"><i data-lucide="check"
+                                    class="w-4 h-4 text-accent-primary"></i> Detects shifts from survival to wisdom</li>
                         </ul>
                     </div>
 
                     <!-- Phase 3 -->
                     <div class="relative pl-16">
-                        <div class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2"></div>
+                        <div
+                            class="absolute left-4 top-0 w-5 h-5 rounded-full bg-[#0F0C29] border-2 border-accent-primary transform -translate-x-1/2">
+                        </div>
                         <span class="text-xs font-bold text-accent-primary uppercase mb-2 block">Weeks 7-10</span>
                         <h3 class="text-2xl font-serif text-white mb-4">Integration</h3>
                         <p class="text-moonlight-secondary text-lg leading-relaxed mb-4">
-                            New patterns need practice. Your twin tracks small wins and voice frequency changes (2-3 semitones). Then, it begins to fade.
+                            New patterns need practice. Your twin tracks small wins and voice frequency changes (2-3
+                            semitones). Then, it begins to fade.
                         </p>
                         <p class="text-accent-primary text-sm font-bold">
                             It lets you lead more, suggests less, until you are sovereign.
@@ -569,7 +775,8 @@
             <div class="py-24 px-4 max-w-7xl mx-auto bg-cosmic-mid/30">
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="opacity-60">
-                        <h3 class="text-xl font-serif text-white mb-6 border-b border-white/10 pb-4">Traditional AI Coaching</h3>
+                        <h3 class="text-xl font-serif text-white mb-6 border-b border-white/10 pb-4">Traditional AI
+                            Coaching</h3>
                         <ul class="space-y-4 text-sm text-moonlight-muted font-mono">
                             <li class="flex gap-3">
                                 <span class="text-red-400">→</span> Endless loops of questions
@@ -587,7 +794,9 @@
                     </div>
                     <div class="relative">
                         <div class="absolute -inset-4 bg-accent-primary/5 rounded-xl blur-xl"></div>
-                        <h3 class="text-xl font-serif text-white mb-6 border-b border-accent-primary/50 pb-4 relative z-10">Kairos Consciousness Twin</h3>
+                        <h3
+                            class="text-xl font-serif text-white mb-6 border-b border-accent-primary/50 pb-4 relative z-10">
+                            Kairos Consciousness Twin</h3>
                         <ul class="space-y-4 text-sm text-white font-mono relative z-10">
                             <li class="flex gap-3">
                                 <span class="text-accent-primary">→</span> Recognition → Release → Independence
@@ -596,7 +805,8 @@
                                 <span class="text-accent-primary">→</span> IFS-informed multi-response types
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-accent-primary">→</span> Your device → Your patterns → Your sovereignty
+                                <span class="text-accent-primary">→</span> Your device → Your patterns → Your
+                                sovereignty
                             </li>
                             <li class="flex gap-3">
                                 <span class="text-accent-primary">→</span> Optimizes for obsolescence
@@ -608,11 +818,12 @@
 
             <!-- Section 5: Privacy Fortress -->
             <div class="py-24 px-4 max-w-4xl mx-auto text-center">
-                <div class="w-16 h-16 mx-auto bg-white/5 rounded-full flex items-center justify-center mb-8 border border-white/10">
+                <div
+                    class="w-16 h-16 mx-auto bg-white/5 rounded-full flex items-center justify-center mb-8 border border-white/10">
                     <i data-lucide="shield" class="w-8 h-8 text-white"></i>
                 </div>
                 <h2 class="font-serif text-4xl text-white mb-12">Privacy as Sacred Architecture</h2>
-                
+
                 <div class="grid md:grid-cols-2 gap-8 text-left">
                     <div class="glass-panel p-8">
                         <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -643,10 +854,14 @@
             <div class="py-24 px-4 max-w-7xl mx-auto border-t border-white/5">
                 <div class="grid md:grid-cols-2 gap-16">
                     <div>
-                        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">The Frontier</span>
+                        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">The
+                            Frontier</span>
                         <h2 class="font-serif text-3xl text-white mb-6">Digital Twins as Consciousness Labs</h2>
                         <p class="text-moonlight-secondary leading-relaxed mb-6">
-                            We're using Stanford's Generative Agents architecture to create digital twins that simulate realistic transformation journeys. We prototype interventions on AI agents before testing with humans, allowing us to understand transformation velocity without risking human wellbeing.
+                            We're using Stanford's Generative Agents architecture to create digital twins that simulate
+                            realistic transformation journeys. We prototype interventions on AI agents before testing
+                            with humans, allowing us to understand transformation velocity without risking human
+                            wellbeing.
                         </p>
                     </div>
                     <div>
@@ -656,21 +871,24 @@
                                 <div class="text-accent-primary font-bold font-mono">2025</div>
                                 <div>
                                     <strong class="text-white block">The Sovereignty Stack</strong>
-                                    <p class="text-xs text-moonlight-muted">Local-first tools. Pattern recognition. Zero cloud dependency.</p>
+                                    <p class="text-xs text-moonlight-muted">Local-first tools. Pattern recognition. Zero
+                                        cloud dependency.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
                                 <div class="text-white/50 font-bold font-mono">2026</div>
                                 <div>
                                     <strong class="text-white/80 block">Collective Intelligence Network</strong>
-                                    <p class="text-xs text-moonlight-muted">Federated learning connecting thousands of transformations without privacy compromise.</p>
+                                    <p class="text-xs text-moonlight-muted">Federated learning connecting thousands of
+                                        transformations without privacy compromise.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
                                 <div class="text-white/30 font-bold font-mono">2027</div>
                                 <div>
                                     <strong class="text-white/60 block">The Obsolescence Protocol</strong>
-                                    <p class="text-xs text-moonlight-muted">AI that deliberately makes itself unnecessary.</p>
+                                    <p class="text-xs text-moonlight-muted">AI that deliberately makes itself
+                                        unnecessary.</p>
                                 </div>
                             </div>
                         </div>
@@ -683,13 +901,16 @@
                 <div class="glass-panel p-12 max-w-3xl mx-auto rounded-2xl shadow-[0_0_50px_rgba(212,175,55,0.1)]">
                     <h2 class="font-serif text-4xl text-white mb-6">Join the Sovereignty Movement</h2>
                     <p class="text-moonlight-muted mb-8">
-                        Be among the first to experience consciousness evolution technology that respects your privacy, honors your pace, and celebrates your independence.
+                        Be among the first to experience consciousness evolution technology that respects your privacy,
+                        honors your pace, and celebrates your independence.
                     </p>
-                    <button class="px-10 py-4 bg-accent-primary text-[#0F0C29] font-bold tracking-widest uppercase hover:bg-white transition-colors rounded-sm">
+                    <button
+                        class="px-10 py-4 bg-accent-primary text-[#0F0C29] font-bold tracking-widest uppercase hover:bg-white transition-colors rounded-sm">
                         Begin Your Journey - Data Stays With You
                     </button>
                     <p class="mt-8 text-xs text-moonlight-muted italic font-serif">
-                        "The highest form of technology is the kind that reminds you of your own power, then gracefully disappears."
+                        "The highest form of technology is the kind that reminds you of your own power, then gracefully
+                        disappears."
                     </p>
                 </div>
             </div>
@@ -699,22 +920,28 @@
         <section id="labs" class="page-section min-h-screen">
             <div class="py-24 px-4 max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Interactive Experience</span>
-                    <h2 class="font-serif text-5xl md:text-7xl text-white mt-4 mb-6">Consciousness Labs <span class="text-moonlight-muted text-3xl">(Beta)</span></h2>
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Interactive
+                        Experience</span>
+                    <h2 class="font-serif text-5xl md:text-7xl text-white mt-4 mb-6">Consciousness Labs <span
+                            class="text-moonlight-muted text-3xl">(Beta)</span></h2>
                     <p class="text-moonlight-secondary text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-                        Experience the tools we use in the 10-week program. These are real AI-powered simulations that help you explore your inner landscape.
+                        Experience the tools we use in the 10-week program. These are real AI-powered simulations that
+                        help you explore your inner landscape.
                     </p>
                 </div>
 
                 <!-- Lab Mode Selector -->
                 <div class="flex justify-center gap-4 mb-12 flex-wrap">
-                    <button data-action="switch-lab" data-mode="mirror" class="lab-mode-btn active px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                    <button data-action="switch-lab" data-mode="mirror"
+                        class="lab-mode-btn active px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
                         <i data-lucide="eye" class="inline w-4 h-4 mr-2"></i> Consciousness Mirror
                     </button>
-                    <button data-action="switch-lab" data-mode="parts" class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                    <button data-action="switch-lab" data-mode="parts"
+                        class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
                         <i data-lucide="users" class="inline w-4 h-4 mr-2"></i> Parts Dialogue
                     </button>
-                    <button data-action="switch-lab" data-mode="crisis" class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                    <button data-action="switch-lab" data-mode="crisis"
+                        class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
                         <i data-lucide="zap" class="inline w-4 h-4 mr-2"></i> Crisis Reframe
                     </button>
                 </div>
@@ -723,20 +950,33 @@
                 <div id="tool-mirror" class="lab-tool active max-w-4xl mx-auto">
                     <div class="glass-panel p-8 md:p-12 rounded-xl">
                         <h3 class="text-3xl font-serif text-white mb-4">Consciousness Mirror</h3>
-                        <p class="text-moonlight-muted mb-6 text-lg">Share what you're feeling, and the AI will reflect back the patterns it detects—helping you see yourself more clearly.</p>
+                        <p class="text-moonlight-muted mb-6 text-lg">Share what you're feeling, and the AI will reflect
+                            back the patterns it detects—helping you see yourself more clearly.</p>
 
-                        <textarea id="mirrorInput" rows="4" placeholder="What's alive in you right now? (e.g., 'I'm feeling anxious about an upcoming presentation...')" class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
+                        <textarea id="mirrorInput" rows="4"
+                            placeholder="What's alive in you right now? (e.g., 'I'm feeling anxious about an upcoming presentation...')"
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
 
                         <div class="flex gap-2 mb-6 flex-wrap">
-                            <button data-action="set-mirror-input" data-text="I feel stuck between wanting freedom and needing security." class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example 1</button>
-                            <button data-action="set-mirror-input" data-text="I'm angry at myself for not being further along." class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example 2</button>
+                            <button data-action="set-mirror-input"
+                                data-text="I feel stuck between wanting freedom and needing security."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                1</button>
+                            <button data-action="set-mirror-input"
+                                data-text="I'm angry at myself for not being further along."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                2</button>
                         </div>
 
-                        <button data-action="call-gemini" data-tool="mirror" data-input="mirrorInput" data-output="mirrorOutput" class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                        <button data-action="call-gemini" data-tool="mirror" data-input="mirrorInput"
+                            data-output="mirrorOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
                             Reflect This Back to Me
                         </button>
 
-                        <div id="mirrorOutput" class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary"></div>
+                        <div id="mirrorOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
                     </div>
                 </div>
 
@@ -744,46 +984,67 @@
                 <div id="tool-parts" class="lab-tool hidden max-w-4xl mx-auto">
                     <div class="glass-panel p-8 md:p-12 rounded-xl">
                         <h3 class="text-3xl font-serif text-white mb-4">Internal Parts Dialogue</h3>
-                        <p class="text-moonlight-muted mb-6 text-lg">Identify two conflicting parts within you, and watch them dialogue. Based on IFS (Internal Family Systems).</p>
+                        <p class="text-moonlight-muted mb-6 text-lg">Identify two conflicting parts within you, and
+                            watch them dialogue. Based on IFS (Internal Family Systems).</p>
 
                         <div class="mb-6">
                             <label class="text-moonlight-secondary mb-2 block font-bold">Current Scenario:</label>
-                            <input id="partsScenario" type="text" placeholder="e.g., 'Should I quit my job to pursue my calling?'" class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary" />
+                            <input id="partsScenario" type="text"
+                                placeholder="e.g., 'Should I quit my job to pursue my calling?'"
+                                class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary" />
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <!-- Part A -->
                             <div class="bg-blue-500/10 p-6 rounded-xl border border-blue-500/20">
                                 <h4 class="text-blue-400 font-bold mb-3 uppercase text-sm">Part A</h4>
-                                <input id="inputPartA" type="text" placeholder="Name this part (e.g., 'The Risk-Taker')" class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3" />
-                                <textarea id="descPartA" rows="2" placeholder="Describe traits..." class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3"></textarea>
-                                <textarea id="perspPartA" rows="2" placeholder="What does this part want?" class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400"></textarea>
+                                <input id="inputPartA" type="text" placeholder="Name this part (e.g., 'The Risk-Taker')"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3" />
+                                <textarea id="descPartA" rows="2" placeholder="Describe traits..."
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3"></textarea>
+                                <textarea id="perspPartA" rows="2" placeholder="What does this part want?"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400"></textarea>
 
                                 <div class="flex gap-2 mt-3 flex-wrap">
-                                    <button data-action="select-part" data-side="A" data-name="The Achiever" data-desc="Driven, perfectionistic" data-persp="Wants success & recognition" class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Achiever</button>
-                                    <button data-action="select-part" data-side="A" data-name="The Free Spirit" data-desc="Spontaneous, creative" data-persp="Wants freedom & play" class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Free Spirit</button>
+                                    <button data-action="select-part" data-side="A" data-name="The Achiever"
+                                        data-desc="Driven, perfectionistic" data-persp="Wants success & recognition"
+                                        class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Achiever</button>
+                                    <button data-action="select-part" data-side="A" data-name="The Free Spirit"
+                                        data-desc="Spontaneous, creative" data-persp="Wants freedom & play"
+                                        class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Free
+                                        Spirit</button>
                                 </div>
                             </div>
 
                             <!-- Part B -->
                             <div class="bg-red-500/10 p-6 rounded-xl border border-red-500/20">
                                 <h4 class="text-red-400 font-bold mb-3 uppercase text-sm">Part B</h4>
-                                <input id="inputPartB" type="text" placeholder="Name this part (e.g., 'The Protector')" class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3" />
-                                <textarea id="descPartB" rows="2" placeholder="Describe traits..." class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3"></textarea>
-                                <textarea id="perspPartB" rows="2" placeholder="What does this part want?" class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400"></textarea>
+                                <input id="inputPartB" type="text" placeholder="Name this part (e.g., 'The Protector')"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3" />
+                                <textarea id="descPartB" rows="2" placeholder="Describe traits..."
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3"></textarea>
+                                <textarea id="perspPartB" rows="2" placeholder="What does this part want?"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400"></textarea>
 
                                 <div class="flex gap-2 mt-3 flex-wrap">
-                                    <button data-action="select-part" data-side="B" data-name="The Guardian" data-desc="Cautious, protective" data-persp="Wants safety & security" class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Guardian</button>
-                                    <button data-action="select-part" data-side="B" data-name="The Critic" data-desc="Harsh, demanding" data-persp="Wants perfection to avoid shame" class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Critic</button>
+                                    <button data-action="select-part" data-side="B" data-name="The Guardian"
+                                        data-desc="Cautious, protective" data-persp="Wants safety & security"
+                                        class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Guardian</button>
+                                    <button data-action="select-part" data-side="B" data-name="The Critic"
+                                        data-desc="Harsh, demanding" data-persp="Wants perfection to avoid shame"
+                                        class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Critic</button>
                                 </div>
                             </div>
                         </div>
 
-                        <button data-action="call-gemini" data-tool="parts" data-input="null" data-output="partsOutput" class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                        <button data-action="call-gemini" data-tool="parts" data-input="null" data-output="partsOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
                             Simulate Dialogue
                         </button>
 
-                        <div id="partsOutput" class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary"></div>
+                        <div id="partsOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
                     </div>
                 </div>
 
@@ -791,22 +1052,36 @@
                 <div id="tool-crisis" class="lab-tool hidden max-w-4xl mx-auto">
                     <div class="glass-panel p-8 md:p-12 rounded-xl">
                         <h3 class="text-3xl font-serif text-white mb-4">Crisis as Growth Edge</h3>
-                        <p class="text-moonlight-muted mb-6 text-lg">Name your current crisis, and the AI will reframe it as a developmental opportunity—a Growth Edge.</p>
+                        <p class="text-moonlight-muted mb-6 text-lg">Name your current crisis, and the AI will reframe
+                            it as a developmental opportunity—a Growth Edge.</p>
 
-                        <input id="crisisName" type="text" placeholder="Crisis in one sentence (e.g., 'I got laid off')" class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4" />
+                        <input id="crisisName" type="text" placeholder="Crisis in one sentence (e.g., 'I got laid off')"
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4" />
 
-                        <textarea id="crisisContext" rows="4" placeholder="Describe the situation and what it's bringing up for you..." class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
+                        <textarea id="crisisContext" rows="4"
+                            placeholder="Describe the situation and what it's bringing up for you..."
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
 
                         <div class="flex gap-2 mb-6 flex-wrap">
-                            <button data-action="select-crisis" data-name="Relationship ended" data-context="5-year relationship just ended. I feel like a failure." class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example 1</button>
-                            <button data-action="select-crisis" data-name="Career stagnation" data-context="Been in same role for 3 years. Feel stuck but too scared to leave." class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example 2</button>
+                            <button data-action="select-crisis" data-name="Relationship ended"
+                                data-context="5-year relationship just ended. I feel like a failure."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                1</button>
+                            <button data-action="select-crisis" data-name="Career stagnation"
+                                data-context="Been in same role for 3 years. Feel stuck but too scared to leave."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                2</button>
                         </div>
 
-                        <button data-action="call-gemini" data-tool="crisis" data-input="null" data-output="crisisOutput" class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                        <button data-action="call-gemini" data-tool="crisis" data-input="null"
+                            data-output="crisisOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
                             Reframe This Crisis
                         </button>
 
-                        <div id="crisisOutput" class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary"></div>
+                        <div id="crisisOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
                     </div>
                 </div>
 
@@ -814,7 +1089,10 @@
                 <div class="mt-16 text-center max-w-2xl mx-auto">
                     <div class="glass-panel p-6 rounded-xl border-t-2 border-t-accent-primary/50">
                         <p class="text-moonlight-muted text-sm italic">
-                            <strong class="text-accent-primary">Beta Feature:</strong> These tools are powered by AI and are for exploratory purposes only. They are not a substitute for professional mental health support. In the full program, these tools are embedded within a structured 10-week methodology with human guidance.
+                            <strong class="text-accent-primary">Beta Feature:</strong> These tools are powered by AI and
+                            are for exploratory purposes only. They are not a substitute for professional mental health
+                            support. In the full program, these tools are embedded within a structured 10-week
+                            methodology with human guidance.
                         </p>
                     </div>
                 </div>
@@ -828,7 +1106,8 @@
                     <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">The Team</span>
                     <h2 class="font-serif text-5xl md:text-6xl text-white mt-4 mb-6">Who We Are</h2>
                     <p class="text-moonlight-secondary text-lg max-w-3xl mx-auto leading-relaxed">
-                        We're not gurus. We're practitioners who've walked this path and are committed to making genuine transformation accessible.
+                        We're not gurus. We're practitioners who've walked this path and are committed to making genuine
+                        transformation accessible.
                     </p>
                 </div>
 
@@ -836,35 +1115,44 @@
                     <!-- Shalini Bio Card -->
                     <div class="glass-panel p-8 rounded-xl hover:border-accent-primary/50 transition-all">
                         <div class="flex items-start gap-6 mb-6">
-                            <div class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="user" class="w-12 h-12 text-accent-primary"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-serif text-white mb-2">Shalini</h3>
-                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Framework Architect</p>
+                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Framework
+                                    Architect</p>
                             </div>
                         </div>
                         <p class="text-moonlight-secondary leading-relaxed mb-4">
-                            Shalini brings deep expertise in integral theory and somatic psychology. With a background in organizational development and personal transformation work, she designed the 10-week methodology that integrates mind, body, culture, and systems.
+                            Shalini brings deep expertise in integral theory and somatic psychology. With a background
+                            in organizational development and personal transformation work, she designed the 10-week
+                            methodology that integrates mind, body, culture, and systems.
                         </p>
                         <p class="text-moonlight-muted text-sm italic border-l-2 border-accent-primary/50 pl-4">
-                            "True transformation isn't about fixing yourself—it's about remembering who you've always been beneath the conditioning."
+                            "True transformation isn't about fixing yourself—it's about remembering who you've always
+                            been beneath the conditioning."
                         </p>
                     </div>
 
                     <!-- Jatin Bio Card -->
                     <div class="glass-panel p-8 rounded-xl hover:border-accent-primary/50 transition-all">
                         <div class="flex items-start gap-6 mb-6">
-                            <div class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="user" class="w-12 h-12 text-accent-primary"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-serif text-white mb-2">Jatin</h3>
-                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Technology Lead</p>
+                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Technology
+                                    Lead</p>
                             </div>
                         </div>
                         <p class="text-moonlight-secondary leading-relaxed mb-4">
-                            Jatin is a technologist committed to building AI that serves human sovereignty rather than exploiting it. He leads the development of our privacy-first, local-first consciousness technology stack.
+                            Jatin is a technologist committed to building AI that serves human sovereignty rather than
+                            exploiting it. He leads the development of our privacy-first, local-first consciousness
+                            technology stack.
                         </p>
                         <p class="text-moonlight-muted text-sm italic border-l-2 border-accent-primary/50 pl-4">
                             "The best technology is invisible—it amplifies your capacity, then gets out of the way."
@@ -877,7 +1165,8 @@
                     <div class="glass-panel p-12 rounded-xl text-center border-t-4 border-t-accent-primary">
                         <h3 class="font-serif text-3xl text-white mb-6">Our Commitment</h3>
                         <p class="text-moonlight-secondary text-lg leading-relaxed mb-6">
-                            We believe transformation should be radical, accessible, and completely under your control. No data harvesting. No endless subscriptions. No artificial dependency.
+                            We believe transformation should be radical, accessible, and completely under your control.
+                            No data harvesting. No endless subscriptions. No artificial dependency.
                         </p>
                         <p class="text-white font-bold">
                             Just tools that help you trust yourself again.
@@ -893,54 +1182,66 @@
                 <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Ready to Begin?</span>
                 <h2 class="font-serif text-5xl md:text-7xl text-white mt-4 mb-8">Your Journey Starts Here</h2>
                 <p class="text-moonlight-secondary text-xl md:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto">
-                    The 10-week Kairos Path program combines somatic awareness, IFS parts work, and personalized AI guidance to create lasting transformation. Applications open quarterly for small cohorts.
+                    The 10-week Kairos Path program combines somatic awareness, IFS parts work, and personalized AI
+                    guidance to create lasting transformation. Applications open quarterly for small cohorts.
                 </p>
 
                 <div class="glass-panel p-12 rounded-2xl mb-12 text-left">
                     <h3 class="text-3xl font-serif text-white mb-8 text-center">What's Included</h3>
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
                         <div class="flex gap-4">
-                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">10 Weekly Live Sessions</h4>
-                                <p class="text-moonlight-muted text-sm">Small cohort calls with structured somatic practices</p>
+                                <p class="text-moonlight-muted text-sm">Small cohort calls with structured somatic
+                                    practices</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">Daily AI Journaling Companion</h4>
-                                <p class="text-moonlight-muted text-sm">Your private digital twin for reflection and pattern recognition</p>
+                                <p class="text-moonlight-muted text-sm">Your private digital twin for reflection and
+                                    pattern recognition</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">Energy Clearing Sessions</h4>
-                                <p class="text-moonlight-muted text-sm">Guided chakra work and somatic release practices</p>
+                                <p class="text-moonlight-muted text-sm">Guided chakra work and somatic release practices
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">Lifetime Access to Tools</h4>
-                                <p class="text-moonlight-muted text-sm">Continue using the Labs and frameworks after completion</p>
+                                <p class="text-moonlight-muted text-sm">Continue using the Labs and frameworks after
+                                    completion</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="border-t border-white/10 pt-8 text-center">
                         <div class="mb-6">
-                            <span class="text-moonlight-muted text-sm uppercase tracking-widest block mb-2">Investment</span>
+                            <span
+                                class="text-moonlight-muted text-sm uppercase tracking-widest block mb-2">Investment</span>
                             <span class="text-white text-4xl font-bold">$2,400</span>
                             <span class="text-moonlight-muted text-lg"> / 10 weeks</span>
                         </div>
-                        <p class="text-moonlight-muted text-sm mb-8 italic">Payment plans available. Need-based scholarships offered for every cohort.</p>
+                        <p class="text-moonlight-muted text-sm mb-8 italic">Payment plans available. Need-based
+                            scholarships offered for every cohort.</p>
                     </div>
                 </div>
 
                 <div class="space-y-6">
-                    <a href="mailto:hello@kairospath.com?subject=Application%20Inquiry" class="inline-block px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm text-lg shadow-lg hover:shadow-accent-primary/50">
+                    <a href="mailto:hello@kairospath.com?subject=Application%20Inquiry"
+                        class="inline-block px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm text-lg shadow-lg hover:shadow-accent-primary/50">
                         Submit Application
                     </a>
                     <p class="text-moonlight-muted text-sm">
@@ -952,9 +1253,11 @@
                 <div class="mt-16 glass-panel p-8 rounded-xl border-l-4 border-l-accent-primary/50 text-left">
                     <h4 class="text-2xl font-serif text-white mb-4">Not Ready to Commit?</h4>
                     <p class="text-moonlight-secondary text-lg mb-4">
-                        Try the Consciousness Labs (above) to experience the methodology firsthand. Or join our quarterly free workshops to learn about the framework.
+                        Try the Consciousness Labs (above) to experience the methodology firsthand. Or join our
+                        quarterly free workshops to learn about the framework.
                     </p>
-                    <button data-action="navigate" data-target="labs" class="px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-cosmic-base transition-all rounded-sm text-sm tracking-widest uppercase font-bold">
+                    <button data-action="navigate" data-target="labs"
+                        class="px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-cosmic-base transition-all rounded-sm text-sm tracking-widest uppercase font-bold">
                         Explore Labs First
                     </button>
                 </div>
@@ -974,6 +1277,9 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/consciousness-manager.js"></script>
+    <script src="js/consciousness-dashboard.js"></script>
+    <script src="js/mobile-nav.js"></script>
 </body>
 
 </html>

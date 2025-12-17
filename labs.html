@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    <title>Consciousness Labs | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Labs
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1 text-white">NEW</span></a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="methodology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="labs.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Labs
+                    (Beta)</a>
+                <a href="about.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="begin.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
+                    Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- SECTION 4: LABS (BETA) -->
+        <section id="labs" class="page-section min-h-screen">
+            <div class="py-24 px-4 max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Interactive
+                        Experience</span>
+                    <h2 class="font-serif text-5xl md:text-7xl text-white mt-4 mb-6">Consciousness Labs <span
+                            class="text-moonlight-muted text-3xl">(Beta)</span></h2>
+                    <p class="text-moonlight-secondary text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                        Experience the tools we use in the 10-week program. These are real AI-powered simulations that
+                        help you explore your inner landscape.
+                    </p>
+                </div>
+
+                <!-- Lab Mode Selector -->
+                <div class="flex justify-center gap-4 mb-12 flex-wrap">
+                    <button data-action="switch-lab" data-mode="mirror"
+                        class="lab-mode-btn active px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                        <i data-lucide="eye" class="inline w-4 h-4 mr-2"></i> Consciousness Mirror
+                    </button>
+                    <button data-action="switch-lab" data-mode="parts"
+                        class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                        <i data-lucide="users" class="inline w-4 h-4 mr-2"></i> Parts Dialogue
+                    </button>
+                    <button data-action="switch-lab" data-mode="crisis"
+                        class="lab-mode-btn px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                        <i data-lucide="zap" class="inline w-4 h-4 mr-2"></i> Crisis Reframe
+                    </button>
+                </div>
+
+                <!-- Tool 1: Consciousness Mirror -->
+                <div id="tool-mirror" class="lab-tool active max-w-4xl mx-auto">
+                    <div class="glass-panel p-8 md:p-12 rounded-xl">
+                        <h3 class="text-3xl font-serif text-white mb-4">Consciousness Mirror</h3>
+                        <p class="text-moonlight-muted mb-6 text-lg">Share what you're feeling, and the AI will reflect
+                            back the patterns it detects—helping you see yourself more clearly.</p>
+
+                        <textarea id="mirrorInput" rows="4"
+                            placeholder="What's alive in you right now? (e.g., 'I'm feeling anxious about an upcoming presentation...')"
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
+
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <button data-action="set-mirror-input"
+                                data-text="I feel stuck between wanting freedom and needing security."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                1</button>
+                            <button data-action="set-mirror-input"
+                                data-text="I'm angry at myself for not being further along."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                2</button>
+                        </div>
+
+                        <button data-action="call-gemini" data-tool="mirror" data-input="mirrorInput"
+                            data-output="mirrorOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                            Reflect This Back to Me
+                        </button>
+
+                        <div id="mirrorOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Parts Dialogue Simulator -->
+                <div id="tool-parts" class="lab-tool hidden max-w-4xl mx-auto">
+                    <div class="glass-panel p-8 md:p-12 rounded-xl">
+                        <h3 class="text-3xl font-serif text-white mb-4">Internal Parts Dialogue</h3>
+                        <p class="text-moonlight-muted mb-6 text-lg">Identify two conflicting parts within you, and
+                            watch them dialogue. Based on IFS (Internal Family Systems).</p>
+
+                        <div class="mb-6">
+                            <label class="text-moonlight-secondary mb-2 block font-bold">Current Scenario:</label>
+                            <input id="partsScenario" type="text"
+                                placeholder="e.g., 'Should I quit my job to pursue my calling?'"
+                                class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary" />
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- Part A -->
+                            <div class="bg-blue-500/10 p-6 rounded-xl border border-blue-500/20">
+                                <h4 class="text-blue-400 font-bold mb-3 uppercase text-sm">Part A</h4>
+                                <input id="inputPartA" type="text" placeholder="Name this part (e.g., 'The Risk-Taker')"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3" />
+                                <textarea id="descPartA" rows="2" placeholder="Describe traits..."
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400 mb-3"></textarea>
+                                <textarea id="perspPartA" rows="2" placeholder="What does this part want?"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-blue-400"></textarea>
+
+                                <div class="flex gap-2 mt-3 flex-wrap">
+                                    <button data-action="select-part" data-side="A" data-name="The Achiever"
+                                        data-desc="Driven, perfectionistic" data-persp="Wants success & recognition"
+                                        class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Achiever</button>
+                                    <button data-action="select-part" data-side="A" data-name="The Free Spirit"
+                                        data-desc="Spontaneous, creative" data-persp="Wants freedom & play"
+                                        class="part-btn-a text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Free
+                                        Spirit</button>
+                                </div>
+                            </div>
+
+                            <!-- Part B -->
+                            <div class="bg-red-500/10 p-6 rounded-xl border border-red-500/20">
+                                <h4 class="text-red-400 font-bold mb-3 uppercase text-sm">Part B</h4>
+                                <input id="inputPartB" type="text" placeholder="Name this part (e.g., 'The Protector')"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3" />
+                                <textarea id="descPartB" rows="2" placeholder="Describe traits..."
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400 mb-3"></textarea>
+                                <textarea id="perspPartB" rows="2" placeholder="What does this part want?"
+                                    class="w-full bg-white/5 border border-white/20 rounded p-3 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-red-400"></textarea>
+
+                                <div class="flex gap-2 mt-3 flex-wrap">
+                                    <button data-action="select-part" data-side="B" data-name="The Guardian"
+                                        data-desc="Cautious, protective" data-persp="Wants safety & security"
+                                        class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Guardian</button>
+                                    <button data-action="select-part" data-side="B" data-name="The Critic"
+                                        data-desc="Harsh, demanding" data-persp="Wants perfection to avoid shame"
+                                        class="part-btn-b text-xs px-3 py-1 border border-white/10 rounded hover:bg-white/20">Critic</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button data-action="call-gemini" data-tool="parts" data-input="null" data-output="partsOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                            Simulate Dialogue
+                        </button>
+
+                        <div id="partsOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 3: Crisis as Growth Edge -->
+                <div id="tool-crisis" class="lab-tool hidden max-w-4xl mx-auto">
+                    <div class="glass-panel p-8 md:p-12 rounded-xl">
+                        <h3 class="text-3xl font-serif text-white mb-4">Crisis as Growth Edge</h3>
+                        <p class="text-moonlight-muted mb-6 text-lg">Name your current crisis, and the AI will reframe
+                            it as a developmental opportunity—a Growth Edge.</p>
+
+                        <input id="crisisName" type="text" placeholder="Crisis in one sentence (e.g., 'I got laid off')"
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4" />
+
+                        <textarea id="crisisContext" rows="4"
+                            placeholder="Describe the situation and what it's bringing up for you..."
+                            class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary mb-4"></textarea>
+
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <button data-action="select-crisis" data-name="Relationship ended"
+                                data-context="5-year relationship just ended. I feel like a failure."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                1</button>
+                            <button data-action="select-crisis" data-name="Career stagnation"
+                                data-context="Been in same role for 3 years. Feel stuck but too scared to leave."
+                                class="text-xs px-3 py-2 bg-white/5 border border-white/10 rounded hover:border-accent-primary transition-colors">Example
+                                2</button>
+                        </div>
+
+                        <button data-action="call-gemini" data-tool="crisis" data-input="null"
+                            data-output="crisisOutput"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm mb-6">
+                            Reframe This Crisis
+                        </button>
+
+                        <div id="crisisOutput"
+                            class="hidden mt-6 p-6 bg-black/20 rounded-xl border border-white/10 text-moonlight-secondary">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beta Notice -->
+                <div class="mt-16 text-center max-w-2xl mx-auto">
+                    <div class="glass-panel p-6 rounded-xl border-t-2 border-t-accent-primary/50">
+                        <p class="text-moonlight-muted text-sm italic">
+                            <strong class="text-accent-primary">Beta Feature:</strong> These tools are powered by AI and
+                            are for exploratory purposes only. They are not a substitute for professional mental health
+                            support. In the full program, these tools are embedded within a structured 10-week
+                            methodology with human guidance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+
+</html>

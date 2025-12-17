@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    <title>About Us | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">NEW</span></a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">About</a>
+                        <a href="begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="methodology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="labs.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Labs
+                    (Beta)</a>
+                <a href="about.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">About</a>
+                <a href="begin.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
+                    Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- SECTION 5: ABOUT ---->
+        <section id="about" class="page-section min-h-screen">
+            <div class="py-24 px-4 max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">The Team</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-white mt-4 mb-6">Who We Are</h2>
+                    <p class="text-moonlight-secondary text-lg max-w-3xl mx-auto leading-relaxed">
+                        We're not gurus. We're practitioners who've walked this path and are committed to making genuine
+                        transformation accessible.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Shalini Bio Card -->
+                    <div class="glass-panel p-8 rounded-xl hover:border-accent-primary/50 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="user" class="w-12 h-12 text-accent-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-serif text-white mb-2">Shalini</h3>
+                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Framework
+                                    Architect</p>
+                            </div>
+                        </div>
+                        <p class="text-moonlight-secondary leading-relaxed mb-4">
+                            Shalini brings deep expertise in integral theory and somatic psychology. With a background
+                            in organizational development and personal transformation work, she designed the 10-week
+                            methodology that integrates mind, body, culture, and systems.
+                        </p>
+                        <p class="text-moonlight-muted text-sm italic border-l-2 border-accent-primary/50 pl-4">
+                            "True transformation isn't about fixing yourself—it's about remembering who you've always
+                            been beneath the conditioning."
+                        </p>
+                    </div>
+
+                    <!-- Jatin Bio Card -->
+                    <div class="glass-panel p-8 rounded-xl hover:border-accent-primary/50 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-24 h-24 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="user" class="w-12 h-12 text-accent-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-serif text-white mb-2">Jatin</h3>
+                                <p class="text-accent-primary text-sm uppercase tracking-widest">Co-Founder & Technology
+                                    Lead</p>
+                            </div>
+                        </div>
+                        <p class="text-moonlight-secondary leading-relaxed mb-4">
+                            Jatin is a technologist committed to building AI that serves human sovereignty rather than
+                            exploiting it. He leads the development of our privacy-first, local-first consciousness
+                            technology stack.
+                        </p>
+                        <p class="text-moonlight-muted text-sm italic border-l-2 border-accent-primary/50 pl-4">
+                            "The best technology is invisible—it amplifies your capacity, then gets out of the way."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission Statement -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div class="glass-panel p-12 rounded-xl text-center border-t-4 border-t-accent-primary">
+                        <h3 class="font-serif text-3xl text-white mb-6">Our Commitment</h3>
+                        <p class="text-moonlight-secondary text-lg leading-relaxed mb-6">
+                            We believe transformation should be radical, accessible, and completely under your control.
+                            No data harvesting. No endless subscriptions. No artificial dependency.
+                        </p>
+                        <p class="text-white font-bold">
+                            Just tools that help you trust yourself again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+
+</html>

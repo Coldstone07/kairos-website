@@ -169,13 +169,15 @@ body {
 }
 
 .page-section {
-    display: none;
-    opacity: 0;
+    display: block;
+    opacity: 1;
+    padding-top: 100px;
+    /* Add breathing room for fixed header */
 }
 
+/* Legacy active class - no longer needed for visibility but kept for potential transition hooks if any */
 .page-section.active {
     display: block;
-    animation: fadeIn 0.5s ease forwards;
 }
 
 @keyframes fadeIn {

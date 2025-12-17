@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    <title>Technology | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 3s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">NEW</span></a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="methodology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Technology</a>
+                <a href="labs.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Labs
+                    (Beta)</a>
+                <a href="about.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="begin.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
+                    Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- SECTION 4: TECHNOLOGY VISION -->
+        <section id="tech" class="page-section min-h-screen">
+            <!-- Hero: The Technology That Makes Itself Obsolete -->
+            <div class="relative pt-32 pb-24 px-4 text-center max-w-5xl mx-auto overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+                    <div
+                        class="w-[800px] h-[800px] border border-white/5 rounded-full animate-[spin_60s_linear_infinite]">
+                    </div>
+                    <div
+                        class="w-[600px] h-[600px] border border-white/10 rounded-full animate-[spin_40s_linear_infinite_reverse]">
+                    </div>
+                    <div class="w-[400px] h-[400px] border border-accent-primary/20 rounded-full animate-pulse-slow">
+                    </div>
+                </div>
+
+                <span class="text-accent-primary tracking-[0.3em] text-xs uppercase font-bold relative z-10">Digital
+                    Sovereignty</span>
+                <h1 class="font-serif text-6xl md:text-8xl text-white mt-6 mb-8 relative z-10 leading-tight">
+                    The Technology That <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Makes Itself
+                        Obsolete</span>
+                </h1>
+                <p
+                    class="text-2xl md:text-3xl text-moonlight-secondary max-w-3xl mx-auto font-light leading-relaxed relative z-10">
+                    We're building AI that teaches you to trust yourself again. Technology that restores your inner
+                    authority, then celebrates when you don't need it anymore.
+                </p>
+            </div>
+
+            <!-- Section 1: The Problem -->
+            <div class="py-24 px-4 max-w-7xl mx-auto border-t border-white/5">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-red-500/5 blur-3xl rounded-full"></div>
+                        <div class="glass-panel p-8 border-red-500/20 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-red-500/50"></div>
+                            <div class="flex gap-2 mb-4 opacity-50">
+                                <div class="h-2 w-full bg-white/10 rounded"></div>
+                                <div class="h-2 w-2/3 bg-white/10 rounded"></div>
+                            </div>
+                            <div class="flex gap-2 mb-4 opacity-30">
+                                <div class="h-2 w-3/4 bg-white/10 rounded"></div>
+                                <div class="h-2 w-1/2 bg-white/10 rounded"></div>
+                            </div>
+                            <div
+                                class="flex items-center justify-center h-32 border border-white/10 rounded border-dashed text-red-400/50 text-xs tracking-widest uppercase">
+                                Data Harvesting in Progress
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Your Consciousness Has Become
+                            Currency</h2>
+                        <p class="text-moonlight-secondary text-lg md:text-xl mb-6 leading-relaxed">
+                            Every journal entry. Every moment of vulnerability. Uploaded to servers you'll never see,
+                            analyzed by algorithms you'll never understand, monetized in ways you'll never know.
+                        </p>
+                        <p
+                            class="text-moonlight-secondary text-lg md:text-xl leading-relaxed border-l-2 border-red-500/30 pl-4">
+                            The mental health tech industry promises healing while creating dependency. Wellness apps
+                            optimizing for daily opens, not genuine transformation. Your most intimate patterns becoming
+                            training data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Our Revolutionary Approach -->
+            <div class="py-24 px-4 max-w-7xl mx-auto bg-white/5 rounded-3xl border border-white/5">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-5xl md:text-6xl text-white mb-4">Three Layers of Ethical Innovation</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="smartphone" class="text-accent-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-4">Your Device, Your Data</h3>
+                        <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
+                            Everything that matters stays with you. Your digital twin lives entirely on your phone. No
+                            cloud surveillance. Using breakthrough small language models (2.7B parameters), we run
+                            completely offline.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="network" class="text-accent-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-4">Collective Wisdom Without Exposure</h3>
+                        <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
+                            Through federated learning, only encrypted pattern signatures—never your actual
+                            data—contribute to collective intelligence. Learn from others without exposing yourself.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-panel p-8 hover:border-accent-primary/50 transition-all group">
+                        <div
+                            class="bg-accent-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="trending-up" class="text-accent-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-4">Technology as Training Wheels</h3>
+                        <p class="text-base md:text-lg text-moonlight-secondary leading-relaxed">
+                            Our AI builds capacity, not dependency. Over 10 weeks, it gradually reduces its involvement
+                            as your awareness grows. Success is measured by independence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Research & Roadmap -->
+            <div class="py-24 px-4 max-w-7xl mx-auto border-t border-white/5">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <span class="text-accent-primary text-xs uppercase tracking-widest mb-2 block">The
+                            Frontier</span>
+                        <h2 class="font-serif text-3xl text-white mb-6">Digital Twins as Consciousness Labs</h2>
+                        <p class="text-moonlight-secondary leading-relaxed mb-6">
+                            We're using Stanford's Generative Agents architecture to create digital twins that simulate
+                            realistic transformation journeys. We prototype interventions on AI agents before testing
+                            with humans, allowing us to understand transformation velocity without risking human
+                            wellbeing.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl text-white mb-6">The Roadmap</h3>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="text-accent-primary font-bold font-mono">2025</div>
+                                <div>
+                                    <strong class="text-white block">The Sovereignty Stack</strong>
+                                    <p class="text-xs text-moonlight-muted">Local-first tools. Pattern recognition. Zero
+                                        cloud dependency.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="text-white/50 font-bold font-mono">2026</div>
+                                <div>
+                                    <strong class="text-white/80 block">Collective Intelligence Network</strong>
+                                    <p class="text-xs text-moonlight-muted">Federated learning connecting thousands of
+                                        transformations without privacy compromise.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="text-white/30 font-bold font-mono">2027</div>
+                                <div>
+                                    <strong class="text-white/60 block">The Obsolescence Protocol</strong>
+                                    <p class="text-xs text-moonlight-muted">Systems that program themselves to
+                                        disappear as human capacity comes online.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+
+</html>

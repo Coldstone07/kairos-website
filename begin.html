@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    <title>Begin Journey | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs
+                            <span class="bg-white/10 px-1 rounded text-[10px] ml-1">NEW</span></a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-white transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="methodology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="labs.html" class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Labs
+                    (Beta)</a>
+                <a href="about.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="begin.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
+                    Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- SECTION 6: BEGIN APPLICATION -->
+        <section id="begin" class="page-section min-h-screen">
+            <div class="py-24 px-4 max-w-4xl mx-auto text-center">
+                <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Ready to Begin?</span>
+                <h2 class="font-serif text-5xl md:text-7xl text-white mt-4 mb-8">Your Journey Starts Here</h2>
+                <p class="text-moonlight-secondary text-xl md:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto">
+                    The 10-week Kairos Path program combines somatic awareness, IFS parts work, and personalized AI
+                    guidance to create lasting transformation. Applications open quarterly for small cohorts.
+                </p>
+
+                <div class="glass-panel p-12 rounded-2xl mb-12 text-left">
+                    <h3 class="text-3xl font-serif text-white mb-8 text-center">What's Included</h3>
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="flex gap-4">
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">10 Weekly Live Sessions</h4>
+                                <p class="text-moonlight-muted text-sm">Small cohort calls with structured somatic
+                                    practices</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Daily AI Journaling Companion</h4>
+                                <p class="text-moonlight-muted text-sm">Your private digital twin for reflection and
+                                    pattern recognition</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Energy Clearing Sessions</h4>
+                                <p class="text-moonlight-muted text-sm">Guided chakra work and somatic release practices
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-accent-primary flex-shrink-0"><i data-lucide="check-circle"
+                                    class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Lifetime Access to Tools</h4>
+                                <p class="text-moonlight-muted text-sm">Continue using the Labs and frameworks after
+                                    completion</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-8 text-center">
+                        <div class="mb-6">
+                            <span
+                                class="text-moonlight-muted text-sm uppercase tracking-widest block mb-2">Investment</span>
+                            <span class="text-white text-4xl font-bold">$2,400</span>
+                            <span class="text-moonlight-muted text-lg"> / 10 weeks</span>
+                        </div>
+                        <p class="text-moonlight-muted text-sm mb-8 italic">Payment plans available. Need-based
+                            scholarships offered for every cohort.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <a href="mailto:hello@kairospath.com?subject=Application%20Inquiry"
+                        class="inline-block px-12 py-5 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm text-lg shadow-lg hover:shadow-accent-primary/50">
+                        Submit Application
+                    </a>
+                    <p class="text-moonlight-muted text-sm">
+                        Next cohort starts <strong class="text-white">January 2026</strong><br>
+                        Applications reviewed on a rolling basis
+                    </p>
+                </div>
+
+                <div class="mt-16 glass-panel p-8 rounded-xl border-l-4 border-l-accent-primary/50 text-left">
+                    <h4 class="text-2xl font-serif text-white mb-4">Not Ready to Commit?</h4>
+                    <p class="text-moonlight-secondary text-lg mb-4">
+                        Try the Consciousness Labs (above) to experience the methodology firsthand. Or join our
+                        quarterly free workshops to learn about the framework.
+                    </p>
+                    <a href="labs.html"
+                        class="inline-block px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-cosmic-base transition-all rounded-sm text-sm tracking-widest uppercase font-bold">
+                        Explore Labs First
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+
+</html>

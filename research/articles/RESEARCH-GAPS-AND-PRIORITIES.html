@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Research Article | Kairos Research</title>
+    <meta name="description" content="">
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../assets/research-styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="pt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumbs mb-6">
+                <a href="../../research.html">Research</a>
+                <span>/</span>
+                <a href="../meta.html">Meta Research</a>
+                <span>/</span>
+                <span>Research Article</span>
+            </nav>
+
+            <!-- Article Metadata Bar -->
+            <div class="research-meta">
+                <span class="evidence-badge evidence-moderate">
+                    Moderate Evidence
+                </span>
+                <span>
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    11 min read
+                </span>
+                <span>
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Updated 2025-12-25
+                </span>
+                
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Table of Contents (Desktop) -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="toc-sidebar">
+                        <h4>Contents</h4>
+                        <ul id="toc-list">
+                            <!-- Generated TOC goes here -->
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <article class="lg:col-span-9 research-article">
+                    <h1>Kairos Research Gaps &amp; Priorities for Peer-Review Fill</h1>
+<p><strong>Date Created:</strong> December 24, 2025<br><strong>Purpose:</strong> Systematic identification of research gaps requiring peer-reviewed citations<br><strong>Status:</strong> Active - Prioritized for Research Agent Investigation</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This document identifies <strong>25 research gaps</strong> across Kairos&#39;s evidence base, prioritized by:</p>
+<ol>
+<li><strong>Impact on product development</strong> (MVP vs. future features)</li>
+<li><strong>Strength of current evidence</strong> (weak vs. moderate vs. missing)</li>
+<li><strong>Availability of peer-reviewed research</strong> (likely to exist vs. emerging field)</li>
+</ol>
+<p><strong>Immediate Action:</strong> Launch deep-research agents to fill High Priority gaps with peer-reviewed sources from PubMed, arXiv, ACM Digital Library, and academic journals.</p>
+<hr>
+<h2>Gap Classification System</h2>
+<h3>Priority Levels</h3>
+<ul>
+<li><strong>🔴 P1 - Critical:</strong> Needed for MVP launch, safety, or core claims</li>
+<li><strong>🟡 P2 - High:</strong> Needed for differentiation, future features (3-6 months)</li>
+<li><strong>🟢 P3 - Medium:</strong> Nice-to-have, research publication, long-term validation</li>
+</ul>
+<h3>Evidence Status</h3>
+<ul>
+<li><strong>❌ Missing:</strong> No current research in repository</li>
+<li><strong>⚠️ Weak:</strong> Single study, anecdotal, or non-peer-reviewed</li>
+<li><strong>📊 Moderate:</strong> Some evidence but needs strengthening</li>
+<li><strong>✅ Strong:</strong> Well-documented but could use updates</li>
+</ul>
+<hr>
+<h2>🔴 Priority 1: Critical for MVP &amp; Safety</h2>
+<h3>1. AI Crisis Detection &amp; Safety Protocols</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - Research 12 notes &quot;0/29 chatbots meet adequate criteria&quot;<br><strong>Gap:</strong> Need peer-reviewed protocols for:</p>
+<ul>
+<li>Suicide/self-harm detection algorithms</li>
+<li>Appropriate escalation pathways</li>
+<li>False positive/negative rates in crisis detection</li>
+<li>Best practices for AI limitations in crisis</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;AI crisis detection mental health&quot;</li>
+<li>&quot;suicide prevention chatbot algorithms&quot;</li>
+<li>&quot;automated risk assessment validation&quot;</li>
+<li>&quot;crisis response protocols AI mental health&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> PMC/PubMed (clinical), ACM/IEEE (technical), JMIR Mental Health</p>
+<hr>
+<h3>2. Quantifying the &quot;2-Week Wall&quot; with Biomarkers</h3>
+<p><strong>Current Status:</strong> 📊 Moderate - Research 04 has behavioral evidence<br><strong>Gap:</strong> Need physiological validation:</p>
+<ul>
+<li>HRV changes during extinction burst (weeks 2-3)</li>
+<li>Cortisol/stress biomarker patterns</li>
+<li>Neural imaging during pattern change resistance</li>
+<li>Objective markers correlating with subjective &quot;wall&quot;</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;extinction burst biomarkers&quot;</li>
+<li>&quot;habit change HRV heart rate variability&quot;</li>
+<li>&quot;neuroplasticity timeline cortisol&quot;</li>
+<li>&quot;behavioral change physiological markers&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> PubMed/PMC (neuroscience, psychology)</p>
+<hr>
+<h3>3. AI Pattern Recognition vs. Human Therapist Accuracy</h3>
+<p><strong>Current Status:</strong> ❌ Missing - No direct comparison<br><strong>Gap:</strong> Head-to-head studies on:</p>
+<ul>
+<li>Pattern identification accuracy (AI vs. human)</li>
+<li>Therapeutic insights quality</li>
+<li>Blind comparisons of AI vs. therapist observations</li>
+<li>Which patterns AI misses that humans catch</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;AI pattern recognition psychotherapy comparison&quot;</li>
+<li>&quot;machine learning clinical insight validation&quot;</li>
+<li>&quot;automated vs human therapeutic assessment&quot;</li>
+<li>&quot;NLP therapy notes accuracy&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> JMIR, AI in Medicine, Psychological Assessment journals</p>
+<hr>
+<h3>4. Privacy-Preserving AI Architecture for Mental Health</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - General privacy mentioned but no specific implementations<br><strong>Gap:</strong> Technical validation for:</p>
+<ul>
+<li>Federated learning in mental health contexts</li>
+<li>On-device processing feasibility</li>
+<li>Differential privacy in therapy data</li>
+<li>Encrypted computation for pattern analysis</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;federated learning mental health privacy&quot;</li>
+<li>&quot;on-device processing therapy AI&quot;</li>
+<li>&quot;differential privacy clinical data&quot;</li>
+<li>&quot;homomorphic encryption healthcare&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> arXiv, IEEE Security &amp; Privacy, JMIR</p>
+<hr>
+<h3>5. Informed Consent Best Practices for AI Mental Health</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - Principles stated but no empirical validation<br><strong>Gap:</strong> Evidence-based consent design:</p>
+<ul>
+<li>Comprehension testing of AI limitations disclosure</li>
+<li>Optimal consent timing and reinforcement</li>
+<li>User misconceptions about AI consciousness</li>
+<li>Effective consent language/formats</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;informed consent AI mental health&quot;</li>
+<li>&quot;user understanding AI limitations&quot;</li>
+<li>&quot;digital therapeutic consent design&quot;</li>
+<li>&quot;AI misconceptions disclosure effectiveness&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> PMC, bioethics journals, HCI conferences</p>
+<hr>
+<h2>🟡 Priority 2: High Value for Differentiation</h2>
+<h3>6. Framework Integration Mechanisms (IFS + Somatic + AI)</h3>
+<p><strong>Current Status:</strong> ❌ Missing - Individual frameworks validated separately<br><strong>Gap:</strong> How integrated approaches work:</p>
+<ul>
+<li>IFS parts work enhanced by somatic awareness</li>
+<li>AI pattern recognition accelerating IFS progress</li>
+<li>Combined effect sizes vs. individual modalities</li>
+<li>Optimal sequencing of modalities</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;multimodal psychotherapy integration&quot;</li>
+<li>&quot;IFS combined somatic therapy outcomes&quot;</li>
+<li>&quot;technology-assisted parts work&quot;</li>
+<li>&quot;embodied psychotherapy AI augmentation&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Psychotherapy journals, integrative medicine</p>
+<hr>
+<h3>7. Optimal Group Composition for Collective Healing</h3>
+<p><strong>Current Status:</strong> 📊 Moderate - Research 11 validates groups generally<br><strong>Gap:</strong> Specific composition guidelines:</p>
+<ul>
+<li>Optimal diversity vs. homogeneity</li>
+<li>Group size for online vs. in-person</li>
+<li>Matching algorithms for therapeutic groups</li>
+<li>Contraindications for group participation</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;therapeutic group composition outcomes&quot;</li>
+<li>&quot;group therapy matching algorithms&quot;</li>
+<li>&quot;optimal group size psychotherapy&quot;</li>
+<li>&quot;online group therapy effectiveness&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Group Dynamics journals, psychotherapy research</p>
+<hr>
+<h3>8. Cultural Adaptation of Western Psychological Models</h3>
+<p><strong>Current Status:</strong> ❌ Missing - All research is Western-centric<br><strong>Gap:</strong> Non-Western validation:</p>
+<ul>
+<li>IFS applicability in collectivist cultures</li>
+<li>Somatic practices cultural variations</li>
+<li>Cultural differences in parts work</li>
+<li>Language/metaphor adaptations needed</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;IFS internal family systems cross-cultural&quot;</li>
+<li>&quot;somatic therapy cultural adaptation&quot;</li>
+<li>&quot;psychotherapy cultural competence non-Western&quot;</li>
+<li>&quot;collectivist culture individual therapy&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Transcultural Psychiatry, Cultural Diversity journals</p>
+<hr>
+<h3>9. Long-Term Outcomes of AI Mental Health Interventions</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - Research 12 notes &quot;only 6 studies with follow-up&quot;<br><strong>Gap:</strong> Sustained effectiveness:</p>
+<ul>
+<li>6+ month outcomes for AI therapy</li>
+<li>Relapse rates compared to traditional therapy</li>
+<li>Skills retention after AI intervention ends</li>
+<li>Long-term dependency risks</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;digital mental health long-term outcomes&quot;</li>
+<li>&quot;AI therapy sustained effectiveness&quot;</li>
+<li>&quot;chatbot mental health follow-up&quot;</li>
+<li>&quot;digital therapeutic durability&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> JMIR, Lancet Digital Health, psychological journals</p>
+<hr>
+<h3>10. Collective Coherence Measurement</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - Conceptual but not operationalized<br><strong>Gap:</strong> Objective measurement of:</p>
+<ul>
+<li>Group HRV synchrony protocols</li>
+<li>Neural synchrony in group settings</li>
+<li>Physiological markers of collective states</li>
+<li>Validation of &quot;group coherence&quot; construct</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;group heart rate variability synchrony&quot;</li>
+<li>&quot;collective physiological coherence&quot;</li>
+<li>&quot;interpersonal synchrony measurement&quot;</li>
+<li>&quot;group neural entrainment&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Social Neuroscience, Frontiers in Psychology</p>
+<hr>
+<h3>11. Digital Twin Accuracy &amp; User Experience</h3>
+<p><strong>Current Status:</strong> 📊 Moderate - Research on HDTs exists but needs expansion<br><strong>Gap:</strong> Validation studies for:</p>
+<ul>
+<li>Personality model accuracy (claim is 85%)</li>
+<li>User satisfaction with digital twin interactions</li>
+<li>Uncanny valley effects in digital twins</li>
+<li>Long-term relationship with own digital twin</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;digital twin personality accuracy&quot;</li>
+<li>&quot;human digital twin user experience&quot;</li>
+<li>&quot;AI persona consistency validation&quot;</li>
+<li>&quot;digital representation satisfaction&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> HCI conferences (CHI, CSCW), AI journals</p>
+<hr>
+<h3>12. Agent-to-Agent Matching Effectiveness</h3>
+<p><strong>Current Status:</strong> ❌ Missing - Novel concept, limited research<br><strong>Gap:</strong> HDT-to-HDT pre-screening:</p>
+<ul>
+<li>Accuracy of digital twin compatibility prediction</li>
+<li>User acceptance of HDT-mediated matching</li>
+<li>Efficiency gains vs. direct human matching</li>
+<li>Ethical considerations of automated matching</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;AI-mediated matching algorithms&quot;</li>
+<li>&quot;digital twin compatibility prediction&quot;</li>
+<li>&quot;automated relationship matching effectiveness&quot;</li>
+<li>&quot;proxy-based social matching&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> arXiv, ACM conferences, social computing</p>
+<hr>
+<h2>🟢 Priority 3: Medium - Research &amp; Long-Term</h2>
+<h3>13. Individual Variation Predictors (Who Benefits Most)</h3>
+<p><strong>Current Status:</strong> ❌ Missing<br><strong>Gap:</strong> Predictive models for:</p>
+<ul>
+<li>Baseline characteristics predicting response</li>
+<li>Contraindications for Kairos approach</li>
+<li>Optimal personalization strategies</li>
+<li>Subgroup analyses by demographics</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;psychotherapy response predictors&quot;</li>
+<li>&quot;digital mental health individual differences&quot;</li>
+<li>&quot;treatment matching algorithms&quot;</li>
+<li>&quot;personalized intervention outcomes&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Clinical Psychology Review, personalized medicine journals</p>
+<hr>
+<h3>14. Intergenerational Trauma Patterns</h3>
+<p><strong>Current Status:</strong> ❌ Missing - Mentioned as future direction<br><strong>Gap:</strong> Epigenetic and systemic trauma:</p>
+<ul>
+<li>Epigenetic markers of trauma transmission</li>
+<li>Family systems patterns in digital data</li>
+<li>Intergenerational healing frameworks</li>
+<li>Historical trauma in contemporary patterns</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;intergenerational trauma epigenetics&quot;</li>
+<li>&quot;family systems digital patterns&quot;</li>
+<li>&quot;historical trauma contemporary symptoms&quot;</li>
+<li>&quot;transgenerational trauma mechanisms&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Trauma journals, epigenetics research</p>
+<hr>
+<h3>15. Societal-Level Mental Health Interventions</h3>
+<p><strong>Current Status:</strong> ❌ Missing<br><strong>Gap:</strong> Population health impact:</p>
+<ul>
+<li>Scaling individual interventions to communities</li>
+<li>Network effects in mental health apps</li>
+<li>Public health metrics for digital therapeutics</li>
+<li>Social contagion of wellbeing</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;population mental health digital interventions&quot;</li>
+<li>&quot;network effects mental health apps&quot;</li>
+<li>&quot;social contagion wellbeing&quot;</li>
+<li>&quot;community-level psychological interventions&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> American Journal of Public Health, population health journals</p>
+<hr>
+<h3>16. Voice Agent Effectiveness (Hume AI, Vapi Integration)</h3>
+<p><strong>Current Status:</strong> ❌ Missing<br><strong>Gap:</strong> Voice-based therapy:</p>
+<ul>
+<li>Voice AI empathy detection accuracy</li>
+<li>User preference voice vs. text</li>
+<li>Vocal biomarkers of mental health</li>
+<li>Therapeutic alliance via voice</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;voice AI mental health empathy&quot;</li>
+<li>&quot;vocal biomarkers depression anxiety&quot;</li>
+<li>&quot;conversational AI therapeutic outcomes&quot;</li>
+<li>&quot;voice-based digital therapeutics&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> JMIR, Speech Communication, affective computing</p>
+<hr>
+<h3>17. Economic Models for Scaling Impact</h3>
+<p><strong>Current Status:</strong> ❌ Missing<br><strong>Gap:</strong> Business + social impact:</p>
+<ul>
+<li>Cost-effectiveness vs. traditional therapy</li>
+<li>ROI for healthcare systems</li>
+<li>Value-based pricing models</li>
+<li>Sustainability of hybrid models</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;digital mental health cost-effectiveness&quot;</li>
+<li>&quot;hybrid therapy economic models&quot;</li>
+<li>&quot;AI mental health return on investment&quot;</li>
+<li>&quot;value-based mental health pricing&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Health Economics journals, health services research</p>
+<hr>
+<h3>18. Algorithmic Bias in Mental Health AI (Kairos-Specific)</h3>
+<p><strong>Current Status:</strong> 📊 Moderate - General bias research exists (Research 13)<br><strong>Gap:</strong> Mental health specific:</p>
+<ul>
+<li>Bias in pattern recognition across demographics</li>
+<li>Cultural bias in therapeutic language models</li>
+<li>Age bias in mental health algorithms</li>
+<li>Mitigation strategies that work</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;algorithmic bias mental health AI&quot;</li>
+<li>&quot;cultural bias digital therapeutics&quot;</li>
+<li>&quot;demographic fairness mental health algorithms&quot;</li>
+<li>&quot;bias mitigation mental health AI&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> AI Ethics journals, FAccT conference, medical AI</p>
+<hr>
+<h3>19. Energy Work Mechanisms (Honest Scientific Investigation)</h3>
+<p><strong>Current Status:</strong> ⚠️ Weak - Research 08 acknowledges uncertainty<br><strong>Gap:</strong> Rigorous investigation of:</p>
+<ul>
+<li>Placebo vs. specific effects in energy work</li>
+<li>Neurobiological correlates of energy practices</li>
+<li>Active ingredients in somatic techniques</li>
+<li>What actually works and why</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;biofield therapy mechanisms&quot;</li>
+<li>&quot;energy healing neurobiological effects&quot;</li>
+<li>&quot;placebo mechanisms somatic therapy&quot;</li>
+<li>&quot;touch therapy active ingredients&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> PMC, Complementary Medicine journals (with caution)</p>
+<hr>
+<h3>20. Measurement &amp; Attribution in Integrated Interventions</h3>
+<p><strong>Current Status:</strong> ❌ Missing<br><strong>Gap:</strong> What causes improvement:</p>
+<ul>
+<li>Isolating effects of different modalities</li>
+<li>Attribution modeling for multi-component interventions</li>
+<li>Active ingredients identification</li>
+<li>Necessary vs. sufficient components</li>
+</ul>
+<p><strong>Search Terms:</strong></p>
+<ul>
+<li>&quot;component analysis psychotherapy&quot;</li>
+<li>&quot;active ingredients therapeutic change&quot;</li>
+<li>&quot;multimodal intervention attribution&quot;</li>
+<li>&quot;mechanism-based treatment development&quot;</li>
+</ul>
+<p><strong>Expected Sources:</strong> Clinical Psychology Science, psychotherapy research</p>
+<hr>
+<h2>Additional Gaps (Lower Priority)</h2>
+<h3>21. Neurodiversity &amp; Kairos Approach</h3>
+<p><strong>Status:</strong> ❌ Missing<br><strong>Need:</strong> Autism, ADHD, other neurodivergent populations</p>
+<h3>22. Trauma Typology &amp; Differential Effectiveness</h3>
+<p><strong>Status:</strong> ❌ Missing<br><strong>Need:</strong> Complex PTSD vs. single-incident vs. developmental trauma</p>
+<h3>23. Meditation/Contemplative Practice Dose-Response</h3>
+<p><strong>Status:</strong> 📊 Moderate<br><strong>Need:</strong> Optimal frequency, duration, type</p>
+<h3>24. Attachment Style &amp; Digital Therapeutic Alliance</h3>
+<p><strong>Status:</strong> ❌ Missing<br><strong>Need:</strong> How attachment patterns affect AI relationship</p>
+<h3>25. Spiritual/Existential Dimensions in Secular Framework</h3>
+<p><strong>Status:</strong> ❌ Missing<br><strong>Need:</strong> Meaning-making without religious framing</p>
+<hr>
+<h2>Research Agent Deployment Plan</h2>
+<h3>Phase 1: Critical Safety &amp; MVP (P1 Gaps)</h3>
+<p><strong>Timeline:</strong> Immediate (Week 1)<br><strong>Agents:</strong> 5 deep-research-agents in parallel<br><strong>Focus:</strong> Gaps 1-5<br><strong>Deliverable:</strong> Peer-reviewed literature reviews with citations</p>
+<h3>Phase 2: Differentiation &amp; Future Features (P2 Gaps)</h3>
+<p><strong>Timeline:</strong> Weeks 2-3<br><strong>Agents:</strong> 4 deep-research-agents in parallel<br><strong>Focus:</strong> Gaps 6-12<br><strong>Deliverable:</strong> Integrated research documents with applications to Kairos</p>
+<h3>Phase 3: Long-Term Research Agenda (P3 Gaps)</h3>
+<p><strong>Timeline:</strong> Month 2 onwards<br><strong>Agents:</strong> 2 deep-research-agents, ongoing<br><strong>Focus:</strong> Gaps 13-25<br><strong>Deliverable:</strong> Research roadmap and future studies design</p>
+<hr>
+<h2>Success Criteria</h2>
+<h3>For Each Gap Filled:</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Minimum 10 peer-reviewed sources identified</li>
+<li><input disabled="" type="checkbox"> Quality rating: 🟢 Strong or 🟡 Moderate minimum</li>
+<li><input disabled="" type="checkbox"> Direct application to Kairos documented</li>
+<li><input disabled="" type="checkbox"> Limitations honestly acknowledged</li>
+<li><input disabled="" type="checkbox"> Added to appropriate Research/## document</li>
+<li><input disabled="" type="checkbox"> MASTER_RESEARCH_NAVIGATION.md updated</li>
+</ul>
+<h3>Overall Repository Health:</h3>
+<ul>
+<li><input disabled="" type="checkbox"> No P1 gaps remaining</li>
+<li><input disabled="" type="checkbox"> &lt; 3 P2 gaps remaining</li>
+<li><input disabled="" type="checkbox"> P3 gaps documented for future research</li>
+<li><input disabled="" type="checkbox"> All claims in product have citation support</li>
+<li><input disabled="" type="checkbox"> Limitations transparently communicated</li>
+</ul>
+<hr>
+<h2>Notes for Research Agents</h2>
+<h3>Source Prioritization:</h3>
+<ol>
+<li><strong>Tier 1:</strong> Systematic reviews, meta-analyses (Cochrane, JAMA, Lancet)</li>
+<li><strong>Tier 2:</strong> Peer-reviewed RCTs, longitudinal studies</li>
+<li><strong>Tier 3:</strong> Well-designed observational studies</li>
+<li><strong>Tier 4:</strong> Expert consensus, clinical guidelines (WHO, APA)</li>
+<li><strong>Use Cautiously:</strong> Single studies, non-peer-reviewed, industry-funded</li>
+</ol>
+<h3>Search Databases (in order):</h3>
+<ol>
+<li><strong>PubMed/PMC</strong> - Medical and psychological research</li>
+<li><strong>PsycINFO</strong> - Psychology-specific</li>
+<li><strong>IEEE Xplore</strong> - Technical/AI research</li>
+<li><strong>ACM Digital Library</strong> - Computer science, HCI</li>
+<li><strong>arXiv</strong> - Preprints (verify quality)</li>
+<li><strong>Google Scholar</strong> - Broad coverage, citation tracking</li>
+</ol>
+<h3>Quality Checks:</h3>
+<ul>
+<li>Verify peer-review status</li>
+<li>Check sample sizes (n &gt; 30 minimum for quantitative)</li>
+<li>Note conflicts of interest</li>
+<li>Prefer recent (last 5 years) unless foundational</li>
+<li>Ensure methodology is sound</li>
+</ul>
+<hr>
+<h2>Maintenance</h2>
+<p><strong>Quarterly Review:</strong> Update this document with:</p>
+<ul>
+<li>Newly filled gaps (move to &quot;Completed&quot; section)</li>
+<li>Emerging research areas</li>
+<li>New gaps identified</li>
+<li>Priority re-ranking based on product roadmap</li>
+</ul>
+<p><strong>Owner:</strong> Research Lead<br><strong>Next Review:</strong> March 2026</p>
+<hr>
+<p><strong>Document Created:</strong> December 24, 2025<br><strong>Status:</strong> Active - Ready for Research Agent Deployment<br><strong>Immediate Action:</strong> Launch Phase 1 agents on P1 gaps 1-5</p>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Generate Table of Contents
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.research-article');
+            const headings = article.querySelectorAll('h2, h3');
+            const tocList = document.getElementById('toc-list');
+
+            headings.forEach((heading, index) => {
+                // Add ID to heading for linking
+                const id = 'section-' + index;
+                heading.id = id;
+
+                // Create TOC entry
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + id;
+                a.textContent = heading.textContent;
+                a.className = heading.tagName === 'H3' ? 'pl-4' : '';
+                li.appendChild(a);
+                tocList.appendChild(li);
+
+                // Smooth scroll behavior
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+        });
+
+        // Highlight active TOC item on scroll
+        window.addEventListener('scroll', () => {
+            const headings = document.querySelectorAll('.research-article h2, .research-article h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+
+            let current = '';
+            headings.forEach(heading => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    current = heading.id;
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

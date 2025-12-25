@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>All Research | Kairos Path Evidence Base</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Header -->
+        <section class="px-4 py-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="font-serif text-4xl md:text-6xl text-white mb-4">All Research Documents</h1>
+                    <p class="text-moonlight-secondary text-xl max-w-3xl mx-auto">
+                        Complete evidence base supporting the Kairos methodology
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Research Section -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl text-white mb-8">Core Research</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="articles/loneliness-epidemic.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Loneliness Epidemic</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Public health crisis validation</p>
+                        <span class="text-accent-primary text-xs uppercase">36 min read →</span>
+                    </a>
+
+                    <a href="articles/ifs-evidence-base.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">IFS Evidence Base</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Internal Family Systems validation</p>
+                        <span class="text-accent-primary text-xs uppercase">38 min read →</span>
+                    </a>
+
+                    <a href="articles/somatic-psychology.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Somatic Psychology</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Body-based healing evidence</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/neuroplasticity-pattern-change.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Neuroplasticity & Pattern Change</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Brain change mechanisms</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/addiction-connection-disorder.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Addiction as Connection Disorder</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Reframing addiction treatment</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/journaling-expressive-writing.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Journaling & Expressive Writing</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Written processing benefits</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/contemplative-science.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Contemplative Science</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Meditation and mindfulness research</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/energy-work-biofield.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Energy Work & Biofield</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Energetic healing evidence</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/attachment-relational-healing.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Attachment & Relational Healing</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Connection-based recovery</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/attention-economy-mental-health.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Attention Economy & Mental Health</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Digital impact on wellbeing</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/collective-healing-group-dynamics.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Collective Healing & Group Dynamics</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Community healing power</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/ai-mental-health-evidence.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">AI in Mental Health</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Technology integration evidence</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/dataset-values-lit-review.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Dataset Values Literature Review</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Bias and values in AI systems</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Research Section -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl text-white mb-8">Advanced Research</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="articles/neuroplasticity-biomarker-validation.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Neuroplasticity Biomarker Validation</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">2-Week Wall evidence</p>
+                        <span class="text-accent-primary text-xs uppercase">35 min read →</span>
+                    </a>
+
+                    <a href="articles/ai-vs-human-pattern-recognition.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">AI vs Human Pattern Recognition</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Comparative capabilities analysis</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/informed-consent-ai-mental-health.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Informed Consent in AI Mental Health</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Ethical framework development</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/ai-crisis-detection-safety.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">AI Crisis Detection & Safety</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Critical safety analysis</p>
+                        <span class="text-accent-primary text-xs uppercase">27 min read →</span>
+                    </a>
+
+                    <a href="articles/privacy-preserving-ai-architecture.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Privacy-Preserving AI Architecture</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Secure system design</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meta Research Section -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl text-white mb-8">Meta Research</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="articles/RESEARCH-INDEX.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Research Index</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Complete research overview</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/CITATION-TRACKING-AND-QUALITY.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Citation Tracking</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">417+ citation analysis</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/RESEARCH-GAPS-AND-PRIORITIES.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Research Gaps</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Future research priorities</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+
+                    <a href="articles/RESEARCH-SUMMARY.html" class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform">
+                        <h3 class="font-serif text-xl text-white mb-2">Research Summary</h3>
+                        <p class="text-moonlight-muted text-sm mb-3">Executive overview</p>
+                        <span class="text-accent-primary text-xs uppercase">Read →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Hub -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto text-center">
+                <a href="../research.html" class="inline-flex items-center gap-2 px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Back to Research Hub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/mobile-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

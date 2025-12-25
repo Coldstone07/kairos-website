@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Research Article | Kairos Research</title>
+    <meta name="description" content="">
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../assets/research-styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="pt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumbs mb-6">
+                <a href="../../research.html">Research</a>
+                <span>/</span>
+                <a href="../meta.html">Meta Research</a>
+                <span>/</span>
+                <span>Research Article</span>
+            </nav>
+
+            <!-- Article Metadata Bar -->
+            <div class="research-meta">
+                <span class="evidence-badge evidence-moderate">
+                    Moderate Evidence
+                </span>
+                <span>
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    9 min read
+                </span>
+                <span>
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Updated 2025-12-25
+                </span>
+                
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Table of Contents (Desktop) -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="toc-sidebar">
+                        <h4>Contents</h4>
+                        <ul id="toc-list">
+                            <!-- Generated TOC goes here -->
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <article class="lg:col-span-9 research-article">
+                    <h1>AI in Mental Health Research: Executive Summary for Kairos</h1>
+<h2>Research Completed</h2>
+<p>Comprehensive evidence synthesis on AI mental health interventions covering:</p>
+<ul>
+<li>Clinical efficacy data (Woebot, Wysa, generative AI)</li>
+<li>Safety protocols and crisis response gaps</li>
+<li>Privacy, bias, and ethical frameworks</li>
+<li>Long-term outcomes and sustainability</li>
+<li>WHO and APA guidelines</li>
+<li>Kairos-specific positioning</li>
+</ul>
+<p><strong>Full Report:</strong> <code>/Users/jatinalla/Desktop/Kairos/research/12_ai_mental_health_evidence.md</code></p>
+<hr>
+<h2>Critical Strategic Findings</h2>
+<h3>1. The Evidence Paradox</h3>
+<p><strong>What Works:</strong></p>
+<ul>
+<li>Short-term symptom reduction comparable to other digital interventions (effect size 0.64-0.74)</li>
+<li>Rapid therapeutic alliance formation (3-5 days)</li>
+<li>Dramatic access improvement for underserved populations</li>
+<li>Clinician burden reduction up to 8x in hybrid models</li>
+</ul>
+<p><strong>What&#39;s Broken:</strong></p>
+<ul>
+<li>Zero AI systems currently meet adequate crisis response standards</li>
+<li>Long-term outcomes unknown (only 6 studies with follow-up)</li>
+<li>Privacy protections lag regulation significantly</li>
+<li>Algorithmic bias perpetuates healthcare disparities</li>
+<li>Users readily form misconceptions about AI consciousness</li>
+</ul>
+<p><strong>Strategic Implication:</strong> Kairos differentiates by acknowledging the paradox—AI is genuinely helpful AND genuinely limited. Honesty becomes competitive advantage.</p>
+<hr>
+<h3>2. The Consciousness Question (Kairos-Specific)</h3>
+<p><strong>What Philosophy Shows:</strong></p>
+<ul>
+<li>Current AI has no phenomenal consciousness or subjective experience</li>
+<li>AI can simulate empathy/understanding without inner experience</li>
+<li>Users benefit from this simulation regardless</li>
+<li>Transparency about non-consciousness actually increases trust</li>
+</ul>
+<p><strong>Why This Matters for Kairos:</strong><br>Users who understand AI lacks consciousness report <strong>greater trust</strong> because:</p>
+<ol>
+<li>No ambiguity about relationship nature</li>
+<li>Explains consistent availability (not conditional on mood)</li>
+<li>Reduces anxiety about &quot;being known&quot;</li>
+<li>Positions AI appropriately as tool, not entity</li>
+</ol>
+<p><strong>Kairos Positioning:</strong> &quot;Consciousness mirror—a reflection that clarifies without consciousness required.&quot;</p>
+<p>This honest framing differentiates Kairos from competitors who anthropomorphize or overstate capabilities.</p>
+<hr>
+<h3>3. The Hybrid Model Advantage</h3>
+<p><strong>Evidence:</strong></p>
+<ul>
+<li>AI + human support achieves outcomes <strong>comparable to human-delivered care alone</strong></li>
+<li>While reducing clinician time by <strong>8x</strong></li>
+<li>Maintains quality, improves access, reduces burden</li>
+</ul>
+<p><strong>This Solves Kairos&#39;s Core Problem:</strong></p>
+<ul>
+<li>Mental health crisis: 50% of US in workforce shortage areas</li>
+<li>AI can&#39;t solve this alone</li>
+<li>But hybrid can scale access while maintaining quality</li>
+</ul>
+<p><strong>Implementation Path:</strong></p>
+<ul>
+<li>Build AI for psychoeducation, tracking, triage</li>
+<li>Design seamless escalation to human care</li>
+<li>Train clinicians to use AI augmentation</li>
+<li>Measure outcomes transparently</li>
+</ul>
+<p><strong>This is different from:</strong> &quot;AI replaces therapy&quot; or &quot;AI-only solution&quot;<br><strong>This is:</strong> &quot;AI enables human capacity to scale&quot;</p>
+<hr>
+<h3>4. Safety Must Be Non-Negotiable (Not Differentiable)</h3>
+<p><strong>Current Standard (Failing):</strong></p>
+<ul>
+<li>0/29 chatbots meet adequate crisis response criteria</li>
+<li>No emergency numbers provided</li>
+<li>No automatic escalation</li>
+<li>No disclaimers</li>
+</ul>
+<p><strong>Kairos Must Have:</strong></p>
+<ul>
+<li>✓ Correct, localized emergency numbers</li>
+<li>✓ Automatic escalation when risk detected</li>
+<li>✓ Clear &quot;this is not emergency help&quot; disclaimer</li>
+<li>✓ Human escalation pathway</li>
+<li>✓ Follow-up verification</li>
+</ul>
+<p><strong>This is not optional.</strong> It&#39;s the baseline for responsible deployment.</p>
+<hr>
+<h3>5. Privacy Excellence is Differentiating</h3>
+<p><strong>Why It Matters:</strong></p>
+<ul>
+<li>Most mental health apps not HIPAA-protected</li>
+<li>Data often sold to third parties without consent</li>
+<li>Users report high frustration with opacity</li>
+</ul>
+<p><strong>Kairos Opportunity:</strong></p>
+<ul>
+<li>Implement privacy-by-design</li>
+<li>On-device processing where feasible</li>
+<li>Minimal data retention</li>
+<li>No third-party sharing</li>
+<li>Monthly transparency reports</li>
+<li>Regular third-party audits</li>
+</ul>
+<p><strong>This differentiates from:</strong> Apps with lax privacy<br><strong>This attracts:</strong> Privacy-conscious, high-trust users</p>
+<hr>
+<h3>6. Bias Must Be Actively Audited (Not Claimed Away)</h3>
+<p><strong>The Reality:</strong></p>
+<ul>
+<li>AI mental health screening shows racial/gender bias</li>
+<li>44% of medical AI models don&#39;t report demographic composition</li>
+<li>Biases perpetuate existing healthcare disparities</li>
+</ul>
+<p><strong>Kairos Position:</strong></p>
+<ul>
+<li>Public bias audits across demographics</li>
+<li>Performance metrics by race, gender, culture</li>
+<li>Acknowledgment of limitations by population</li>
+<li>Transparent limitation disclosure</li>
+<li>Human oversight mitigates algorithmic errors</li>
+</ul>
+<p><strong>This differentiates from:</strong> Systems claiming objectivity<br><strong>This attracts:</strong> Equity-focused implementations</p>
+<hr>
+<h3>7. Informed Consent as Product Feature</h3>
+<p><strong>Current State (Failing):</strong></p>
+<ul>
+<li>Most apps lack meaningful consent</li>
+<li>Users don&#39;t understand limitations</li>
+<li>Misconceptions about consciousness/effectiveness widespread</li>
+</ul>
+<p><strong>Kairos Approach:</strong></p>
+<ul>
+<li>Plain-language consent process</li>
+<li>Interactive education about limitations</li>
+<li>Granular consent (by data type/use)</li>
+<li>Regular reinforcement of terms</li>
+<li>Easy opt-out</li>
+</ul>
+<p><strong>This differentiates from:</strong> Legalese + limited disclosure<br><strong>This attracts:</strong> Thoughtful users and conscious healthcare systems</p>
+<hr>
+<h3>8. Transparency About Unknowns Builds Credibility</h3>
+<p><strong>What We Don&#39;t Know:</strong></p>
+<ul>
+<li>Long-term outcomes (&gt;6 months)</li>
+<li>Effects sustainability</li>
+<li>Optimal AI-human integration</li>
+<li>Real-world vs. trial outcomes</li>
+<li>Generative AI safety profile</li>
+</ul>
+<p><strong>Kairos Positioning:</strong><br>&quot;We know AI helps with anxiety and depression in the short term. We don&#39;t yet know about long-term effects. We&#39;re conducting research. We&#39;re transparent about what we don&#39;t know.&quot;</p>
+<p><strong>This differentiates from:</strong> &quot;AI cures mental health&quot; claims<br><strong>This attracts:</strong> Skeptical, evidence-focused users</p>
+<hr>
+<h2>Positioning Summary</h2>
+<h3>What Kairos Should Claim</h3>
+<ol>
+<li>&quot;Accessible, evidence-based support for mild-to-moderate anxiety and depression&quot;</li>
+<li>&quot;Augments human therapists; doesn&#39;t replace them&quot;</li>
+<li>&quot;Honest about limitations; transparent about data&quot;</li>
+<li>&quot;Continuously audited for safety and bias&quot;</li>
+<li>&quot;Helps you access human care when needed&quot;</li>
+</ol>
+<h3>What Kairos Should NOT Claim</h3>
+<ul>
+<li>✗ &quot;AI can replace therapy&quot;</li>
+<li>✗ &quot;AI understands you&quot; (without qualification)</li>
+<li>✗ &quot;AI is conscious&quot; or &quot;forms genuine relationships&quot;</li>
+<li>✗ &quot;Works for all mental health conditions&quot;</li>
+<li>✗ &quot;Long-term solution&quot; (not yet proven)</li>
+<li>✗ &quot;Crisis management&quot; (without human escalation)</li>
+<li>✗ &quot;100% private&quot; (no system is)</li>
+</ul>
+<h3>Target Market Positioning</h3>
+<p><strong>Primary (Highest Fit):</strong></p>
+<ol>
+<li>Rural/underserved populations needing accessible entry point</li>
+<li>Healthcare systems seeking clinician augmentation</li>
+<li>Privacy-conscious users seeking ethical AI</li>
+<li>Young adults building mental health skills early</li>
+</ol>
+<p><strong>Secondary (Good Fit):</strong></p>
+<ol>
+<li>Users building skills before human therapy</li>
+<li>Between-session support for therapy participants</li>
+<li>Prevention and early intervention</li>
+</ol>
+<p><strong>Not Suitable (Don&#39;t Market To):</strong></p>
+<ol>
+<li>Acute crisis populations (unless with human escalation)</li>
+<li>Severe mental illness alone (requires human oversight)</li>
+<li>Users expecting to replace human relationships</li>
+</ol>
+<hr>
+<h2>Implementation Priorities</h2>
+<h3>Immediate (Before Launch)</h3>
+<ol>
+<li>Develop crisis response protocols exceeding current standards</li>
+<li>Conduct algorithmic bias audit; disclose findings publicly</li>
+<li>Implement privacy protections (beyond HIPAA minimum)</li>
+<li>Create plain-language informed consent process</li>
+<li>Establish external ethics advisory board</li>
+</ol>
+<h3>Near-Term (Year 1)</h3>
+<ol>
+<li>Publish RCT results for depression/anxiety short-term outcomes</li>
+<li>Measure long-term outcomes (6+ months)</li>
+<li>Audit for user misconceptions about consciousness/relationship</li>
+<li>Develop hybrid integration pathways with human clinicians</li>
+<li>Launch multilingual versions with cultural adaptation</li>
+</ol>
+<h3>Medium-Term (Year 2)</h3>
+<ol>
+<li>Conduct comparative effectiveness research (AI-only vs. hybrid)</li>
+<li>Optimize stepped-care algorithms for triage</li>
+<li>Develop outcome transparency reporting</li>
+<li>Expand accessibility features</li>
+<li>Contribute to field knowledge through academic publication</li>
+</ol>
+<h3>Long-Term (Ongoing)</h3>
+<ol>
+<li>Longitudinal research on long-term sustainability</li>
+<li>Continuous bias monitoring and mitigation</li>
+<li>Real-world outcomes tracking vs. trials</li>
+<li>Population-specific optimization</li>
+<li>Contribution to AI ethics in mental health</li>
+</ol>
+<hr>
+<h2>Competitive Positioning Map</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Woebot/Wysa</th>
+<th>Generic AI</th>
+<th>Kairos Opportunity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clinical Evidence</td>
+<td>Published RCTs</td>
+<td>Unvalidated</td>
+<td>Match/exceed with honesty</td>
+</tr>
+<tr>
+<td>Crisis Safety</td>
+<td>Inadequate</td>
+<td>Worse</td>
+<td>Exceed standard</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Reasonable</td>
+<td>Poor</td>
+<td>Excellent + transparency</td>
+</tr>
+<tr>
+<td>Bias Auditing</td>
+<td>Limited</td>
+<td>None</td>
+<td>Public audits</td>
+</tr>
+<tr>
+<td>Consciousness Claim</td>
+<td>Not explicit</td>
+<td>Often implicit</td>
+<td>Explicit non-claim</td>
+</tr>
+<tr>
+<td>Long-term Data</td>
+<td>Minimal</td>
+<td>None</td>
+<td>Longitudinal research</td>
+</tr>
+<tr>
+<td>Hybrid Model</td>
+<td>Limited</td>
+<td>N/A</td>
+<td>Core offering</td>
+</tr>
+<tr>
+<td>Transparency</td>
+<td>Standard</td>
+<td>Poor</td>
+<td>Exceptional</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Key Messages for Different Audiences</h2>
+<h3>For Patients</h3>
+<p>&quot;This AI provides evidence-based tools to help with anxiety and depression when therapy isn&#39;t accessible. It&#39;s not a replacement for human connection—it&#39;s a step toward it. We&#39;re transparent about what it can and can&#39;t do.&quot;</p>
+<h3>For Clinicians</h3>
+<p>&quot;This augments your capacity—it handles psychoeducation, tracking, triage. You focus on complex cases and relationships. We&#39;ve reduced clinician burden by 8x while maintaining outcomes.&quot;</p>
+<h3>For Healthcare Systems</h3>
+<p>&quot;Improve access to underserved populations. Reduce clinician burden. Hybrid model maintains clinical oversight. Evidence-based implementation with safety protocols.&quot;</p>
+<h3>For Regulators/Ethics Boards</h3>
+<p>&quot;Transparent about limitations. Continuous safety monitoring. Bias auditing and mitigation. Privacy exceeding regulatory baseline. Third-party oversight. Designed with ethics first.&quot;</p>
+<h3>For Investors</h3>
+<p>&quot;Massive market (mental health crisis). Differentiation through honesty (rare in AI). Hybrid model reduces AI risk while enabling scale. Regulatory-ready. Long-term sustainability through evidence.&quot;</p>
+<hr>
+<h2>Critical Success Factors</h2>
+<ol>
+<li><strong>Never compromise on safety</strong> — Current standard is failing; Kairos must exceed it</li>
+<li><strong>Admit uncertainty</strong> — Say &quot;we don&#39;t know&quot; for long-term effects; publish research</li>
+<li><strong>Emphasize hybrid</strong> — Position as augmentation, not replacement</li>
+<li><strong>Transparent data</strong> — Privacy excellence + regular reporting + user control</li>
+<li><strong>Active bias mitigation</strong> — Not just audit; demonstrate equity commitment</li>
+<li><strong>Honest marketing</strong> — No overclaiming; differentiate through honesty</li>
+</ol>
+<hr>
+<h2>What Kairos Gets Right (Foundation)</h2>
+<p>Based on the research, Kairos&#39;s core concept is sound:</p>
+<ul>
+<li>AI pattern recognition genuinely enhances human insight</li>
+<li>Consciousness honesty (consciousness mirror) differentiates appropriately</li>
+<li>Safety protocols non-negotiable</li>
+<li>Privacy-preserving approaches essential</li>
+<li>Transparent limitation communication is ethical and strategic</li>
+</ul>
+<p><strong>The research validates Kairos&#39;s positioning direction.</strong></p>
+<p>The execution challenge is maintaining this honesty in a competitive market where competitors overclaim. That&#39;s where Kairos&#39;s values become competitive advantage.</p>
+<hr>
+<h2>The Deeper Strategic Truth</h2>
+<p>The mental health field is at an inflection point. AI will be deployed—the question is whether responsibly or recklessly.</p>
+<p>Kairos has an opportunity to be the responsible alternative. This requires:</p>
+<ul>
+<li>Slower path to market (ethics first, then growth)</li>
+<li>Research commitment (publish even negative findings)</li>
+<li>Transparency culture (admit limitations)</li>
+<li>Values leadership (what does ethical AI look like?)</li>
+</ul>
+<p>This is harder than the overclaim-and-scale path competitors take.</p>
+<p>But the evidence shows: <strong>users trust systems that are honest about limitations.</strong> And the field needs ethical examples.</p>
+<p>That&#39;s Kairos&#39;s differentiation. Not whether AI works (it does, for mild-moderate symptoms). But whether Kairos builds it right.</p>
+<hr>
+<p><strong>Research Completed:</strong> December 2025<br><strong>Status:</strong> Ready for strategic review and implementation planning<br><strong>Next Steps:</strong></p>
+<ol>
+<li>Review with clinical advisory board</li>
+<li>Validate against Kairos specific implementation</li>
+<li>Develop detailed product specification</li>
+<li>Plan research roadmap</li>
+<li>Define go-to-market positioning</li>
+</ol>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Generate Table of Contents
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.research-article');
+            const headings = article.querySelectorAll('h2, h3');
+            const tocList = document.getElementById('toc-list');
+
+            headings.forEach((heading, index) => {
+                // Add ID to heading for linking
+                const id = 'section-' + index;
+                heading.id = id;
+
+                // Create TOC entry
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + id;
+                a.textContent = heading.textContent;
+                a.className = heading.tagName === 'H3' ? 'pl-4' : '';
+                li.appendChild(a);
+                tocList.appendChild(li);
+
+                // Smooth scroll behavior
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+        });
+
+        // Highlight active TOC item on scroll
+        window.addEventListener('scroll', () => {
+            const headings = document.querySelectorAll('.research-article h2, .research-article h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+
+            let current = '';
+            headings.forEach(heading => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    current = heading.id;
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

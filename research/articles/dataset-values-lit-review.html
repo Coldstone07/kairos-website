@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Research Article | Kairos Research</title>
+    <meta name="description" content="">
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../assets/research-styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="pt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumbs mb-6">
+                <a href="../../research.html">Research</a>
+                <span>/</span>
+                <a href="../core.html">Core Research</a>
+                <span>/</span>
+                <span>Research Article</span>
+            </nav>
+
+            <!-- Article Metadata Bar -->
+            <div class="research-meta">
+                <span class="evidence-badge evidence-moderate">
+                    Moderate Evidence
+                </span>
+                <span>
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    27 min read
+                </span>
+                <span>
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Updated 2025-12-25
+                </span>
+                
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Table of Contents (Desktop) -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="toc-sidebar">
+                        <h4>Contents</h4>
+                        <ul id="toc-list">
+                            <!-- Generated TOC goes here -->
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <article class="lg:col-span-9 research-article">
+                    <h1>Annotator Values and Bias in Machine Learning Datasets: A Literature Review</h1>
+<p><strong>Author:</strong> Research Team<br><strong>Last Updated:</strong> December 24, 2025<br><strong>Focus Areas:</strong> Annotator bias, human values in AI, age bias, dataset documentation, value-sensitive design</p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#annotator-bias-and-identity">Annotator Bias and Identity in Machine Learning</a></li>
+<li><a href="#beyond-identity-politics">Beyond Identity Politics: Positionality and Standpoint</a></li>
+<li><a href="#crowdworker-demographics">Crowdworker Demographics and Annotation Quality</a></li>
+<li><a href="#values-over-time">Values Over Time: Social Movements and Algorithmic Systems</a></li>
+<li><a href="#value-sensitive-design">Value-Sensitive Design Approaches</a></li>
+<li><a href="#documentation-practices">Dataset and Model Documentation</a></li>
+<li><a href="#annotation-task-design">Annotation Task Design and Survey Methodology</a></li>
+<li><a href="#age-bias">Age Bias in Algorithmic Systems</a></li>
+<li><a href="#subjective-tasks">Challenges in Subjective Annotation Tasks</a></li>
+<li><a href="#conclusions">Conclusions and Future Directions</a></li>
+</ol>
+<hr>
+<h2>1. Introduction {#introduction}</h2>
+<p>This literature review examines the emerging body of research on how human values and biases shape machine learning datasets through the data annotation process. Despite the critical role that annotators play in creating training data, relatively little attention has been paid to the social experiences, identities, and standpoints of data annotators, all of which influence annotation behavior and subsequently impact model performance and fairness (Gebru et al., 2018; Mitchell et al., 2019).</p>
+<p>The central question this review addresses is: how can datasets—and the models built upon them—be intentionally curated to express values in accordance with desired end users and stakeholders, given that data cannot be generated independent of human biases? This review synthesizes research across multiple domains including machine learning fairness, human-computer interaction, social computing, and value-sensitive design to provide a comprehensive understanding of current knowledge and identify critical gaps.</p>
+<h3>Research Scope and Objectives</h3>
+<p>This review has three primary aims:</p>
+<ol>
+<li>To surface current understanding of annotator biases and methods for measuring them</li>
+<li>To examine how these biases influence annotation judgments and resulting model behavior</li>
+<li>To identify best practices for selecting annotators and designing annotation tasks, particularly for subjective concepts</li>
+</ol>
+<hr>
+<h2>2. Annotator Bias and Identity in Machine Learning {#annotator-bias-and-identity}</h2>
+<h3>2.1 The Problem of Annotator Invisibility</h3>
+<p>Broadly speaking, little information is catalogued about who data annotators are, despite evidence that different groups of annotators will annotate the same content differently (Sen et al., 2015). Recent research has demonstrated that annotation bias—the systematic patterns of judgment introduced by human annotators—represents a fundamental challenge in machine learning systems (arXiv:2511.14662, 2024; arXiv:1908.07898, 2019).</p>
+<p>A 2024 study examining bias in multilingual large language models proposed a comprehensive typology of annotation bias encompassing instruction bias, annotator bias, and contextual or cultural bias, arguing that trends in multilingual and multimodal benchmarks have &quot;exposed a structural vulnerability: annotation bias&quot; (arXiv:2511.14662, 2024). This systematic examination reveals that bias does not merely arise during model training or deployment, but is embedded from the earliest stages of data collection.</p>
+<h3>2.2 Annotator Identity as Signal, Not Noise</h3>
+<p>Treating annotators as uniform, interchangeable components of the ML pipeline limits researchers&#39; and developers&#39; ability to produce documentation to guide ethical use of models and datasets (Mitchell et al., 2019; Gebru et al., 2018). Research by Geva et al. (2019) pointed out that common NLP datasets tend to be composed of data produced by a relatively small number of crowdworkers. Critically, they found that models often perform worse on examples labeled by annotators withheld from training data and that models can learn individual annotators&#39; biases.</p>
+<p>The influential 2019 paper &quot;Are We Modeling the Task or the Annotator?&quot; demonstrated that model performance improves when training with annotator identifiers as features, suggesting that what is often dismissed as &quot;noise&quot; in annotation data may actually contain meaningful signal about annotator perspectives (arXiv:1908.07898, 2019). This finding challenges the conventional view that seeks to eliminate annotator variability rather than understanding and appropriately incorporating it.</p>
+<h3>2.3 Sources of Annotation Bias</h3>
+<p>Recent research has identified that annotation bias often begins even before annotators see the data. A 2024 study titled &quot;Don&#39;t Blame the Annotator: Bias Already Starts in the Annotation Instructions&quot; hypothesizes that annotators pick up on patterns in the crowdsourcing instructions, which bias them to write many similar examples that are then over-represented in the collected data (arXiv:2205.00415, 2022).</p>
+<p>Furthermore, research on &quot;Blind Spots and Biases: Exploring the Role of Annotator Cognitive Biases in NLP&quot; systematically examines how human cognitive biases—confirmation bias, anchoring effects, and availability heuristic—influence annotation outcomes (arXiv:2404.19071, 2024). This work demonstrates that annotator bias is not merely a matter of individual prejudice, but is rooted in fundamental cognitive processes that affect all human judgment.</p>
+<h3>2.4 From Bias Elimination to Bias Awareness</h3>
+<p>A significant paradigm shift has emerged in recent years from pursuing &quot;unbiased&quot; datasets toward using datasets with awareness of inherent biases. Research on &quot;Situated Ground Truths&quot; argues for embracing the nuanced, situated nature of annotations rather than seeking a single universal truth (arXiv:2406.07583, 2024). This perspective acknowledges that for many tasks—particularly those involving subjective judgments about content like toxicity, sentiment, or appropriateness—the notion of a singular &quot;gold standard&quot; is philosophically and practically untenable.</p>
+<hr>
+<h2>3. Beyond Identity Politics: Positionality and Standpoint {#beyond-identity-politics}</h2>
+<h3>3.1 The Limitations of Identity Categories Alone</h3>
+<p>Although the demographic makeup of annotator pools is an important step in cataloguing who is represented in data, social identity is just one consideration that might account for differences in annotation behavior and model performance. Recent scholarship has emphasized that social identity alone may not sufficiently account for relevant differences in annotation behavior and resulting model performance. As several researchers note, social identity serves as a proxy for a set of likely social experiences that inform standpoints, but social identity is not, in and of itself, equivalent to standpoint.</p>
+<p>Focusing on social identity categories rather than lived experiences or attitudes correlated with those categories can be problematic because individuals from stigmatized social identity groups can internalize discriminatory attitudes. This phenomenon has been documented in age bias research, where older adults themselves produced age-biased annotations in sentiment analysis tasks.</p>
+<h3>3.2 Positionality in Data Annotation</h3>
+<p>Contemporary research on positionality in machine learning has drawn from feminist epistemology and standpoint theory to argue that all knowledge production is situated. A 2024 study titled &quot;How Data Workers Shape Datasets: The Role of Positionality in Data Collection and Annotation for Computer Vision&quot; found that tech workers—engineers, data scientists, and researchers—introduce their own positionalities when defining &quot;identity&quot; concepts, specifically instilling &quot;the way they understand and are shaped by the world around them&quot; (ACM CSCW, 2024).</p>
+<p>Given the link between positionality and standpoint, knowledge production, and power relations, researchers have turned to the notion of reflexivity as a way to recognize one&#39;s positionalities as well as those of research participants. The framework of &quot;model positionality and computational reflexivity&quot; has been proposed to help data scientists reflect on and communicate the social and cultural context of a model&#39;s development, the data annotators and their annotations, and the data scientists themselves (arXiv:2203.07031, 2022).</p>
+<h3>3.3 Lived Experience as Domain Expertise</h3>
+<p>Patton and colleagues&#39; groundbreaking research on gang-related social media content provides compelling evidence for the value of lived experience in data annotation. Their work used both qualitative and quantitative methods to show how social work graduate students and community members differently annotate online interactions between gang members (Patton et al., 2017). Importantly, the differences in annotation arose even after graduate students were trained in the social and historical context of the tweet authors, on top of their specialized training as social work graduate students.</p>
+<p>In their 2018 follow-up study &quot;Multimodal Social Media Analysis for Gang Violence Prevention,&quot; Patton and colleagues partnered computer scientists with social work researchers who have domain expertise in gang violence to develop a rigorous methodology for collecting and annotating tweets, gathering 1,851 tweets and accompanying annotations related to visual concepts and psychosocial codes including aggression, loss, and substance use (arXiv:1807.08465, 2018).</p>
+<p>Graduate students in Patton&#39;s studies less often annotated images as aggressive. The researchers posited two potential explanations: (1) social work graduate students might be averse to associating marginalized communities with labels that might further marginalize them, or (2) community members, by virtue of their proximity to gang violence, might be less wary of false negatives because &quot;aggression&quot; annotations might lead to intervention that could prevent violence and save lives. These competing explanations represent fundamentally different value orientations toward the annotation task—prioritizing avoiding problematic labeling versus prioritizing potential safety.</p>
+<h3>3.4 Activist Expertise in Hate Speech Detection</h3>
+<p>Waseem (2017) took a significant step in the direction of capturing annotator standpoint by recruiting feminist and anti-racism activists as experts for a hate speech annotation task. Research examining this approach found that feminist and anti-racism activists were recruited along with crowdsourcing for the annotation of tweets, with labels including racist, sexist, neither, or both.</p>
+<p>Studies comparing expert and amateur annotators have found meaningful differences: amateur annotators recruited on CrowdFlower without selection tended to misclassify content as hate speech more often than their expert counterparts. Furthermore, hate speech detection datasets labeled by general annotators contain systematic bias, as they cannot effectively consider language use differences among different speakers, while experts can produce much less biased annotations.</p>
+<p>However, important questions remain about how &quot;expert&quot; should be defined. Within the range of &quot;expert&quot; annotators, possibilities include paper authors, linguistics experts, activists, and political experts—each bringing different forms of knowledge and potentially different biases to the annotation task.</p>
+<hr>
+<h2>4. Crowdworker Demographics and Annotation Quality {#crowdworker-demographics}</h2>
+<h3>4.1 Quality Challenges in Crowdsourced Data</h3>
+<p>Crowdsourced data displays significant variability in quality compared to expert-collected data, which is particularly problematic in machine learning where crowdsourcing is widely used to obtain annotations for creating ML datasets. Noisy labels arise from limited expertise or unreliability of annotators, and research has documented that this noise can substantially impact model performance.</p>
+<p>A 2024 study on &quot;Data Quality in Crowdsourcing and Spamming Behavior Detection&quot; examined various quality assurance mechanisms and their effectiveness in identifying and mitigating low-quality annotations (arXiv:2404.17582, 2024). The research emphasized that it is important to assess the quality of crowd-provided data to improve analysis performance and reduce biases in subsequent machine learning tasks.</p>
+<h3>4.2 The Myth of One Truth</h3>
+<p>The notion of &quot;one truth&quot; in crowdsourcing responses is increasingly recognized as a myth. Research on &quot;Capturing Perspectives of Crowdsourced Annotators in Subjective Learning Tasks&quot; argues that disagreement among annotators in subjective tasks is expected because annotation outcomes depend on the annotator&#39;s perspective and lived experience, the item being evaluated, task circumstances, and instruction clarity (arXiv:2311.09743, 2023).</p>
+<p>The notion of objective ground-truth does not always hold, especially in domains such as medical diagnosis, sentiment analysis, and artistic evaluation where labels could be fairly subjective. A classifier that does not take variety in human labels into account risks overlooking minority perspectives by ignoring potentially informative differences between annotators.</p>
+<h3>4.3 Beyond Majority Vote</h3>
+<p>Traditional approaches to handling disagreement among annotators typically rely on majority voting, but research published in the Proceedings of the ACM on Human-Computer Interaction found that a pipeline combining pairwise comparison labeling with Elo scoring outperforms majority-voting methods in reducing both random error and measurement bias in subjective constructs (ACM CSCW, 2023).</p>
+<p>This finding suggests that the aggregation method used to synthesize multiple annotators&#39; judgments can significantly impact the quality of the resulting training data, and that more sophisticated approaches than simple majority vote may be necessary for subjective annotation tasks.</p>
+<hr>
+<h2>5. Values Over Time: Social Movements and Algorithmic Systems {#values-over-time}</h2>
+<h3>5.1 Temporal Dynamics of Social Norms</h3>
+<p>Historical and social context remains a challenge for algorithmic learning. Social movements produce new language and ways of communicating, adding a challenging layer to algorithmic language detection and understanding. Social movements can fundamentally shift societal understanding or acceptance of social norms and behaviors that many algorithmic technologies are designed to detect and analyze.</p>
+<h3>5.2 The #MeToo Movement as Case Study</h3>
+<p>The #MeToo movement provides a compelling case study of how social movements reshape the normative boundaries that algorithmic systems must encode. The movement has spurred broad-reaching conversations about inappropriate sexual behavior from men in power, as well as men more generally. These conversations directly challenge behaviors that have been historically considered appropriate or even blamed on women.</p>
+<p>Researchers at Caltech developed machine learning tools to detect online harassment related to the #MeToo movement, using GloVe word embeddings to understand context and analyze how words like &quot;female&quot; were used differently across platforms. A cross-platform study analyzed sexual violence disclosures across social media, using machine learning to identify 2,927 disclosures for content analysis during the #MeToo period and surrounding timeframes.</p>
+<p>Historical moments invoked by #MeToo and related conversations shift mainstream notions of sexually inappropriate behavior and therefore force reassessments of how algorithmic systems encode these concepts. However, societal debate surrounding how normative behavior should be defined inherently complicates and politicizes decisions and definitions operationalized into algorithms.</p>
+<h3>5.3 Gender Differences in Harassment Perception</h3>
+<p>Research has documented that men and women make significantly different assessments of sexual harassment online (Duggan, 2017). An algorithmic definition of what constitutes inappropriately sexual communication will inherently be concordant with some views and discordant with others, further emphasizing a need to validate technological systems in relation to particular social contexts and marginalized perspectives.</p>
+<h3>5.4 Algorithmic Influence on Social Movement Visibility</h3>
+<p>The relationship between algorithms and social movements is bidirectional. Social media algorithms affect #MeToo&#39;s intersectional origins, as algorithms are much more likely to favor certain types of content over others. The #MeToo tweet&#39;s spread was linked to &quot;the algorithmic distribution of a tweet,&quot; highlighting how algorithms affect social movement visibility.</p>
+<h3>5.5 Conversational AI and Harassment</h3>
+<p>Research examining how conversational AI systems like Amazon&#39;s Alexa respond to sexual harassment found that commercial systems mainly avoid answering, rule-based chatbots deflect, while data-driven systems &quot;are often non-coherent, but also run the risk of being interpreted as flirtatious and sometimes react with counter-aggression&quot; (ACL Anthology, 2018). This finding demonstrates how training data and system design choices embed particular responses to harassment that may or may not align with user needs or societal values.</p>
+<hr>
+<h2>6. Value-Sensitive Design Approaches {#value-sensitive-design}</h2>
+<h3>6.1 Foundations of Value-Sensitive Design</h3>
+<p>Value-sensitive design (VSD) is an established method for integrating values into technical design, developed by Batya Friedman and Peter Kahn at the University of Washington starting in the late 1980s and early 1990s. VSD provides a helpful framework for thinking &#39;beyond identity politics&#39;—it illuminates not only the significance of human values in relation to standpoint, but also provides a framework for outlining the ways in which humans and computational systems express values both separately and in tandem.</p>
+<h3>6.2 Application to Machine Learning</h3>
+<p>VSD has been applied to different technologies and, more recently, to artificial intelligence. However, machine learning, in particular, poses two challenges: First, humans may not understand how an AI system learns certain things, which requires paying attention to values such as transparency, explicability, and accountability. Second, ML may lead to AI systems adapting in ways that &#39;disembody&#39; the values embedded in them.</p>
+<h3>6.3 Mapping VSD to AI for Social Good</h3>
+<p>Research published in the journal AI and Ethics examined &quot;Mapping value sensitive design onto AI for social good principles,&quot; finding important alignments between VSD methodologies and AI4SG (AI for Social Good) frameworks (AI and Ethics, 2021). The paper is available through PMC (PMC7848675) and represents an important bridge between ethical design frameworks and practical AI development.</p>
+<h3>6.4 Socio-Technical Design Processes</h3>
+<p>A critical review titled &quot;Designing value-sensitive AI: a critical review and recommendations for socio-technical design processes&quot; examined how different socio-technical design processes for AI-based systems support the creation of value-sensitive AI (VSAI) (AI and Ethics, 2023). This work emphasizes that value sensitivity cannot be achieved through technical means alone, but requires careful attention to the social processes of design and deployment.</p>
+<h3>6.5 Integration with Responsible AI</h3>
+<p>Recent research has examined how VSD approaches are compatible with and advantageous to the development of Responsible AI (RAI) toolkits. A paper published in the Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems provided &quot;Guidelines for Integrating Value Sensitive Design in Responsible AI Toolkits,&quot; offering practical guidance for practitioners (CHI 2024).</p>
+<h3>6.6 Values and the Fallacy of &quot;Unbiased&quot; Data</h3>
+<p>At least for social data and data produced by humans, thinking about bias in terms of values helps delineate the fallacy of &quot;unbiased&quot; data or models. Intuitively, &quot;valuelessness&quot; does not make sense when human judgment is involved. Acknowledging that a system cannot be &quot;value-less,&quot; researchers and practitioners must figure out how to carefully curate values in ways that serve marginalized communities and other stakeholders.</p>
+<hr>
+<h2>7. Dataset and Model Documentation {#documentation-practices}</h2>
+<h3>7.1 Datasheets for Datasets</h3>
+<p>The machine learning community currently has no standardized process for documenting datasets, which can lead to severe consequences in high-stakes domains. To address this gap, Gebru et al. (2018) proposed &quot;Datasheets for Datasets&quot;—a framework in which every dataset would be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and other critical information (arXiv:1803.09010, 2018).</p>
+<p>The proposal was inspired by the electronics industry, where every component, no matter how simple or complex, is accompanied with a datasheet that describes its operating characteristics, test results, recommended uses, and other information. The authors—Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna M. Wallach, Hal Daumé, and Kate Crawford—argued that datasheets for datasets will facilitate better communication between dataset creators and dataset consumers, and encourage the machine learning community to prioritize transparency and accountability.</p>
+<p>The paper was initially posted to arXiv on March 23, 2018, and later published in Communications of the ACM, becoming one of the most influential frameworks for dataset documentation.</p>
+<h3>7.2 Model Cards for Model Reporting</h3>
+<p>Complementing datasheets for datasets, Mitchell et al. (2019) proposed &quot;Model Cards for Model Reporting&quot;—short documents accompanying trained machine learning models that provide benchmarked evaluation in a variety of conditions, such as across different cultural, demographic, or phenotypic groups (FAT* 2019, arXiv:1810.03993).</p>
+<p>The paper was authored by Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru, and was presented at the Conference on Fairness, Accountability, and Transparency on January 29-31, 2019, in Atlanta, GA.</p>
+<p>The goal of model cards is to clarify the intended use cases of machine learning models and minimize their usage in contexts for which they are not well suited. This framework encourages transparent model reporting and has become influential in promoting responsible AI development practices.</p>
+<h3>7.3 Documenting Annotator Information</h3>
+<p>Both datasheets and model cards create opportunities to document annotator demographics, standpoints, and values—information that is currently rarely collected or reported. However, these documentation frameworks raise important questions about privacy, informed consent, and the potential for annotator information to be used in ways that could harm annotators themselves.</p>
+<hr>
+<h2>8. Annotation Task Design and Survey Methodology {#annotation-task-design}</h2>
+<h3>8.1 Structural Similarity to Surveys</h3>
+<p>There is a relatively rich literature on survey methodology that directly applies to annotation task design, since annotation tasks frequently resemble surveys. A 2023 paper titled &quot;Quality aspects of annotated data&quot; published in the AStA Wirtschafts- und Sozialstatistisches Archiv establishes the structural similarity between annotation tasks and surveys, exploring how data annotation could benefit from survey methodology research (Springer, 2023).</p>
+<p>The paper examines quality confounders from two perspectives: annotator composition and data collection strategy, providing a framework for thinking systematically about annotation quality.</p>
+<h3>8.2 Insights from Survey Methodology</h3>
+<p>Research titled &quot;Position: Insights from Survey Methodology can Improve Training Data&quot; makes the case that label collection is similar to survey data collection and develops hypotheses about data collection task facets that may impact label quality (arXiv:2403.01208, 2024).</p>
+<p>Annotation instruments have similarities to web surveys, and research has shown that wording, ordering, and annotator effects impact both survey data and model training annotations. A 2023 presentation at City, University of London on &quot;Bringing Survey Methodology to Machine Learning&quot; discussed how these parallels can inform better annotation design.</p>
+<h3>8.3 Breaking Down Complex Concepts</h3>
+<p>There is a need for guidance around designing annotation tasks that is rooted in survey design principles. For example, asking whether or not something is hate speech versus asking about whether something is pejorative AND about an identity group/label (breaking down a concept into component parts) represents fundamentally different task designs that may yield different quality annotations.</p>
+<p>Similarly, asking whether a person feels represented by an image (rather than asking whether an image set is &#39;diverse&#39;) gets at the goal of the annotation/model building process more directly. This principle—operationalizing the actual construct of interest rather than proxies for it—is well-established in survey methodology but underutilized in annotation task design.</p>
+<h3>8.4 Question Design Choices</h3>
+<p>How specific questions are designed matters significantly: check-all-that-apply questions versus explicitly asking whether something is pejorative and then asking if it is about an identity label can produce different response patterns. These design choices, well-studied in survey methodology, have received insufficient attention in the machine learning annotation literature.</p>
+<h3>8.5 Large Language Models for Annotation</h3>
+<p>A 2024 comprehensive survey titled &quot;Large Language Models for Data Annotation and Synthesis: A Survey&quot; examined the emerging practice of using LLMs for annotation tasks (arXiv:2402.13446, 2024). While LLMs offer potential efficiency gains, the survey raises important questions about whether LLM annotations replicate human biases, introduce new biases, or fail to capture important human variability in subjective judgments.</p>
+<hr>
+<h2>9. Age Bias in Algorithmic Systems {#age-bias}</h2>
+<h3>9.1 AI Ageism: A Critical Roadmap</h3>
+<p>The concept of &quot;AI ageism&quot; has been introduced to expand understanding of inclusion and exclusion in AI to include age. Research published in PMC defines AI ageism as &quot;practices and ideologies operating within AI that exclude, discriminate, or neglect the interests, experiences, and needs of older populations&quot; (PMC9527733).</p>
+<p>AI ageism manifests in five interconnected forms:</p>
+<ol>
+<li>Age biases in algorithms and datasets</li>
+<li>Age stereotypes of AI actors</li>
+<li>Invisibility of old age in AI discourses</li>
+<li>Discriminatory effects of AI technology on different age groups</li>
+<li>Exclusion as users of AI technology</li>
+</ol>
+<h3>9.2 The Algorithmic Divide</h3>
+<p>The research emphasizes that algorithms are neither neutral, fair, nor objective, as they reproduce the assumptions and beliefs of those who decide about their design and deployment. This evidence suggests continuous exclusion of older populations on a group level—an &quot;algorithmic divide&quot; understood as an extension of the digital divide, with effects believed to threaten various political, social, economic, cultural, educational, and career opportunities provided by machine learning and AI.</p>
+<h3>9.3 Age Bias in Sentiment Analysis</h3>
+<p>Preliminary research has found that in re-annotation tasks, older adults produced annotations on age-related content such that a sentiment model trained on the data rated references to older age more negatively than references to younger age in counterfactual tests. This mirrored bias produced by original annotations, but the error pattern between the two models was significantly different.</p>
+<p>This finding suggests that simply recruiting annotators from an affected demographic group (older adults) is insufficient to eliminate bias—annotators can internalize societal biases against their own groups, highlighting the need to assess standpoints and values rather than identity alone.</p>
+<h3>9.4 Research Gaps</h3>
+<p>Critical questions remain underexplored:</p>
+<ul>
+<li>How does experience with ageism correlate with annotation behavior?</li>
+<li>How does identifying as an older adult correlate with annotation behavior?</li>
+<li>Does slicing the annotator pool by age versus by attitudes toward aging and age discrimination produce significantly different data annotations?</li>
+</ul>
+<hr>
+<h2>10. Challenges in Subjective Annotation Tasks {#subjective-tasks}</h2>
+<h3>10.1 Inter-Rater Reliability in Subjective Contexts</h3>
+<p>Inter-Rater Consistency (IRC) measures the degree of agreement among different human annotators when labeling or judging the same data. For tasks like emotion detection, sentiment analysis, or summarizing text—tasks that rely heavily on human judgment—people may see things differently, especially in complex or subjective tasks.</p>
+<p>AI systems depend on human-labeled data to learn and improve, but when human annotators disagree, the data becomes unreliable, and so do the benchmarks used to judge model performance. Low Cohen&#39;s kappa values may reflect ambiguous instructions or inherently subjective questions rather than rater error.</p>
+<h3>10.2 Impact on Model Training</h3>
+<p>If there is high IRC, the labels are consistent, and models can learn from a stable target. However, if there is low IRC, the labels are noisy and models may get penalized even when their answers are reasonable. Research by Anthropic observed that more sophisticated topics get lower agreement, suggesting that task difficulty and subjectivity are inherently linked.</p>
+<h3>10.3 Common Metrics and Their Limitations</h3>
+<p>Several statistical measures are used to assess inter-rater reliability:</p>
+<ul>
+<li><strong>Cohen&#39;s Kappa</strong>: Measures IRR between two raters for categorical items</li>
+<li><strong>Fleiss&#39; Kappa</strong>: Measures consistency between multiple annotators</li>
+<li><strong>Krippendorff&#39;s Alpha</strong>: A more universal method suitable for any number of raters and data types</li>
+</ul>
+<p>However, these metrics assume that agreement is desirable and that disagreement represents error. This assumption is increasingly challenged in the context of subjective tasks where legitimate differences in perspective may be valuable signal rather than noise.</p>
+<hr>
+<h2>11. Conclusions and Future Directions {#conclusions}</h2>
+<h3>11.1 Summary of Key Findings</h3>
+<p>This literature review has synthesized research across multiple domains to examine how annotator values and biases shape machine learning datasets. Several key themes emerge:</p>
+<ol>
+<li><p><strong>Annotator bias is systematic and measurable</strong>: Research demonstrates that annotation bias is not random noise but reflects systematic patterns related to annotator identity, positionality, cognitive processes, and task design.</p>
+</li>
+<li><p><strong>Identity alone is insufficient</strong>: While annotator demographics matter, lived experience, standpoint, and values provide more nuanced understanding of annotation behavior than identity categories alone.</p>
+</li>
+<li><p><strong>The myth of objectivity</strong>: For many annotation tasks, particularly those involving subjective judgments, the notion of a single objective ground truth is philosophically untenable. Disagreement may reflect legitimate perspectival differences.</p>
+</li>
+<li><p><strong>Values change over time</strong>: Social movements and historical context shift the meaning of concepts that algorithmic systems are designed to detect, requiring ongoing reassessment of training data.</p>
+</li>
+<li><p><strong>Documentation is critical</strong>: Frameworks like datasheets for datasets and model cards provide mechanisms for transparency, but questions remain about what annotator information should be collected and how to protect annotator privacy.</p>
+</li>
+<li><p><strong>Design matters</strong>: Annotation task design, informed by survey methodology principles, significantly impacts annotation quality and the values embedded in resulting datasets.</p>
+</li>
+</ol>
+<h3>11.2 Critical Research Gaps</h3>
+<p>Despite growing research attention, significant gaps remain:</p>
+<p><strong>Empirical studies linking annotator characteristics to model behavior</strong>: While research has established that annotator identity and values affect annotations, more work is needed to trace these effects through to deployed model behavior and downstream harms.</p>
+<p><strong>Best practices for annotator selection</strong>: Clear guidance is lacking on how to determine whose values should be represented in annotation pools for different tasks and deployment contexts.</p>
+<p><strong>Privacy-preserving methods for collecting annotator information</strong>: Balancing the need for transparency about annotator standpoints with annotator privacy and safety requires methodological innovation.</p>
+<p><strong>Handling internalized bias</strong>: When annotators from marginalized groups have internalized discriminatory attitudes, how should their annotations be weighted or contextualized?</p>
+<p><strong>Temporal validity</strong>: How long do annotations remain valid as social norms evolve? How should datasets be updated to reflect changing values?</p>
+<h3>11.3 Practical Implications</h3>
+<p>For practitioners developing machine learning systems, this research suggests several actionable recommendations:</p>
+<ol>
+<li><p><strong>Document annotator information systematically</strong>: At minimum, collect demographics, but ideally also assess relevant attitudes, values, and lived experiences.</p>
+</li>
+<li><p><strong>Design annotation tasks using survey methodology principles</strong>: Break complex concepts into components, use clear language, and pilot test instructions.</p>
+</li>
+<li><p><strong>Embrace disagreement as signal</strong>: Rather than forcing consensus through majority vote, consider whether disagreement reflects important perspectival differences.</p>
+</li>
+<li><p><strong>Situate datasets and models</strong>: Use datasheets and model cards to document who annotated data, under what conditions, and for what purposes.</p>
+</li>
+<li><p><strong>Consider value alignment</strong>: Explicitly articulate what values the system should embody and assess whether annotation processes support those values.</p>
+</li>
+</ol>
+<h3>11.4 Toward Value-Conscious AI</h3>
+<p>The research reviewed here points toward a fundamental reframing of the relationship between human values and machine learning. Rather than treating values as &quot;bias&quot; to be eliminated, value-conscious AI development would:</p>
+<ul>
+<li>Acknowledge that all datasets embody values</li>
+<li>Make those values explicit and transparent</li>
+<li>Align dataset values with the needs of affected communities</li>
+<li>Build systems that respect multiple legitimate perspectives</li>
+<li>Continuously reassess value alignment as social contexts evolve</li>
+</ul>
+<p>This represents a shift from the pursuit of impossible objectivity to the practice of responsible value curation in service of fairness and equity.</p>
+<hr>
+<h2>References</h2>
+<h3>Annotator Bias and Identity</h3>
+<ul>
+<li><em>Bias in, Bias out: Annotation Bias in Multilingual Large Language Models</em> (2024). arXiv:2511.14662. <a href="https://arxiv.org/html/2511.14662">https://arxiv.org/html/2511.14662</a></li>
+<li><em>Are We Modeling the Task or the Annotator? An Investigation of Annotator Bias in Natural Language Understanding Datasets</em> (2019). arXiv:1908.07898. <a href="https://arxiv.org/abs/1908.07898">https://arxiv.org/abs/1908.07898</a></li>
+<li><em>Don&#39;t Blame the Annotator: Bias Already Starts in the Annotation Instructions</em> (2022). arXiv:2205.00415. <a href="https://arxiv.org/abs/2205.00415">https://arxiv.org/abs/2205.00415</a></li>
+<li><em>Blind Spots and Biases: Exploring the Role of Annotator Cognitive Biases in NLP</em> (2024). arXiv:2404.19071. <a href="https://arxiv.org/html/2404.19071v1">https://arxiv.org/html/2404.19071v1</a></li>
+<li><em>Situated Ground Truths: Enhancing Bias-Aware AI by Situating Data Labels with SituAnnotate</em> (2024). arXiv:2406.07583. <a href="https://arxiv.org/html/2406.07583v1">https://arxiv.org/html/2406.07583v1</a></li>
+<li><em>Investigating Annotator Bias in Large Language Models for Hate Speech Detection</em> (2024). arXiv:2406.11109. <a href="https://arxiv.org/html/2406.11109v2">https://arxiv.org/html/2406.11109v2</a></li>
+</ul>
+<h3>Positionality and Standpoint Theory</h3>
+<ul>
+<li><em>How Data Workers Shape Datasets: The Role of Positionality in Data Collection and Annotation for Computer Vision</em> (2024). Proceedings of the ACM on Human-Computer Interaction. <a href="https://dl.acm.org/doi/10.1145/3757481">https://dl.acm.org/doi/10.1145/3757481</a></li>
+<li><em>Products of Positionality: How Tech Workers Shape Identity Concepts in Computer Vision</em> (2024). CHI Conference on Human Factors in Computing Systems. <a href="https://dl.acm.org/doi/10.1145/3613904.3641890">https://dl.acm.org/doi/10.1145/3613904.3641890</a></li>
+<li><em>Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science</em> (2022). arXiv:2203.07031. <a href="https://arxiv.org/abs/2203.07031">https://arxiv.org/abs/2203.07031</a></li>
+<li><em>Between Subjectivity and Imposition: Power Dynamics in Data Annotation for Computer Vision</em> (2020). Proceedings of the ACM on Human-Computer Interaction, 4(CSCW2). <a href="https://dl.acm.org/doi/10.1145/3415186">https://dl.acm.org/doi/10.1145/3415186</a></li>
+</ul>
+<h3>Lived Experience and Domain Expertise</h3>
+<ul>
+<li>Patton, D.U., Lane, J., Leonard, P., Macbeth, J., &amp; Smith Lee, J.R. (2017). <em>Gang violence on the digital street: Case study of a South Side Chicago gang member&#39;s Twitter communication</em>. New Media &amp; Society. <a href="https://journals.sagepub.com/doi/abs/10.1177/1461444815625949">https://journals.sagepub.com/doi/abs/10.1177/1461444815625949</a></li>
+<li><em>Multimodal Social Media Analysis for Gang Violence Prevention</em> (2018). arXiv:1807.08465. <a href="https://arxiv.org/abs/1807.08465">https://arxiv.org/abs/1807.08465</a></li>
+<li>Waseem, Z. (2017). <em>Are You a Racist or Am I Seeing Things? Annotator Influence on Hate Speech Detection on Twitter</em>. <a href="https://typeset.io/papers/are-you-a-racist-or-am-i-seeing-things-annotator-influence-2cd8zsu6q8">https://typeset.io/papers/are-you-a-racist-or-am-i-seeing-things-annotator-influence-2cd8zsu6q8</a></li>
+</ul>
+<h3>Crowdworker Quality and Subjectivity</h3>
+<ul>
+<li><em>Data Quality in Crowdsourcing and Spamming Behavior Detection</em> (2024). arXiv:2404.17582. <a href="https://arxiv.org/html/2404.17582v1">https://arxiv.org/html/2404.17582v1</a></li>
+<li><em>Capturing Perspectives of Crowdsourced Annotators in Subjective Learning Tasks</em> (2023). arXiv:2311.09743. <a href="https://arxiv.org/html/2311.09743v2">https://arxiv.org/html/2311.09743v2</a></li>
+<li><em>Whose Ground Truth? Accounting for Individual and Collective Identities Underlying Dataset Annotation</em> (2021). arXiv:2112.04554. <a href="https://ar5iv.labs.arxiv.org/html/2112.04554">https://ar5iv.labs.arxiv.org/html/2112.04554</a></li>
+<li><em>Crowdsourcing Subjective Annotations Using Pairwise Comparisons Reduces Bias and Error Compared to the Majority-vote Method</em> (2023). Proceedings of the ACM on Human-Computer Interaction. <a href="https://dl.acm.org/doi/10.1145/3610183">https://dl.acm.org/doi/10.1145/3610183</a></li>
+</ul>
+<h3>Social Movements and Algorithmic Systems</h3>
+<ul>
+<li><em>AI for #MeToo: Training Algorithms to Spot Online Trolls</em> (2019). Caltech News. <a href="https://www.caltech.edu/about/news/ai-metoo-training-algorithms-spot-online-trolls">https://www.caltech.edu/about/news/ai-metoo-training-algorithms-spot-online-trolls</a></li>
+<li><em>#MeToo Alexa: How Conversational Systems Respond to Sexual Harassment</em> (2018). ACL Anthology. <a href="https://aclanthology.org/W18-0802/">https://aclanthology.org/W18-0802/</a></li>
+<li><em>Sharing unwanted sexual experiences online: A cross-platform analysis of disclosures before, during and after the #MeToo movement</em> (2023). ScienceDirect. <a href="https://www.sciencedirect.com/science/article/pii/S0747563223000754">https://www.sciencedirect.com/science/article/pii/S0747563223000754</a></li>
+</ul>
+<h3>Value-Sensitive Design</h3>
+<ul>
+<li><em>Mapping value sensitive design onto AI for social good principles</em> (2021). AI and Ethics. PMC7848675. <a href="https://link.springer.com/article/10.1007/s43681-021-00038-3">https://link.springer.com/article/10.1007/s43681-021-00038-3</a></li>
+<li><em>Designing value-sensitive AI: a critical review and recommendations for socio-technical design processes</em> (2023). AI and Ethics. <a href="https://link.springer.com/article/10.1007/s43681-023-00373-7">https://link.springer.com/article/10.1007/s43681-023-00373-7</a></li>
+<li><em>Guidelines for Integrating Value Sensitive Design in Responsible AI Toolkits</em> (2024). CHI Conference on Human Factors in Computing Systems. <a href="https://dl.acm.org/doi/10.1145/3613904.3642810">https://dl.acm.org/doi/10.1145/3613904.3642810</a></li>
+</ul>
+<h3>Documentation Practices</h3>
+<ul>
+<li>Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J.W., Wallach, H., Daumé, H., &amp; Crawford, K. (2018). <em>Datasheets for Datasets</em>. arXiv:1803.09010. Communications of the ACM. <a href="https://arxiv.org/abs/1803.09010">https://arxiv.org/abs/1803.09010</a></li>
+<li>Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I.D., &amp; Gebru, T. (2019). <em>Model Cards for Model Reporting</em>. FAT* 2019, arXiv:1810.03993. <a href="https://arxiv.org/abs/1810.03993">https://arxiv.org/abs/1810.03993</a></li>
+</ul>
+<h3>Annotation Task Design and Survey Methodology</h3>
+<ul>
+<li><em>Quality aspects of annotated data</em> (2023). AStA Wirtschafts- und Sozialstatistisches Archiv. <a href="https://link.springer.com/article/10.1007/s11943-023-00332-y">https://link.springer.com/article/10.1007/s11943-023-00332-y</a></li>
+<li><em>Position: Insights from Survey Methodology can Improve Training Data</em> (2024). arXiv:2403.01208. <a href="https://arxiv.org/html/2403.01208">https://arxiv.org/html/2403.01208</a></li>
+<li><em>Large Language Models for Data Annotation and Synthesis: A Survey</em> (2024). arXiv:2402.13446. <a href="https://arxiv.org/html/2402.13446v2">https://arxiv.org/html/2402.13446v2</a></li>
+</ul>
+<h3>Age Bias in AI</h3>
+<ul>
+<li><em>AI ageism: a critical roadmap for studying age discrimination and exclusion in digitalized societies</em> (2022). PMC9527733. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9527733/">https://pmc.ncbi.nlm.nih.gov/articles/PMC9527733/</a></li>
+<li><em>How can we manage biases in artificial intelligence systems – A systematic literature review</em> (2023). ScienceDirect. <a href="https://www.sciencedirect.com/science/article/pii/S2667096823000125">https://www.sciencedirect.com/science/article/pii/S2667096823000125</a></li>
+</ul>
+<h3>Inter-Rater Reliability</h3>
+<ul>
+<li><em>Inter-Annotator Agreement: An Introduction to Cohen&#39;s Kappa Statistic</em> (2024). Surge AI. <a href="https://surge-ai.medium.com/inter-annotator-agreement-an-introduction-to-cohens-kappa-statistic-dcc15ffa5ac4">https://surge-ai.medium.com/inter-annotator-agreement-an-introduction-to-cohens-kappa-statistic-dcc15ffa5ac4</a></li>
+<li><em>Investigating Inter-Rater Reliability of Qualitative Text Annotations in Machine Learning Datasets</em> (2020). Cambridge Core. <a href="https://www.cambridge.org/core/journals/proceedings-of-the-design-society-design-conference/article/investigating-interrater-reliability-of-qualitative-text-annotations-in-machine-learning-datasets/0ADA7BB033C7D65A208D3E2F9A6DA340">https://www.cambridge.org/core/journals/proceedings-of-the-design-society-design-conference/article/investigating-interrater-reliability-of-qualitative-text-annotations-in-machine-learning-datasets/0ADA7BB033C7D65A208D3E2F9A6DA340</a></li>
+</ul>
+<hr>
+<p><strong>Document End</strong></p>
+<p><em>This literature review was compiled on December 24, 2025, drawing from academic papers, conference proceedings, and peer-reviewed journals. All citations include direct links to source materials for verification and further reading.</em></p>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Generate Table of Contents
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.research-article');
+            const headings = article.querySelectorAll('h2, h3');
+            const tocList = document.getElementById('toc-list');
+
+            headings.forEach((heading, index) => {
+                // Add ID to heading for linking
+                const id = 'section-' + index;
+                heading.id = id;
+
+                // Create TOC entry
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + id;
+                a.textContent = heading.textContent;
+                a.className = heading.tagName === 'H3' ? 'pl-4' : '';
+                li.appendChild(a);
+                tocList.appendChild(li);
+
+                // Smooth scroll behavior
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+        });
+
+        // Highlight active TOC item on scroll
+        window.addEventListener('scroll', () => {
+            const headings = document.querySelectorAll('.research-article h2, .research-article h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+
+            let current = '';
+            headings.forEach(heading => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    current = heading.id;
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

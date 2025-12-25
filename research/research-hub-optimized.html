@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairos Research Hub - Evidence-Based Mental Health Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            will-change: transform;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .filter-active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .evidence-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .evidence-strong { background: #10b981; color: white; }
+        .evidence-moderate { background: #f59e0b; color: white; }
+        .evidence-emerging { background: #6366f1; color: white; }
+        .evidence-critical { background: #ef4444; color: white; }
+        .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .category-core { background: #e0e7ff; color: #4338ca; }
+        .category-advanced { background: #fce7f3; color: #a21caf; }
+        .category-ai { background: #dbeafe; color: #1e40af; }
+        .category-safety { background: #fee2e2; color: #b91c1c; }
+        .research-card { contain: layout style paint; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Kairos Research Hub</h1>
+            <p class="text-xl mb-8 opacity-90">Evidence-Based Mental Health Innovation</p>
+            <div class="grid md:grid-cols-4 gap-6 mt-12">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">16</div>
+                    <div class="text-sm opacity-90">Research Reviews</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">500+</div>
+                    <div class="text-sm opacity-90">Citations</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">6</div>
+                    <div class="text-sm opacity-90">Research Areas</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">2024</div>
+                    <div class="text-sm opacity-90">Latest Updates</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-6">
+            <div class="mb-6">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Search research articles..."
+                           class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="lucide-search absolute left-4 top-3.5 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:border-purple-500 transition" data-filter="all">All Articles</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:border-purple-500 transition" data-filter="core">Core Research</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:border-purple-500 transition" data-filter="advanced">Advanced Topics</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:border-purple-500 transition" data-filter="ai">AI & Technology</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:border-purple-500 transition" data-filter="safety">Safety & Ethics</button>
+                </div>
+                <div class="flex flex-wrap gap-2 ml-auto">
+                    <select id="evidenceFilter" class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <option value="all">All Evidence Levels</option>
+                        <option value="strong">Strong Evidence</option>
+                        <option value="moderate">Moderate Evidence</option>
+                        <option value="emerging">Emerging Evidence</option>
+                        <option value="critical">Critical Findings</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+                Showing <span id="resultsCount">16</span> research articles
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-12">
+        <div id="articlesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="noResults" class="hidden text-center py-12">
+            <p class="text-gray-500 text-lg">No articles found matching your search criteria.</p>
+            <button id="resetBtn" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition">Clear Filters</button>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">© 2024 Kairos Research Hub</p>
+            <p class="text-sm text-gray-400">Evidence-based mental health innovation through comprehensive research synthesis</p>
+        </div>
+    </footer>
+
+    <script>
+        const ARTICLES_DATA = [
+            {title:"The Loneliness Epidemic",fullTitle:"The Loneliness Epidemic: A Comprehensive Literature Review",description:"Synthesis of 70+ citations on loneliness prevalence, mechanisms, and interventions. Documents 50% prevalence and 26-32% increased mortality risk.",citations:"70+ citations",evidence:"strong",categories:["core"],url:"articles/loneliness-epidemic-enhanced.html"},
+            {title:"Internal Family Systems (IFS) Evidence Base",fullTitle:"Internal Family Systems (IFS) Evidence Base",description:"30 references documenting IFS therapy efficacy. Shows 92% PTSD remission rate and d=-4.46 effect size in controlled trials.",citations:"30 citations",evidence:"strong",categories:["core"],url:"articles/ifs-evidence-base-enhanced.html"},
+            {title:"AI Crisis Detection & Safety",fullTitle:"AI Crisis Detection & Safety in Mental Health Chatbots",description:"28 citations revealing critical safety gaps. Landmark study found 0% of chatbots met adequate safety criteria, with APA advisory warning.",citations:"28 citations",evidence:"critical",categories:["ai","safety"],url:"articles/ai-crisis-detection-enhanced.html"},
+            {title:"Neuroplasticity & Biomarker Validation",fullTitle:"Neuroplasticity & Biomarker Validation",description:"38 references on behavioral change and the '2-week wall'. Timeline-based analysis from Week 1 to Day 66 automaticity with HRV, cortisol tracking.",citations:"38 citations",evidence:"strong",categories:["core","advanced"],url:"articles/neuroplasticity-biomarkers-enhanced.html"},
+            {title:"Somatic Psychology & Body-Based Healing",fullTitle:"Somatic Psychology & Body-Based Healing",description:"52 references validating 'somatics before cognition' approach. Covers polyvagal theory, trauma release, and 8-12 week healing timeline.",citations:"52 citations",evidence:"strong",categories:["core"],url:"articles/somatic-psychology-enhanced.html"},
+            {title:"Neuroplasticity & Pattern Change",fullTitle:"Neuroplasticity & Pattern Change Mechanisms",description:"37 studies on memory reconsolidation, extinction bursts, and default mode network dynamics. Maps consolidation windows at 4-6 and 8-12 weeks.",citations:"37 citations",evidence:"strong",categories:["core"],url:"articles/neuroplasticity-patterns-enhanced.html"},
+            {title:"Addiction as Connection Disorder",fullTitle:"Addiction as Connection Disorder",description:"Paradigm shift from disease model to connection framework. Covers Rat Park, ACEs research, and neuroplasticity evidence for recovery.",citations:"11 citations",evidence:"strong",categories:["core"],url:"articles/addiction-connection-enhanced.html"},
+            {title:"Journaling & Expressive Writing",fullTitle:"Journaling & Expressive Writing Evidence",description:"Pennebaker protocol and meta-analyses showing d=0.075 overall effect, with 42% anxiety reduction. Includes optimal parameters and mechanisms.",citations:"11 citations",evidence:"moderate",categories:["core"],url:"articles/journaling-writing-enhanced.html"},
+            {title:"Contemplative Science",fullTitle:"Contemplative Science & Neuroscience",description:"27 sources bridging Buddhist psychology with neuroscience. Covers DMN changes, craving mechanisms, and Sara Lazar's structural findings.",citations:"27 citations",evidence:"strong",categories:["core"],url:"articles/contemplative-science-enhanced.html"},
+            {title:"Energy Work & Biofield Science",fullTitle:"Energy Work & Biofield Science",description:"32 references examining biofield therapies. Honest positioning of evidence levels, placebo mechanisms, and nervous system frameworks.",citations:"32 citations",evidence:"emerging",categories:["advanced"],url:"articles/energy-biofield-enhanced.html"},
+            {title:"Attachment & Relational Healing",fullTitle:"Attachment & Relational Healing",description:"24 citations on attachment science and earned security. Shows 75% intergenerational transmission and pathways to healing.",citations:"24 citations",evidence:"strong",categories:["advanced"],url:"articles/attachment-healing-enhanced.html"},
+            {title:"Attention Economy & Mental Health",fullTitle:"Attention Economy & Mental Health",description:"15 sources on digital technology impacts. Shows 134% anxiety increase, dopamine hijacking, and anti-gravity design solutions.",citations:"15 citations",evidence:"critical",categories:["advanced","safety"],url:"articles/attention-economy-enhanced.html"},
+            {title:"Collective Healing & Group Dynamics",fullTitle:"Collective Healing & Group Dynamics",description:"12 citations on group therapy mechanisms. Covers Yalom's factors, mirror neurons, and why healing happens better in community.",citations:"12 citations",evidence:"strong",categories:["advanced"],url:"articles/collective-healing-enhanced.html"},
+            {title:"AI in Mental Health: Evidence & Ethics",fullTitle:"AI in Mental Health: Evidence & Ethics",description:"Comprehensive review of AI applications. Shows short-term efficacy but critical safety gaps, with hybrid models as optimal approach.",citations:"Multiple studies",evidence:"moderate",categories:["ai"],url:"articles/ai-mental-health-enhanced.html"},
+            {title:"Dataset Values & AI Bias",fullTitle:"Dataset Values & AI Bias",description:"41 references on annotator invisibility and embedded values. Shows how biases propagate through AI systems, especially in mental health.",citations:"41 citations",evidence:"emerging",categories:["ai","safety"],url:"articles/dataset-values-enhanced.html"},
+            {title:"AI vs Human Pattern Recognition",fullTitle:"AI vs Human Pattern Recognition",description:"39 citations comparing capabilities. AI excels at diagnosis (91% depression detection), humans at crisis response and empathy.",citations:"39 citations",evidence:"strong",categories:["ai"],url:"articles/ai-pattern-recognition-enhanced.html"},
+            {title:"Informed Consent in AI Mental Health",fullTitle:"Informed Consent in AI Mental Health",description:"16 citations on consent challenges. Shows user misconceptions, design manipulations, and frameworks for ethical implementation.",citations:"16 citations",evidence:"critical",categories:["safety"],url:"articles/informed-consent-enhanced.html"},
+            {title:"Privacy-Preserving AI Architecture",fullTitle:"Privacy-Preserving AI Architecture",description:"67 citations on privacy techniques. Demonstrates federated learning, differential privacy, and on-device processing are clinically viable.",citations:"67 citations",evidence:"strong",categories:["ai","safety"],url:"articles/privacy-architecture-enhanced.html"}
+        ];
+
+        const els={s:document.getElementById('searchInput'),e:document.getElementById('evidenceFilter'),f:document.querySelectorAll('.filter-btn'),g:document.getElementById('articlesGrid'),c:document.getElementById('resultsCount'),n:document.getElementById('noResults'),r:document.getElementById('resetBtn')};
+        let st={cat:'all',ev:'all',term:''};
+
+        function debounce(fn,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)}}
+
+        function createElement(tag,classes,text){const el=document.createElement(tag);if(classes)el.className=classes;if(text)el.textContent=text;return el}
+
+        function createCard(a){const card=createElement('article','research-card card-hover bg-white rounded-lg shadow-md overflow-hidden');card.dataset.categories=a.categories.join(' ');card.dataset.evidence=a.evidence;card.dataset.searchText=(a.fullTitle+' '+a.description).toLowerCase();
+        const top=createElement('div','relative');const badge=createElement('span',`evidence-badge evidence-${a.evidence}`,{strong:'Strong Evidence',moderate:'Moderate Evidence',emerging:'Emerging Evidence',critical:'Critical'}[a.evidence]);top.appendChild(badge);top.appendChild(createElement('div','gradient-bg h-2'));
+        const body=createElement('div','p-6');const badgeDiv=createElement('div','mb-3');a.categories.forEach(c=>badgeDiv.appendChild(createElement('span',`category-badge category-${c}`,{core:'Core Research',advanced:'Advanced Topics',ai:'AI & Technology',safety:'Safety & Ethics'}[c])));
+        const h3=createElement('h3','text-xl font-bold mb-3 text-gray-900',a.title);const p=createElement('p','text-gray-600 mb-4',a.description);
+        const footer=createElement('div','flex justify-between items-center');footer.appendChild(createElement('span','text-sm text-gray-500',a.citations));const link=createElement('a','text-purple-600 hover:text-purple-700 font-medium','Read More →');link.href=a.url;footer.appendChild(link);
+        body.append(badgeDiv,h3,p,footer);card.append(top,body);return card}
+
+        function render(){els.g.textContent='';ARTICLES_DATA.forEach(a=>els.g.appendChild(createCard(a)))}
+
+        function filter(){const cards=els.g.children;let vis=0;for(let i=0;i<cards.length;i++){const c=cards[i];const show=(st.cat==='all'||c.dataset.categories.includes(st.cat))&&(st.ev==='all'||c.dataset.evidence===st.ev)&&(st.term===''||c.dataset.searchText.includes(st.term));c.style.display=show?'block':'none';if(show)vis++}
+        els.c.textContent=vis;if(vis===0){els.g.style.display='none';els.n.classList.remove('hidden')}else{els.g.style.display='grid';els.n.classList.add('hidden')}}
+
+        const debouncedFilter=debounce(filter,300);
+        els.s.addEventListener('input',e=>{st.term=e.target.value.toLowerCase();debouncedFilter()});
+        els.e.addEventListener('change',e=>{st.ev=e.target.value;filter()});
+        els.f.forEach(b=>b.addEventListener('click',()=>{els.f.forEach(x=>x.classList.remove('filter-active'));b.classList.add('filter-active');st.cat=b.dataset.filter;filter()}));
+        els.r.addEventListener('click',()=>{els.s.value='';els.e.value='all';st={cat:'all',ev:'all',term:''};els.f.forEach(b=>b.classList.remove('filter-active'));els.f[0].classList.add('filter-active');filter()});
+        render();els.f[0].classList.add('filter-active');
+    </script>
+</body>
+</html>

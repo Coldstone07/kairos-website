@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Core Research | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Header -->
+        <section class="px-4 py-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Foundation Evidence</span>
+                    <h1 class="font-serif text-4xl md:text-6xl text-white mt-4 mb-4">Core Research</h1>
+                    <p class="text-moonlight-secondary text-xl max-w-3xl mx-auto">
+                        Foundational evidence validating our approach to consciousness and healing
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Grid -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Loneliness Epidemic -->
+                    <a href="articles/loneliness-epidemic.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">36 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    The Loneliness Epidemic
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Comprehensive evidence showing loneliness increases premature death risk by 26-32%, equivalent to smoking 15 cigarettes daily. Validates Kairos's focus on authentic connection.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- IFS Evidence Base -->
+                    <a href="articles/ifs-evidence-base.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">38 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    IFS (Internal Family Systems) Evidence Base
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Meta-analysis showing 71-92% improvement rates across trauma, depression, and anxiety. Validates the parts-work approach central to Kairos methodology.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Somatic Psychology -->
+                    <a href="articles/somatic-psychology.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">32 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Somatic Psychology
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Body-based healing approaches showing significant efficacy in trauma treatment, with evidence for bottom-up processing in emotional regulation.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Neuroplasticity & Pattern Change -->
+                    <a href="articles/neuroplasticity-pattern-change.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">40 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Neuroplasticity & Pattern Change
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Evidence for the brain's capacity to rewire at any age, with specific protocols for breaking unconscious patterns and establishing new neural pathways.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Addiction as Connection Disorder -->
+                    <a href="articles/addiction-connection-disorder.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">35 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Addiction as Connection Disorder
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Reframing addiction through the lens of attachment and connection, with evidence showing social bonds as primary factors in recovery.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Journaling & Expressive Writing -->
+                    <a href="articles/journaling-expressive-writing.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">28 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Journaling & Expressive Writing
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Pennebaker's paradigm and evidence for written emotional processing, showing measurable improvements in physical and mental health.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Contemplative Science -->
+                    <a href="articles/contemplative-science.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">45 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Contemplative Science
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Meditation and mindfulness research showing structural brain changes, with specific protocols for different therapeutic outcomes.
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    Read Full Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Additional Core Research -->
+                    <a href="all.html#core" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform bg-white/5">
+                            <div class="p-8 flex flex-col justify-center items-center text-center h-full">
+                                <i data-lucide="library" class="w-12 h-12 text-accent-primary mb-4"></i>
+                                <h3 class="font-serif text-2xl text-white mb-3">
+                                    View 6 More Core Research Documents
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Including Energy Work, Attachment Theory, Attention Economy, Group Dynamics, and AI Evidence
+                                </p>
+                                <div class="text-accent-primary text-sm font-semibold">
+                                    View All Core Research →
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto flex justify-center gap-4">
+                <a href="../research.html" class="inline-flex items-center gap-2 px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Back to Research Hub
+                </a>
+                <a href="advanced.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary/10 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    Advanced Research
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/mobile-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Advanced Research | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Header -->
+        <section class="px-4 py-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Cutting-Edge Investigation</span>
+                    <h1 class="font-serif text-4xl md:text-6xl text-white mt-4 mb-4">Advanced Research</h1>
+                    <p class="text-moonlight-secondary text-xl max-w-3xl mx-auto">
+                        Cutting-edge investigations into AI, neuroplasticity, and crisis intervention
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Grid -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- AI Crisis Detection & Safety -->
+                    <a href="articles/ai-crisis-detection-safety.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-semibold uppercase tracking-wider rounded">Critical Findings</span>
+                                    <span class="text-moonlight-muted text-xs">27 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    AI Crisis Detection & Safety Protocols
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Critical analysis showing 0/29 AI chatbots meet adequate safety criteria. Comprehensive safety framework for AI mental health interventions with APA guidelines integration.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-moonlight-muted">
+                                        <i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>
+                                        30 citations
+                                    </span>
+                                    <span class="text-yellow-400">
+                                        <i data-lucide="alert-triangle" class="w-4 h-4 inline mr-1"></i>
+                                        Safety Critical
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Neuroplasticity Biomarker Validation -->
+                    <a href="articles/neuroplasticity-biomarker-validation.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider rounded">Strong Evidence</span>
+                                    <span class="text-moonlight-muted text-xs">35 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    The 2-Week Wall: Neuroplasticity Validation
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Evidence from STRIDE trials (N=947) showing 67% dropout before month 1. Validates Kairos's intensive 2-week breakthrough approach with biomarker support.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-moonlight-muted">
+                                        <i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>
+                                        27 citations
+                                    </span>
+                                    <span class="text-green-400">
+                                        <i data-lucide="shield-check" class="w-4 h-4 inline mr-1"></i>
+                                        Validated
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- AI vs Human Pattern Recognition -->
+                    <a href="articles/ai-vs-human-pattern-recognition.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider rounded">Comparative Analysis</span>
+                                    <span class="text-moonlight-muted text-xs">30 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    AI vs Human Pattern Recognition
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Comparative analysis showing AI accuracy of 70-95% for common conditions vs. human clinicians. Hybrid models achieve 89-96% accuracy. Critical insights on where each excels.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-moonlight-muted">
+                                        <i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>
+                                        30+ citations
+                                    </span>
+                                    <span class="text-blue-400">
+                                        <i data-lucide="brain" class="w-4 h-4 inline mr-1"></i>
+                                        AI/Human Hybrid
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Privacy-Preserving AI Architecture -->
+                    <a href="articles/privacy-preserving-ai-architecture.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-wider rounded">Technical Framework</span>
+                                    <span class="text-moonlight-muted text-xs">60 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Privacy-Preserving AI Architecture
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    Technical framework for secure mental health AI systems. FedMentalCare and FedMentor implementations with 3-layer architecture and 12-month implementation roadmap.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-moonlight-muted">
+                                        <i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>
+                                        70+ citations
+                                    </span>
+                                    <span class="text-purple-400">
+                                        <i data-lucide="lock" class="w-4 h-4 inline mr-1"></i>
+                                        Privacy-First
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Informed Consent in AI Mental Health -->
+                    <a href="articles/informed-consent-ai-mental-health.html" class="block">
+                        <article class="glass-panel rounded-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider rounded">Ethical Framework</span>
+                                    <span class="text-moonlight-muted text-xs">25 min read</span>
+                                </div>
+                                <h3 class="font-serif text-2xl text-white mb-3 group-hover:text-accent-primary transition-colors">
+                                    Informed Consent in AI Mental Health
+                                </h3>
+                                <p class="text-moonlight-secondary mb-4">
+                                    User misconceptions documented (Eliza Effect). Interactive multimedia consent shows 5-15% improvement. "Consciousness mirror" positioning validated for ethical AI deployment.
+                                </p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-moonlight-muted">
+                                        <i data-lucide="file-text" class="w-4 h-4 inline mr-1"></i>
+                                        15+ citations
+                                    </span>
+                                    <span class="text-amber-400">
+                                        <i data-lucide="shield" class="w-4 h-4 inline mr-1"></i>
+                                        Ethical Guidelines
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="px-4 py-12">
+            <div class="max-w-7xl mx-auto flex justify-center gap-4">
+                <a href="core.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary/10 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Core Research
+                </a>
+                <a href="../research.html" class="inline-flex items-center gap-2 px-6 py-3 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    Research Hub
+                </a>
+                <a href="meta.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary/10 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-sm tracking-widest uppercase font-semibold">
+                    Meta Research
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/mobile-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

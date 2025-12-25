@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuroplasticity and Pattern Change: Brain Transformation Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cosmic Color Palette for Neural Theming */
+        :root {
+            --neural-purple: #9d4edd;
+            --neural-blue: #3a86ff;
+            --neural-cyan: #00f5ff;
+            --neural-pink: #ff006e;
+            --neural-green: #06ffa5;
+            --neural-amber: #ffbe0b;
+            --dark-space: #0a0e27;
+            --dark-navy: #1a1f3a;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-space) 0%, var(--dark-navy) 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .neural-glow {
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.3), inset 0 0 20px rgba(157, 78, 221, 0.1);
+            border: 1px solid rgba(157, 78, 221, 0.5);
+        }
+
+        .neural-glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2), inset 0 0 20px rgba(0, 245, 255, 0.05);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+        }
+
+        .neural-glow-pink {
+            box-shadow: 0 0 20px rgba(255, 0, 110, 0.2), inset 0 0 20px rgba(255, 0, 110, 0.05);
+            border: 1px solid rgba(255, 0, 110, 0.3);
+        }
+
+        .neural-accent { color: var(--neural-cyan); }
+        .neural-accent-pink { color: var(--neural-pink); }
+        .neural-accent-green { color: var(--neural-green); }
+        .neural-accent-amber { color: var(--neural-amber); }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--neural-cyan) 0%, var(--neural-purple) 50%, var(--neural-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .phase-indicator {
+            position: relative;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(0, 245, 255, 0.1));
+        }
+
+        .phase-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .slide-container {
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 500px;
+        }
+
+        .slide-content {
+            min-width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        svg {
+            filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.2));
+        }
+
+        /* Progress bar styling */
+        .progress-bar {
+            height: 4px;
+            background: rgba(157, 78, 221, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neural-purple), var(--neural-cyan), var(--neural-pink));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Animation for pulsing elements */
+        @keyframes neuralPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .neural-pulse {
+            animation: neuralPulse 2s ease-in-out infinite;
+        }
+
+        /* Glowing text animation */
+        @keyframes glowText {
+            0%, 100% { text-shadow: 0 0 10px rgba(0, 245, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(0, 245, 255, 0.8), 0 0 30px rgba(157, 78, 221, 0.5); }
+        }
+
+        .glow-text {
+            animation: glowText 3s ease-in-out infinite;
+        }
+
+        /* Cycling animation */
+        @keyframes cyclePulse {
+            0% { opacity: 0; transform: scale(0.9); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: scale(1.1); }
+        }
+
+        .cycle-animation {
+            animation: cyclePulse 4s ease-in-out infinite;
+        }
+
+        .toc-item {
+            padding: 0.5rem 1rem;
+            border-left: 3px solid var(--neural-purple);
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toc-item:hover {
+            border-left-color: var(--neural-cyan);
+            padding-left: 1.5rem;
+            background: rgba(0, 245, 255, 0.05);
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(58, 134, 255, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            text-align: center;
+        }
+
+        .citation {
+            background: rgba(0, 245, 255, 0.05);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 3px solid var(--neural-cyan);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .interactive-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .interactive-toggle:hover {
+            color: var(--neural-cyan);
+        }
+
+        /* Responsive grid */
+        .grid-auto {
+            display: grid;
+            grid-auto-columns: minmax(250px, 1fr);
+            gap: 1.5rem;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neural-purple), var(--neural-cyan), transparent);
+            margin: 3rem 0;
+        }
+
+        code {
+            background: rgba(0, 245, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--neural-green);
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--neural-pink);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header Navigation -->
+    <nav class="fixed top-0 w-full bg-gradient-to-b from-var(--dark-space) to-transparent z-50 backdrop-blur-sm neural-glow-cyan">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gradient">Neuroplasticity Lab</h1>
+                <p class="text-xs text-gray-400">Brain Pattern Transformation Research</p>
+            </div>
+            <button onclick="toggleTOC()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white transition">
+                Contents
+            </button>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-6xl mx-auto px-4 pt-32">
+        <!-- Hero Section -->
+        <section class="mb-16 py-12 neural-glow rounded-xl p-8">
+            <div class="text-center mb-8">
+                <h1 class="text-5xl font-bold mb-4 text-gradient glow-text">
+                    Neuroplasticity and Pattern Change
+                </h1>
+                <p class="text-xl text-gray-300 mb-6">
+                    A Comprehensive Literature Review of the Neurobiological Mechanisms Underlying Behavioral Transformation
+                </p>
+                <div class="flex justify-center gap-4 text-sm">
+                    <span class="px-4 py-2 bg-purple-900/30 border border-purple-500/50 rounded-full">
+                        <span class="neural-accent">37</span> Research Studies
+                    </span>
+                    <span class="px-4 py-2 bg-cyan-900/30 border border-cyan-500/50 rounded-full">
+                        <span class="neural-accent">12</span> Key Sections
+                    </span>
+                    <span class="px-4 py-2 bg-pink-900/30 border border-pink-500/50 rounded-full">
+                        <span class="neural-accent-pink">8-12</span> Week Timeline
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table of Contents Panel -->
+        <div id="tocPanel" class="hidden mb-12 neural-glow rounded-xl p-6 bg-gradient-to-br from-purple-900/20 to-blue-900/20">
+            <h2 class="text-2xl font-bold text-gradient mb-6">Research Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div class="toc-item" onclick="scrollToSection('part1')">
+                    Part I: Memory Reconsolidation
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part2')">
+                    Part II: The Two-Week Wall
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part3')">
+                    Part III: Default Mode Network
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part4')">
+                    Part IV: 4-6 Week Consolidation
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part5')">
+                    Part V: 8-12 Week Integration
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part6')">
+                    Part VI: Supporting Mechanisms
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part7')">
+                    Part VII: Directed Neuroplasticity
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part8')">
+                    Part VIII: Alternative Approaches
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part9')">
+                    Part IX: Success Basis
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part10')">
+                    Part X: Critical Periods
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part11')">
+                    Part XI: Observation & Dissolution
+                </div>
+                <div class="toc-item" onclick="scrollToSection('part12')">
+                    Part XII: Supporting Mechanisms
+                </div>
+            </div>
+        </div>
+
+        <!-- VISUALIZATION 1: Memory Reconsolidation Process -->
+        <section id="part1" class="mb-16 neural-glow-cyan rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent">●</span> Memory Reconsolidation Process</h2>
+            <p class="text-gray-300 mb-6">The brain's fundamental mechanism for permanently erasing emotional learning and rewriting neural patterns at the synaptic level.</p>
+
+            <div class="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 rounded-lg p-8 mb-8 neural-glow-cyan">
+                <svg viewBox="0 0 900 400" class="w-full h-auto">
+                    <!-- Background grid -->
+                    <defs>
+                        <linearGradient id="reconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(0,245,255,0.1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(157,78,221,0.1);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="900" height="400" fill="url(#reconGradient)"/>
+
+                    <!-- Stage 1: Memory Activation -->
+                    <g id="stage1">
+                        <rect x="20" y="80" width="150" height="240" rx="10" fill="rgba(255,0,110,0.15)" stroke="rgba(255,0,110,0.5)" stroke-width="2"/>
+                        <text x="95" y="30" font-size="14" font-weight="bold" fill="#ff006e" text-anchor="middle">Stage 1</text>
+                        <text x="95" y="120" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Memory</text>
+                        <text x="95" y="140" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Activation</text>
+
+                        <!-- Amygdala neurons -->
+                        <circle cx="50" cy="180" r="8" fill="#ff006e" class="neural-pulse"/>
+                        <circle cx="95" cy="200" r="8" fill="#ff006e" class="neural-pulse"/>
+                        <circle cx="140" cy="170" r="8" fill="#ff006e" class="neural-pulse"/>
+                        <circle cx="75" cy="240" r="8" fill="#ff006e" class="neural-pulse"/>
+                        <circle cx="120" cy="250" r="8" fill="#ff006e" class="neural-pulse"/>
+
+                        <!-- Connecting lines -->
+                        <line x1="50" y1="180" x2="95" y2="200" stroke="#ff006e" stroke-width="1" opacity="0.5"/>
+                        <line x1="95" y1="200" x2="140" y2="170" stroke="#ff006e" stroke-width="1" opacity="0.5"/>
+                    </g>
+
+                    <!-- Arrow 1 -->
+                    <path d="M 170 220 L 220 220" stroke="#00f5ff" stroke-width="3" fill="none" marker-end="url(#arrowCyan)"/>
+                    <text x="195" y="210" font-size="11" fill="#00f5ff" text-anchor="middle">Emotional</text>
+                    <text x="195" y="225" font-size="11" fill="#00f5ff" text-anchor="middle">Charge</text>
+
+                    <!-- Stage 2: Reconsolidation Window (5 hours) -->
+                    <g id="stage2">
+                        <rect x="220" y="80" width="150" height="240" rx="10" fill="rgba(58,134,255,0.15)" stroke="rgba(58,134,255,0.5)" stroke-width="2"/>
+                        <text x="295" y="30" font-size="14" font-weight="bold" fill="#3a86ff" text-anchor="middle">Stage 2</text>
+                        <text x="295" y="120" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Reconsolidation</text>
+                        <text x="295" y="140" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Window</text>
+                        <text x="295" y="160" font-size="11" fill="#06ffa5" text-anchor="middle">(~5 hours)</text>
+
+                        <!-- Synaptic loosening -->
+                        <circle cx="250" cy="190" r="6" fill="none" stroke="#3a86ff" stroke-width="2"/>
+                        <circle cx="295" cy="210" r="6" fill="none" stroke="#3a86ff" stroke-width="2"/>
+                        <circle cx="340" cy="180" r="6" fill="none" stroke="#3a86ff" stroke-width="2"/>
+                        <circle cx="270" cy="250" r="6" fill="none" stroke="#3a86ff" stroke-width="2"/>
+
+                        <!-- Destabilization indicator -->
+                        <text x="295" y="280" font-size="11" fill="#ffbe0b" text-anchor="middle">Synapses</text>
+                        <text x="295" y="295" font-size="11" fill="#ffbe0b" text-anchor="middle">Destabilized</text>
+                    </g>
+
+                    <!-- Arrow 2 -->
+                    <path d="M 370 220 L 420 220" stroke="#00f5ff" stroke-width="3" fill="none" marker-end="url(#arrowCyan)"/>
+                    <text x="395" y="210" font-size="11" fill="#00f5ff" text-anchor="middle">Contradictory</text>
+                    <text x="395" y="225" font-size="11" fill="#00f5ff" text-anchor="middle">Context</text>
+
+                    <!-- Stage 3: New Learning Integration -->
+                    <g id="stage3">
+                        <rect x="420" y="80" width="150" height="240" rx="10" fill="rgba(157,78,221,0.15)" stroke="rgba(157,78,221,0.5)" stroke-width="2"/>
+                        <text x="495" y="30" font-size="14" font-weight="bold" fill="#9d4edd" text-anchor="middle">Stage 3</text>
+                        <text x="495" y="120" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">New Learning</text>
+                        <text x="495" y="140" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Integration</text>
+
+                        <!-- New synaptic connections -->
+                        <circle cx="450" cy="180" r="7" fill="#06ffa5"/>
+                        <circle cx="495" cy="210" r="7" fill="#06ffa5"/>
+                        <circle cx="540" cy="175" r="7" fill="#06ffa5"/>
+
+                        <!-- Connection lines showing integration -->
+                        <line x1="450" y1="180" x2="495" y2="210" stroke="#06ffa5" stroke-width="2"/>
+                        <line x1="495" y1="210" x2="540" y2="175" stroke="#06ffa5" stroke-width="2"/>
+
+                        <text x="495" y="280" font-size="11" fill="#06ffa5" text-anchor="middle">Synaptic</text>
+                        <text x="495" y="295" font-size="11" fill="#06ffa5" text-anchor="middle">Remodeling</text>
+                    </g>
+
+                    <!-- Arrow 3 -->
+                    <path d="M 570 220 L 620 220" stroke="#00f5ff" stroke-width="3" fill="none" marker-end="url(#arrowCyan)"/>
+                    <text x="595" y="210" font-size="11" fill="#00f5ff" text-anchor="middle">Permanent</text>
+                    <text x="595" y="225" font-size="11" fill="#00f5ff" text-anchor="middle">Rewriting</text>
+
+                    <!-- Stage 4: New Pattern Encoded -->
+                    <g id="stage4">
+                        <rect x="620" y="80" width="150" height="240" rx="10" fill="rgba(6,255,165,0.15)" stroke="rgba(6,255,165,0.5)" stroke-width="2"/>
+                        <text x="695" y="30" font-size="14" font-weight="bold" fill="#06ffa5" text-anchor="middle">Stage 4</text>
+                        <text x="695" y="120" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Permanent</text>
+                        <text x="695" y="140" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">Neural Change</text>
+
+                        <!-- Stable synaptic structure -->
+                        <rect x="660" y="170" width="70" height="80" rx="5" fill="none" stroke="#06ffa5" stroke-width="2"/>
+                        <circle cx="675" cy="190" r="5" fill="#06ffa5"/>
+                        <circle cx="710" cy="200" r="5" fill="#06ffa5"/>
+                        <circle cx="695" cy="225" r="5" fill="#06ffa5"/>
+                        <circle cx="675" cy="240" r="5" fill="#06ffa5"/>
+
+                        <text x="695" y="280" font-size="11" fill="#06ffa5" text-anchor="middle">Pattern</text>
+                        <text x="695" y="295" font-size="11" fill="#06ffa5" text-anchor="middle">Erased</text>
+                    </g>
+
+                    <!-- SVG arrow marker definition -->
+                    <defs>
+                        <marker id="arrowCyan" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#00f5ff"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="metric-card">
+                    <div class="text-2xl font-bold neural-accent">5 Hours</div>
+                    <div class="text-sm text-gray-400">Reconsolidation Window Duration</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-2xl font-bold neural-accent-pink">100%</div>
+                    <div class="text-sm text-gray-400">Synaptic Malleability</div>
+                </div>
+            </div>
+
+            <blockquote class="mt-6">
+                "Memory reconsolidation represents the only known neurobiological process capable of permanently erasing the emotional encoding that anchors persistent patterns."
+            </blockquote>
+
+            <div class="citation mt-6">
+                <strong>Key References:</strong> Ecker, Ticic, & Hulley (2012); Ecker (2013); Johansen et al. (2011)
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VISUALIZATION 2: Extinction Burst Timeline -->
+        <section id="part2" class="mb-16 neural-glow-pink rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent-pink">●</span> The Extinction Burst Timeline</h2>
+            <p class="text-gray-300 mb-6">Understanding the neurobiology behind the characteristic two-week intensification of pattern resistance when behavioral reinforcement is withdrawn.</p>
+
+            <div class="bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-lg p-8 mb-8 neural-glow-pink">
+                <svg viewBox="0 0 1000 450" class="w-full h-auto">
+                    <!-- Timeline background -->
+                    <defs>
+                        <linearGradient id="extGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#3a86ff;stop-opacity:0.2" />
+                            <stop offset="25%" style="stop-color:#ff006e;stop-opacity:0.2" />
+                            <stop offset="50%" style="stop-color:#9d4edd;stop-opacity:0.2" />
+                            <stop offset="75%" style="stop-color:#00f5ff;stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:#06ffa5;stop-opacity:0.2" />
+                        </linearGradient>
+                    </defs>
+
+                    <rect x="50" y="0" width="900" height="450" fill="url(#extGradient)"/>
+
+                    <!-- Timeline base -->
+                    <line x1="50" y1="250" x2="950" y2="250" stroke="#00f5ff" stroke-width="2" opacity="0.5"/>
+
+                    <!-- Week 1: Cognitive Awareness -->
+                    <g id="week1">
+                        <circle cx="150" cy="250" r="10" fill="#3a86ff" stroke="#00f5ff" stroke-width="2"/>
+                        <text x="150" y="300" font-size="13" font-weight="bold" fill="#3a86ff" text-anchor="middle">Week 1</text>
+                        <text x="150" y="320" font-size="11" fill="#00f5ff" text-anchor="middle">Cognitive</text>
+                        <text x="150" y="335" font-size="11" fill="#00f5ff" text-anchor="middle">Awareness</text>
+
+                        <!-- Prefrontal activation -->
+                        <rect x="100" y="150" width="100" height="60" rx="5" fill="none" stroke="#3a86ff" stroke-width="2" opacity="0.7"/>
+                        <text x="150" y="190" font-size="9" fill="#3a86ff" text-anchor="middle">PFC</text>
+
+                        <!-- Activity level -->
+                        <polyline points="110,100 130,95 150,110 170,85 190,105" stroke="#3a86ff" stroke-width="2" fill="none"/>
+                    </g>
+
+                    <!-- Week 2: Extinction Burst Peak -->
+                    <g id="week2">
+                        <circle cx="350" cy="250" r="10" fill="#ff006e" stroke="#ff006e" stroke-width="2"/>
+                        <text x="350" y="300" font-size="13" font-weight="bold" fill="#ff006e" text-anchor="middle">Week 2</text>
+                        <text x="350" y="320" font-size="11" fill="#ff006e" text-anchor="middle">Extinction</text>
+                        <text x="350" y="335" font-size="11" fill="#ff006e" text-anchor="middle">Burst PEAK</text>
+
+                        <!-- Amygdala intense activation -->
+                        <rect x="300" y="120" width="100" height="90" rx="5" fill="rgba(255,0,110,0.3)" stroke="#ff006e" stroke-width="2"/>
+                        <text x="350" y="155" font-size="9" fill="#ff006e" text-anchor="middle">Amygdala</text>
+                        <text x="350" y="170" font-size="9" fill="#ff006e" text-anchor="middle">Hyperactive</text>
+
+                        <!-- High activity -->
+                        <polyline points="310,95 330,40 350,60 370,25 390,50" stroke="#ff006e" stroke-width="3" fill="none"/>
+                        <circle cx="350" cy="60" r="3" fill="#ff006e" class="neural-pulse"/>
+
+                        <!-- Emotional intensity indicator -->
+                        <text x="350" y="375" font-size="12" font-weight="bold" fill="#ff006e" text-anchor="middle">MAXIMUM INTENSITY</text>
+                    </g>
+
+                    <!-- Week 3: Burst Subsiding -->
+                    <g id="week3">
+                        <circle cx="550" cy="250" r="10" fill="#9d4edd" stroke="#00f5ff" stroke-width="2"/>
+                        <text x="550" y="300" font-size="13" font-weight="bold" fill="#9d4edd" text-anchor="middle">Week 3</text>
+                        <text x="550" y="320" font-size="11" fill="#00f5ff" text-anchor="middle">Burst</text>
+                        <text x="550" y="335" font-size="11" fill="#00f5ff" text-anchor="middle">Subsiding</text>
+
+                        <!-- Prefrontal-limbic integration -->
+                        <rect x="500" y="140" width="100" height="70" rx="5" fill="rgba(157,78,221,0.2)" stroke="#9d4edd" stroke-width="2"/>
+                        <text x="550" y="180" font-size="9" fill="#9d4edd" text-anchor="middle">PFC-Limbic</text>
+                        <text x="550" y="193" font-size="9" fill="#9d4edd" text-anchor="middle">Integration</text>
+
+                        <!-- Recovering activity -->
+                        <polyline points="510,110 530,85 550,95 570,75 590,90" stroke="#9d4edd" stroke-width="2" fill="none"/>
+                    </g>
+
+                    <!-- Week 4-6: Consolidation -->
+                    <g id="week4">
+                        <circle cx="750" cy="250" r="10" fill="#06ffa5" stroke="#00f5ff" stroke-width="2"/>
+                        <text x="750" y="300" font-size="13" font-weight="bold" fill="#06ffa5" text-anchor="middle">Weeks 4-6</text>
+                        <text x="750" y="320" font-size="11" fill="#06ffa5" text-anchor="middle">Consolidation</text>
+                        <text x="750" y="335" font-size="11" fill="#06ffa5" text-anchor="middle">Window</text>
+
+                        <!-- Striatum automaticity -->
+                        <rect x="700" y="160" width="100" height="50" rx="5" fill="rgba(6,255,165,0.2)" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="750" y="190" font-size="9" fill="#06ffa5" text-anchor="middle">Striatum</text>
+                        <text x="750" y="203" font-size="9" fill="#06ffa5" text-anchor="middle">Automaticity</text>
+
+                        <!-- Stabilizing -->
+                        <polyline points="710,120 730,110 750,120 770,105 790,115" stroke="#06ffa5" stroke-width="2" fill="none"/>
+                    </g>
+
+                    <!-- Week 8-12: Structural -->
+                    <g id="week8">
+                        <circle cx="900" cy="250" r="10" fill="#ffbe0b" stroke="#00f5ff" stroke-width="2"/>
+                        <text x="900" y="300" font-size="13" font-weight="bold" fill="#ffbe0b" text-anchor="middle">Weeks 8-12</text>
+                        <text x="900" y="320" font-size="11" fill="#ffbe0b" text-anchor="middle">Structural</text>
+                        <text x="900" y="335" font-size="11" fill="#ffbe0b" text-anchor="middle">Integration</text>
+
+                        <!-- Brain structure reorganization -->
+                        <rect x="850" y="160" width="100" height="50" rx="5" fill="rgba(255,190,11,0.2)" stroke="#ffbe0b" stroke-width="2"/>
+                        <text x="900" y="190" font-size="9" fill="#ffbe0b" text-anchor="middle">Brain</text>
+                        <text x="900" y="203" font-size="9" fill="#ffbe0b" text-anchor="middle">Remodeling</text>
+                    </g>
+
+                    <!-- Connecting lines between weeks -->
+                    <path d="M 160 250 L 340 250" stroke="#00f5ff" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+                    <path d="M 360 250 L 540 250" stroke="#ff006e" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+                    <path d="M 560 250 L 740 250" stroke="#9d4edd" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+                    <path d="M 760 250 L 890 250" stroke="#06ffa5" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="phase-indicator border-l-4 border-blue-400">
+                    <div class="flex items-center mb-2">
+                        <span class="phase-marker" style="background-color: #3a86ff;"></span>
+                        <span class="font-bold">Week 1</span>
+                    </div>
+                    <p class="text-sm">Cognitive awareness builds. PFC recognizes pattern consciously.</p>
+                </div>
+
+                <div class="phase-indicator border-l-4 border-pink-500">
+                    <div class="flex items-center mb-2">
+                        <span class="phase-marker" style="background-color: #ff006e;"></span>
+                        <span class="font-bold">Week 2</span>
+                    </div>
+                    <p class="text-sm">Amygdala recognizes threat. Extinction burst peaks at maximum intensity.</p>
+                </div>
+
+                <div class="phase-indicator border-l-4 border-purple-500">
+                    <div class="flex items-center mb-2">
+                        <span class="phase-marker" style="background-color: #9d4edd;"></span>
+                        <span class="font-bold">Week 3</span>
+                    </div>
+                    <p class="text-sm">Burst subsides. PFC-limbic integration increases. Recovery begins.</p>
+                </div>
+
+                <div class="phase-indicator border-l-4 border-green-500">
+                    <div class="flex items-center mb-2">
+                        <span class="phase-marker" style="background-color: #06ffa5;"></span>
+                        <span class="font-bold">Weeks 4-6</span>
+                    </div>
+                    <p class="text-sm">Consolidation window. Striatum encodes automaticity. Breakthrough emerges.</p>
+                </div>
+            </div>
+
+            <div class="citation mt-6">
+                <strong>Key Insight:</strong> The extinction burst is neurobiologically inevitable and actually evidence the pattern is being accessed at the emotional level where change is possible. Week-2 intensification predicts success when properly contextualized.
+            </div>
+
+            <div class="citation mt-4">
+                <strong>Key References:</strong> PMC Meta-analysis (2023); Rescorla & Heth (1975); Dunsmoor & Paz (2015)
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VISUALIZATION 3: Default Mode Network Transformation -->
+        <section id="part3" class="mb-16 neural-glow rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent">●</span> Default Mode Network Connectivity Map</h2>
+            <p class="text-gray-300 mb-6">How the self-referential rumination network transforms through observation-based pattern disruption.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Before Transformation -->
+                <div class="bg-gradient-to-br from-red-900/20 to-pink-900/20 rounded-lg p-6 neural-glow-pink">
+                    <h3 class="text-xl font-bold mb-4 text-pink-300">Before: Hyperactive DMN</h3>
+                    <svg viewBox="0 0 300 300" class="w-full h-auto">
+                        <!-- Brain outline -->
+                        <ellipse cx="150" cy="150" rx="120" ry="110" fill="none" stroke="#ff006e" stroke-width="2" opacity="0.3"/>
+
+                        <!-- DMN Regions -->
+                        <!-- mPFC (top center) -->
+                        <circle cx="150" cy="80" r="25" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="150" y="85" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">mPFC</text>
+
+                        <!-- PCC (bottom center) -->
+                        <circle cx="150" cy="220" r="25" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="150" y="225" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">PCC</text>
+
+                        <!-- Precuneus (middle back) -->
+                        <circle cx="150" cy="150" r="20" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="150" y="155" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">PCu</text>
+
+                        <!-- Angular Gyrus (left and right) -->
+                        <circle cx="80" cy="150" r="18" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="80" y="156" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">AG</text>
+
+                        <circle cx="220" cy="150" r="18" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="220" y="156" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">AG</text>
+
+                        <!-- Hyperactive connections (thick, many) -->
+                        <line x1="150" y1="105" x2="150" y2="195" stroke="#ff006e" stroke-width="4" opacity="0.6"/>
+                        <line x1="150" y1="80" x2="80" y2="150" stroke="#ff006e" stroke-width="3" opacity="0.5"/>
+                        <line x1="150" y1="80" x2="220" y2="150" stroke="#ff006e" stroke-width="3" opacity="0.5"/>
+                        <line x1="150" y1="220" x2="80" y2="150" stroke="#ff006e" stroke-width="3" opacity="0.5"/>
+                        <line x1="150" y1="220" x2="220" y2="150" stroke="#ff006e" stroke-width="3" opacity="0.5"/>
+                        <line x1="80" y1="150" x2="220" y2="150" stroke="#ff006e" stroke-width="3" opacity="0.5"/>
+
+                        <!-- Status indicator -->
+                        <text x="150" y="280" font-size="12" fill="#ff006e" text-anchor="middle" font-weight="bold">RUMINATION LOCKED</text>
+                    </svg>
+
+                    <div class="mt-4 p-3 bg-red-900/30 rounded border border-red-500/50">
+                        <div class="text-sm text-gray-300">
+                            <strong>Characteristics:</strong>
+                            <ul class="list-disc list-inside mt-2 text-xs">
+                                <li>Hyperconnected mPFC-PCC pathway</li>
+                                <li>Self-critical rumination loops</li>
+                                <li>Difficulty disengaging from negative self-referential thoughts</li>
+                                <li>Automatic activation of limiting beliefs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- After Transformation -->
+                <div class="bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-lg p-6 neural-glow-cyan">
+                    <h3 class="text-xl font-bold mb-4 text-green-300">After: Balanced DMN Integration</h3>
+                    <svg viewBox="0 0 300 300" class="w-full h-auto">
+                        <!-- Brain outline -->
+                        <ellipse cx="150" cy="150" rx="120" ry="110" fill="none" stroke="#06ffa5" stroke-width="2" opacity="0.3"/>
+
+                        <!-- DMN Regions (normalized) -->
+                        <!-- mPFC (top center) -->
+                        <circle cx="150" cy="80" r="20" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="150" y="85" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">mPFC</text>
+
+                        <!-- PCC (bottom center) -->
+                        <circle cx="150" cy="220" r="20" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="150" y="225" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">PCC</text>
+
+                        <!-- Precuneus (middle back) -->
+                        <circle cx="150" cy="150" r="18" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="150" y="155" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">PCu</text>
+
+                        <!-- Angular Gyrus (left and right) -->
+                        <circle cx="80" cy="150" r="15" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="80" y="156" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">AG</text>
+
+                        <circle cx="220" cy="150" r="15" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="220" y="156" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">AG</text>
+
+                        <!-- Balanced connections -->
+                        <line x1="150" y1="100" x2="150" y2="200" stroke="#06ffa5" stroke-width="1.5" opacity="0.4"/>
+                        <line x1="150" y1="80" x2="80" y2="150" stroke="#06ffa5" stroke-width="1" opacity="0.3"/>
+                        <line x1="150" y1="80" x2="220" y2="150" stroke="#06ffa5" stroke-width="1" opacity="0.3"/>
+
+                        <!-- New Task-Positive connections -->
+                        <circle cx="80" cy="80" r="12" fill="#00f5ff" opacity="0.3" stroke="#00f5ff" stroke-width="1.5"/>
+                        <text x="80" y="85" font-size="8" fill="#fff" text-anchor="middle">TPN</text>
+
+                        <circle cx="220" cy="80" r="12" fill="#00f5ff" opacity="0.3" stroke="#00f5ff" stroke-width="1.5"/>
+                        <text x="220" y="85" font-size="8" fill="#fff" text-anchor="middle">TPN</text>
+
+                        <line x1="100" y1="90" x2="130" y2="100" stroke="#00f5ff" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+                        <line x1="200" y1="100" x2="170" y2="90" stroke="#00f5ff" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+
+                        <!-- Status indicator -->
+                        <text x="150" y="280" font-size="12" fill="#06ffa5" text-anchor="middle" font-weight="bold">INTEGRATED & FLEXIBLE</text>
+                    </svg>
+
+                    <div class="mt-4 p-3 bg-green-900/30 rounded border border-green-500/50">
+                        <div class="text-sm text-gray-300">
+                            <strong>Characteristics:</strong>
+                            <ul class="list-disc list-inside mt-2 text-xs">
+                                <li>Normalized DMN connectivity</li>
+                                <li>Enhanced task-positive network engagement</li>
+                                <li>Flexible self-referential processing</li>
+                                <li>Capacity to shift from inward to outward attention</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg p-6 neural-glow border-l-4 border-cyan-500">
+                <h3 class="text-lg font-bold mb-3 text-cyan-300">The Observation Mechanism</h3>
+                <p class="text-sm text-gray-300 mb-3">
+                    When an individual observes a thought, feeling, or sensation with non-judgmental attention, the rostrolateral prefrontal cortex activates in a metacognitive monitoring mode. This shifts processing from amygdala-dominated reactivity toward cortical awareness.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-blue-900/20 rounded border border-blue-500/30">
+                        <strong class="text-blue-300">DMN Activity ↓</strong>
+                        <p class="text-gray-400 mt-1">Default rumination networks quiet down</p>
+                    </div>
+                    <div class="p-3 bg-cyan-900/20 rounded border border-cyan-500/30">
+                        <strong class="text-cyan-300">Task-Positive ↑</strong>
+                        <p class="text-gray-400 mt-1">Executive networks activate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citation mt-6">
+                <strong>Key References:</strong> Raichle et al. (2001); Zahn et al. (2015); Brewer et al. (2011); Corbetta & Shulman (2002)
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VISUALIZATION 4: Consolidation Windows Timeline -->
+        <section id="part4" class="mb-16 neural-glow-cyan rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent">●</span> Consolidation Windows: 4-6 Weeks & 8-12 Weeks</h2>
+            <p class="text-gray-300 mb-6">Critical transformation phases where patterns transition from conscious effort to automatic behavior, and temporary changes become structural brain modifications.</p>
+
+            <div class="space-y-6">
+                <!-- 4-6 Week Window -->
+                <div class="bg-gradient-to-br from-amber-900/20 to-orange-900/20 rounded-lg p-6 neural-glow-cyan border-l-4 border-amber-500">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="neural-accent-amber mr-3">4-6 Weeks:</span> <span class="text-lg text-gray-400">Memory Consolidation & Behavioral Automaticity</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-amber-900/30 rounded p-4 border border-amber-500/50">
+                            <div class="text-sm font-bold text-amber-300 mb-2">Synaptic Phase</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Days 7-21: Protein synthesis cascades</li>
+                                <li>• Days 21-42: Structural reorganization</li>
+                                <li>• Dendritic spine remodeling</li>
+                                <li>• AMPA receptor redistribution</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-orange-900/30 rounded p-4 border border-orange-500/50">
+                            <div class="text-sm font-bold text-orange-300 mb-2">Memory Consolidation</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Hippocampus → Basal Ganglia transfer</li>
+                                <li>• Context-dependent → Automatic</li>
+                                <li>• Conscious effort → Behavioral habit</li>
+                                <li>• Subjective: "This is just me now"</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-900/30 rounded p-4 border border-yellow-500/50">
+                            <div class="text-sm font-bold text-yellow-300 mb-2">Prediction Error</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Brain's expectations update</li>
+                                <li>• New self-model: "Who I am"</li>
+                                <li>• Prediction errors resolve</li>
+                                <li>• Emotional reactivity decreases</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <svg viewBox="0 0 800 250" class="w-full h-auto mb-4">
+                        <defs>
+                            <linearGradient id="consol1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#3a86ff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#ffbe0b;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="20" y="0" width="760" height="250" fill="url(#consol1)"/>
+
+                        <!-- Timeline -->
+                        <line x1="50" y1="150" x2="750" y2="150" stroke="#ffbe0b" stroke-width="2"/>
+
+                        <!-- Week 4: Transition begins -->
+                        <circle cx="150" cy="150" r="8" fill="#ffbe0b" stroke="#fff" stroke-width="2"/>
+                        <text x="150" y="190" font-size="12" font-weight="bold" fill="#ffbe0b" text-anchor="middle">Week 4</text>
+                        <text x="150" y="210" font-size="10" fill="#00f5ff" text-anchor="middle">Transition</text>
+
+                        <!-- Week 5: Full consolidation -->
+                        <circle cx="400" cy="150" r="8" fill="#ffbe0b" stroke="#fff" stroke-width="2"/>
+                        <text x="400" y="190" font-size="12" font-weight="bold" fill="#ffbe0b" text-anchor="middle">Week 5</text>
+                        <text x="400" y="210" font-size="10" fill="#00f5ff" text-anchor="middle">Consolidation</text>
+
+                        <!-- Week 6: Automaticity achieved -->
+                        <circle cx="650" cy="150" r="8" fill="#ffbe0b" stroke="#fff" stroke-width="2"/>
+                        <text x="650" y="190" font-size="12" font-weight="bold" fill="#ffbe0b" text-anchor="middle">Week 6</text>
+                        <text x="650" y="210" font-size="10" fill="#00f5ff" text-anchor="middle">Automaticity</text>
+
+                        <!-- Neural processes illustrated -->
+                        <!-- Hippocampus to Striatum arrow -->
+                        <path d="M 150 100 Q 400 40 650 100" stroke="#3a86ff" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+                        <text x="400" y="35" font-size="10" fill="#3a86ff" text-anchor="middle">Hippocampus → Basal Ganglia</text>
+
+                        <!-- Behavioral learning curve -->
+                        <polyline points="150,120 250,100 350,85 450,75 550,70 650,68" stroke="#06ffa5" stroke-width="2" fill="none"/>
+                        <text x="300" y="50" font-size="9" fill="#06ffa5">Automaticity Increasing</text>
+                    </svg>
+
+                    <div class="p-4 bg-amber-900/20 rounded border border-amber-500/50">
+                        <strong class="text-amber-300 text-sm">Subjective Experience:</strong>
+                        <p class="text-sm text-gray-300 mt-2">
+                            The person transitions from "I am working hard to do this differently" to "This is just how I am now." The new approach feels natural rather than forced. Daily life triggers that previously activated the old pattern no longer do so automatically.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 8-12 Week Window -->
+                <div class="bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-lg p-6 neural-glow-cyan border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="neural-accent-green mr-3">8-12 Weeks:</span> <span class="text-lg text-gray-400">Structural Brain Changes & Permanence</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-green-900/30 rounded p-4 border border-green-500/50">
+                            <div class="text-sm font-bold text-green-300 mb-2">Structural Plasticity</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Gray matter density increases</li>
+                                <li>• Cortical thickness changes</li>
+                                <li>• Dendritic spine stabilization</li>
+                                <li>• Permanent neural reorganization</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-cyan-900/30 rounded p-4 border border-cyan-500/50">
+                            <div class="text-sm font-bold text-cyan-300 mb-2">Multi-System Integration</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Cortical: Identity integration</li>
+                                <li>• Limbic: Emotional habituation</li>
+                                <li>• Subcortical: Procedural automaticity</li>
+                                <li>• Network: Baseline reorganization</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-teal-900/30 rounded p-4 border border-teal-500/50">
+                            <div class="text-sm font-bold text-teal-300 mb-2">Identity Transformation</div>
+                            <ul class="text-xs text-gray-300 space-y-1">
+                                <li>• Autobiographical memory shift</li>
+                                <li>• Self-referential beliefs updated</li>
+                                <li>• New identity integration</li>
+                                <li>• Lasting permanence emerges</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <svg viewBox="0 0 800 280" class="w-full h-auto mb-4">
+                        <defs>
+                            <linearGradient id="consol2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#06ffa5;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.2" />
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="20" y="0" width="760" height="280" fill="url(#consol2)"/>
+
+                        <!-- Multi-system integration visualization -->
+                        <!-- Cortical (top) -->
+                        <rect x="50" y="30" width="150" height="60" rx="5" fill="rgba(6,255,165,0.2)" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="125" y="65" font-size="12" fill="#06ffa5" text-anchor="middle" font-weight="bold">Cortical</text>
+                        <text x="125" y="78" font-size="9" fill="#00f5ff" text-anchor="middle">(mPFC, Identity)</text>
+
+                        <!-- Limbic (middle-left) -->
+                        <rect x="250" y="30" width="150" height="60" rx="5" fill="rgba(6,255,165,0.2)" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="325" y="65" font-size="12" fill="#06ffa5" text-anchor="middle" font-weight="bold">Limbic</text>
+                        <text x="325" y="78" font-size="9" fill="#00f5ff" text-anchor="middle">(Amygdala, Emotion)</text>
+
+                        <!-- Subcortical (middle-right) -->
+                        <rect x="450" y="30" width="150" height="60" rx="5" fill="rgba(6,255,165,0.2)" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="525" y="65" font-size="12" fill="#06ffa5" text-anchor="middle" font-weight="bold">Subcortical</text>
+                        <text x="525" y="78" font-size="9" fill="#00f5ff" text-anchor="middle">(Striatum, Procedure)</text>
+
+                        <!-- Network (right) -->
+                        <rect x="650" y="30" width="100" height="60" rx="5" fill="rgba(6,255,165,0.2)" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="700" y="65" font-size="12" fill="#06ffa5" text-anchor="middle" font-weight="bold">Network</text>
+                        <text x="700" y="78" font-size="9" fill="#00f5ff" text-anchor="middle">(Integration)</text>
+
+                        <!-- Connections between systems -->
+                        <path d="M 200 60 L 250 60" stroke="#06ffa5" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                        <path d="M 400 60 L 450 60" stroke="#06ffa5" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                        <path d="M 600 60 L 650 60" stroke="#06ffa5" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+                        <!-- Markers -->
+                        <defs>
+                            <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 Z" fill="#06ffa5"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Structural changes timeline -->
+                        <text x="50" y="150" font-size="12" font-weight="bold" fill="#00f5ff">Structural Changes (Weeks 8-12):</text>
+
+                        <!-- Gray matter changes -->
+                        <g>
+                            <rect x="50" y="170" width="300" height="30" rx="5" fill="rgba(6,255,165,0.1)" stroke="#06ffa5" stroke-width="1"/>
+                            <text x="60" y="175" font-size="11" fill="#06ffa5" font-weight="bold">Gray Matter Density ↑</text>
+                            <text x="60" y="190" font-size="9" fill="#00f5ff">Hippocampus (learning), PFC (regulation)</text>
+                        </g>
+
+                        <!-- Amygdala changes -->
+                        <g>
+                            <rect x="370" y="170" width="300" height="30" rx="5" fill="rgba(6,255,165,0.1)" stroke="#06ffa5" stroke-width="1"/>
+                            <text x="380" y="175" font-size="11" fill="#06ffa5" font-weight="bold">Amygdala Volume ↓</text>
+                            <text x="380" y="190" font-size="9" fill="#00f5ff">Reduced stress reactivity, emotional resilience</text>
+                        </g>
+
+                        <!-- Permanence indicator -->
+                        <g>
+                            <rect x="50" y="220" width="620" height="40" rx="8" fill="rgba(255,190,11,0.15)" stroke="#ffbe0b" stroke-width="2"/>
+                            <text x="360" y="240" font-size="13" fill="#ffbe0b" text-anchor="middle" font-weight="bold">STRUCTURAL PERMANENCE ACHIEVED</text>
+                            <text x="360" y="258" font-size="10" fill="#00f5ff" text-anchor="middle">New pattern encoded in brain anatomy—resistant to regression</text>
+                        </g>
+                    </svg>
+
+                    <div class="p-4 bg-green-900/20 rounded border border-green-500/50">
+                        <strong class="text-green-300 text-sm">Why This Matters for Permanence:</strong>
+                        <p class="text-sm text-gray-300 mt-2">
+                            Once a synapse has been physically remodeled through reconsolidation—once dendritic spines have been reshaped and structural proteins synthesized—reverting to the old pattern would require creating a competing pattern through additional learning. The old pattern cannot simply "come back" because rebuilding it would require learning processes that no longer automatically activate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citation mt-6">
+                <strong>Key References:</strong> Hölzel et al. (2011); Packard & Knowlton (2002); Kandel et al. (2014); Friston (2005); Alexander & Brown (2011)
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VISUALIZATION 5: Brain Plasticity Phases -->
+        <section id="part5" class="mb-16 neural-glow rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent">●</span> Brain Plasticity Transformation Phases</h2>
+            <p class="text-gray-300 mb-6">Three distinct neurobiological phases showing how the brain moves from resistance through consolidation to automaticity.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Phase 1: Resistance -->
+                <div class="bg-gradient-to-br from-red-900/20 to-pink-900/20 rounded-lg p-6 neural-glow-pink border-l-4 border-pink-500">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-pink-500 mr-3">1</span>
+                        <h3 class="text-2xl font-bold text-pink-300">Resistance Phase</h3>
+                    </div>
+
+                    <div class="mb-4 p-4 bg-pink-900/30 rounded border border-pink-500/50">
+                        <div class="text-sm font-bold text-pink-300 mb-2">Duration: Weeks 1-3</div>
+                        <ul class="text-xs text-gray-300 space-y-2">
+                            <li><strong>Week 1:</strong> Cognitive awareness builds</li>
+                            <li><strong>Week 2:</strong> Extinction burst peaks (maximum intensity)</li>
+                            <li><strong>Week 3:</strong> Emotional intensity begins to subside</li>
+                        </ul>
+                    </div>
+
+                    <svg viewBox="0 0 250 200" class="w-full h-auto mb-4">
+                        <!-- Brain illustration -->
+                        <ellipse cx="125" cy="100" rx="90" ry="70" fill="none" stroke="#ff006e" stroke-width="2" opacity="0.3"/>
+
+                        <!-- Amygdala (highlighted) -->
+                        <circle cx="90" cy="100" r="25" fill="#ff006e" opacity="0.4" stroke="#ff006e" stroke-width="2" class="neural-pulse"/>
+                        <text x="90" y="105" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">Amygdala</text>
+
+                        <!-- PFC (less active) -->
+                        <circle cx="160" cy="70" r="20" fill="#3a86ff" opacity="0.2" stroke="#3a86ff" stroke-width="1"/>
+                        <text x="160" y="75" font-size="9" fill="#aaa" text-anchor="middle">PFC</text>
+
+                        <!-- Defensive activation indicators -->
+                        <path d="M 85 70 Q 70 50 60 40" stroke="#ff006e" stroke-width="2" fill="none" stroke-dasharray="3,3" opacity="0.6"/>
+                        <path d="M 115 70 Q 140 50 150 40" stroke="#ff006e" stroke-width="2" fill="none" stroke-dasharray="3,3" opacity="0.6"/>
+
+                        <!-- Intensity marker -->
+                        <text x="125" y="180" font-size="13" fill="#ff006e" text-anchor="middle" font-weight="bold">HIGH DEFENSIVE ACTIVATION</text>
+                    </svg>
+
+                    <div class="text-xs text-gray-300 space-y-2">
+                        <p><strong class="text-pink-300">Neural Events:</strong></p>
+                        <ul class="list-disc list-inside">
+                            <li>Amygdala recognizes threat</li>
+                            <li>Stress response systems activate</li>
+                            <li>PFC-limbic conflict</li>
+                            <li>Large prediction errors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Consolidation -->
+                <div class="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg p-6 neural-glow border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-purple-500 mr-3">2</span>
+                        <h3 class="text-2xl font-bold text-purple-300">Consolidation Phase</h3>
+                    </div>
+
+                    <div class="mb-4 p-4 bg-purple-900/30 rounded border border-purple-500/50">
+                        <div class="text-sm font-bold text-purple-300 mb-2">Duration: Weeks 3-8</div>
+                        <ul class="text-xs text-gray-300 space-y-2">
+                            <li><strong>Weeks 3-4:</strong> Burst subsides, integration begins</li>
+                            <li><strong>Weeks 4-6:</strong> Memory consolidation (Hippo→Striatum)</li>
+                            <li><strong>Weeks 6-8:</strong> Behavioral automaticity emerges</li>
+                        </ul>
+                    </div>
+
+                    <svg viewBox="0 0 250 200" class="w-full h-auto mb-4">
+                        <!-- Brain illustration -->
+                        <ellipse cx="125" cy="100" rx="90" ry="70" fill="none" stroke="#9d4edd" stroke-width="2" opacity="0.3"/>
+
+                        <!-- Multiple systems integrating -->
+                        <!-- Amygdala (normalizing) -->
+                        <circle cx="70" cy="90" r="20" fill="#ff006e" opacity="0.2" stroke="#ff006e" stroke-width="1"/>
+                        <text x="70" y="95" font-size="9" fill="#999" text-anchor="middle">Amyg</text>
+
+                        <!-- Hippocampus (active) -->
+                        <circle cx="125" cy="70" r="20" fill="#3a86ff" opacity="0.4" stroke="#3a86ff" stroke-width="2"/>
+                        <text x="125" y="75" font-size="9" fill="#fff" text-anchor="middle">Hippo</text>
+
+                        <!-- PFC (integrating) -->
+                        <circle cx="180" cy="90" r="20" fill="#9d4edd" opacity="0.3" stroke="#9d4edd" stroke-width="1"/>
+                        <text x="180" y="95" font-size="9" fill="#fff" text-anchor="middle">PFC</text>
+
+                        <!-- Integration arrows -->
+                        <path d="M 90 85 L 105 75" stroke="#9d4edd" stroke-width="2" marker-end="url(#arrowPurple)"/>
+                        <path d="M 145 75 L 160 85" stroke="#9d4edd" stroke-width="2" marker-end="url(#arrowPurple)"/>
+
+                        <!-- Striatum (beginning) -->
+                        <circle cx="125" cy="130" r="18" fill="#06ffa5" opacity="0.2" stroke="#06ffa5" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="125" y="135" font-size="9" fill="#aaa" text-anchor="middle">Striat</text>
+
+                        <!-- Arrow from Hippo to Striatum -->
+                        <path d="M 125 90 L 125 112" stroke="#06ffa5" stroke-width="2" stroke-dasharray="3,3"/>
+
+                        <defs>
+                            <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 Z" fill="#9d4edd"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Intensity marker -->
+                        <text x="125" y="180" font-size="13" fill="#9d4edd" text-anchor="middle" font-weight="bold">MULTI-SYSTEM COORDINATION</text>
+                    </svg>
+
+                    <div class="text-xs text-gray-300 space-y-2">
+                        <p><strong class="text-purple-300">Neural Events:</strong></p>
+                        <ul class="list-disc list-inside">
+                            <li>Amygdala habituates gradually</li>
+                            <li>PFC-limbic integration strengthens</li>
+                            <li>Memory consolidation cascades</li>
+                            <li>Prediction errors resolve</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Automaticity -->
+                <div class="bg-gradient-to-br from-green-900/20 to-cyan-900/20 rounded-lg p-6 neural-glow-cyan border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl font-bold text-green-500 mr-3">3</span>
+                        <h3 class="text-2xl font-bold text-green-300">Automaticity Phase</h3>
+                    </div>
+
+                    <div class="mb-4 p-4 bg-green-900/30 rounded border border-green-500/50">
+                        <div class="text-sm font-bold text-green-300 mb-2">Duration: Weeks 8-12+</div>
+                        <ul class="text-xs text-gray-300 space-y-2">
+                            <li><strong>Weeks 8-10:</strong> Behavioral integration complete</li>
+                            <li><strong>Weeks 10-12:</strong> Structural brain changes measurable</li>
+                            <li><strong>Beyond Week 12:</strong> Long-term permanence established</li>
+                        </ul>
+                    </div>
+
+                    <svg viewBox="0 0 250 200" class="w-full h-auto mb-4">
+                        <!-- Brain illustration -->
+                        <ellipse cx="125" cy="100" rx="90" ry="70" fill="none" stroke="#06ffa5" stroke-width="2" opacity="0.3"/>
+
+                        <!-- Integrated system -->
+                        <!-- Striatum (dominant) -->
+                        <circle cx="125" cy="100" r="35" fill="#06ffa5" opacity="0.3" stroke="#06ffa5" stroke-width="2"/>
+                        <text x="125" y="105" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">Striatum</text>
+                        <text x="125" y="120" font-size="9" fill="#00f5ff" text-anchor="middle">Automaticity</text>
+
+                        <!-- Supporting systems (integrated) -->
+                        <circle cx="80" cy="60" r="15" fill="#00f5ff" opacity="0.2" stroke="#00f5ff" stroke-width="1"/>
+                        <text x="80" y="65" font-size="8" fill="#aaa" text-anchor="middle">PFC</text>
+
+                        <circle cx="170" cy="60" r="15" fill="#00f5ff" opacity="0.2" stroke="#00f5ff" stroke-width="1"/>
+                        <text x="170" y="65" font-size="8" fill="#aaa" text-anchor="middle">Hippo</text>
+
+                        <circle cx="60" cy="120" r="15" fill="#00f5ff" opacity="0.2" stroke="#00f5ff" stroke-width="1"/>
+                        <text x="60" y="125" font-size="8" fill="#aaa" text-anchor="middle">Amyg</text>
+
+                        <circle cx="190" cy="120" r="15" fill="#00f5ff" opacity="0.2" stroke="#00f5ff" stroke-width="1"/>
+                        <text x="190" y="125" font-size="8" fill="#aaa" text-anchor="middle">DMN</text>
+
+                        <!-- Connections to central striatum -->
+                        <line x1="95" y1="75" x2="110" y2="90" stroke="#06ffa5" stroke-width="1" opacity="0.5"/>
+                        <line x1="155" y1="75" x2="140" y2="90" stroke="#06ffa5" stroke-width="1" opacity="0.5"/>
+                        <line x1="75" y1="105" x2="90" y2="105" stroke="#06ffa5" stroke-width="1" opacity="0.5"/>
+                        <line x1="175" y1="105" x2="160" y2="105" stroke="#06ffa5" stroke-width="1" opacity="0.5"/>
+
+                        <!-- Intensity marker -->
+                        <text x="125" y="180" font-size="13" fill="#06ffa5" text-anchor="middle" font-weight="bold">AUTOMATIC & STABLE</text>
+                    </svg>
+
+                    <div class="text-xs text-gray-300 space-y-2">
+                        <p><strong class="text-green-300">Neural Events:</strong></p>
+                        <ul class="list-disc list-inside">
+                            <li>Basal ganglia encodes procedure</li>
+                            <li>Behavior requires minimal PFC effort</li>
+                            <li>Structural brain reorganization</li>
+                            <li>Identity integration complete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-cyan-900/20 to-purple-900/20 rounded-lg p-6 neural-glow-cyan">
+                <h3 class="text-lg font-bold mb-4 text-cyan-300">The Three Phases in Context</h3>
+                <svg viewBox="0 0 800 150" class="w-full h-auto">
+                    <!-- Timeline -->
+                    <line x1="50" y1="75" x2="750" y2="75" stroke="#00f5ff" stroke-width="2"/>
+
+                    <!-- Phase 1 -->
+                    <rect x="50" y="40" width="200" height="70" rx="5" fill="rgba(255,0,110,0.1)" stroke="#ff006e" stroke-width="2"/>
+                    <text x="150" y="60" font-size="11" fill="#ff006e" text-anchor="middle" font-weight="bold">Resistance</text>
+                    <text x="150" y="75" font-size="10" fill="#00f5ff" text-anchor="middle">Weeks 1-3</text>
+                    <text x="150" y="90" font-size="9" fill="#999" text-anchor="middle">Extinction burst</text>
+                    <text x="150" y="103" font-size="9" fill="#999" text-anchor="middle">peaks at Week 2</text>
+
+                    <!-- Phase 2 -->
+                    <rect x="270" y="40" width="240" height="70" rx="5" fill="rgba(157,78,221,0.1)" stroke="#9d4edd" stroke-width="2"/>
+                    <text x="390" y="60" font-size="11" fill="#9d4edd" text-anchor="middle" font-weight="bold">Consolidation</text>
+                    <text x="390" y="75" font-size="10" fill="#00f5ff" text-anchor="middle">Weeks 3-8</text>
+                    <text x="390" y="90" font-size="9" fill="#999" text-anchor="middle">Memory consolidation,</text>
+                    <text x="390" y="103" font-size="9" fill="#999" text-anchor="middle">behavioral automaticity emerges</text>
+
+                    <!-- Phase 3 -->
+                    <rect x="530" y="40" width="220" height="70" rx="5" fill="rgba(6,255,165,0.1)" stroke="#06ffa5" stroke-width="2"/>
+                    <text x="640" y="60" font-size="11" fill="#06ffa5" text-anchor="middle" font-weight="bold">Automaticity</text>
+                    <text x="640" y="75" font-size="10" fill="#00f5ff" text-anchor="middle">Weeks 8-12+</text>
+                    <text x="640" y="90" font-size="9" fill="#999" text-anchor="middle">Structural changes,</text>
+                    <text x="640" y="103" font-size="9" fill="#999" text-anchor="middle">permanence achieved</text>
+                </svg>
+            </div>
+
+            <div class="citation mt-6">
+                <strong>Key Insight:</strong> Each phase involves distinct neurobiological processes. Attempting to skip phases or accelerate beyond the brain's natural timeline compromises permanent integration.
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VISUALIZATION 6: Pattern Breaking and Formation Cycle -->
+        <section id="part6" class="mb-16 neural-glow-pink rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6"><span class="neural-accent-pink">●</span> Pattern Breaking & Formation Cycle</h2>
+            <p class="text-gray-300 mb-6">The continuous neural process showing how old patterns dissolve while new patterns become encoded across multiple brain systems.</p>
+
+            <div class="bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-lg p-8 mb-8 neural-glow-pink">
+                <svg viewBox="0 0 900 500" class="w-full h-auto">
+                    <!-- Background -->
+                    <defs>
+                        <linearGradient id="cycleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff006e;stop-opacity:0.1" />
+                            <stop offset="50%" style="stop-color:#9d4edd;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#06ffa5;stop-opacity:0.1" />
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="900" height="500" fill="url(#cycleGrad)"/>
+
+                    <!-- Center point -->
+                    <circle cx="450" cy="250" r="150" fill="none" stroke="#00f5ff" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+
+                    <!-- Old Pattern Dissolution (Top) -->
+                    <g id="oldPattern">
+                        <!-- Outer circle -->
+                        <circle cx="450" cy="80" r="60" fill="none" stroke="#ff006e" stroke-width="3"/>
+
+                        <!-- Dissolving elements -->
+                        <circle cx="420" cy="60" r="12" fill="#ff006e" opacity="0.6"/>
+                        <circle cx="480" cy="60" r="12" fill="#ff006e" opacity="0.4"/>
+                        <circle cx="450" cy="40" r="12" fill="#ff006e" opacity="0.3"/>
+                        <circle cx="430" cy="100" r="12" fill="#ff006e" opacity="0.5"/>
+                        <circle cx="470" cy="100" r="12" fill="#ff006e" opacity="0.2"/>
+
+                        <!-- Disconnecting lines (fading) -->
+                        <line x1="420" y1="60" x2="480" y2="60" stroke="#ff006e" stroke-width="1" opacity="0.3"/>
+                        <line x1="450" y1="40" x2="450" y2="80" stroke="#ff006e" stroke-width="1" opacity="0.2"/>
+
+                        <text x="450" y="145" font-size="13" fill="#ff006e" text-anchor="middle" font-weight="bold">OLD PATTERN</text>
+                        <text x="450" y="163" font-size="10" fill="#ff006e" text-anchor="middle">Weakening &</text>
+                        <text x="450" y="178" font-size="10" fill="#ff006e" text-anchor="middle">Dissolving</text>
+                    </g>
+
+                    <!-- New Pattern Formation (Bottom) -->
+                    <g id="newPattern">
+                        <!-- Outer circle -->
+                        <circle cx="450" cy="420" r="60" fill="none" stroke="#06ffa5" stroke-width="3"/>
+
+                        <!-- Forming elements -->
+                        <circle cx="420" cy="400" r="12" fill="#06ffa5" opacity="0.4"/>
+                        <circle cx="480" cy="400" r="12" fill="#06ffa5" opacity="0.6"/>
+                        <circle cx="450" cy="380" r="12" fill="#06ffa5" opacity="0.5"/>
+                        <circle cx="430" cy="440" r="12" fill="#06ffa5" opacity="0.6"/>
+                        <circle cx="470" cy="440" r="12" fill="#06ffa5" opacity="0.7"/>
+
+                        <!-- Connecting lines (forming) -->
+                        <line x1="420" y1="400" x2="480" y2="400" stroke="#06ffa5" stroke-width="2" opacity="0.6"/>
+                        <line x1="450" y1="380" x2="450" y2="420" stroke="#06ffa5" stroke-width="2" opacity="0.6"/>
+                        <line x1="430" y1="440" x2="470" y2="440" stroke="#06ffa5" stroke-width="2" opacity="0.6"/>
+
+                        <text x="450" y="295" font-size="13" fill="#06ffa5" text-anchor="middle" font-weight="bold">NEW PATTERN</text>
+                        <text x="450" y="313" font-size="10" fill="#06ffa5" text-anchor="middle">Strengthening &</text>
+                        <text x="450" y="328" font-size="10" fill="#06ffa5" text-anchor="middle">Consolidating</text>
+                    </g>
+
+                    <!-- Bidirectional arrows showing transition -->
+                    <!-- Down arrow (pattern breaking) -->
+                    <path d="M 450 145 L 450 200" stroke="#ff006e" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+                    <text x="470" y="175" font-size="11" fill="#ff006e">Breaking</text>
+
+                    <!-- Up arrow (pattern forming) -->
+                    <path d="M 450 300 L 450 355" stroke="#06ffa5" stroke-width="3" fill="none" marker-end="url(#arrowGreen2)"/>
+                    <text x="470" y="330" font-size="11" fill="#06ffa5">Forming</text>
+
+                    <!-- Central transition zone -->
+                    <rect x="350" y="190" width="200" height="120" rx="10" fill="rgba(157,78,221,0.15)" stroke="#9d4edd" stroke-width="2"/>
+                    <text x="450" y="215" font-size="12" fill="#9d4edd" text-anchor="middle" font-weight="bold">RECONSOLIDATION</text>
+                    <text x="450" y="235" font-size="10" fill="#00f5ff" text-anchor="middle">WINDOW</text>
+                    <text x="450" y="255" font-size="9" fill="#9d4edd" text-anchor="middle">Pattern activated,</text>
+                    <text x="450" y="270" font-size="9" fill="#9d4edd" text-anchor="middle">contradictory context,</text>
+                    <text x="450" y="285" font-size="9" fill="#9d4edd" text-anchor="middle">synaptic rewriting</text>
+
+                    <!-- Side annotations -->
+                    <!-- Left side: Systems weakening -->
+                    <g>
+                        <text x="80" y="100" font-size="10" fill="#ff006e" font-weight="bold">Amygdala:</text>
+                        <text x="80" y="115" font-size="9" fill="#ff006e">Emotional weight ↓</text>
+
+                        <text x="80" y="160" font-size="10" fill="#ff006e" font-weight="bold">DMN:</text>
+                        <text x="80" y="175" font-size="9" fill="#ff006e">Self-identity ↓</text>
+
+                        <text x="80" y="220" font-size="10" fill="#ff006e" font-weight="bold">Striatum:</text>
+                        <text x="80" y="235" font-size="9" fill="#ff006e">Automaticity ↓</text>
+                    </g>
+
+                    <!-- Right side: Systems strengthening -->
+                    <g>
+                        <text x="740" y="100" font-size="10" fill="#06ffa5" font-weight="bold">Hippocampus:</text>
+                        <text x="740" y="115" font-size="9" fill="#06ffa5">New context ↑</text>
+
+                        <text x="740" y="160" font-size="10" fill="#06ffa5" font-weight="bold">PFC:</text>
+                        <text x="740" y="175" font-size="9" fill="#06ffa5">Prefrontal control ↑</text>
+
+                        <text x="740" y="220" font-size="10" fill="#06ffa5" font-weight="bold">Interoception:</text>
+                        <text x="740" y="235" font-size="9" fill="#06ffa5">Awareness ↑</text>
+                    </g>
+
+                    <!-- Arrow markers -->
+                    <defs>
+                        <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#ff006e"/>
+                        </marker>
+                        <marker id="arrowGreen2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#06ffa5"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="phase-indicator border-l-4 border-pink-500">
+                    <h4 class="font-bold text-pink-300 mb-3">Pattern Breaking (Dissolution)</h4>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><strong>Amygdala:</strong> Emotional charge gradually decreases</li>
+                        <li><strong>DMN:</strong> Identity association weakens</li>
+                        <li><strong>Basal Ganglia:</strong> Automatic execution loses force</li>
+                        <li><strong>Hippocampus:</strong> Original context less powerful</li>
+                        <li><strong>Interoception:</strong> Somatic charge diminishes</li>
+                    </ul>
+                </div>
+
+                <div class="phase-indicator border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-300 mb-3">Pattern Formation (Consolidation)</h4>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><strong>Hippocampus:</strong> New contextual associations strengthen</li>
+                        <li><strong>PFC:</strong> Executive control & regulation increases</li>
+                        <li><strong>Striatum:</strong> Automatic execution of new behavior</li>
+                        <li><strong>Interoception:</strong> New somatic signatures embedded</li>
+                        <li><strong>DMN:</strong> Updated identity integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-amber-900/20 to-orange-900/20 rounded-lg p-6 neural-glow-cyan border border-amber-500/50">
+                <h3 class="text-lg font-bold mb-3 text-amber-300">Dual Cycle Operation</h3>
+                <p class="text-sm text-gray-300 mb-3">
+                    The pattern change process involves two simultaneous cycles: the old pattern is weakening through decreased neural activity and synaptic weakening, while the new pattern is strengthening through enhanced synaptic connections and increased neural recruitment. These occur in the same brain systems through competitive activation.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-red-900/20 rounded border border-red-500/30">
+                        <strong class="text-red-300">Long-term Depression (LTD)</strong>
+                        <p class="text-gray-400 mt-1">Weakens synapses encoding old pattern</p>
+                    </div>
+                    <div class="p-3 bg-green-900/20 rounded border border-green-500/30">
+                        <strong class="text-green-300">Long-term Potentiation (LTP)</strong>
+                        <p class="text-gray-400 mt-1">Strengthens synapses encoding new pattern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citation mt-6">
+                <strong>Key Concept:</strong> This bidirectional cycle explains why transformation requires sufficient time—both the dissolution of the old pattern's neural substrate and the consolidation of the new pattern's neural substrate must occur.
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Key Findings Summary -->
+        <section class="mb-16 neural-glow rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-gradient">Research Summary: Key Neurobiological Findings</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Memory Reconsolidation</div>
+                    <div class="neural-accent text-lg font-bold">Only Known Mechanism</div>
+                    <p class="text-xs text-gray-400 mt-2">for permanent erasure of emotional learning at synaptic level</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Extinction Burst Peak</div>
+                    <div class="neural-accent text-lg font-bold">Week 2</div>
+                    <p class="text-xs text-gray-400 mt-2">Paradoxically signals progress, not failure</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Behavioral Automaticity</div>
+                    <div class="neural-accent text-lg font-bold">4-6 Weeks</div>
+                    <p class="text-xs text-gray-400 mt-2">Memory consolidation: Hippocampus to Striatum</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Structural Changes</div>
+                    <div class="neural-accent text-lg font-bold">8-12 Weeks</div>
+                    <p class="text-xs text-gray-400 mt-2">Gray matter density, cortical thickness shifts</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Sleep's Role</div>
+                    <div class="neural-accent text-lg font-bold">~80%</div>
+                    <p class="text-xs text-gray-400 mt-2">of circuit rewiring occurs during REM sleep</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="text-sm text-gray-400 mb-2">Multi-System Integration</div>
+                    <div class="neural-accent text-lg font-bold">Essential</div>
+                    <p class="text-xs text-gray-400 mt-2">Simultaneous updating of all encoding systems</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bibliography Section -->
+        <section id="references" class="mb-16 neural-glow rounded-xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-gradient">Research References</h2>
+
+            <div class="space-y-3 text-sm">
+                <details class="p-4 bg-blue-900/20 rounded border border-blue-500/30 cursor-pointer hover:bg-blue-900/30">
+                    <summary class="font-bold text-blue-300 select-none">Memory Reconsolidation & Emotional Learning (8 studies)</summary>
+                    <div class="mt-3 text-xs text-gray-400 space-y-1 p-3 bg-blue-900/10 rounded">
+                        <p>[1] Ecker, B., Ticic, R., & Hulley, L. (2012). Unlocking the Emotional Brain</p>
+                        <p>[2] Nature Neuroscience. (2024). Memory reconsolidation and therapeutic application</p>
+                        <p>[3] Nature Human Behaviour. (2022). Neuronal activity in amygdala and hippocampus</p>
+                        <p>[4] Ecker, B. (2013). A Primer on Memory Reconsolidation</p>
+                        <p>[5] Bouton, M. E. (2004). Context and behavioral processes in extinction</p>
+                        <p>[37] Johansen, J. P., et al. (2011). Molecular mechanisms of fear learning and memory</p>
+                    </div>
+                </details>
+
+                <details class="p-4 bg-pink-900/20 rounded border border-pink-500/30 cursor-pointer hover:bg-pink-900/30">
+                    <summary class="font-bold text-pink-300 select-none">Extinction Bursts & Two-Week Timeline (4 studies)</summary>
+                    <div class="mt-3 text-xs text-gray-400 space-y-1 p-3 bg-pink-900/10 rounded">
+                        <p>[6] PMC Meta-analysis. (2023). Basic and applied research on extinction bursts</p>
+                        <p>[7] Rescorla, R. A., & Heth, C. D. (1975). Reinstatement of fear to extinguished stimuli</p>
+                        <p>[8] Phelps, E. A. (2004). Human emotion and memory interactions</p>
+                        <p>[9] Dunsmoor, J. E., & Paz, R. (2015). Fear generalization and anxiety</p>
+                    </div>
+                </details>
+
+                <details class="p-4 bg-purple-900/20 rounded border border-purple-500/30 cursor-pointer hover:bg-purple-900/30">
+                    <summary class="font-bold text-purple-300 select-none">Default Mode Network & Self-Referential Processing (6 studies)</summary>
+                    <div class="mt-3 text-xs text-gray-400 space-y-1 p-3 bg-purple-900/10 rounded">
+                        <p>[10] Raichle, M. E., et al. (2001). A default mode of brain function</p>
+                        <p>[11] Zahn, R., et al. (2015). Self-referential processing in psychiatric disorders</p>
+                        <p>[12] Tang, Y.-Y., et al. (2015). The neuroscience of mindfulness meditation</p>
+                        <p>[13] Brewer, J. A., et al. (2011). Meditation and default mode network activity</p>
+                        <p>[14] Corbetta, M., & Shulman, G. L. (2002). Control of goal-directed attention</p>
+                    </div>
+                </details>
+
+                <details class="p-4 bg-amber-900/20 rounded border border-amber-500/30 cursor-pointer hover:bg-amber-900/30">
+                    <summary class="font-bold text-amber-300 select-none">Consolidation Windows & Memory Systems (5 studies)</summary>
+                    <div class="mt-3 text-xs text-gray-400 space-y-1 p-3 bg-amber-900/10 rounded">
+                        <p>[15] Packard, M. G., & Knowlton, B. J. (2002). Learning and memory systems</p>
+                        <p>[16] Kandel, E. R., et al. (2014). Molecular and systems biology of memory</p>
+                        <p>[17] Friston, K. (2005). A theory of cortical responses</p>
+                        <p>[18] Alexander, W. H., & Brown, J. W. (2011). Medial prefrontal cortex prediction</p>
+                        <p>[19] Hartley, C. A., & Phelps, E. A. (2010). Changing fear</p>
+                    </div>
+                </details>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-6 p-3 bg-gray-900/30 rounded border border-gray-500/20">
+                Full reference list available in original markdown document. Total: 37 comprehensive peer-reviewed studies covering neuroplasticity, memory, emotion, and behavioral change mechanisms.
+            </p>
+        </section>
+
+        <!-- Footer with metadata -->
+        <section class="mb-12 py-8 border-t border-gray-600/30 text-center text-sm text-gray-500">
+            <p class="mb-2">Neuroplasticity and Pattern Change: Literature Review</p>
+            <p class="mb-2">Enhanced Research Presentation • December 2025</p>
+            <p>Source: Comprehensive 2024-2025 Peer-Reviewed Neuroscience Literature</p>
+            <p class="mt-4 text-xs">Interactive visualizations showing transformation as a neurobiological process with distinct phases</p>
+        </section>
+    </div>
+
+    <script>
+        // Toggle Table of Contents
+        function toggleTOC() {
+            const tocPanel = document.getElementById('tocPanel');
+            tocPanel.classList.toggle('hidden');
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('tocPanel').classList.add('hidden');
+            }
+        }
+
+        // Update progress bar on scroll
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progressFill').style.width = scrollPercent + '%';
+        });
+
+        // Animate elements on view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0.7';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

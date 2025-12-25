@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Neuroscience of Contemplative Practice | Kairos Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Meditative Color Palette */
+        :root {
+            --primary-dark: #1a3a3a;
+            --primary-medium: #2d5a5a;
+            --primary-light: #4a8080;
+            --accent-warm: #d4a574;
+            --accent-cool: #6b9e9e;
+            --background: #f5f3f0;
+            --text-dark: #2c2c2c;
+            --text-light: #5a5a5a;
+            --border-subtle: #d4cfc6;
+            --success: #6ba587;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --blue-accent: #2563eb;
+        }
+
+        body {
+            font-family: 'Georgia', 'Cambria', serif;
+            background: linear-gradient(135deg, #faf8f5 0%, #f3ede8 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-dark);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-warm);
+        }
+
+        nav a.active {
+            color: var(--accent-warm);
+            border-bottom: 2px solid var(--accent-warm);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-warm);
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-medium);
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        /* Abstract */
+        .abstract {
+            background: linear-gradient(135deg, rgba(74, 128, 128, 0.08) 0%, rgba(107, 158, 158, 0.08) 100%);
+            border-left: 5px solid var(--primary-light);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        /* Visualizations Container */
+        .visualization-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary-light);
+        }
+
+        .visualization-title {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* DMN Visualization */
+        .dmn-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .dmn-state {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .dmn-state.before {
+            border-top: 4px solid #d97706;
+        }
+
+        .dmn-state.after {
+            border-top: 4px solid #6ba587;
+        }
+
+        .dmn-brain-visual {
+            width: 120px;
+            height: 120px;
+            margin: 1rem auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .dmn-state.before .dmn-brain-visual {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2) 0%, rgba(217, 119, 6, 0.05) 100%);
+            color: #d97706;
+        }
+
+        .dmn-state.after .dmn-brain-visual {
+            background: linear-gradient(135deg, rgba(107, 158, 158, 0.2) 0%, rgba(107, 158, 158, 0.05) 100%);
+            color: #6ba587;
+        }
+
+        .dmn-state h4 {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: var(--primary-dark);
+        }
+
+        .dmn-characteristics {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .dmn-characteristics li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .dmn-characteristics li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+        }
+
+        /* Craving Cycle Visualization */
+        .craving-cycle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .cycle-diagram {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            position: relative;
+            margin: 2rem auto;
+        }
+
+        .cycle-step {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-1 { top: 0; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .step-2 { top: 75px; right: 0; background: linear-gradient(135deg, #d97706, #b45309); }
+        .step-3 { bottom: 75px; right: 0; background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .step-4 { bottom: 0; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .step-5 { bottom: 75px; left: 0; background: linear-gradient(135deg, #059669, #047857); }
+        .step-6 { top: 75px; left: 0; background: linear-gradient(135deg, #2563eb, #1d4ed8); opacity: 0.7; }
+
+        .cycle-arrows {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .cycle-description {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .step-description {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-light);
+            font-size: 0.95rem;
+        }
+
+        /* Brain Structure Changes */
+        .brain-regions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .region-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .region-card:hover {
+            box-shadow: 0 4px 12px rgba(74, 128, 128, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .region-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .region-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .region-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Equanimity Scale */
+        .equanimity-scale {
+            margin: 2rem 0;
+        }
+
+        .scale-item {
+            display: grid;
+            grid-template-columns: 150px 1fr 80px;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .scale-label {
+            font-weight: 500;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+        }
+
+        .scale-bar {
+            height: 30px;
+            background: var(--background);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scale-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent-warm));
+            border-radius: 15px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.8rem;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .scale-value {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        /* Decentering/Defusion Visualization */
+        .defusion-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .defusion-state {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .defusion-state.rumination {
+            border-top: 4px solid #d97706;
+        }
+
+        .defusion-state.defusion {
+            border-top: 4px solid #6ba587;
+        }
+
+        .state-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .state-title.rumination {
+            color: #d97706;
+        }
+
+        .state-title.defusion {
+            color: #6ba587;
+        }
+
+        .state-title-icon {
+            font-size: 1.5rem;
+        }
+
+        .state-thought {
+            background: var(--background);
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .state-characteristics {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .characteristic {
+            padding: 1rem;
+            background: var(--background);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .characteristic-icon {
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+            border-left: 5px solid #dc2626;
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .warning-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .warning-title-icon {
+            font-size: 1.8rem;
+        }
+
+        .warning-content {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .warning-content h4 {
+            color: #b91c1c;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .warning-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .warning-content li {
+            padding-left: 1.5rem;
+            margin: 0.6rem 0;
+            position: relative;
+        }
+
+        .warning-content li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #d97706;
+        }
+
+        /* Buddhist Psychology Bridge */
+        .bridge-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .bridge-table th {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .bridge-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .bridge-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bridge-table tr:hover {
+            background: var(--background);
+        }
+
+        .buddhist-concept {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .neuroscience-equivalent {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Adverse Effects Box */
+        .adverse-effects {
+            background: white;
+            border: 2px solid #dc2626;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .adverse-title {
+            font-size: 1.3rem;
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .effect-category {
+            margin: 1.5rem 0;
+        }
+
+        .effect-category h5 {
+            color: #b91c1c;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .effect-list {
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+
+        .effect-list li {
+            margin: 0.6rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .effect-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #d97706;
+        }
+
+        /* Interactive Elements */
+        .tab-container {
+            margin: 2rem 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-subtle);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-button:hover {
+            color: var(--primary-light);
+        }
+
+        .tab-button.active {
+            color: var(--primary-dark);
+            border-bottom-color: var(--accent-warm);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Key Insights */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .insight-card:hover {
+            box-shadow: 0 4px 16px rgba(74, 128, 128, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .insight-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-warm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .insight-title {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .insight-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* References */
+        .references {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .reference-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .reference-item:before {
+            content: "[" counter(ref-counter) "]";
+            counter-increment: ref-counter;
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .references {
+            counter-reset: ref-counter;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .dmn-comparison,
+            .brain-regions,
+            .defusion-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .scale-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .cycle-diagram {
+                height: 300px;
+            }
+
+            .nav-content {
+                gap: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, nav, footer {
+                display: none;
+            }
+
+            .visualization-container {
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: var(--primary-light);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1 class="header-title">The Neuroscience of Contemplative Practice</h1>
+            <p class="header-subtitle">Bridging Ancient Wisdom with Modern Brain Science</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#abstract" class="active">Abstract</a>
+            <a href="#dmn">Default Mode Network</a>
+            <a href="#craving">Craving Cycles</a>
+            <a href="#brain-changes">Brain Changes</a>
+            <a href="#equanimity">Equanimity</a>
+            <a href="#defusion">Defusion</a>
+            <a href="#adverse">Adverse Effects</a>
+            <a href="#bridge">Buddhist-Neuroscience</a>
+            <a href="#references">References</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Abstract Section -->
+        <section id="abstract">
+            <h1>Academic Literature Review</h1>
+            <div class="abstract">
+                <p>Recent neuroscientific investigations have provided empirical validation for core principles of Buddhist psychology, demonstrating measurable neurobiological changes associated with contemplative practice. This comprehensive literature review synthesizes research on meditation's effects on brain structure and function, examining mechanisms of psychological change through the lens of modern neuroscience. Particular emphasis is placed on the Default Mode Network's role in self-referential processing, the neurobiological basis of craving and addiction interruption, structural brain modifications documented through neuroimaging, and the integration of ancient contemplative wisdom with contemporary neuroscientific frameworks. Evidence demonstrates that meditation produces robust, measurable changes in neural architecture within eight weeks of regular practice, with mechanisms aligned to Buddhist conceptualizations of suffering reduction and behavioral change.</p>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section>
+            <h2>Core Findings at a Glance</h2>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 01</div>
+                    <div class="insight-title">Brain Structure Changes in 8 Weeks</div>
+                    <div class="insight-text">Measurable increases in gray matter density in the hippocampus, anterior cingulate cortex, and insula following just 27 minutes daily of meditation practice.</div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 02</div>
+                    <div class="insight-title">Doubling Addiction Recovery Rates</div>
+                    <div class="insight-text">Mindfulness-based approaches achieve 35% smoking quit rates compared to 17% for standard behavioral treatment through novel craving interruption mechanisms.</div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 03</div>
+                    <div class="insight-title">Default Mode Network Reduction</div>
+                    <div class="insight-text">Long-term meditators demonstrate permanently reduced DMN baseline activity, corresponding to decreased rumination, anxiety, and self-referential processing.</div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 04</div>
+                    <div class="insight-title">Structural Brain Protection</div>
+                    <div class="insight-text">Meditation appears to protect against age-related cognitive decline, with practitioners showing maintained gray matter in regions typically vulnerable to aging.</div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 05</div>
+                    <div class="insight-title">Amygdala Shrinkage</div>
+                    <div class="insight-text">Gray matter density decreases in the amygdala (fear-processing center) correlate directly with reported stress reduction, suggesting structural reorganization of emotional processing.</div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-number">Evidence 06</div>
+                    <div class="insight-title">Advanced Gamma Synchronization</div>
+                    <div class="insight-text">Expert meditators show extraordinary whole-brain gamma band synchronization (40-100+ Hz), representing highly integrated neural states previously thought impossible.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DMN Visualization -->
+        <section id="dmn">
+            <h2>The Default Mode Network: Architecture of the Self</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">How Meditation Transforms Self-Referential Processing</div>
+
+                <p>The Default Mode Network (DMN) is a large-scale brain system that becomes active during mind-wandering, daydreaming, remembering the past, and imagining the future. It is fundamental to how we construct and maintain our sense of continuous self. However, elevated DMN activity correlates strongly with rumination, anxiety, depression, and psychological suffering generally.</p>
+
+                <div class="dmn-comparison">
+                    <div class="dmn-state before">
+                        <div class="dmn-brain-visual">🧠</div>
+                        <h4>Before Meditation</h4>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem;">Non-meditators and novices</p>
+                        <ul class="dmn-characteristics">
+                            <li>High baseline DMN activity</li>
+                            <li>Constant mind-wandering</li>
+                            <li>Strong self-referential thinking</li>
+                            <li>Rumination about past/future</li>
+                            <li>Self-narrative integration</li>
+                            <li>Anxiety and self-concern</li>
+                        </ul>
+                    </div>
+
+                    <div class="dmn-state after">
+                        <div class="dmn-brain-visual">✨</div>
+                        <h4>After Meditation</h4>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem;">Long-term practitioners (10,000+ hours)</p>
+                        <ul class="dmn-characteristics">
+                            <li>Reduced baseline DMN activity</li>
+                            <li>Decreased mind-wandering</li>
+                            <li>Reduced self-referential processing</li>
+                            <li>Present-moment focus</li>
+                            <li>Observing awareness (witness consciousness)</li>
+                            <li>Equanimous perspective</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Brain Regions Involved in the DMN</h3>
+                <div class="brain-regions">
+                    <div class="region-card">
+                        <div class="region-icon">🎯</div>
+                        <h4>Medial Prefrontal Cortex</h4>
+                        <p>Processes self-referential information and autobiographical memories. Shows reduced activation in meditators, indicating less self-focused thinking.</p>
+                    </div>
+
+                    <div class="region-card">
+                        <div class="region-icon">🔄</div>
+                        <h4>Posterior Cingulate & Precuneus</h4>
+                        <p>Integrates self-representation and spatial information. Fundamental to the sense of "I" persisting through time. Modulated by meditation practice.</p>
+                    </div>
+
+                    <div class="region-card">
+                        <div class="region-icon">🤝</div>
+                        <h4>Temporoparietal Junction</h4>
+                        <p>Supports theory of mind and perspective-taking. Shows structural changes in long-term meditators, suggesting modified self-boundary perception.</p>
+                    </div>
+
+                    <div class="region-card">
+                        <div class="region-icon">🧩</div>
+                        <h4>Angular Gyrus</h4>
+                        <p>Integrates perspectives of self and world. Involved in narrative self-construction. Reduced engagement in meditative states.</p>
+                    </div>
+                </div>
+
+                <h3>The Buddhist Non-Self Concept Meets Neuroscience</h3>
+                <p style="margin-top: 1rem;">Buddhist psychology teaches "anatta" (non-self)—that the persistent, unchanging self is not fundamental reality but rather a construction. This aligns precisely with neuroscientific understanding: the DMN generates a continuous narrative that weaves experiences into the illusion of a permanent self. Through meditation, as DMN activity reduces, practitioners experience directly that the "self" is constructed rather than fundamental. This is not philosophical but lived experience: thoughts and emotions arise, but they are not automatically integrated into the narrative of "I."</p>
+            </div>
+        </section>
+
+        <!-- Craving Cycle -->
+        <section id="craving">
+            <h2>Neural Mechanisms of Craving and Addiction Interruption</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">Brewer's Craving-Meditation Pathway</div>
+
+                <p>Judson Brewer's research reveals that mindfulness interrupts addiction through a fundamentally different mechanism than willpower-based approaches. Rather than fighting the urge, mindfulness involves observing the uncomfortable sensation directly, without immediately attempting to relieve it. This produces a remarkable double reduction: reduced activity in the reward-prediction system combined with heightened interoceptive awareness.</p>
+
+                <div class="craving-cycle">
+                    <div class="cycle-diagram">
+                        <div class="cycle-step step-1">Uncomfortable<br>Sensation</div>
+                        <div class="cycle-step step-2">Reward<br>Prediction</div>
+                        <div class="cycle-step step-3">Craving<br>Intensity</div>
+                        <div class="cycle-step step-4">Behavioral<br>Response</div>
+                        <div class="cycle-step step-5">Relief &<br>Reinforcement</div>
+                        <div class="cycle-step step-6">Pathway<br>Strengthens</div>
+                    </div>
+                </div>
+
+                <div class="cycle-description">
+                    <div class="step-description">
+                        <strong>Step 1: Sensation</strong><br>Insula detects uncomfortable internal state (withdrawal, anxiety, boredom)
+                    </div>
+                    <div class="step-description">
+                        <strong>Step 2: Prediction</strong><br>Ventromedial prefrontal cortex generates: "Using would relieve this"
+                    </div>
+                    <div class="step-description">
+                        <strong>Step 3: Wanting</strong><br>Nucleus accumbens activates, generating anticipatory pleasure and approach
+                    </div>
+                    <div class="step-description">
+                        <strong>Step 4: Behavior</strong><br>Motor systems execute substance use or compulsive behavior
+                    </div>
+                    <div class="step-description">
+                        <strong>Step 5: Relief</strong><br>Brain receives confirmation: "Using worked, it relieved the discomfort"
+                    </div>
+                    <div class="step-description">
+                        <strong>Step 6: Learning</strong><br>Cue-craving-relief association strengthens, making next cycle automatic
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2.5rem;">Mindfulness-Based Interruption Mechanism</h3>
+                <p>When mindfulness practitioners experience cravings, neuroimaging reveals a striking neural pattern:</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                    <div style="background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%); padding: 1.5rem; border-radius: 8px;">
+                        <p style="margin: 0;"><strong style="color: #d97706;">Reduced Reward Prediction (vmPFC)</strong></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Decreased belief that substance use will relieve discomfort</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.1) 0%, rgba(107, 158, 158, 0.05) 100%); padding: 1.5rem; border-radius: 8px;">
+                        <p style="margin: 0;"><strong style="color: #6ba587;">Increased Sensation Awareness (Insula)</strong></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Heightened awareness of craving sensations without automatic relief-seeking</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><strong>The Paradox:</strong> The person is more aware of the uncomfortable sensation yet less engaged with the impulse to relieve it. By observing the sensation directly without behavioral reinforcement, the brain learns through extinction: "I can experience discomfort. It's uncomfortable, but it passes. When I don't use, I experience both the discomfort and something else—awareness, presence, choice."</p>
+
+                <div style="background: #e8f4f4; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #6ba587;">
+                    <p style="margin: 0;"><strong>Effectiveness:</strong> Mindfulness achieves 35% quit smoking rates vs. 17% for standard behavioral treatment—more than doubling effectiveness through this novel mechanism.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brain Structure Changes -->
+        <section id="brain-changes">
+            <h2>Structural Brain Modifications: The Physical Architecture of Change</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">Sara Lazar's Landmark Discoveries</div>
+
+                <p>Sara Lazar's research fundamentally changed neuroscience by demonstrating that mental practice produces not merely functional changes (how the brain works moment-to-moment) but also structural changes (physical alterations in brain tissue). This responds to a critical question: if meditation is "just" mental practice, how can it produce enduring physical changes?</p>
+
+                <h3>Gray Matter Modifications (8-Week Timeline)</h3>
+                <p>After just 27 minutes daily for 8 weeks, measurable changes include:</p>
+
+                <div class="brain-regions">
+                    <div class="region-card" style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.08) 0%, rgba(107, 158, 158, 0.05) 100%);">
+                        <div class="region-icon">🧠</div>
+                        <h4>Hippocampus</h4>
+                        <p><strong>Finding:</strong> Increased gray matter density</p>
+                        <p style="margin-top: 0.8rem; font-size: 0.9rem;">Critical for learning and memory. Enhanced capacity to encode new patterns and interrupt old ones.</p>
+                    </div>
+
+                    <div class="region-card" style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.08) 0%, rgba(107, 158, 158, 0.05) 100%);">
+                        <div class="region-icon">🎯</div>
+                        <h4>Anterior Cingulate Cortex</h4>
+                        <p><strong>Finding:</strong> Increased volume and connectivity</p>
+                        <p style="margin-top: 0.8rem; font-size: 0.9rem;">Central to attention and emotional regulation. Bridges DMN and executive control networks.</p>
+                    </div>
+
+                    <div class="region-card" style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.08) 0%, rgba(107, 158, 158, 0.05) 100%);">
+                        <div class="region-icon">📍</div>
+                        <h4>Insula</h4>
+                        <p><strong>Finding:</strong> Expanded gray matter</p>
+                        <p style="margin-top: 0.8rem; font-size: 0.9rem;">Mediates interoceptive awareness (sensing internal body states) and metacognitive awareness.</p>
+                    </div>
+
+                    <div class="region-card" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0.05) 100%);">
+                        <div class="region-icon">😨</div>
+                        <h4>Amygdala</h4>
+                        <p><strong>Finding:</strong> Reduced gray matter density</p>
+                        <p style="margin-top: 0.8rem; font-size: 0.9rem;">Fear and threat-detection center. Reduction correlates directly with reported stress reduction.</p>
+                    </div>
+                </div>
+
+                <h3>Timeline of Neural Reorganization</h3>
+                <div style="margin: 2rem 0;">
+                    <div class="scale-item">
+                        <div class="scale-label">Weeks 2-4</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 30%;">Functional</div>
+                        </div>
+                        <div class="scale-value">Early</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Weeks 5-8</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 60%;">Measurable</div>
+                        </div>
+                        <div class="scale-value">Structural</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Weeks 9-16</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 80%;">Deepening</div>
+                        </div>
+                        <div class="scale-value">Integrated</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">6+ Months</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 95%;">Substantial</div>
+                        </div>
+                        <div class="scale-value">Expert</div>
+                    </div>
+                </div>
+
+                <h3>Neuroplasticity Mechanisms: How Thought Reshapes Brain Tissue</h3>
+                <p>When neural circuits are repeatedly activated through meditation practice, several coordinated changes occur:</p>
+                <ul style="margin: 1.5rem 0; list-style: none; padding: 0;">
+                    <li style="margin: 1rem 0; padding-left: 2rem; position: relative;"><span style="position: absolute; left: 0;">1.</span> <strong>Synaptic Strengthening:</strong> Connections between neurons strengthen through repeated activation ("neurons that fire together wire together")</li>
+                    <li style="margin: 1rem 0; padding-left: 2rem; position: relative;"><span style="position: absolute; left: 0;">2.</span> <strong>Neurogenesis:</strong> New neurons are produced, particularly in the hippocampus, integrating into existing networks</li>
+                    <li style="margin: 1rem 0; padding-left: 2rem; position: relative;"><span style="position: absolute; left: 0;">3.</span> <strong>Glial Support:</strong> Support cells increase in number, providing nutrients to heavily-used networks</li>
+                    <li style="margin: 1rem 0; padding-left: 2rem; position: relative;"><span style="position: absolute; left: 0;">4.</span> <strong>BDNF Upregulation:</strong> Brain-derived neurotrophic factor ("brain fertilizer") increases, promoting neural growth and adaptation</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Equanimity Scale -->
+        <section id="equanimity">
+            <h2>Measuring Equanimity: Operationalizing a Central Contemplative Outcome</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">The Buddhist-Neuroscience Bridge for Equanimity</div>
+
+                <p><strong>Equanimity (upekkha):</strong> An even-minded mental state toward all experiences, freedom from preference or aversion, and balanced response regardless of circumstances. Critically, equanimity is NOT indifference or emotional suppression but rather full presence and awareness combined with freedom from clinging or rejection.</p>
+
+                <h3>Equanimity as Measurable Outcome</h3>
+                <p style="margin-bottom: 2rem;">Recent research operationalizes equanimity through multiple complementary measures:</p>
+
+                <div class="equanimity-scale">
+                    <div class="scale-item">
+                        <div class="scale-label">Emotional Reactivity</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 25%;">Reduced</div>
+                        </div>
+                        <div class="scale-value">Lower</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Response Latency</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 65%;">Increased</div>
+                        </div>
+                        <div class="scale-value">Slower</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Recovery Time</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 35%;">Faster</div>
+                        </div>
+                        <div class="scale-value">Better</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Behavioral Flexibility</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 75%;">Enhanced</div>
+                        </div>
+                        <div class="scale-value">Higher</div>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-label">Heart Rate Variability</div>
+                        <div class="scale-bar">
+                            <div class="scale-fill" style="width: 70%;">Increased</div>
+                        </div>
+                        <div class="scale-value">Balanced</div>
+                    </div>
+                </div>
+
+                <h3>Multi-Domain Measurement Framework</h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2563eb;">
+                        <h4 style="color: #2563eb; margin-bottom: 1rem;">Behavioral</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                            <li style="margin: 0.6rem 0;">Response latency to triggers</li>
+                            <li style="margin: 0.6rem 0;">Response intensity (↓)</li>
+                            <li style="margin: 0.6rem 0;">Recovery to baseline time</li>
+                            <li style="margin: 0.6rem 0;">Response flexibility</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #059669;">
+                        <h4 style="color: #059669; margin-bottom: 1rem;">Physiological</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                            <li style="margin: 0.6rem 0;">Heart rate variability (↑)</li>
+                            <li style="margin: 0.6rem 0;">Cortisol recovery (↑)</li>
+                            <li style="margin: 0.6rem 0;">Breathing stability</li>
+                            <li style="margin: 0.6rem 0;">Nervous system coherence</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7c3aed;">
+                        <h4 style="color: #7c3aed; margin-bottom: 1rem;">Cognitive</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                            <li style="margin: 0.6rem 0;">Emotional naming (without acting)</li>
+                            <li style="margin: 0.6rem 0;">Impermanence recognition</li>
+                            <li style="margin: 0.6rem 0;">Self-compassion capacity</li>
+                            <li style="margin: 0.6rem 0;">Perspective flexibility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Neuroscientific Validation of Equanimity</h3>
+                <p style="margin-top: 2rem;">When practitioners develop equanimity, specific brain patterns emerge:</p>
+
+                <div style="background: white; border: 1px solid var(--border-subtle); padding: 2rem; border-radius: 8px; margin-top: 1.5rem;">
+                    <p><strong style="color: var(--primary-dark);">Amygdala Reactivity ↓</strong><br>
+                    <span style="color: var(--text-light); font-size: 0.95rem;">Reduced automatic threat reactivity to emotionally provocative stimuli, indicating decreased emotional reactivity.</span></p>
+
+                    <p style="margin-top: 1.5rem;"><strong style="color: var(--primary-dark);">Prefrontal Cortex Activity ↑</strong><br>
+                    <span style="color: var(--text-light); font-size: 0.95rem;">Increased activation during emotional challenge, indicating active regulation capacity (not emotional blunting).</span></p>
+
+                    <p style="margin-top: 1.5rem;"><strong style="color: var(--primary-dark);">Functional Connectivity ↑</strong><br>
+                    <span style="color: var(--text-light); font-size: 0.95rem;">Enhanced connectivity between emotional regulation regions (prefrontal) and emotional processing regions (amygdala, insula), suggesting integrated emotion processing.</span></p>
+
+                    <p style="margin-top: 1.5rem;"><strong style="color: var(--primary-dark);">EEG Alpha/Theta ↑</strong><br>
+                    <span style="color: var(--text-light); font-size: 0.95rem;">Increased alpha and theta power indicating calm alertness—awareness maintained without agitation.</span></p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.08) 0%, rgba(107, 158, 158, 0.05) 100%); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #6ba587;">
+                    <p style="margin: 0;"><strong>Distinction from Emotional Blunting:</strong> Equanimity is distinguished from emotional suppression or dissociation by the presence of prefrontal activity during emotional challenge. The emotion is experienced fully while perspective is maintained. This is fundamentally different from emotional shutdown.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Defusion/Decentering -->
+        <section id="defusion">
+            <h2>Cognitive Defusion and Decentering: Observing Without Reactivity</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">The Neural Mechanism of Freedom from Thought</div>
+
+                <p>At the heart of contemplative practice lies a deceptively simple mechanism: the capacity to observe mental content—thoughts, emotions, sensations, cravings—without automatic identification or behavioral reactivity. Western psychology terms this <strong>cognitive defusion</strong> (creating distance from thoughts) and <strong>decentering</strong> (viewing thoughts as temporary mental events rather than truth). Buddhist psychology describes the same capacity through <strong>sati</strong> (mindfulness) and <strong>sampajañña</strong> (clear comprehension).</p>
+
+                <h3 style="margin-top: 2.5rem;">The Neural Distinction: Rumination vs. Defusion</h3>
+
+                <div class="defusion-comparison">
+                    <div class="defusion-state rumination">
+                        <div class="state-title rumination">
+                            <span class="state-title-icon">🔄</span>
+                            <span>RUMINATION (Stuck)</span>
+                        </div>
+
+                        <div class="state-thought">
+                            "I am not good enough"
+                        </div>
+
+                        <div class="state-characteristics">
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🧠</div>
+                                <div><strong>DMN Exclusively Active:</strong> Mind locked into self-referential elaboration</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">⚡</div>
+                                <div><strong>Meta-Awareness Minimal:</strong> Limited recognition that these are thoughts, not facts</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">😟</div>
+                                <div><strong>Emotional Reactivity High:</strong> Thought triggers emotion, which elaborates thought—self-perpetuating cycle</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🚫</div>
+                                <div><strong>Behavioral Cascade:</strong> Emotion automatically leads to avoidance, withdrawal, self-criticism</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🔒</div>
+                                <div><strong>Stuck Quality:</strong> Mind feels locked into concern, trapped in loop</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="defusion-state defusion">
+                        <div class="state-title defusion">
+                            <span class="state-title-icon">🌊</span>
+                            <span>DEFUSION (Free)</span>
+                        </div>
+
+                        <div class="state-thought">
+                            "I'm having the thought that I'm not good enough"
+                        </div>
+
+                        <div class="state-characteristics">
+                            <div class="characteristic">
+                                <div class="characteristic-icon">👁️</div>
+                                <div><strong>Meta-Cognitive Awareness:</strong> Anterior insula notes thought arising; dACC detects it as mental event</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🎯</div>
+                                <div><strong>DMN + Meta-Awareness:</strong> Mind generates content while simultaneously observing it</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🧘</div>
+                                <div><strong>Emotional Decoupling:</strong> Emotion may be present but not automatically triggering behavioral response</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">⚙️</div>
+                                <div><strong>Perspective Maintained:</strong> Prefrontal cortex holds alternative perspective; choice becomes available</div>
+                            </div>
+                            <div class="characteristic">
+                                <div class="characteristic-icon">🌬️</div>
+                                <div><strong>Fluid Quality:</strong> Mind observes content from stable vantage point; flexibility available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2.5rem;">Brain Regions Supporting Defusion</h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Anterior Insula</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Provides meta-awareness of thoughts and emotions—"thinking about thinking." When active, creates distance from thought content by recognizing it as an event.</p>
+                    </div>
+
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Dorsal Anterior Cingulate</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Error-detection system noticing mismatch and alerting to distraction. The moment of "Oh, I was lost in thought" involves dACC activation.</p>
+                    </div>
+
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Dorsolateral Prefrontal Cortex</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Implements cognitive reappraisal—adopting alternative perspectives. Maintains the view that "this thought is temporary, not absolute truth."</p>
+                    </div>
+
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Anterior Cingulate Cortex</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Bridges DMN and task-positive networks, redirecting attention away from self-referential thought toward present-moment experience.</p>
+                    </div>
+                </div>
+
+                <h3>The Paradox Resolved: Why Observing Changes Everything</h3>
+                <p style="margin-top: 2rem;">A critical paradox in contemplative practice: if you observe a craving, don't you still desire? If you observe anger, aren't you still angry? How does observation change anything if the emotion itself remains unchanged?</p>
+
+                <div style="background: white; border: 2px solid var(--primary-light); padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                    <p style="margin: 0;"><strong>The Neural Resolution:</strong></p>
+                    <p style="margin-top: 1rem; color: var(--text-light);">The emotional system (amygdala, insula) activates generating the emotion, WITHOUT the cascade of events that typically follows. In normal automaticity: emotion → meaning attribution ("I should act") → motor response (behavior). In defusion: emotion occurs AND meta-awareness systems (anterior insula, dACC, dlPFC) activate simultaneously, interrupting the automatic pathway. The emotion is full and complete; the behavioral response becomes voluntary rather than automatic.</p>
+                    <p style="margin-top: 1rem; color: var(--text-light);">Emotions experienced without behavioral reinforcement lead to habituation through extinction learning. The craving observed without using gradually loses strength. The anger observed without acting gradually diminishes power over behavior. The fundamental insight: the prefrontal meaning-attribution system depends on automatic integration. By activating meta-awareness simultaneously with emotion, practitioners create a window where feeling occurs but automatic meaning-making does not.</p>
+                </div>
+
+                <h3>Practical Example: The Leaves on a Stream Exercise</h3>
+                <p style="margin-top: 2rem;">In this meditation, practitioners imagine thoughts as leaves floating down a stream, observing them pass without grasping or rejecting. The exercise illustrates neural mechanisms precisely:</p>
+
+                <div style="background: linear-gradient(135deg, rgba(74, 128, 128, 0.08) 0%, rgba(74, 128, 128, 0.05) 100%); padding: 1.5rem; border-radius: 8px;">
+                    <p style="margin: 0;"><strong>Shift in Processing:</strong> From "I am having this thought about myself" (DMN self-referential) to "A thought is appearing in awareness" (meta-cognitive stance)</p>
+                    <p style="margin-top: 1rem;"><strong>Neural Engagement:</strong> DMN is no longer exclusively processing; meta-cognitive circuits (anterior insula, dACC) engage in observing the generation process</p>
+                    <p style="margin-top: 1rem;"><strong>With Practice:</strong> Brain strengthens neural circuits supporting simultaneous holding of two perspectives: thoughts are generated AND the observer is aware of generation. This becomes increasingly automatic and effortless.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adverse Effects Warning -->
+        <section id="adverse">
+            <h2>Meditation Adverse Effects, Contraindications, and Safety</h2>
+
+            <div class="warning-box">
+                <div class="warning-title">
+                    <div class="warning-title-icon">⚠️</div>
+                    <div>Critical Safety Information: Meditation Is Not Universal Benign</div>
+                </div>
+
+                <div class="warning-content">
+                    <p>Until recently, meditation research exhibited a significant blind spot regarding negative outcomes. Meta-analyses of over 12,000 meditation studies found that only 1% measured adverse effects. Willoughby Britton's research revealed that this reporting gap created dangerous publication bias. Current evidence shows:</p>
+
+                    <div style="background: rgba(220, 38, 38, 0.1); padding: 1.5rem; border-radius: 6px; margin: 1.5rem 0;">
+                        <p style="margin: 0;"><strong style="color: #dc2626;">83%</strong> of mindfulness participants report at least one meditation-related side effect</p>
+                        <p style="margin-top: 0.8rem;"><strong style="color: #dc2626;">58%</strong> report effects with negative valence (undesirable)</p>
+                        <p style="margin-top: 0.8rem;"><strong style="color: #dc2626;">37%</strong> report negative impacts on functioning</p>
+                        <p style="margin-top: 0.8rem;"><strong style="color: #dc2626;">1 in 10</strong> report meditation-related adverse effects causing significant impairment</p>
+                    </div>
+
+                    <h4>Types of Meditation-Related Adverse Effects</h4>
+
+                    <div class="effect-category">
+                        <h5>Dissociative Experiences (Most Common)</h5>
+                        <ul class="effect-list">
+                            <li>Depersonalization (feeling detached from body)</li>
+                            <li>Derealization (world feeling unreal)</li>
+                            <li>Out-of-body experiences</li>
+                            <li>Altered perception of time/space</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-category">
+                        <h5>Anxiety and Panic Symptoms</h5>
+                        <ul class="effect-list">
+                            <li>Acute anxiety during meditation</li>
+                            <li>Increased baseline anxiety between sessions</li>
+                            <li>Panic attacks triggered by practice</li>
+                            <li>Hyperventilation and fear symptoms</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-category">
+                        <h5>Sleep Disturbances</h5>
+                        <ul class="effect-list">
+                            <li>Insomnia and sleep fragmentation</li>
+                            <li>Nightmares and vivid dreaming</li>
+                            <li>Sleep paralysis sensations</li>
+                            <li>Altered sleep architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-category">
+                        <h5>Sensory Hypersensitivity</h5>
+                        <ul class="effect-list">
+                            <li>Sounds becoming overwhelmingly loud</li>
+                            <li>Lights unbearably bright</li>
+                            <li>Touch sensation hypersensitive</li>
+                            <li>Social withdrawal and functional impairment</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-category">
+                        <h5>Emotional Dysregulation</h5>
+                        <ul class="effect-list">
+                            <li>Increased irritability and emotional lability</li>
+                            <li>Blunting of positive emotion</li>
+                            <li>Rare but serious: suicidal ideation</li>
+                        </ul>
+                    </div>
+
+                    <div class="effect-category">
+                        <h5>Re-experiencing of Trauma</h5>
+                        <ul class="effect-list">
+                            <li>Spontaneous trauma flashbacks</li>
+                            <li>Emotional and physiological flooding</li>
+                            <li>Can occur in those without known trauma history</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="margin-top: 2rem;">Rare but Serious Effects</h4>
+                    <p>Psychotic episodes and neuroleptic malignant syndrome-like presentations have been documented in vulnerable individuals. While extremely uncommon, these require acknowledgment and safety measures.</p>
+
+                    <h4>At-Risk Populations Requiring Modified Approaches or Screening</h4>
+
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="background: rgba(220, 38, 38, 0.05); padding: 1.2rem; border-left: 4px solid #dc2626; border-radius: 4px;">
+                            <p style="margin: 0;"><strong style="color: #dc2626;">Trauma History</strong><br>
+                            <span style="font-size: 0.9rem;">Elevated risk for dissociative and re-traumatization effects. Requires trauma-informed approaches and coordination with trauma therapists.</span></p>
+                        </div>
+
+                        <div style="background: rgba(220, 38, 38, 0.05); padding: 1.2rem; border-left: 4px solid #dc2626; border-radius: 4px;">
+                            <p style="margin: 0;"><strong style="color: #dc2626;">Psychotic Spectrum Disorders</strong><br>
+                            <span style="font-size: 0.9rem;">Including schizophrenia, schizoaffective disorder, or first-degree relatives with psychosis. Elevated risk of meditation precipitating psychotic episodes.</span></p>
+                        </div>
+
+                        <div style="background: rgba(220, 38, 38, 0.05); padding: 1.2rem; border-left: 4px solid #dc2626; border-radius: 4px;">
+                            <p style="margin: 0;"><strong style="color: #dc2626;">Dissociative Disorders</strong><br>
+                            <span style="font-size: 0.9rem;">Represent contraindication. Open-monitoring practices can exacerbate dissociation. Requires specialist evaluation.</span></p>
+                        </div>
+
+                        <div style="background: rgba(220, 38, 38, 0.05); padding: 1.2rem; border-left: 4px solid #dc2626; border-radius: 4px;">
+                            <p style="margin: 0;"><strong style="color: #dc2626;">Severe Anxiety/Panic Disorders</strong><br>
+                            <span style="font-size: 0.9rem;">Interoceptive focus can amplify panic in vulnerable individuals. Modified approaches focusing external attention prove safer.</span></p>
+                        </div>
+
+                        <div style="background: rgba(220, 38, 38, 0.05); padding: 1.2rem; border-left: 4px solid #dc2626; border-radius: 4px;">
+                            <p style="margin: 0;"><strong style="color: #dc2626;">Substance Use Disorder</strong><br>
+                            <span style="font-size: 0.9rem;">Meditation should not replace formal treatment. Interoceptive activation can trigger cravings in early recovery. Requires specialist coordination.</span></p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 2rem;">Clear Contraindications Requiring Specialist Consultation</h4>
+                    <ul class="effect-list" style="margin-top: 1rem;">
+                        <li>Active psychotic symptoms</li>
+                        <li>Current suicidal intent</li>
+                        <li>Severe dissociative disorders</li>
+                        <li>Active substance dependence</li>
+                        <li>Recent psychiatric hospitalization (within 6 months)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">Essential Safety Protocols</h4>
+                    <p style="margin-top: 1rem;">Evidence-based implementation requires:</p>
+                    <ul class="effect-list" style="margin-top: 1rem;">
+                        <li>Comprehensive screening for psychiatric history, dissociation, trauma, substance use</li>
+                        <li>Explicit informed consent addressing possibility of adverse effects</li>
+                        <li>Clear criteria for when to discontinue practice and seek help</li>
+                        <li>Available mental health consultation with clear crisis protocols</li>
+                        <li>Modified approaches for at-risk populations (shorter sessions, external focus, gradual extension)</li>
+                        <li>Coordination with therapists for trauma survivors and those with psychiatric conditions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="adverse-effects">
+                <h3>Neurobiological Mechanisms of Adverse Effects</h3>
+                <p>Understanding mechanisms permits better prevention and response:</p>
+
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                    <h4 style="color: var(--primary-dark);">Top-Down Disruption Hypothesis</h4>
+                    <p style="color: var(--text-light);">Intensive meditation without adequate foundational stability increases interoceptive awareness beyond regulatory capacity, producing overwhelm. This disrupts normal dissociative defenses before replacement mechanisms establish.</p>
+                </div>
+
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                    <h4 style="color: var(--primary-dark);">Neuroinflammatory Response Hypothesis</h4>
+                    <p style="color: var(--text-light);">Some vulnerable individuals may experience neuroinflammatory responses to meditation, manifesting as dissociation, anxiety, or psychiatric symptoms.</p>
+                </div>
+
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+                    <h4 style="color: var(--primary-dark);">Deautomatization Without Reintegration</h4>
+                    <p style="color: var(--text-light);">Meditation disrupts automatic processes without establishing integrated perspectives to replace them, leaving practitioners with hyperawareness without comprehension. Particularly acute days 5-7 of intensive retreats.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buddhist-Neuroscience Bridge -->
+        <section id="bridge">
+            <h2>Integrating Buddhist Psychology with Neuroscientific Frameworks</h2>
+            <div class="visualization-container">
+                <div class="visualization-title">Translation Framework: Ancient Wisdom Meets Modern Neuroscience</div>
+
+                <p>The integration of Buddhist psychology with Western neuroscience represents validation at multiple complementary levels: phenomenological (mental processes are observable), mechanistic (neural circuits align with Buddhist descriptions), and outcome (predicted benefits match empirical findings). This approach grounds Buddhist concepts in measurable, replicable neurobiological processes.</p>
+
+                <h3>Buddhist Concepts Mapped to Neuroscience</h3>
+                <table class="bridge-table">
+                    <thead>
+                        <tr>
+                            <th>Buddhist Concept</th>
+                            <th>Neuroscientific Equivalent</th>
+                            <th>Practical Translation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="buddhist-concept">Non-Self (Anatta)</td>
+                            <td class="neuroscience-equivalent">Default Mode Network construction of narrative self; reduced DMN activity</td>
+                            <td style="font-size: 0.9rem;">The persistent "I" is constructed by DMN, not fundamental. Meditation reduces this construction, revealing direct experience without narrative overlay.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Craving (Tanha)</td>
+                            <td class="neuroscience-equivalent">Ventromedial prefrontal cortex reward prediction + behavioral reinforcement</td>
+                            <td style="font-size: 0.9rem;">Neural encoding of "using this will relieve discomfort." Meditation reveals impermanence of craving, interrupting automatic reinforcement.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Aversion (Dosa)</td>
+                            <td class="neuroscience-equivalent">Amygdala and insula fear/threat reactivity + avoidance learning</td>
+                            <td style="font-size: 0.9rem;">Automatic rejection of uncomfortable experience. Meditation develops capacity to observe discomfort without automatic avoidance.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Delusion (Moha)</td>
+                            <td class="neuroscience-equivalent">Failure of dorsolateral prefrontal error detection and belief updating</td>
+                            <td style="font-size: 0.9rem;">Inaccurate perception and failure to integrate contrary evidence. Meditation strengthens reality-testing capacity.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Equanimity (Upekkha)</td>
+                            <td class="neuroscience-equivalent">Reduced amygdala reactivity + prefrontal regulation + nervous system balance</td>
+                            <td style="font-size: 0.9rem;">Even-minded response to all experiences. Measurable through amygdala reactivity, prefrontal activation, heart rate variability.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Mindfulness (Sati)</td>
+                            <td class="neuroscience-equivalent">Anterior insula + dorsal anterior cingulate meta-awareness</td>
+                            <td style="font-size: 0.9rem;">Remembering to remain aware; continuous meta-cognitive monitoring of mental and physical experience.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Impermanence (Anicca)</td>
+                            <td class="neuroscience-equivalent">Neural plasticity, synaptic reorganization, constant brain restructuring</td>
+                            <td style="font-size: 0.9rem;">All phenomena are in flux, including the neural pathways supporting them. Change is possible because systems are inherently plastic.</td>
+                        </tr>
+                        <tr>
+                            <td class="buddhist-concept">Insight (Vipassana/Prajna)</td>
+                            <td class="neuroscience-equivalent">Integrated understanding + network reorganization enabling stable behavioral change</td>
+                            <td style="font-size: 0.9rem;">Clear seeing that transforms understanding from intellectual to embodied. Corresponds to permanent network reorganization.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 2.5rem;">Samskaras as Neural Pathways</h3>
+                <p style="margin-top: 1rem;">The Buddhist concept of <strong>samskara</strong> (mental formation, karmic imprint) directly parallels neural pathways. Samskaras are conditioned patterns that deepen with repetition, disposing the mind toward particular responses. Their neuroscientific equivalent involves:</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                    <div style="background: linear-gradient(135deg, rgba(74, 128, 128, 0.08) 0%, rgba(74, 128, 128, 0.05) 100%); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-light);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Formation (Initial Experience)</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Experience triggers response (fear, desire, confusion), activating specific neural circuits. Synaptic connections within those circuits strengthen through repeated activation.</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(74, 128, 128, 0.08) 0%, rgba(74, 128, 128, 0.05) 100%); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-light);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 1rem;">Automaticity (Strengthened Pattern)</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">As pathway strengthens through repetition, response becomes automatic, occurring without conscious decision. Pattern now self-reinforces through behavioral consequences.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><strong>Therapeutic Implication:</strong> Pathways strengthened through repetition can be weakened through consistent practice of alternatives. This principle of neuroplasticity validates Buddhist assertions about the modifiability of mind. A samskara is not a character flaw but a neural pathway strengthened through repetition—and therefore changeable.</p>
+
+                <h3 style="margin-top: 2.5rem;">The Paradox of Observation Without Change</h3>
+                <p>Central paradox of contemplative practice: If you observe craving, don't you still desire? If you observe anger, aren't you still angry? <strong>Resolution through network understanding:</strong></p>
+
+                <div style="background: var(--background); padding: 2rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--primary-light);">
+                    <p style="margin: 0;"><strong>Without Observation (Automatic):</strong><br>
+                    Stimulus → Amygdala/Insula (emotion) → Ventromedial prefrontal cortex (meaning: "I should act") → Motor systems (behavior)</p>
+
+                    <p style="margin-top: 1.5rem;"><strong>With Observation (Meta-Aware):</strong><br>
+                    Stimulus → Amygdala/Insula (emotion) AND Anterior insula (meta-awareness) + dACC (detection) + dlPFC (perspective)</p>
+
+                    <p style="margin-top: 1.5rem;"><strong>The Key:</strong> The behavior depends on automatic meaning-attribution integrating emotion into motivation for action. By activating meta-awareness systems simultaneously with emotion, a brief window opens where emotion occurs but automatic meaning-attribution does not follow. The emotion is full; the behavioral response is voluntary.</p>
+
+                    <p style="margin-top: 1.5rem;"><strong>With Repeated Practice:</strong> Emotions experienced without reinforcement lead to extinction learning, gradually reducing conditioned response strength. The amygdala remains reactive (emotional responsivity appropriate), but automatic pathways are interrupted.</p>
+                </div>
+
+                <h3>Direct Experience of Impermanence and Neural Plasticity</h3>
+                <p style="margin-top: 2rem;">Central Buddhist insight: all phenomena arise, change, intensify, diminish, and cease. In vipassana practice, observation of sensations reveals this directly and immediately. The sensation appears, peaks, diminishes, dissolves, to be replaced by another.</p>
+
+                <p style="margin-top: 1.5rem;">This practice directly engages the brain's inherent plasticity. The brain itself is impermanent—constantly reorganizing through synaptic plasticity, neurogenesis, and network reconfiguration. Neural pathways supporting suffering are not locked, not permanent, not inevitable; they can be weakened, redirected, or replaced.</p>
+
+                <div style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.1) 0%, rgba(107, 158, 158, 0.05) 100%); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #6ba587;">
+                    <p style="margin: 0;"><strong>Profound Therapeutic Mechanism:</strong> Direct experience that suffering is impermanent simultaneously demonstrates that the neural pathway supporting it is not locked. This undermines core beliefs in many conditions: "This will always be this way," "I cannot change," "This suffering is permanent." Through observing sensation's impermanence, the practitioner experiences neural plasticity directly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Research Takeaways -->
+        <section>
+            <h2>Critical Takeaways: What the Evidence Demonstrates and Does Not</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div style="background: linear-gradient(135deg, rgba(107, 158, 158, 0.1) 0%, rgba(107, 158, 158, 0.05) 100%); padding: 2rem; border-radius: 8px; border-left: 5px solid #6ba587;">
+                    <h3 style="color: #6ba587; margin-top: 0; margin-bottom: 1.5rem;">What Evidence Demonstrates</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Meditation produces measurable brain structure/function changes</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Changes occur on predictable timelines (weeks to months)</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Different practices produce distinct neural signatures</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Changes correlate with psychological/behavioral improvements</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Long-term practitioners show sustained baseline differences</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #6ba587;">✓</span> Adverse effects occur in 58% of practitioners, requiring screening</li>
+                    </ul>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%); padding: 2rem; border-radius: 8px; border-left: 5px solid #d97706;">
+                    <h3 style="color: #d97706; margin-top: 0; margin-bottom: 1.5rem;">What Evidence Does NOT Demonstrate</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That Buddhism is metaphysically "true" in philosophical sense</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That neuroscience explains subjective experience of meditation</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That meditation is universally beneficial or safe for all people</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That meditation is superior to all other interventions</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That adverse effects are rare or easily avoided</li>
+                        <li style="margin: 1rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #d97706;">✗</span> That meditation should replace other treatments for serious conditions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+            <h2>References</h2>
+            <div class="references">
+                <div class="reference-item">Lazar, S. W., et al. (2005). "Meditation experience is associated with increased cortical thickness." NeuroReport, 16(17), 1893-1897.</div>
+
+                <div class="reference-item">Tang, Y. Y., Hölzel, B. K., & Posner, M. I. (2015). "The neuroscience of mindfulness meditation." Nature Reviews Neuroscience, 16(4), 213-225.</div>
+
+                <div class="reference-item">Davidson, R. J., & Begley, S. (2012). The Emotional Life of Your Brain: How Its Unique Patterns Affect the Way You Think, Feel, and Live. Bantam.</div>
+
+                <div class="reference-item">Brewer, J. A., et al. (2011). "Meditation experience is associated with differences in default mode network activity and connectivity." Proceedings of the National Academy of Sciences, 108(49), 20254-20259.</div>
+
+                <div class="reference-item">Hölzel, B. K., et al. (2011). "Mindfulness practice leads to increases in regional brain gray matter density." NeuroImage, 36(1), 226-235.</div>
+
+                <div class="reference-item">Brewer, J. A., et al. (2013). "Craving to quit: Psychological models and neurobiological mechanisms of mindfulness training as treatment for addictions." American Psychologist, 68(8), 545-556.</div>
+
+                <div class="reference-item">Britton, W. B., et al. (2017). "Defining and measuring meditation-related adverse effects in mindfulness-based programs." SAGE Open, 11(1), 21677106219844654.</div>
+
+                <div class="reference-item">Raichle, M. E., et al. (2001). "A default mode of brain function." Proceedings of the National Academy of Sciences, 98(2), 676-682.</div>
+
+                <div class="reference-item">Buckner, R. L., et al. (2008). "The brain's default network: anatomy, function, and relevance to disease." Annals of the New York Academy of Sciences, 1124, 1-38.</div>
+
+                <div class="reference-item">Lutz, A., et al. (2004). "Long-term meditators self-induce high-amplitude gamma synchrony during mental practice." Proceedings of the National Academy of Sciences, 101(46), 16369-16373.</div>
+
+                <div class="reference-item">Craig, A. D. (2009). "How do you feel? Interoception: the sense of the physiological condition of the body." Nature Reviews Neuroscience, 10(1), 59-70.</div>
+
+                <div class="reference-item">Desbordes, G., et al. (2015). "Moving beyond mindfulness: Defining equanimity as an outcome measure in meditation and contemplative research." Mindfulness, 6(2), 356-372.</div>
+
+                <div class="reference-item">Austin, J. H. (1998). Zen and the Brain: Toward an Understanding of Meditation and Consciousness. MIT Press.</div>
+
+                <div class="reference-item">Goleman, D. (2003). Destructive Emotions: How Can We Overcome Them? Bantam.</div>
+
+                <div class="reference-item">Hayes, S. C., et al. (2006). "Acceptance and commitment therapy: Model, processes and outcomes." Behavior Research and Therapy, 44(1), 1-25.</div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section>
+            <h2>Conclusion: Ancient Wisdom Validated by Modern Neuroscience</h2>
+
+            <p>Contemporary neuroscience has provided empirical validation for core principles of Buddhist psychology developed through 2,500 years of systematic introspection and meditation practice. This convergence operates at multiple complementary levels: Buddhist concepts map to identifiable brain networks, predicted outcomes align with neuroscientific findings, and proposed mechanisms correspond to discovered neural processes.</p>
+
+            <p>The Default Mode Network reveals the neural mechanism through which the sense of continuous self is constructed, validating the Buddhist teaching of non-self (anatta). Craving, identified as a root cause of suffering, is now understandable as a specifiable neural process that meditation can interrupt through novel mechanisms of direct observation. Equanimity, once purely poetic, is now measurable through objective physiological and neuroscientific approaches.</p>
+
+            <p>The structural brain changes documented through neuroimaging provide physical evidence that mental practice reshapes brain anatomy through fundamental principles of neuroplasticity. These changes are not mystical but reflect well-understood mechanisms of synaptic strengthening, neurogenesis, and network reorganization.</p>
+
+            <p>Simultaneously, rigorous research has revealed that meditation produces adverse effects in substantial percentages of practitioners, requiring proper screening, informed consent, and support mechanisms. Meditation is not universally benign and cannot be implemented without attention to safety.</p>
+
+            <p>The integration of ancient wisdom traditions with modern neuroscience honors both sources of knowledge: centuries of human experiential investigation into consciousness combined with contemporary objective scientific methodology. This convergence enables the development of evidence-based approaches drawing on millennia of practical knowledge while grounded in reproducible, falsifiable scientific findings.</p>
+
+            <div style="background: linear-gradient(135deg, rgba(74, 128, 128, 0.08) 0%, rgba(74, 128, 128, 0.05) 100%); padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 5px solid var(--primary-light);">
+                <p style="margin: 0;"><strong>The future of contemplative neuroscience involves:</strong> Continued validation of practice-brain relationships through sophisticated neuroimaging and physiological assessment; personalization of approaches based on individual neurobiological characteristics and responsiveness; deeper investigation of specific mechanisms underlying different practices; systematic study of adverse effects and development of mitigation protocols; and collaborative research between traditional practitioners and neuroscientists bringing together experiential and scientific expertise.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text"><strong>The Neuroscience of Contemplative Practice: An Academic Literature Review</strong></p>
+            <p class="footer-text">Kairos Research Initiative | December 2025</p>
+            <p class="footer-text" style="margin-top: 1.5rem; font-size: 0.9rem;">Bridging Ancient Wisdom with Modern Neuroscience</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation active state
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scroll behavior already in CSS
+
+        // Tab functionality if needed
+        window.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+
+                    // Hide all tabs
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
+                    // Remove active from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Show selected tab and mark button as active
+                    if (document.getElementById(tabName)) {
+                        document.getElementById(tabName).classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Scroll to section on nav click
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

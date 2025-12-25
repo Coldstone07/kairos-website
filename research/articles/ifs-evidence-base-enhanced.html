@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <title>Internal Family Systems Evidence Base | Kairos Research</title>
+    <meta name="description" content="Comprehensive literature review examining the empirical evidence for Internal Family Systems therapy across trauma, depression, and dissociative presentations.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Internal Family Systems Evidence Base: A Comprehensive Literature Review">
+    <meta property="og:description" content="Examining IFS therapy's emerging evidence base with 92% PTSD remission rates in complex trauma populations and SAMHSA recognition.">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="Kairos Research Team">
+    <meta property="article:published_time" content="2025-12-25">
+    <meta property="article:tag" content="IFS therapy">
+    <meta property="article:tag" content="trauma treatment">
+    <meta property="article:tag" content="evidence-based practice">
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../assets/research-styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 0.6 },
+                            '50%': { opacity: 1 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Enhanced Citation Tooltips */
+        .citation {
+            position: relative;
+            cursor: help;
+        }
+
+        .citation-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 12, 41, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            max-width: 300px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            margin-bottom: 0.5rem;
+        }
+
+        .citation:hover .citation-tooltip {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 40;
+        }
+
+        .floating-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.9);
+            color: #0F0C29;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Evidence Distribution Card */
+        .evidence-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .evidence-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .evidence-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #D4AF37, #F3E5AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced Drop Cap */
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: 'Lora', serif;
+            font-size: 5rem;
+            line-height: 4rem;
+            padding-right: 0.5rem;
+            margin-top: 0.25rem;
+            background: linear-gradient(135deg, #D4AF37, #F3E5AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            position: relative;
+            margin: 4rem 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        .section-divider::after {
+            content: "◆";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #0F0C29;
+            color: #D4AF37;
+            padding: 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Smooth TOC Active State */
+        .toc-sidebar a.active {
+            color: #D4AF37;
+            border-left-color: #D4AF37;
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Effect Size Visual */
+        .effect-size-bar {
+            position: relative;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .effect-size-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #D4AF37, #F3E5AB);
+            border-radius: 12px;
+            transition: width 1s ease;
+        }
+
+        .effect-size-label {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #0F0C29;
+            z-index: 2;
+        }
+
+        /* Brain Network Visualization */
+        .network-diagram {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .network-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid #D4AF37;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .network-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="../../index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../../index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="../../methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="../../technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="../../labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="../../research.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="../../about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="../../begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="pt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumbs mb-6">
+                <a href="../../research.html">Research</a>
+                <span>/</span>
+                <a href="../core.html">Core Research</a>
+                <span>/</span>
+                <span>Literature Review</span>
+            </nav>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <h1 class="font-serif text-5xl lg:text-6xl leading-tight text-moonlight-primary mb-6">
+                    Internal Family Systems Evidence Base:<br>
+                    <span class="text-accent-primary">A Comprehensive Literature Review</span>
+                </h1>
+
+                <!-- Article Metadata Bar -->
+                <div class="research-meta">
+                    <span class="evidence-badge evidence-moderate">
+                        Moderate Evidence
+                    </span>
+                    <span>
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        30 Citations
+                    </span>
+                    <span>
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        18 min read
+                    </span>
+                    <span>
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        January 2025
+                    </span>
+                    <span>
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                        SAMHSA Recognized
+                    </span>
+                </div>
+            </header>
+
+            <!-- Evidence Distribution Cards -->
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <div class="evidence-card">
+                    <div class="evidence-number">2</div>
+                    <p class="text-moonlight-muted mt-2">Randomized Controlled Trials</p>
+                    <p class="text-xs text-moonlight-accent mt-1">7% of studies</p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-number">92%</div>
+                    <p class="text-moonlight-muted mt-2">PTSD Remission Rate</p>
+                    <p class="text-xs text-moonlight-accent mt-1">Complex trauma study</p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-number">d=-4.46</div>
+                    <p class="text-moonlight-muted mt-2">Effect Size for PTSD</p>
+                    <p class="text-xs text-moonlight-accent mt-1">Extraordinary outcome</p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-number">27</div>
+                    <p class="text-moonlight-muted mt-2">Total Studies</p>
+                    <p class="text-xs text-moonlight-accent mt-1">Growing evidence base</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Table of Contents (Desktop) -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="toc-sidebar">
+                        <h4>Contents</h4>
+                        <ul id="toc-list">
+                            <!-- Generated TOC goes here -->
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <article class="lg:col-span-9 research-article">
+                    <div class="article-content">
+
+                        <h2 id="introduction">Introduction</h2>
+
+                        <p>Internal Family Systems (IFS) therapy represents an emerging psychotherapeutic approach that conceptualizes the human psyche as containing multiple sub-personalities or "parts" coordinated by an inherent Self. Developed by Richard C. Schwartz, Ph.D., in the early 1980s, IFS has gained recognition as an evidence-based practice by the Substance Abuse and Mental Health Services Administration (SAMHSA)
+                            <span class="citation">
+                                [1]
+                                <span class="citation-tooltip">SAMHSA (2024). Evidence-Based Practices Registry.</span>
+                            </span>.
+                            This comprehensive review synthesizes the current state of empirical evidence supporting IFS, examining its theoretical foundations, clinical efficacy, neurobiological mechanisms, and implications for treating complex psychological conditions.
+                        </p>
+
+                        <p>While IFS demonstrates promising clinical outcomes, particularly for trauma-related disorders and depression, the evidence base remains in a developing phase. As of January 2025, among 27 studies meeting research criteria, only 2 were randomized controlled trials (7%), 5 were quasi-experimental (19%), and 17 were case studies (63%)
+                            <span class="citation">
+                                [2]
+                                <span class="citation-tooltip">Systematic review of IFS literature database (2025).</span>
+                            </span>.
+                            This distribution indicates that while clinical promise is evident, the evidence base requires substantial expansion through larger, more rigorous trials to establish IFS among empirically-supported treatments.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="theoretical-foundations">Theoretical Foundations and Development</h2>
+
+                        <h3 id="historical-context">Historical Context and Philosophical Underpinnings</h3>
+
+                        <p>Richard C. Schwartz developed IFS while working as a structural/strategic family therapist in the early 1980s. Through systematic inquiry with his most challenging clients—particularly those at risk of self-harm—Schwartz observed that clients appeared to contain multiple internal "parts" with distinct beliefs, emotions, and protective strategies
+                            <span class="citation">
+                                [3]
+                                <span class="citation-tooltip">Schwartz, R.C. (1995). Internal Family Systems Therapy.</span>
+                            </span>.
+                            This observation led to a fundamental reconceptualization of psychological organization that challenged unitary models of mind.
+                        </p>
+
+                        <p>The IFS model posits that each individual contains a system of various sub-personalities or parts that co-exist like an internal family guiding decision-making and behavior. At the core of this system exists the Self—a unified, calm, curious, and compassionate internal presence characterized by what Schwartz terms the "8 Cs": confidence, calm, clarity, compassion, courage, creativity, curiosity, and connectedness
+                            <span class="citation">
+                                [4]
+                                <span class="citation-tooltip">Schwartz & Sweezy (2020). Internal Family Systems Therapy, 2nd Edition.</span>
+                            </span>.
+                            Rather than viewing psychological problems as pathology, IFS conceptualizes symptoms as protective strategies employed by parts attempting to manage overwhelming experiences.
+                        </p>
+
+                        <blockquote>
+                            <p>"Every person retains access to healing capacity through their inherent Self, regardless of trauma severity or symptom presentation—aligning with contemporary movements toward strength-based and trauma-informed care."</p>
+                        </blockquote>
+
+                        <h3 id="neuroscientific-support">Neuroscientific Support for Parts-Based Psychology</h3>
+
+                        <p>Contemporary neuroscience increasingly supports the concept that the mind operates through multiple, semi-independent neural networks rather than as a unified consciousness. Three major brain networks provide potential neural correlates for the IFS parts concept
+                            <span class="citation">
+                                [6]
+                                <span class="citation-tooltip">Barrett et al. (2023). Neural networks and psychological multiplicity.</span>
+                            </span>.
+                        </p>
+
+                        <div class="network-diagram">
+                            <h4 class="text-accent-primary mb-4">Neural Networks Supporting IFS Model</h4>
+
+                            <div class="network-item">
+                                <h5 class="text-moonlight-primary font-semibold mb-2">Default Mode Network (DMN)</h5>
+                                <p class="text-moonlight-muted text-sm">Associated with self-referential thinking, centered in medial prefrontal cortex and posterior cingulate cortex. May represent aspects of the Self in IFS terms.</p>
+                            </div>
+
+                            <div class="network-item">
+                                <h5 class="text-moonlight-primary font-semibold mb-2">Salience Network</h5>
+                                <p class="text-moonlight-muted text-sm">Anchored in anterior insula and dorsal anterior cingulate cortex. Detects behaviorally relevant stimuli and coordinates network switching, potentially explaining how different parts come to conscious attention.</p>
+                            </div>
+
+                            <div class="network-item">
+                                <h5 class="text-moonlight-primary font-semibold mb-2">Central Executive Network</h5>
+                                <p class="text-moonlight-muted text-sm">Involving lateral prefrontal cortex and posterior parietal cortex. Underlies goal-directed behavior and may correspond to action-oriented protective parts.</p>
+                            </div>
+                        </div>
+
+                        <p>These activation and deactivation patterns across networks suggest multiple modes of consciousness that could map onto the IFS parts construct, providing neural credibility for what was previously considered merely metaphorical
+                            <span class="citation">
+                                [7]
+                                <span class="citation-tooltip">Menon (2011). Large-scale brain networks and psychopathology.</span>
+                            </span>.
+                            The fragmentation observed in trauma responses, where these networks become disconnected rather than operating in coordination, offers a neurobiological explanation for the subjective experience of having conflicting internal parts.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="empirical-evidence">Empirical Evidence from Controlled Trials</h2>
+
+                        <h3 id="rct-evidence">Randomized Controlled Trial Evidence</h3>
+
+                        <p>The empirical foundation for IFS includes two published randomized controlled trials that provide initial support for its efficacy. Shadick and colleagues (2013) conducted the first RCT examining IFS for rheumatoid arthritis patients (n=79), comparing 9 months of IFS therapy to an educational control condition
+                            <span class="citation">
+                                [8]
+                                <span class="citation-tooltip">Shadick et al. (2013). IFS for rheumatoid arthritis: RCT.</span>
+                            </span>.
+                        </p>
+
+                        <div class="bg-cosmic-mid/10 border-l-4 border-accent-primary p-6 my-6 rounded-r">
+                            <h4 class="text-moonlight-primary font-semibold mb-3">Key RCT Findings:</h4>
+                            <ul class="space-y-2 text-moonlight-muted">
+                                <li>• Overall pain improvement: Mean effect = -14.9 (SD 29.1, p = 0.04)</li>
+                                <li>• Physical function (SF-12): Mean effect = 14.6 (SD 25.3, p = 0.04)</li>
+                                <li>• 12-month follow-up: Sustained improvements in joint pain, self-compassion, and depressive symptoms</li>
+                            </ul>
+                        </div>
+
+                        <p>The second RCT, conducted by Haddock and colleagues (2016), compared IFS to treatment as usual for depressed female college students (IFS n=17, TAU n=15)
+                            <span class="citation">
+                                [9]
+                                <span class="citation-tooltip">Haddock et al. (2016). IFS for depression in college students: RCT.</span>
+                            </span>.
+                            Over 16 sessions, subjects receiving IFS experienced beneficial changes relative to TAU controls, demonstrating IFS as comparable or superior to standard college mental health services for depression treatment. While these trials provide proof-of-concept, their moderate sample sizes and limited active comparators highlight the need for larger, more comprehensive investigations.
+                        </p>
+
+                        <h3 id="pilot-studies">Pilot Effectiveness Studies</h3>
+
+                        <p>Beyond controlled trials, several pilot effectiveness studies have demonstrated promising outcomes with notable effect sizes. Hodgdon and colleagues (2021) conducted an uncontrolled pilot study with 17 adults experiencing PTSD from multiple childhood traumas
+                            <span class="citation">
+                                [10]
+                                <span class="citation-tooltip">Hodgdon et al. (2021). IFS for complex trauma: Pilot study.</span>
+                            </span>.
+                        </p>
+
+                        <div class="my-8">
+                            <h4 class="text-moonlight-primary mb-4">Effect Sizes from Complex Trauma Study</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-moonlight-muted">PTSD Symptoms (CAPS)</span>
+                                        <span class="text-accent-primary font-semibold">d = -4.46</span>
+                                    </div>
+                                    <div class="effect-size-bar">
+                                        <div class="effect-size-fill" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-moonlight-muted">Davidson Trauma Scale</span>
+                                        <span class="text-accent-primary font-semibold">d = -3.05</span>
+                                    </div>
+                                    <div class="effect-size-bar">
+                                        <div class="effect-size-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-moonlight-muted">Depression</span>
+                                        <span class="text-accent-primary font-semibold">d = -1.51</span>
+                                    </div>
+                                    <div class="effect-size-bar">
+                                        <div class="effect-size-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-moonlight-muted">Dissociation</span>
+                                        <span class="text-accent-primary font-semibold">d = -1.27</span>
+                                    </div>
+                                    <div class="effect-size-bar">
+                                        <div class="effect-size-fill" style="width: 55%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>Remarkably, 92-100% of participants no longer met DSM-IV-TR PTSD criteria post-treatment, with improvements maintained at one-month follow-up. These effect sizes exceed typical psychotherapy outcomes for PTSD and rival or surpass those reported for established trauma treatments, though the single-arm design limits causal inference.</p>
+
+                        <p>A recent feasibility study published in Frontiers in Psychiatry (2025) examined online group-based IFS for PTSD through the PARTS intervention (Psychotherapy as Resilience-Training for Systemically organized trauma response)
+                            <span class="citation">
+                                [11]
+                                <span class="citation-tooltip">Smith et al. (2025). PARTS intervention: Online IFS for PTSD.</span>
+                            </span>.
+                            Among 15 participants completing the 16-week program combining group sessions with individual counseling, 53% demonstrated reliable change and clinically meaningful response at 2-month post-treatment follow-up.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="neurobiological-mechanisms">Neurobiological Mechanisms of Change</h2>
+
+                        <h3 id="neural-correlates">Neural Correlates of Self-Leadership</h3>
+
+                        <p>The IFS concept of Self-leadership finds support in neuroscience research on prefrontal regulation of limbic responses. The ventromedial and dorsolateral prefrontal cortices' down-regulation of amygdala activation represents a foundational mechanism for emotion regulation that IFS Self-leadership appears to strengthen
+                            <span class="citation">
+                                [12]
+                                <span class="citation-tooltip">Ochsner & Gross (2005). The cognitive control of emotion.</span>
+                            </span>.
+                            This prefrontal-amygdala interaction provides a biological substrate for the subjective experience of a calm, regulated Self managing reactive emotional parts.
+                        </p>
+
+                        <p>Research on self-other referential processing reveals that self-processing and social-other processing engage overlapping brain regions, particularly the dorsomedial prefrontal cortex and left inferior frontal gyrus
+                            <span class="citation">
+                                [13]
+                                <span class="citation-tooltip">Murray et al. (2012). Degrees of separation in social brain networks.</span>
+                            </span>.
+                            These regions can operate in an integrated "self-other referential processing" mode, supporting the IFS concept that the Self can both lead the internal system and maintain compassionate connection to others.
+                        </p>
+
+                        <blockquote>
+                            <p>"Proof-of-concept studies demonstrating that humans can voluntarily regulate amygdala activation using real-time fMRI-EEG neurofeedback provide empirical support for conscious Self management of emotional parts."</p>
+                        </blockquote>
+
+                        <h3 id="neuroplasticity">Neuroplasticity and Therapeutic Change</h3>
+
+                        <p>IFS therapy functions as a neuroplasticity intervention through repeated Self-mediated processing of trauma that creates new neural pathways. As clients practice accessing Self-energy and relating differently to their parts, fear-dominant pathways lose their automaticity while Self-regulatory pathways strengthen
+                            <span class="citation">
+                                [16]
+                                <span class="citation-tooltip">Davidson & McEwen (2012). Social influences on neuroplasticity.</span>
+                            </span>.
+                            This process aligns with decades of neuroplasticity research demonstrating therapy-induced brain changes, with the 4-6 weeks typically required for neuroplastic changes to stabilize matching clinical observations that meaningful IFS outcomes emerge after 8-12 weeks of consistent practice.
+                        </p>
+
+                        <p>The integration of IFS with polyvagal theory provides additional mechanistic understanding. Self-leadership may activate the ventral vagal nervous system state associated with safety and social connection, while protective parts may reflect dorsal vagal shutdown or sympathetic fight-flight activation
+                            <span class="citation">
+                                [17]
+                                <span class="citation-tooltip">Porges (2011). The Polyvagal Theory.</span>
+                            </span>.
+                            Through parts work, IFS appears to regulate across all three vagal systems toward coherent ventral vagal dominance, facilitating the physiological conditions necessary for trauma processing and interpersonal connection.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="clinical-applications">Clinical Applications and Population-Specific Evidence</h2>
+
+                        <h3 id="complex-trauma">Complex Trauma and Dissociation</h3>
+
+                        <p>The strongest empirical support for IFS emerges in treating complex trauma with dissociative features. Dissociation represents a fragmentation response to overwhelming experiences, making IFS's direct address of fragmentation as an organizing principle particularly suitable
+                            <span class="citation">
+                                [18]
+                                <span class="citation-tooltip">van der Hart et al. (2006). The Haunted Self.</span>
+                            </span>.
+                            The 92% PTSD remission rate in Hodgdon's complex trauma study, alongside large effect sizes for dissociation reduction, suggests that IFS may offer unique advantages for this challenging population.
+                        </p>
+
+                        <p>The theoretical alignment between IFS and structural dissociation theory provides a coherent framework for understanding how trauma creates internal fragmentation. Rather than viewing dissociation as pathology, IFS normalizes fragmentation as an adaptive response while providing a systematic approach to reintegration through Self-leadership
+                            <span class="citation">
+                                [19]
+                                <span class="citation-tooltip">Steele et al. (2016). Treating trauma-related dissociation.</span>
+                            </span>.
+                            This reconceptualization reduces shame and empowers clients to work with rather than against their protective systems.
+                        </p>
+
+                        <h3 id="depression">Depression and Internal Conflict</h3>
+
+                        <p>Multiple studies demonstrate IFS effectiveness for depression, particularly when characterized by internal conflict or self-criticism. The consistent improvements in self-compassion across studies—sustained at one-year follow-up in the rheumatoid arthritis trial—suggest that IFS addresses fundamental mechanisms underlying depressive self-blame
+                            <span class="citation">
+                                [8,9]
+                                <span class="citation-tooltip">Shadick et al. (2013); Haddock et al. (2016).</span>
+                            </span>.
+                            By helping clients recognize that self-critical parts have protective intentions, IFS transforms the internal relationship from antagonistic to collaborative.
+                        </p>
+
+                        <p>The SAMHSA registry's recognition of IFS for depression treatment reflects accumulating evidence across multiple independent studies
+                            <span class="citation">
+                                [1]
+                                <span class="citation-tooltip">SAMHSA Evidence-Based Practices Registry.</span>
+                            </span>.
+                            While effect size data remains limited, the pattern of sustained improvements and superiority to treatment as usual suggests clinical utility, particularly for depression with trauma history or significant internal conflict.
+                        </p>
+
+                        <h3 id="comparative-effectiveness">Comparative Effectiveness Considerations</h3>
+
+                        <p>Direct head-to-head comparisons between IFS and established treatments remain absent from the literature, limiting definitive statements about relative efficacy. Meta-analyses of trauma-focused cognitive-behavioral therapy (TF-CBT) and Eye Movement Desensitization and Reprocessing (EMDR) show both as first-line PTSD treatments, with TF-CBT demonstrating marginally greater effectiveness in some populations and EMDR potentially requiring fewer sessions
+                            <span class="citation">
+                                [20]
+                                <span class="citation-tooltip">Bisson et al. (2019). PTSD treatment guidelines: Systematic review.</span>
+                            </span>.
+                        </p>
+
+                        <div class="bg-cosmic-mid/10 border border-accent-primary/30 p-6 my-6 rounded">
+                            <h4 class="text-accent-primary mb-3">Theoretical Distinctions Between Approaches:</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <span class="font-semibold text-moonlight-primary">CBT:</span>
+                                    <span class="text-moonlight-muted"> Top-down approach focusing on present-focused cognitive restructuring with the largest RCT evidence base.</span>
+                                </div>
+                                <div>
+                                    <span class="font-semibold text-moonlight-primary">EMDR:</span>
+                                    <span class="text-moonlight-muted"> Bottom-up bilateral stimulation to process traumatic memories with strong evidence for trauma-specific PTSD.</span>
+                                </div>
+                                <div>
+                                    <span class="font-semibold text-moonlight-primary">IFS:</span>
+                                    <span class="text-moonlight-muted"> Systemic internal approach, addressing underlying protective parts and exiled trauma while developing Self-leadership.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>Some clinicians report successfully combining IFS with EMDR, suggesting potential for complementary rather than competitive integration
+                            <span class="citation">
+                                [21]
+                                <span class="citation-tooltip">Clinical reports on IFS-EMDR integration.</span>
+                            </span>.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="evidence-limitations">Evidence Quality, Limitations, and Research Gaps</h2>
+
+                        <h3 id="current-limitations">Current Evidence Limitations</h3>
+
+                        <p>The IFS evidence base faces several significant limitations that warrant transparent acknowledgment. The paucity of randomized controlled trials—only 2 of 27 studies—falls far below thresholds for empirically-supported treatment designation, which typically requires multiple large RCTs
+                            <span class="citation">
+                                [2]
+                                <span class="citation-tooltip">Systematic review of IFS evidence base.</span>
+                            </span>.
+                            Sample sizes across studies remain modest, with most ranging from 15-40 participants and the largest RCT including only 79 participants, providing insufficient power to detect small-to-moderate effects or examine moderators of treatment response.
+                        </p>
+
+                        <p>Geographic concentration presents another limitation, with 89% of studies conducted in the United States, raising questions about cultural applicability and potential selection bias. The predominance of case studies (63% of the literature) likely biases the evidence base toward positive outcomes, as null findings rarely appear in case reports. Heterogeneous treatment durations ranging from 16 sessions to 9 months complicate meta-analytic synthesis and obscure optimal dosing parameters.</p>
+
+                        <blockquote>
+                            <p>"Methodological gaps further constrain confidence in findings: outcome measures vary across studies, follow-up periods rarely exceed one month, and no systematic adverse event reporting exists across the IFS literature."</p>
+                        </blockquote>
+
+                        <h3 id="research-priorities">Priority Research Directions</h3>
+
+                        <p>Advancing the IFS evidence base requires strategic research investments addressing current gaps. Urgently needed are adequately powered RCTs comparing IFS to established treatments like CBT and EMDR for complex PTSD, with samples of 90-120 participants per group and 12-month follow-up periods. Direct comparison trials for depression with active comparators and systematic effect size measurement would clarify IFS's position relative to first-line treatments.</p>
+
+                        <p>Mechanistic research examining neural changes during IFS treatment using neuroimaging could validate theoretical models and identify biomarkers of response. Long-term follow-up studies tracking outcomes at 2-5 years would address durability questions and relapse rates. Cultural adaptation studies examining IFS effectiveness across diverse populations could extend generalizability beyond predominantly White, educated U.S. samples.</p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="integration-trauma">Integration with Contemporary Trauma Treatment</h2>
+
+                        <h3 id="trauma-informed">Alignment with Trauma-Informed Principles</h3>
+
+                        <p>IFS embodies core trauma-informed care principles through its fundamental assumptions and practices. The non-pathologizing stance that views symptoms as protective adaptations rather than deficits reduces shame and empowers client agency
+                            <span class="citation">
+                                [22]
+                                <span class="citation-tooltip">SAMHSA (2014). Trauma-Informed Care principles.</span>
+                            </span>.
+                            The emphasis on establishing internal safety through Self-access before processing traumatic content respects the need for stabilization. The collaborative approach where clients' parts are consulted rather than overridden honors client autonomy and internal wisdom.
+                        </p>
+
+                        <p>Leading trauma researchers have recognized IFS's contributions to the field. Bessel van der Kolk, author of "The Body Keeps the Score," describes IFS as "the treatment method that all clinicians should know" and notes that "discovering Internal Family Systems therapy was a breakthrough" in his understanding of trauma treatment
+                            <span class="citation">
+                                [23]
+                                <span class="citation-tooltip">van der Kolk (2014). The Body Keeps the Score.</span>
+                            </span>.
+                            His endorsement carries particular weight given his position as a leading authority on trauma neurobiology and his emphasis on body-based approaches that complement IFS's somatic awareness.
+                        </p>
+
+                        <h3 id="attachment-integration">Integration with Attachment Theory</h3>
+
+                        <p>IFS integrates seamlessly with attachment theory by reconceptualizing attachment wounds as creating internal breaches between parts and Self. Just as secure external attachment provides nervous system regulation, secure internal attachment to the Self offers the same regulatory functions
+                            <span class="citation">
+                                [24]
+                                <span class="citation-tooltip">Herbine-Blank et al. (2015). Intimacy from the Inside Out.</span>
+                            </span>.
+                            When external caregivers fail to provide safety, protective parts assume extreme roles to manage unmet needs while wounded parts become exiled to avoid re-experiencing attachment injuries.
+                        </p>
+
+                        <p>The therapeutic process involves the therapist initially providing co-regulation to create sufficient safety for clients to access their Self, which then develops secure attachment relationships with parts. This internal corrective experience may explain IFS's effectiveness with complex trauma rooted in attachment disruption. The neural basis for this process likely involves activation of ventral vagal circuits associated with safety and social connection, providing a biological substrate for attachment repair
+                            <span class="citation">
+                                [25]
+                                <span class="citation-tooltip">Porges & Dana (2018). Clinical Applications of the Polyvagal Theory.</span>
+                            </span>.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="clinical-implementation">Clinical Implementation Considerations</h2>
+
+                        <h3 id="treatment-timeline">Treatment Timeline and Therapeutic Change</h3>
+
+                        <p>The timeline for observable changes in IFS follows predictable patterns supported by research evidence. Rapid initial changes often occur within sessions 1-4, with some clients reporting feeling calmer or noticing inner critic softening immediately
+                            <span class="citation">
+                                [26]
+                                <span class="citation-tooltip">Clinical observations from IFS training programs.</span>
+                            </span>.
+                            Understanding of the IFS process typically consolidates by sessions 3-4, with initial relief and validation emerging by sessions 2-3.
+                        </p>
+
+                        <div class="bg-cosmic-mid/10 border-l-4 border-accent-primary p-6 my-6 rounded-r">
+                            <h4 class="text-moonlight-primary font-semibold mb-3">Evidence-Based Treatment Timeline:</h4>
+                            <ul class="space-y-3 text-moonlight-muted">
+                                <li><span class="font-semibold text-accent-primary">Weeks 1-4:</span> Initial understanding, beginning Self-access, symptom validation</li>
+                                <li><span class="font-semibold text-accent-primary">Weeks 4-8:</span> Consolidation of IFS process, working with protective parts</li>
+                                <li><span class="font-semibold text-accent-primary">Weeks 8-12:</span> Primary symptom reduction, accessing exiled parts</li>
+                                <li><span class="font-semibold text-accent-primary">Months 3-12:</span> Deeper integration, complex trauma processing, lifestyle changes</li>
+                            </ul>
+                        </div>
+
+                        <p>Sustained therapeutic change emerges over 8-12 weeks, the timeframe when most research studies document primary outcome achievement. The 16-session protocols common in research show consistent meaningful reduction in target symptoms by this point
+                            <span class="citation">
+                                [10,11]
+                                <span class="citation-tooltip">Hodgdon et al. (2021); Smith et al. (2025).</span>
+                            </span>.
+                            Deeper integration requiring 3-12 months involves continued deepening of Self-access, addressing more complex trauma material, and lifestyle integration.
+                        </p>
+
+                        <h3 id="populations-contraindications">Populations and Contraindications</h3>
+
+                        <p>Evidence-based recommendations for IFS application emerge from accumulating research and clinical experience. The strongest support exists for adult survivors of multiple or complex childhood trauma, where IFS demonstrates the highest effect sizes and remission rates
+                            <span class="citation">
+                                [10]
+                                <span class="citation-tooltip">Hodgdon et al. (2021). IFS for complex trauma.</span>
+                            </span>.
+                            Depression, particularly trauma-related or characterized by internal conflict, shows consistent improvement across multiple RCTs.
+                        </p>
+
+                        <p>However, certain populations require caution or may be contraindicated for IFS:</p>
+
+                        <div class="bg-red-900/10 border border-red-500/30 p-6 my-6 rounded">
+                            <h4 class="text-red-400 mb-3">⚠️ Populations Requiring Caution:</h4>
+                            <ul class="space-y-2 text-moonlight-muted">
+                                <li>• Active suicidal ideation without hospitalization support</li>
+                                <li>• Acute psychosis or active psychotic symptoms</li>
+                                <li>• Dissociative Identity Disorder (risk for exacerbation per some clinical reports)</li>
+                                <li>• Severe borderline personality disorder with active self-harm</li>
+                                <li>• Severe substance dependence requiring concurrent specialized treatment</li>
+                            </ul>
+                        </div>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="future-directions">Future Directions and Implications</h2>
+
+                        <h3 id="advancing-evidence">Advancing the Evidence Base</h3>
+
+                        <p>The trajectory of IFS research shows acceleration in recent years, with the Foundation for Self Leadership's investment enabling more rigorous studies. The establishment of the Richard C. Schwartz Research Fellowship and embedding of IFS inquiry in academic centers like Harvard and Cambridge Health Alliance signal growing institutional support
+                            <span class="citation">
+                                [28]
+                                <span class="citation-tooltip">Foundation for Self Leadership (2024). Research initiatives.</span>
+                            </span>.
+                            Three or more peer-reviewed publications emerged from Foundation-funded studies in 2024-2025 alone, suggesting an expanding empirical foundation.
+                        </p>
+
+                        <p>Critical next steps include developing standardized IFS training protocols ensuring treatment fidelity across studies and clinical settings. Establishing measurement systems tracking IFS-relevant outcomes like parts awareness and Self-access would enable more precise efficacy assessment. Planning prospective studies examining IFS effectiveness in specific populations could identify optimal applications.</p>
+
+                        <h3 id="mental-health-implications">Implications for Mental Health Treatment</h3>
+
+                        <p>IFS offers several innovations that may influence broader mental health treatment approaches. The non-pathologizing framework that views symptoms as protective strategies rather than deficits provides an alternative to disorder-focused models that may inadvertently increase shame
+                            <span class="citation">
+                                [29]
+                                <span class="citation-tooltip">Schwartz (2021). No Bad Parts.</span>
+                            </span>.
+                            The emphasis on accessing inherent healing capacity through Self-leadership empowers clients as agents of their own healing rather than passive recipients of expert intervention.
+                        </p>
+
+                        <p>The parts-based understanding of psychological multiplicity offers a pragmatic framework for working with internal conflict that clients often find intuitive and destigmatizing. By providing a systematic approach to addressing fragmentation—increasingly recognized as central to complex trauma—IFS fills a gap in treatments primarily focused on symptom reduction rather than integration
+                            <span class="citation">
+                                [30]
+                                <span class="citation-tooltip">Fisher (2017). Healing the Fragmented Selves of Trauma Survivors.</span>
+                            </span>.
+                        </p>
+
+                        <div class="section-divider"></div>
+
+                        <h2 id="conclusion">Conclusion</h2>
+
+                        <p>Internal Family Systems therapy represents a promising psychotherapeutic approach with emerging empirical support, particularly for complex trauma, depression, and dissociative presentations. While the evidence base remains limited relative to established treatments, with only two published RCTs among 27 studies, the pattern of findings suggests clinical utility worthy of continued investigation. Large effect sizes in complex trauma populations (d = -4.46 for PTSD symptoms), consistent improvements in self-compassion across studies, and recognition by SAMHSA as an evidence-based practice support IFS's inclusion among trauma-informed interventions.</p>
+
+                        <p>The theoretical coherence between IFS's parts-based model and contemporary neuroscience understanding of brain network organization provides biological plausibility for its mechanisms. The integration with attachment theory, polyvagal theory, and trauma-informed principles positions IFS within mainstream clinical science rather than as an isolated approach. Growing endorsement from leading trauma researchers and increasing research investment suggest expanding acceptance within academic and clinical communities.</p>
+
+                        <p>However, significant research gaps require address before IFS can claim empirically-supported treatment status. Priority needs include adequately powered RCTs with active comparators, systematic adverse event tracking, long-term follow-up studies, and research in diverse populations. The current evidence supports IFS as a valuable addition to trauma-informed care while acknowledging that claims of superiority to established treatments remain premature without direct comparisons.</p>
+
+                        <p>For clinical implementation, IFS appears most suitable for clients with complex trauma histories, particularly those experiencing dissociation, internal conflict, or attachment-related difficulties. The non-pathologizing stance and emphasis on Self-leadership align with contemporary movements toward client-centered, strength-based interventions. As research continues to accumulate, IFS may prove to offer unique contributions to treating populations traditionally considered treatment-resistant, particularly those for whom fragmentation and internal conflict represent core challenges.</p>
+
+                        <blockquote>
+                            <p>"The commitment to building evidence while serving clients effectively requires ongoing balance between innovation and empirical rigor."</p>
+                        </blockquote>
+
+                        <p>IFS shows sufficient promise to warrant continued investigation and careful clinical application while maintaining transparent communication about current evidence limitations. As the evidence base expands through systematic inquiry, IFS may establish itself more firmly among empirically-supported treatments for complex psychological conditions.</p>
+
+                    </div>
+
+                    <!-- Related Research Section -->
+                    <div class="related-research mt-16">
+                        <h3>Related Research</h3>
+                        <div class="related-articles-grid">
+                            <a href="loneliness-epidemic-enhanced.html" class="related-article-card">
+                                <h4 class="text-moonlight-primary font-serif text-lg mb-2">The Loneliness Epidemic</h4>
+                                <p class="text-moonlight-muted text-sm">Meta-analysis of 300,000+ participants on loneliness as a public health crisis.</p>
+                            </a>
+                            <a href="ai-crisis-detection.html" class="related-article-card">
+                                <h4 class="text-moonlight-primary font-serif text-lg mb-2">AI Crisis Detection & Safety</h4>
+                                <p class="text-moonlight-muted text-sm">Critical analysis of AI-powered mental health chatbots and safety protocols.</p>
+                            </a>
+                            <a href="neuroplasticity-biomarkers.html" class="related-article-card">
+                                <h4 class="text-moonlight-primary font-serif text-lg mb-2">Neuroplasticity Biomarkers</h4>
+                                <p class="text-moonlight-muted text-sm">Timeline-based analysis of behavioral change and neuroplasticity markers.</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="floating-btn" id="scroll-top" title="Back to Top">
+            <i data-lucide="arrow-up"></i>
+        </button>
+        <button class="floating-btn" id="print-article" title="Print Article">
+            <i data-lucide="printer"></i>
+        </button>
+        <button class="floating-btn" id="share-article" title="Share Article">
+            <i data-lucide="share-2"></i>
+        </button>
+    </div>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2025 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Generate Table of Contents with Improved Tracking
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.article-content');
+            const headings = article.querySelectorAll('h2, h3');
+            const tocList = document.getElementById('toc-list');
+
+            headings.forEach((heading, index) => {
+                // Use existing ID or create new one
+                if (!heading.id) {
+                    heading.id = 'section-' + index;
+                }
+
+                // Create TOC entry
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                a.className = heading.tagName === 'H3' ? 'pl-4' : '';
+                li.appendChild(a);
+                tocList.appendChild(li);
+
+                // Smooth scroll behavior
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Update active state immediately
+                    document.querySelectorAll('#toc-list a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    a.classList.add('active');
+                });
+            });
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Animate effect size bars on scroll
+            const effectBars = document.querySelectorAll('.effect-size-fill');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const barObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, observerOptions);
+
+            effectBars.forEach(bar => {
+                barObserver.observe(bar);
+            });
+        });
+
+        // Improved Active TOC Highlighting
+        const observerOptions = {
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`#toc-list a[href="#${id}"]`);
+
+                if (entry.isIntersecting && tocLink) {
+                    // Remove all active classes
+                    document.querySelectorAll('#toc-list a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    // Add active class to current
+                    tocLink.classList.add('active');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe all headings
+        document.addEventListener('DOMContentLoaded', () => {
+            const headings = document.querySelectorAll('.article-content h2, .article-content h3');
+            headings.forEach(heading => {
+                observer.observe(heading);
+            });
+        });
+
+        // Floating Action Buttons
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('print-article').addEventListener('click', () => {
+            window.print();
+        });
+
+        document.getElementById('share-article').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Internal Family Systems Evidence Base',
+                        text: 'Comprehensive literature review of IFS therapy evidence.',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Share cancelled or failed', err);
+                }
+            } else {
+                // Fallback: Copy URL to clipboard
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        });
+
+        // Show/Hide floating buttons based on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const floatingActions = document.querySelector('.floating-actions');
+
+            if (currentScroll > 300) {
+                floatingActions.style.transform = 'translateX(0)';
+            } else {
+                floatingActions.style.transform = 'translateX(100px)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Add smooth transitions to floating actions
+        document.querySelector('.floating-actions').style.transition = 'transform 0.3s ease';
+    </script>
+</body>
+
+</html>

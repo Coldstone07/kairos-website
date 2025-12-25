@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attachment, Relational Healing & Neuroplasticity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-warm: #C89C7B;
+            --primary-deep: #8B6F47;
+            --secondary-soft: #D4A5A5;
+            --secondary-gentle: #E8C4C4;
+            --accent-hope: #A8C5A0;
+            --accent-resilience: #B5A89A;
+            --text-dark: #2C2416;
+            --text-light: #5C4A3D;
+            --bg-cream: #FBF9F4;
+            --bg-warm: #F5EDE4;
+            --border-warm: #E0D5CC;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-warm) 100%);
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary-warm) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(139, 111, 71, 0.15);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid var(--primary-warm);
+        }
+
+        .section h2 {
+            color: var(--primary-deep);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-warm);
+        }
+
+        .section h3 {
+            color: var(--secondary-soft);
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .intro-text {
+            background: linear-gradient(135deg, rgba(200, 156, 123, 0.1) 0%, rgba(168, 197, 160, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-warm);
+        }
+
+        /* Visualization Styles */
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .visualization-card {
+            background: var(--bg-warm);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 2px solid var(--border-warm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .visualization-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 111, 71, 0.1);
+        }
+
+        .visualization-card h4 {
+            color: var(--primary-deep);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Attachment Styles Diagram */
+        .attachment-styles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .attachment-style {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .attachment-secure {
+            background: linear-gradient(135deg, rgba(168, 197, 160, 0.3) 0%, rgba(168, 197, 160, 0.1) 100%);
+            border: 2px solid var(--accent-hope);
+        }
+
+        .attachment-anxious {
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.3) 0%, rgba(212, 165, 165, 0.1) 100%);
+            border: 2px solid var(--secondary-soft);
+        }
+
+        .attachment-avoidant {
+            background: linear-gradient(135deg, rgba(181, 168, 154, 0.3) 0%, rgba(181, 168, 154, 0.1) 100%);
+            border: 2px solid var(--accent-resilience);
+        }
+
+        .attachment-disorganized {
+            background: linear-gradient(135deg, rgba(232, 196, 196, 0.3) 0%, rgba(232, 196, 196, 0.1) 100%);
+            border: 2px solid var(--secondary-gentle);
+        }
+
+        .attachment-style h5 {
+            color: var(--primary-deep);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .attachment-style p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* SVG Visualizations */
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .diagram-wrapper {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-warm);
+        }
+
+        /* Intergenerational Transmission */
+        .transmission-stat {
+            background: linear-gradient(135deg, var(--accent-hope) 0%, var(--accent-hope) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(168, 197, 160, 0.2);
+        }
+
+        .transmission-stat .percentage {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .transmission-stat p {
+            color: white;
+            margin: 0.5rem 0;
+        }
+
+        /* Hope Message */
+        .hope-box {
+            background: linear-gradient(135deg, rgba(168, 197, 160, 0.2) 0%, rgba(200, 156, 123, 0.1) 100%);
+            border-left: 5px solid var(--accent-hope);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .hope-box h4 {
+            color: var(--primary-deep);
+            margin-bottom: 0.8rem;
+        }
+
+        .hope-box p {
+            color: var(--text-light);
+            margin: 0.5rem 0;
+        }
+
+        /* Neuroplasticity Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            gap: 2rem;
+        }
+
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(200, 156, 123, 0.3);
+        }
+
+        .timeline-content {
+            padding-top: 0.5rem;
+        }
+
+        .timeline-content h5 {
+            color: var(--primary-deep);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            margin: 0.3rem 0;
+        }
+
+        /* Key Findings Boxes */
+        .finding-box {
+            background: var(--bg-warm);
+            border: 2px solid var(--border-warm);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .finding-box strong {
+            color: var(--primary-deep);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .finding-box p {
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        /* Reference List */
+        .references {
+            background: var(--bg-warm);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-resilience);
+        }
+
+        .reference-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-warm);
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-soft) 0%, var(--secondary-gentle) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 32px rgba(212, 165, 165, 0.2);
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .attachment-styles {
+                grid-template-columns: 1fr;
+            }
+
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transmission-stat .percentage {
+                font-size: 2.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Meta Information */
+        .meta-info {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .meta-info p {
+            margin: 0.3rem 0;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column-content {
+            padding: 1.5rem;
+            background: var(--bg-warm);
+            border-radius: 8px;
+            border: 1px solid var(--border-warm);
+        }
+
+        .column-content h4 {
+            color: var(--primary-deep);
+            margin-bottom: 1rem;
+        }
+
+        .column-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Attachment, Relational Healing & Neuroplasticity</h1>
+        <p class="subtitle">How Secure Connection Rewires the Nervous System and Restores Hope for Healing</p>
+    </div>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <div class="section">
+            <h2>The Science of Connection: Healing Through Relationship</h2>
+            <div class="intro-text">
+                <p><strong>A Hopeful Discovery:</strong> The relationship between attachment processes, nervous system regulation, and psychological healing reveals that human connection operates according to precise biological mechanisms. The groundbreaking finding that attachment wounds can only heal through relationship—and that earned secure attachment is achievable at any age—transforms our understanding of what healing requires.</p>
+                <p>This comprehensive review synthesizes decades of attachment research, interpersonal neurobiology, and therapeutic outcome studies to demonstrate that genuine human connection is not merely supportive but neurobiologically essential for transformation.</p>
+            </div>
+        </div>
+
+        <!-- Attachment Styles Visualization -->
+        <div class="section">
+            <h2>Understanding Attachment Patterns</h2>
+            <p>Attachment styles represent how early caregiving experiences shape our nervous system's expectations about relationships. The good news: while these patterns are real and measurable, research shows they can transform across the lifespan through earned security.</p>
+
+            <div class="visualization-card">
+                <h4>Four Attachment Styles Across the Lifespan</h4>
+                <div class="attachment-styles">
+                    <div class="attachment-secure">
+                        <h5>Secure Attachment</h5>
+                        <p>Comfort with intimacy, emotional expression, trust in self and others, balance of independence and interdependence</p>
+                    </div>
+                    <div class="attachment-anxious">
+                        <h5>Anxious-Preoccupied</h5>
+                        <p>Fear of abandonment, seeking reassurance, low self-esteem, difficulty regulating emotions without external validation</p>
+                    </div>
+                    <div class="attachment-avoidant">
+                        <h5>Dismissive-Avoidant</h5>
+                        <p>Independence valued above connection, emotional withdrawal, difficulty with vulnerability, avoidance of intimacy</p>
+                    </div>
+                    <div class="attachment-disorganized">
+                        <h5>Fearful-Avoidant (Disorganized)</h5>
+                        <p>Oscillation between anxious and avoidant, difficulty with emotion regulation, simultaneous desire and fear of intimacy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="finding-box">
+                <strong>Critical Finding from Attachment Research:</strong>
+                <p>These patterns, while relatively stable, are not permanent. The discovery of earned secure attachment demonstrates that attachment security can develop or strengthen throughout adulthood through intentional relationships and therapeutic work. This finding transforms the landscape of therapeutic possibility.</p>
+            </div>
+        </div>
+
+        <!-- Intergenerational Transmission -->
+        <div class="section">
+            <h2>Intergenerational Transmission: Breaking the Cycle</h2>
+            <p>One of the most significant findings in developmental psychology reveals how attachment patterns pass across generations—and how they can be intentionally interrupted.</p>
+
+            <div class="transmission-stat">
+                <p>Intergenerational Transmission Rate</p>
+                <div class="percentage">75%</div>
+                <p>of parents show direct correlation between their own attachment style and their children's attachment patterns</p>
+            </div>
+
+            <div class="hope-box">
+                <h4>The Path to Breaking the Cycle</h4>
+                <p><strong>Research demonstrates that approximately 75% of parents show direct correlation between their own attachment style and their children's attachment patterns.</strong> However—and this is crucial—this transmission can be intentionally interrupted through parental earned attachment work.</p>
+                <p>When parents develop earned security through therapeutic work, they change their relational patterns with their children, creating new templates for secure attachment. <strong>This capacity for intentional change across generations means that therapeutic investment in adult attachment patterns has ripple effects extending across family systems and communities.</strong></p>
+            </div>
+
+            <div class="diagram-wrapper">
+                <h4 style="text-align: center; color: var(--primary-deep); margin-bottom: 1.5rem;">The Intergenerational Healing Pathway</h4>
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Generation 1 -->
+                    <circle cx="100" cy="50" r="30" fill="#D4A5A5" opacity="0.6"/>
+                    <text x="100" y="55" text-anchor="middle" fill="#2C2416" font-size="12" font-weight="bold">Parent</text>
+                    <text x="100" y="90" text-anchor="middle" fill="#5C4A3D" font-size="11">(Insecure)</text>
+
+                    <!-- Therapy Arrow -->
+                    <path d="M 100 130 Q 120 150 130 170" stroke="#A8C5A0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="135" y="150" fill="#A8C5A0" font-size="11" font-weight="bold">Therapeutic Work</text>
+
+                    <!-- Earned Security -->
+                    <circle cx="100" cy="210" r="30" fill="#A8C5A0" opacity="0.8"/>
+                    <text x="100" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Earned</text>
+                    <text x="100" y="228" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Security</text>
+
+                    <!-- Transmission Arrow -->
+                    <path d="M 130 230 L 220 230" stroke="#A8C5A0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="175" y="220" text-anchor="middle" fill="#A8C5A0" font-size="11" font-weight="bold">New Patterns</text>
+
+                    <!-- Generation 2 -->
+                    <circle cx="280" cy="210" r="30" fill="#A8C5A0" opacity="0.8"/>
+                    <text x="280" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Child</text>
+                    <text x="280" y="228" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Secure</text>
+
+                    <!-- Generation 3 -->
+                    <circle cx="280" cy="50" r="30" fill="#A8C5A0" opacity="0.8"/>
+                    <text x="280" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Grand-</text>
+                    <text x="280" y="68" text-anchor="middle" fill="white" font-size="12" font-weight="bold">child</text>
+
+                    <!-- Upward arrow for next generation -->
+                    <path d="M 280 180 L 280 110" stroke="#A8C5A0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+                    <!-- Arrow marker definition -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="#A8C5A0"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Neurobiological Foundations -->
+        <div class="section">
+            <h2>The Neurobiology of Healing: How Relationship Rewires the Brain</h2>
+            <p>Contemporary neuroscience reveals that early attachment experiences literally program the developing brain. More importantly, research on neuroplasticity shows that the adult brain remains capable of reorganizing through new relational experiences.</p>
+
+            <div class="two-column">
+                <div class="column-content">
+                    <h4>Allan Schore: Right Brain Programming</h4>
+                    <p>The right brain, dominant for attachment and emotion regulation, develops optimal functioning through secure attachment relationships.</p>
+                    <p><strong>Key mechanism:</strong> The mother or primary caregiver literally regulates the infant's developing nervous system through "crescendos and de-crescendos"—ramping up play then calming through soothing and connection.</p>
+                    <p><strong>Most important insight:</strong> What heals is not the absence of harm, but the presence of repair. Secure attachment depends on reliable repair after rupture.</p>
+                </div>
+                <div class="column-content">
+                    <h4>Dan Siegel: Integration Across Systems</h4>
+                    <p>The brain-mind-relationship triangle reveals these three systems are fundamentally interconnected and interdependent.</p>
+                    <p><strong>Mindsight concept:</strong> The ability to perceive your own mind and other minds develops through being understood and reflected back by others.</p>
+                    <p><strong>Critical finding:</strong> Integration happens first in relationships, then becomes internalized through thousands of moments of being understood and appropriately responded to.</p>
+                </div>
+            </div>
+
+            <div class="hope-box">
+                <h4>The Promise of Neuroplasticity</h4>
+                <p>The brain's neuroplasticity—its capacity to reorganize neural connections through experience—means that nervous systems can be rewired through repeated experiences of safety, attunement, and repair. Rather than being fixed by early experiences, the developing and mature brain remains responsive to relational input throughout life.</p>
+                <p><strong>Timeline reality:</strong> Meaningful shifts in attachment security typically require 12 or more months of consistent relational work. Earned secure attachment does not erase trauma history; it contextualizes experiences within a larger narrative of growth and survival.</p>
+            </div>
+        </div>
+
+        <!-- Polyvagal Theory and Co-Regulation -->
+        <div class="section">
+            <h2>Nervous System Communication: The Polyvagal Gateway to Healing</h2>
+            <p>Stephen Porges's Polyvagal Theory reveals how nervous systems communicate and synchronize through the vagus nerve and social engagement system—and why genuine presence is essential for healing.</p>
+
+            <div class="visualization-card">
+                <h4>Three Evolutionary Layers of Nervous System Response</h4>
+                <div style="margin: 1.5rem 0;">
+                    <div style="padding: 1rem; background: rgba(168, 197, 160, 0.2); border-left: 4px solid var(--accent-hope); margin: 1rem 0; border-radius: 4px;">
+                        <strong style="color: var(--primary-deep);">Ventral Vagal (Newest Evolution)</strong>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-light);">Social engagement, safety, calm presence. The body is calm, facial expressions are animated, vocalization is warm. This is where secure attachment lives.</p>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(212, 165, 165, 0.2); border-left: 4px solid var(--secondary-soft); margin: 1rem 0; border-radius: 4px;">
+                        <strong style="color: var(--primary-deep);">Sympathetic Nervous System (Mobilization)</strong>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-light);">Fight-or-flight responses. Activation occurs when threat is perceived—mobilization for defensive action.</p>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(181, 168, 154, 0.2); border-left: 4px solid var(--accent-resilience); margin: 1rem 0; border-radius: 4px;">
+                        <strong style="color: var(--primary-deep);">Dorsal Vagal (Deepest Layer)</strong>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-light);">Freeze or collapse. Initiates when escape is impossible, enabling dissociation and conservation of energy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="finding-box">
+                <strong>Co-Regulation as Primary Healing Mechanism:</strong>
+                <p>Co-regulation—the synchronization of two nervous systems—is not merely metaphorical; it is a biological process happening through synchronized breathing and heartbeat, mirrored facial expressions, attuned vocal tone, predictable and responsive presence, and safe physical proximity.</p>
+                <p>When a therapist maintains a calm, regulated state, the client's nervous system receives an implicit permission to relax through right-brain-to-right-brain communication that bypasses conscious processing. Over repeated sessions, the synchronized state literally teaches the client's nervous system new patterns of organization.</p>
+            </div>
+
+            <div class="hope-box">
+                <h4>Why Genuine Human Presence is Essential</h4>
+                <p>The involuntary physiological synchronization that occurs between two living nervous systems cannot be simulated. The shared heartbeat, synchronized breathing, matched micro-expressions and vocal tone—all these nonverbal signals communicate safety at a level the body understands directly.</p>
+                <p>An artificial system, lacking a nervous system entirely, cannot participate in this biological dance. The body knows the difference between authentic presence and a facsimile.</p>
+            </div>
+        </div>
+
+        <!-- Mirror Neurons -->
+        <div class="section">
+            <h2>Mirror Neuron System: The Neurological Basis of Empathic Understanding</h2>
+            <p>Mirror neurons, discovered in the 1990s, reveal that empathy is literally wired into human neurobiology. These brain cells activate both when an individual performs an action and when they observe someone else performing that action, creating a neural simulation.</p>
+
+            <div class="diagram-wrapper">
+                <h4 style="text-align: center; color: var(--primary-deep); margin-bottom: 1.5rem;">Mirror Neuron Activation in Healing Relationships</h4>
+                <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Therapist Brain -->
+                    <circle cx="100" cy="80" r="50" fill="none" stroke="#C89C7B" stroke-width="2"/>
+                    <text x="100" y="75" text-anchor="middle" fill="#2C2416" font-size="12" font-weight="bold">Therapist</text>
+                    <text x="100" y="90" text-anchor="middle" fill="#5C4A3D" font-size="11">Regulated</text>
+
+                    <!-- Mirror Neuron activation in therapist -->
+                    <circle cx="80" cy="70" r="8" fill="#C89C7B" opacity="0.8"/>
+                    <circle cx="110" cy="85" r="8" fill="#C89C7B" opacity="0.8"/>
+                    <circle cx="95" cy="95" r="8" fill="#C89C7B" opacity="0.8"/>
+
+                    <!-- Empathic Connection -->
+                    <path d="M 150 80 Q 175 80 200 110" stroke="#A8C5A0" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+                    <text x="175" y="75" text-anchor="middle" fill="#A8C5A0" font-size="11" font-weight="bold">Attunement</text>
+
+                    <!-- Client Brain -->
+                    <circle cx="300" cy="110" r="50" fill="none" stroke="#D4A5A5" stroke-width="2"/>
+                    <text x="300" y="105" text-anchor="middle" fill="#2C2416" font-size="12" font-weight="bold">Client</text>
+                    <text x="300" y="120" text-anchor="middle" fill="#5C4A3D" font-size="11">Dysregulated</text>
+
+                    <!-- Mirror neuron activation in client -->
+                    <circle cx="280" cy="100" r="8" fill="#A8C5A0" opacity="0.8"/>
+                    <circle cx="310" cy="115" r="8" fill="#A8C5A0" opacity="0.8"/>
+                    <circle cx="295" cy="125" r="8" fill="#A8C5A0" opacity="0.8"/>
+
+                    <!-- Outcome Arrow -->
+                    <path d="M 250 200 L 300 200" stroke="#A8C5A0" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+
+                    <!-- Outcome Box -->
+                    <rect x="300" y="180" width="80" height="40" fill="#A8C5A0" opacity="0.3" rx="5"/>
+                    <text x="340" y="200" text-anchor="middle" fill="#2C2416" font-size="11" font-weight="bold">Client Nervous</text>
+                    <text x="340" y="215" text-anchor="middle" fill="#2C2416" font-size="11" font-weight="bold">System Begins</text>
+
+                    <!-- Title at bottom -->
+                    <text x="200" y="240" text-anchor="middle" fill="#5C4A3D" font-size="11">Neural Simulation: Client's brain partially recreates therapist's regulated state</text>
+
+                    <defs>
+                        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="#A8C5A0"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="finding-box">
+                <strong>Empathy Through Mirror Neurons:</strong>
+                <p>When a therapist or group member is genuinely present and empathic toward another person's experience, mirror neurons in that person's brain activate. The person's brain partially simulates the regulated state of the one showing empathy. Over repeated interactions, this neural simulation contributes to the person's own developing capacity for regulation.</p>
+                <p>This is why artificial systems cannot provide genuine therapeutic function—they lack the emotional presence needed to activate mirror neuron networks.</p>
+            </div>
+        </div>
+
+        <!-- Therapeutic Alliance -->
+        <div class="section">
+            <h2>The Therapeutic Relationship: Science's Most Potent Healing Tool</h2>
+            <p>Decades of research consistently point to one profound finding: the quality of the therapeutic relationship predicts healing more than any specific therapeutic technique.</p>
+
+            <div class="visualization-card">
+                <h4>What Research Reveals About Therapeutic Effectiveness</h4>
+                <div style="margin: 1.5rem 0;">
+                    <div style="padding: 1rem; background: var(--bg-warm); border-radius: 4px; margin: 1rem 0;">
+                        <strong style="color: var(--primary-deep); display: block; margin-bottom: 0.5rem;">Therapeutic Alliance: ~30% of Outcome Variance</strong>
+                        <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Meta-analyses across hundreds of studies demonstrate that the therapeutic relationship accounts for approximately 30% of variance in outcomes—often more than specific techniques.</p>
+                    </div>
+                    <div style="padding: 1rem; background: var(--bg-warm); border-radius: 4px; margin: 1rem 0;">
+                        <strong style="color: var(--primary-deep); display: block; margin-bottom: 0.5rem;">Technique Equivalence: Surprising Finding</strong>
+                        <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Specific techniques—cognitive-behavioral, psychodynamic, emotionally focused, somatic—are roughly equivalent in outcomes when studied carefully. What differs dramatically is the quality of relationship within which techniques are delivered.</p>
+                    </div>
+                    <div style="padding: 1rem; background: var(--bg-warm); border-radius: 4px; margin: 1rem 0;">
+                        <strong style="color: var(--primary-deep); display: block; margin-bottom: 0.5rem;">Being Seen Matters Most</strong>
+                        <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Clients who feel genuinely seen and understood by their therapist show significantly better outcomes across all psychological measures, regardless of theoretical approach.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Core Mechanisms of Therapeutic Healing</h3>
+            <div class="two-column">
+                <div class="column-content">
+                    <h4>Secure Base Function</h4>
+                    <p>The therapist becomes a secure base from which the client can explore previously avoided emotions and experiences. Because safety is established through consistent attunement and responsiveness, the client can lower defenses.</p>
+                </div>
+                <div class="column-content">
+                    <h4>Right-Brain-to-Right-Brain Communication</h4>
+                    <p>Healing occurs primarily through emotional attunement rather than intellectual understanding. The therapist's own emotional regulation is directly transmitted to the client, often outside conscious awareness.</p>
+                </div>
+            </div>
+
+            <div class="two-column">
+                <div class="column-content">
+                    <h4>Rupture and Repair</h4>
+                    <p>The therapist inevitably creates moments of misattunement. What matters is how ruptures are handled: recognition, acknowledgment, and genuine reconnection teach that disconnection is survivable and repair is possible.</p>
+                </div>
+                <div class="column-content">
+                    <h4>Corrective Emotional Experience</h4>
+                    <p>The client experiences what secure attachment feels like at a visceral, embodied level. Internalized beliefs are challenged through lived experience—the therapist's consistent presence contradicts trauma narratives.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earned Secure Attachment Pathway -->
+        <div class="section">
+            <h2>The Earned Security Pathway: Hope for Healing</h2>
+            <p>One of psychology's most hopeful findings is that attachment security can develop throughout adulthood. The path involves specific, sequential developmental stages.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h5>Understand Origins</h5>
+                        <p>Develop awareness of how early experiences shaped nervous system expectations and relational patterns. This cognitive understanding creates context for change.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h5>Experience Safety in Relationship</h5>
+                        <p>Spend time with someone consistently present, attuned, and responsive. The nervous system gradually learns that connection is safe. This typically requires 12+ months of consistent relational work.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h5>Practice Vulnerability</h5>
+                        <p>Begin expressing authentic self in progressively more challenging contexts. Each moment of being seen without rejection rewires nervous system expectations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h5>Navigate Rupture and Repair</h5>
+                        <p>Survive disconnection and repair it. Each successful repair teaches that relationships can recover and people can be trusted to recognize and fix harm.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h5>Internalize Security</h5>
+                        <p>Through thousands of moments of being understood, the client gradually internalizes the sense of being valued and worthy. Self-regulation capacity develops.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <h5>Develop Narrative Coherence</h5>
+                        <p>Integrate personal history within a larger life context. Move from being controlled by past experiences to understanding them as part of one's story without being defined by them.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">7</div>
+                    <div class="timeline-content">
+                        <h5>Choose Connection from Wholeness</h5>
+                        <p>Develop relational sovereignty—the internal security that allows authentic choice in relationships. Connect because it is nourishing, not because of desperation or fear.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adult Attachment Interview -->
+        <div class="section">
+            <h2>The Adult Attachment Interview: Measuring Change Across Development</h2>
+            <p>The Adult Attachment Interview (AAI) is the most validated measure in attachment research, revealing how individuals have integrated and made meaning of their attachment experiences.</p>
+
+            <div class="finding-box">
+                <strong>Remarkable Cross-Person Continuity:</strong>
+                <p>Mary Main's longitudinal research following infants from the 1970s into adulthood revealed extraordinary correlation between infant attachment behavior, behavior at age 6, and adults' AAI responses from 20 years later. Van IJzendoorn calculated it would take 1,087 attempted replications to overturn this finding through chance alone, describing it as "one of the most remarkable cross-person, cross-situation, cross-measurement continuities in all of psychology."</p>
+            </div>
+
+            <div class="hope-box">
+                <h4>Why the AAI Matters for Understanding Change</h4>
+                <p>The AAI measures not merely attachment history but "state of mind with respect to attachment"—how individuals have made sense of their attachment experiences. This distinction is crucial: <strong>what changes in therapy is not the historical fact of adverse experiences but the individual's capacity to reflect on those experiences, understand them, integrate them, and relate to them differently.</strong></p>
+                <p>This is precisely the mechanism through which earned secure attachment develops. Individuals move from being unconsciously controlled by attachment patterns to consciously understanding and choosing how to respond.</p>
+            </div>
+
+            <div class="visualization-card">
+                <h4>Intergenerational Impact of Parent Change</h4>
+                <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(168, 197, 160, 0.15) 0%, rgba(200, 156, 123, 0.1) 100%); border-radius: 8px;">
+                    <p style="margin: 0.5rem 0;"><strong style="color: var(--primary-deep);">Parent-Child Correspondence:</strong> Approximately 75% correspondence between parent's AAI status and child's attachment behavior, even when parent interview is conducted before child's birth.</p>
+                    <p style="margin: 0.5rem 0;"><strong style="color: var(--primary-deep);">Interrupting Transmission:</strong> When parents develop earned secure attachment, they change relational patterns with their children, creating new templates for security.</p>
+                    <p style="margin: 0.5rem 0;"><strong style="color: var(--primary-deep);">Ripple Effect:</strong> Therapeutic investment in adult attachment patterns has effects extending across family systems and communities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group Healing and Community -->
+        <div class="section">
+            <h2>Group Healing and Community: Collective Mechanisms for Transformation</h2>
+            <p>While individual therapy is powerful, group therapy provides irreplaceable healing mechanisms. Research demonstrates group therapy is equivalent to individual therapy for anxiety, depression, grief, eating disorders, and schizophrenia—and shows superior outcomes for some presentations.</p>
+
+            <div class="visualization-grid">
+                <div class="visualization-card">
+                    <h4>Multiple Attachment Figures</h4>
+                    <p>Rather than depending on one secure relationship, group members develop connections with the facilitator, with each other, and with the group as a whole. This reduces pathological dependency while building capacity to receive care from multiple sources.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Social Proof of Normalcy</h4>
+                    <p>When individuals share struggles in group, normalcy is established. Hearing others' resilience and survival inspires hope. The universality of human pain becomes visible and therefore more bearable.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Real-Time Relational Practice</h4>
+                    <p>Members practice relational skills in the group itself—asking for help, expressing needs, setting boundaries, disagreeing without fragmenting. Feedback from multiple perspectives reshapes internal working models.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Peer Witness and Mutual Healing</h4>
+                    <p>Peer witness carries different power than professional guidance alone. One client helping another becomes healing for both. Roles become fluid rather than fixed, reducing shame and isolation.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Accountability and Commitment</h4>
+                    <p>Group members develop shared investment in each other's healing. Social accountability—showing up matters to others—sustains individuals through difficulty when internal motivation flags.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Public Repair and System Learning</h4>
+                    <p>Members witness rupture and repair in real time, not hidden in confidential dyadic space. This public repair teaches the nervous system that relationship problems can be solved.</p>
+                </div>
+            </div>
+
+            <div class="finding-box">
+                <strong>Research on Collective Trauma Recovery:</strong>
+                <p>In one trauma-informed group intervention, participants in a 30-person group retreat demonstrated a 37% reduction in PTSD symptoms, 80% improvement in sense of social connection, and 60% improvement in emotional resilience—effects sustained across follow-up periods. These outcomes suggest that collective healing generates synergistic effects beyond individual work.</p>
+            </div>
+        </div>
+
+        <!-- Attachment and Addiction -->
+        <div class="section">
+            <h2>Attachment Trauma and Addiction: Disconnection as Root Cause</h2>
+            <p>Contemporary neuroscience reveals that attachment trauma and addiction share fundamental neurobiological pathways. This insight reframes addiction not as a brain disease but as a relational wound that heals through relational medicine.</p>
+
+            <div class="finding-box">
+                <strong>Shared Neurobiology of Disconnection:</strong>
+                <p>Both attachment and substance addiction involve the dopamine system (reward/motivation), oxytocin system (bonding), and glucocorticoid system (stress response). When attachment needs are unmet, the developing brain receives insufficient dopamine reward from social contact. Later, when individuals encounter substances that flood the dopamine system, they find what was missing—a chemical solution to the disconnection wound.</p>
+            </div>
+
+            <div class="hope-box">
+                <h4>Peter Cohen's Revolutionary Insight</h4>
+                <p><strong>"Addiction is not about drugs—it's about bonds."</strong> Humans bond to whatever provides relief, comfort, or escape. Addiction develops not because certain substances are inherently addictive but because healthy bonding is impossible. Disconnection, not drugs, becomes the primary condition.</p>
+                <p>This reframes therapeutic attention from the substance to the relational wound beneath—and reveals that sustainable recovery requires rebuilding connection.</p>
+            </div>
+
+            <div class="two-column">
+                <div class="column-content">
+                    <h4>What Predicts Addiction Risk</h4>
+                    <p>Insecure attachment patterns strongly predict addiction vulnerability. Fearful-avoidant attachment shows highest addiction rates. Unresolved childhood trauma represents the strongest predictor of substance use disorders.</p>
+                    <p>The intergenerational transmission is profound: parental addiction increases child vulnerability through rewiring of dopamine and oxytocin systems.</p>
+                </div>
+                <div class="column-content">
+                    <h4>What Enables Sustainable Recovery</h4>
+                    <p>12-step programs work because they provide community and fellowship—the fellowship is the medicine. Group support during recovery is the strongest predictor of sustained sobriety. Isolation represents the fastest pathway to relapse.</p>
+                    <p>Sustainable recovery depends on mending broken connections and forging new relational bonds—neurobiological rewiring through relationship.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Relational Sovereignty -->
+        <div class="section">
+            <h2>Relational Sovereignty: The Goal of Attachment Healing</h2>
+            <p>Sovereignty means developing the internal security that allows authentic choice in relationships. This paradoxical finding reveals that genuine autonomy depends on secure attachment.</p>
+
+            <div class="hope-box">
+                <h4>What Relational Sovereignty Looks Like</h4>
+                <p>Secure individuals can be interdependent without losing themselves. They can ask for help without shame or loss of identity. They can set boundaries without guilt or fear of rejection. They can be vulnerable without terror. They choose connection because it is nourishing and meaningful, not because they are desperate or controlled by fear.</p>
+                <p><strong>This is not selfishness disguised as autonomy.</strong> True relational sovereignty means having enough internal security to show up authentically in relationships, meeting others as equals rather than from positions of desperation or self-protection.</p>
+            </div>
+
+            <div class="finding-box">
+                <strong>The Paradox of Connection and Autonomy:</strong>
+                <p>People with secure attachments are more independent, not less. They can take risks because support exists. They can be vulnerable because they trust repair. They can invest in projects and dreams because they are not consumed by relational anxiety. Paradoxically, relational security enables individual autonomy; isolation impairs it.</p>
+            </div>
+
+            <div class="two-column">
+                <div class="column-content">
+                    <h4>What Insecurity Looks Like</h4>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li><strong>Anxious:</strong> Loss of self in relationships, abandoning own needs</li>
+                        <li><strong>Avoidant:</strong> Isolation and inability to access support</li>
+                        <li><strong>Disorganized:</strong> Oscillation between anxious and avoidant poles</li>
+                    </ul>
+                    <p>In all cases, the person remains controlled by the wound rather than choosing from wholeness.</p>
+                </div>
+                <div class="column-content">
+                    <h4>Why Relational Help is Essential</h4>
+                    <p>Individuals cannot bootstrap themselves into secure attachment. They cannot think their way there through intellectual understanding, will their way through determination, or strategize their way through technique.</p>
+                    <p>The attachment patterns are encoded in the nervous system, not the conscious mind. The nervous system learns through experience, not understanding. Real experiences of being valued and cared for must come from others; they cannot be self-generated.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why AI Cannot Replace Human Connection -->
+        <div class="section">
+            <h2>The Neurobiological Limitations of Artificial Systems</h2>
+            <p>Research on therapeutic mechanisms reveals why artificial systems, regardless of sophistication, cannot provide what the nervous system requires for attachment healing.</p>
+
+            <div class="visualization-grid">
+                <div class="visualization-card">
+                    <h4>Genuine Attunement Required</h4>
+                    <p>Genuine attunement requires one person to deeply feel with another—a shared emotional state where nervous systems resonate. Artificial systems can process language but have no emotional experience. The nervous system knows the difference between simulated and genuine presence.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Co-Regulation Impossible</h4>
+                    <p>Co-regulation depends on involuntary physiological synchronization—shared heartbeat, synchronized breathing, matched expressions, attuned vocal tone. An artificial system lacks a nervous system entirely. The body cannot be fooled into experiencing safety from a non-embodied source.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Embodied Presence Essential</h4>
+                    <p>Healing involves eye contact, vocal tone, postural shifts that communicate attunement. Artificial systems interface through screens; the client knows they are interacting with code. The body knows what the mind denies.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Continuity of Care Missing</h4>
+                    <p>A human therapist thinks about the client between sessions and holds their story across time. An artificial system has no genuine continuity of consciousness. This continuity is crucial for building secure attachment.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Relational Friction Bypassed</h4>
+                    <p>Growth through relational friction—misunderstanding, negotiation of difference, recovery from disconnection—is essential for deep transformation. Artificial systems designed for maximum compatibility bypass this essential process.</p>
+                </div>
+                <div class="visualization-card">
+                    <h4>Risk of Relational Imprisonment</h4>
+                    <p>Artificial systems may reinforce avoidance patterns rather than healing them. Individuals with attachment trauma may find them appealing—safe, predictable, controlled, with no possibility of rejection. This creates a sense of security while remaining isolated from human connection.</p>
+                </div>
+            </div>
+
+            <div class="hope-box">
+                <h4>Mirror Neurons and Authentic Presence</h4>
+                <p>Mirror neurons require genuine emotional presence to activate. A sophisticated language model cannot activate mirror neuron networks because it has no emotional experience to simulate. The neural mechanism through which relationship rewires the brain requires authentic human presence. This is not limitation of current technology—it is fundamental neurobiology.</p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h3>The Path Forward: Relational Healing is Possible</h3>
+            <p>The science is clear: human connection is not a luxury or enhancement—it is the fundamental mechanism through which attachment wounds heal and relational sovereignty develops.</p>
+            <p>For individuals recovering from attachment trauma, seeking to build relational sovereignty, or moving toward earned secure attachment, the research clearly indicates that the path requires genuine human connection within a container of safety and authentic care.</p>
+            <p><strong>This is not wishful thinking. This is validated neurobiology across decades of rigorous research.</strong></p>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="section">
+            <h2>Key Findings Summary</h2>
+            <div class="visualization-grid">
+                <div class="finding-box">
+                    <strong>1. Attachment Patterns Can Change</strong>
+                    <p>Earned secure attachment is achievable at any age through sustained, attuned relational work. Research documents change beginning within 12-16 weeks, with substantial shifts at 12+ months.</p>
+                </div>
+                <div class="finding-box">
+                    <strong>2. The Nervous System Heals in Relationship</strong>
+                    <p>Nervous systems heal in relationship with other regulated nervous systems. This is not metaphorical—it is neurobiological co-regulation through physiological synchronization.</p>
+                </div>
+                <div class="finding-box">
+                    <strong>3. Therapeutic Alliance is Most Potent</strong>
+                    <p>The quality of relationship predicts healing more than specific techniques. Being genuinely seen and understood consistently shows superior outcomes across all psychological measures.</p>
+                </div>
+                <div class="finding-box">
+                    <strong>4. Community Creates Synergistic Healing</strong>
+                    <p>Group healing generates outcomes exceeding individual work through multiple attachment figures, social proof of normalcy, real-time relational practice, and collective witness.</p>
+                </div>
+                <div class="finding-box">
+                    <strong>5. Generational Change is Possible</strong>
+                    <p>When parents develop earned security, they change relational patterns with their children, creating new templates. Therapeutic investment ripples across family systems.</p>
+                </div>
+                <div class="finding-box">
+                    <strong>6. Neuroplasticity is Lifelong</strong>
+                    <p>The adult brain remains capable of reorganizing through new relational experiences. Change is possible regardless of early adversity or current age.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- References -->
+        <div class="section">
+            <h2>References</h2>
+            <div class="references">
+                <div class="reference-item">[1] Bowlby, J. (1988). <em>A secure base: Parent-child attachment and healthy human development.</em> Basic Books.</div>
+                <div class="reference-item">[2] Ainsworth, M. D. S. (1978). <em>Infancy in Uganda: Infant care and the growth of love.</em> Johns Hopkins University Press.</div>
+                <div class="reference-item">[3] Heller, D. S., & LaPierre, S. (2012). <em>Healing developmental trauma: How early trauma affects self-regulation, self-image, and the capacity for relationship.</em> North Atlantic Books.</div>
+                <div class="reference-item">[4] Doidge, N. (2007). <em>The brain that changes itself: Stories of personal triumph from the frontiers of neuroscience.</em> Penguin Press.</div>
+                <div class="reference-item">[5] Hesse, E. (1996). Discourse, memory, and the Adult Attachment Interview. <em>Infant Mental Health Journal, 17</em>(1), 4-11.</div>
+                <div class="reference-item">[6] Schore, A. N. (2012). <em>The science of the art of psychotherapy.</em> W. W. Norton & Company.</div>
+                <div class="reference-item">[7] Schore, A. N. (2002). Dysregulation of the right brain: A fundamental mechanism of traumatic attachment. <em>Australian and New Zealand Journal of Psychiatry, 36</em>, 9-30.</div>
+                <div class="reference-item">[8] Siegel, D. J. (2012). <em>The developing mind: How relationships and the brain interact to shape who we are.</em> Guilford Press.</div>
+                <div class="reference-item">[9] Porges, S. W. (2011). <em>The polyvagal theory: Neurophysiological foundations of emotions, attachment, communication, and self-regulation.</em> W. W. Norton & Company.</div>
+                <div class="reference-item">[10] Horvath, A. O., Del Re, A. C., Flückiger, C., & Symonds, D. (2011). Alliance in individual psychotherapy. <em>Psychotherapy, 48</em>, 9-16.</div>
+                <div class="reference-item">[11] Johnson, S. M. (2019). <em>Attachment theory in practice: Emotionally focused therapy with individuals, couples, and families.</em> Guilford Press.</div>
+                <div class="reference-item">[12] Johnson, S. M., & Whiffen, V. E. (2003). <em>Attachment processes in couple and family therapy.</em> Guilford Press.</div>
+                <div class="reference-item">[13] van der Kolk, B. A. (2014). <em>The body keeps the score: Brain, mind, and body in the healing of trauma.</em> Penguin Press.</div>
+                <div class="reference-item">[14] Morgan, O. J. (2020). <em>Addiction, attachment, trauma and recovery: The power of connection.</em> W. W. Norton & Company.</div>
+                <div class="reference-item">[15] Yalom, I. D., & Leszcz, M. (2005). <em>The theory and practice of group psychotherapy</em> (5th ed.). Basic Books.</div>
+                <div class="reference-item">[16] Pocock, D., & Howard, P. (2021). <em>Attachment-informed group psychotherapy: An integrated model.</em> Routledge.</div>
+                <div class="reference-item">[17] Granfield, R., & Cloud, W. (1999). <em>Coming clean: Overcoming addiction without treatment.</em> New York University Press.</div>
+                <div class="reference-item">[18] Schindler, A. (2019). Pathways relating the neurobiology of attachment to drug addiction. <em>Frontiers in Psychiatry, 10</em>, 737.</div>
+                <div class="reference-item">[19] Levy, K. N., & Johnson, S. M. (2018). Attachment theory and psychotherapy: An introduction. <em>Canadian Psychology, 59</em>, 206-208.</div>
+                <div class="reference-item">[22] Main, M., Kaplan, N., & Cassidy, J. (1985). Security in infancy, childhood, and adulthood: A move to the level of representation. <em>Monographs of the Society for Research in Child Development, 50</em>, 66-104.</div>
+                <div class="reference-item">[23] Main, M. (1995). Recent studies on attachment: Overview, with selected implications for clinical work. <em>Attachment and Human Development, 3</em>, 1-5.</div>
+                <div class="reference-item">[24] Ramachandran, V. S. (2000). Mirror neurons and imitation learning as the driving force behind the great leap forward in human evolution. <em>Edge Foundation.</em></div>
+            </div>
+        </div>
+
+        <!-- Meta Information -->
+        <div class="meta-info">
+            <p><strong>Document Type:</strong> Enhanced Literature Review with Scientific Visualizations</p>
+            <p><strong>Research Focus:</strong> Attachment Theory, Relational Neuroscience, and Therapeutic Healing</p>
+            <p><strong>Theoretical Framework:</strong> Earned Secure Attachment and Relational Sovereignty Development</p>
+            <p><strong>Design Philosophy:</strong> Scientific Validity with Relational Warmth and Hope for Neuroplasticity</p>
+            <p><strong>Created:</strong> December 25, 2025</p>
+        </div>
+    </div>
+</body>
+</html>

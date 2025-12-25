@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Attention Economy and Mental Health: Evidence, Mechanisms, and Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --danger-red: #DC2626;
+            --danger-orange: #EA580C;
+            --warning-yellow: #EAB308;
+            --calm-green: #10B981;
+            --calm-blue: #0EA5E9;
+            --calm-purple: #8B5CF6;
+            --soft-white: #F9FAFB;
+            --dark-gray: #1F2937;
+            --medium-gray: #6B7280;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--soft-white);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #374151 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            border-bottom: 3px solid var(--calm-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #1F2937;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .evidence-box {
+            background: #FEF3C7;
+            border-left: 4px solid var(--warning-yellow);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .danger-box {
+            background: #FEE2E2;
+            border-left: 4px solid var(--danger-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            color: #991B1B;
+        }
+
+        .solution-box {
+            background: #ECFDF5;
+            border-left: 4px solid var(--calm-green);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            color: #065F46;
+        }
+
+        .visualization {
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .visualization h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        /* Dopamine Hijacking Visualization */
+        .dopamine-chart {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background: linear-gradient(to top, #F3F4F6, white);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .dopamine-timeline {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 250px;
+            gap: 1rem;
+        }
+
+        .dopamine-bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--danger-red), var(--danger-orange));
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .dopamine-bar:hover {
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .dopamine-bar span {
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dopamine-bar.baseline {
+            background: linear-gradient(to top, var(--medium-gray), #9CA3AF);
+            height: 40px;
+        }
+
+        .dopamine-bar.check-1 {
+            height: 60px;
+        }
+
+        .dopamine-bar.check-2 {
+            height: 90px;
+        }
+
+        .dopamine-bar.check-3 {
+            height: 140px;
+        }
+
+        .dopamine-bar.check-4 {
+            height: 180px;
+        }
+
+        .dopamine-label {
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--medium-gray);
+        }
+
+        /* Screen Time & Mental Health Correlation */
+        .correlation-graph {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background: linear-gradient(to top, #F3F4F6, white);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* FOMO Cycle Diagram */
+        .fomo-cycle {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .fomo-stage {
+            background: linear-gradient(135deg, var(--danger-red), var(--danger-orange));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .fomo-stage:hover {
+            transform: scale(1.05);
+        }
+
+        .fomo-stage h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fomo-stage p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .fomo-arrow {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--danger-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-top-right {
+            top: -30px;
+            right: -30px;
+        }
+
+        .arrow-bottom-right {
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .arrow-bottom-left {
+            bottom: -30px;
+            left: -30px;
+        }
+
+        .arrow-top-left {
+            top: -30px;
+            left: -30px;
+        }
+
+        /* Persuasive Design Patterns */
+        .design-patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .pattern-card {
+            background: linear-gradient(135deg, #FEE2E2, #FECACA);
+            border: 2px solid var(--danger-red);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pattern-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(220, 38, 38, 0.2);
+        }
+
+        .pattern-card h4 {
+            color: var(--danger-red);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pattern-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Calm Technology & Solutions */
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+            border: 2px solid var(--calm-green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+        }
+
+        .solution-card h4 {
+            color: var(--calm-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #065F46;
+        }
+
+        /* Anti-Gravity Design Concept */
+        .anti-gravity-flow {
+            background: linear-gradient(135deg, #EDE9FE, #F3E8FF);
+            border: 2px solid var(--calm-purple);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .flow-stage {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .flow-number {
+            background: var(--calm-purple);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .flow-content {
+            flex: 1;
+        }
+
+        .flow-content h4 {
+            color: var(--calm-purple);
+            margin: 0 0 0.3rem 0;
+        }
+
+        .flow-content p {
+            margin: 0;
+            color: #581C87;
+            font-size: 0.95rem;
+        }
+
+        /* Causal Evidence Section */
+        .evidence-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .evidence-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: #F3F4F6;
+            border-radius: 4px;
+            border-left: 4px solid var(--calm-blue);
+        }
+
+        .evidence-item::before {
+            content: '✓';
+            color: var(--calm-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .evidence-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border: 2px solid var(--calm-blue);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--calm-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #075985;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Dose-Response Curve */
+        .dose-response {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .dose-curve-svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Buttons and CTA */
+        .cta-button {
+            display: inline-block;
+            background: var(--calm-blue);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--calm-purple);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .reference-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #E5E7EB;
+        }
+
+        .reference-list {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+
+        .reference-list p {
+            margin-bottom: 1rem;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .fomo-cycle {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .dopamine-bar span {
+                font-size: 0.75rem;
+            }
+
+            .design-patterns,
+            .solution-cards,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Emphasis */
+        strong {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .highlight-danger {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--danger-red);
+            font-weight: 600;
+            padding: 0.1rem 0.3rem;
+        }
+
+        .highlight-solution {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--calm-green);
+            font-weight: 600;
+            padding: 0.1rem 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Attention Economy and Mental Health</h1>
+        <p>Evidence of Harm, Mechanisms of Addiction, and Pathways to User Sovereignty</p>
+    </header>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="section">
+            <h2>The Crisis: Evidence and Timing</h2>
+            <p>Between 2010 and 2015, a pivotal transformation occurred in adolescent social development. The years that researchers now call "The Great Rewiring of Childhood" mark the period when adolescent social life fundamentally shifted from in-person interactions to primarily digital interactions facilitated through smartphones and social media platforms. This transition was not gradual but sudden, creating a distinct inflection point in population mental health data.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">134%</div>
+                    <div class="stat-label">Anxiety Increase<br>(2010-2018)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">106%</div>
+                    <div class="stat-label">Depression Increase<br>(2010-2018)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">139%</div>
+                    <div class="stat-label">Gen Z Depression<br>Increase</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2x</div>
+                    <div class="stat-label">Depression Risk<br>(5+ hrs daily use)</div>
+                </div>
+            </div>
+
+            <div class="evidence-box">
+                <strong>Evidence of Causation (Not Just Correlation):</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li>Randomized studies: Reducing social media improves happiness within 2 weeks</li>
+                    <li>Natural experiments: Universities showed mental health decline after Facebook adoption</li>
+                    <li>Specification curve analysis: Consistent results across multiple datasets and methodologies</li>
+                    <li>Dose-response relationship: More use = measurable greater harm</li>
+                    <li>Sleep disruption: 33% → 50% of students sleeping ≤7 hours (2010-2021)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Dopamine Hijacking Visualization -->
+        <section class="section">
+            <h2>The Neurobiology of Addiction: Dopamine Hijacking</h2>
+            <p>The mechanisms making technology "engaging" are identical to those that drive gambling addiction. Variable-ratio reinforcement schedules—which deliver rewards at unpredictable intervals—represent the most potent behavioral conditioning schedule identified in decades of operant conditioning research. When you post content and check unpredictably for likes, your brain enters an "anticipation state" where dopamine is released in response to <strong>uncertainty of reward</strong>, not the reward itself.</p>
+
+            <div class="danger-box">
+                <strong>How Instagram Exploits This:</strong> The platform withholds likes temporarily, then delivers them in batches. Users see fewer-than-expected likes initially (negative prediction error), followed by a sudden arrival of high like counts (strong dopamine response). This is not accidental—Instagram employs behavioral scientists specifically to optimize reward prediction error.
+            </div>
+
+            <div class="visualization">
+                <h4>Dopamine Response Pattern: The Addiction Spiral</h4>
+                <div class="dopamine-chart">
+                    <div class="dopamine-timeline">
+                        <div>
+                            <div class="dopamine-bar baseline">
+                                <span>Base</span>
+                            </div>
+                            <div class="dopamine-label">Baseline<br>Dopamine</div>
+                        </div>
+                        <div>
+                            <div class="dopamine-bar check-1">
+                                <span>+48%</span>
+                            </div>
+                            <div class="dopamine-label">First Check<br>(5 min)</div>
+                        </div>
+                        <div>
+                            <div class="dopamine-bar check-2">
+                                <span>+92%</span>
+                            </div>
+                            <div class="dopamine-label">Second Check<br>(10 min)</div>
+                        </div>
+                        <div>
+                            <div class="dopamine-bar check-3">
+                                <span>+156%</span>
+                            </div>
+                            <div class="dopamine-label">Third Check<br>(15 min)</div>
+                        </div>
+                        <div>
+                            <div class="dopamine-bar check-4">
+                                <span>+268%</span>
+                            </div>
+                            <div class="dopamine-label">Addiction State<br>(Chronic)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>The Escalation Cycle</h3>
+            <p>As tolerance develops, greater stimulation is required to produce the same dopamine effect. Users escalate by:</p>
+            <ul style="margin-left: 1.5rem;">
+                <li>Increasing screen time</li>
+                <li>Seeking more extreme content</li>
+                <li>Engaging with multiple platforms simultaneously</li>
+            </ul>
+            <p>This mirrors substance addiction: increased tolerance, withdrawal symptoms (anxiety/irritability), loss of control despite conscious intentions, and functional impairment including neglected relationships and poor sleep.</p>
+        </section>
+
+        <!-- Screen Time & Mental Health Correlation -->
+        <section class="section">
+            <h2>Dose-Response Relationships: The Evidence Curve</h2>
+            <p>Research reveals a clear dose-response relationship between social media use and mental health outcomes. Congressional testimony shows that the threshold effect is dramatic:</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0-2h</div>
+                    <div class="stat-label">No measured mental health<br>decline</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3-4h</div>
+                    <div class="stat-label">Statistically significant<br>harm begins</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+h</div>
+                    <div class="stat-label">2x depression risk vs<br>non-users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7+h</div>
+                    <div class="stat-label">22% of 10th grade girls<br>(2023 data)</div>
+                </div>
+            </div>
+
+            <h3>Gender Dimorphism: Why Girls Are More Severely Affected</h3>
+            <p>Social media's mental health impacts are not uniformly distributed across sexes. Adolescent girls experience dramatically elevated rates of <span class="highlight-danger">self-harm, eating disorders, and suicidal ideation</span> correlated with heavy social media use. This gender difference suggests that psychological mechanisms operate differently depending on developmental pathways and baseline vulnerabilities—particularly around social comparison, appearance, and relational dynamics.</p>
+        </section>
+
+        <!-- Continuous Partial Attention -->
+        <section class="section">
+            <h2>Cognitive Fragmentation: The Cost of Always-On Monitoring</h2>
+            <p><strong>Continuous partial attention</strong> describes a condition where attention is directed toward a primary task while simultaneously monitoring for interruptions—driven not by productivity goals but by fear of missing something socially important. This differs fundamentally from multitasking.</p>
+
+            <div class="danger-box">
+                <strong>Neurological and Physiological Consequences:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li><strong>Working memory impairment:</strong> Reduced capacity for holding complex ideas</li>
+                    <li><strong>Learning degradation:</strong> Poor retention without sustained attention</li>
+                    <li><strong>Reduced creativity:</strong> Novel connections require undivided attention</li>
+                    <li><strong>Elevated cortisol:</strong> Chronic stress hormone elevation</li>
+                    <li><strong>Email apnea:</strong> Unconscious breath-holding during notifications</li>
+                    <li><strong>Sleep disruption:</strong> High-stress baseline prevents restorative sleep</li>
+                    <li><strong>Impaired neuroplasticity:</strong> Long-term exposure may weaken cognitive function</li>
+                </ul>
+            </div>
+
+            <p>The vicious cycle is self-reinforcing: fragmented attention triggers cortisol release → cortisol impairs sleep quality and creates irritability → worse sleep reduces cognitive reserve → increased reliance on stimulation and novelty-seeking → drawn back to intermittent reinforcement systems of social media.</p>
+        </section>
+
+        <!-- FOMO Cycle -->
+        <section class="section">
+            <h2>The FOMO Cycle: Fear of Missing Out as Designed Architecture</h2>
+            <p>Fear of Missing Out (FOMO) is defined as "an all-consuming feeling associated with mental and emotional stress caused by compulsive concern about missing socially rewarding experiences visible on social media platforms." The algorithms curate others' highlight reels, presenting the most socially desirable moments without context. Users compare their everyday reality—with mundane failures and emotional complexity—to others' curated best moments.</p>
+
+            <div class="fomo-cycle">
+                <div class="fomo-stage">
+                    <h4>1. PERCEPTION</h4>
+                    <p>Belief that others are having better experiences</p>
+                </div>
+                <div class="fomo-arrow arrow-top-right">→</div>
+                <div class="fomo-stage">
+                    <h4>2. ANXIETY</h4>
+                    <p>Fear of social exclusion and missing out</p>
+                </div>
+                <div class="fomo-arrow arrow-bottom-right">↓</div>
+                <div class="fomo-stage">
+                    <h4>3. COMPULSION</h4>
+                    <p>Compulsive checking and engagement behavior</p>
+                </div>
+                <div class="fomo-arrow arrow-bottom-left">←</div>
+                <div class="fomo-stage">
+                    <h4>4. INADEQUACY</h4>
+                    <p>Lowered self-esteem and social comparison</p>
+                </div>
+                <div class="fomo-arrow arrow-top-left">↑</div>
+            </div>
+
+            <div class="danger-box">
+                <strong>Mediation Chain (Research-Backed):</strong>
+                <p style="margin-top: 0.5rem;">Social comparison → FOMO → problematic use → decreased self-esteem → increased comparison vulnerability (reinforcing cycle)</p>
+                <p>Moderating factors that intensify this chain: <strong>addiction (β=0.20), baseline loneliness (β=0.13), perfectionism (β=0.14)</strong>—all actively cultivated by social media design.</p>
+            </div>
+        </section>
+
+        <!-- Persuasive Design Patterns Exposed -->
+        <section class="section">
+            <h2>Dark Patterns: Persuasive Design Weaponized</h2>
+            <p>Technology companies employ six systematically combined elements identified by behavioral science as maximally addictive:</p>
+
+            <div class="design-patterns">
+                <div class="pattern-card">
+                    <h4>1. Goals</h4>
+                    <p>Streaks to maintain, levels to advance through, badges to unlock—creating artificial targets that keep users engaged.</p>
+                </div>
+                <div class="pattern-card">
+                    <h4>2. Feedback</h4>
+                    <p>Immediate visible responses to user actions—likes, comments, notifications creating constant reward signals.</p>
+                </div>
+                <div class="pattern-card">
+                    <h4>3. Progress</h4>
+                    <p>Visible milestones and unlocks that show advancement and achievement.</p>
+                </div>
+                <div class="pattern-card">
+                    <h4>4. Escalation</h4>
+                    <p>Increasing difficulty over time, requiring higher engagement thresholds for the same reward value.</p>
+                </div>
+                <div class="pattern-card">
+                    <h4>5. Cliffhangers</h4>
+                    <p>Unread badges, story previews, algorithmic recommendations creating suspense that compels continued use.</p>
+                </div>
+                <div class="pattern-card">
+                    <h4>6. Social Interaction</h4>
+                    <p>Tagging, sharing, following metrics leveraging connections and comparisons.</p>
+                </div>
+            </div>
+
+            <div class="danger-box">
+                <strong>The Information Asymmetry Problem:</strong>
+                <p style="margin-top: 0.5rem;">Companies have access to decades of behavioral science research, employ hundreds of engineers focused on engagement optimization, possess real-time data on individual triggers, and conduct A/B testing to refine techniques. Users have limited information, cognitive biases of which they're unaware, and cannot experiment on their own lives. This fundamental asymmetry makes individual responsibility narratives inadequate.</p>
+            </div>
+
+            <h3>Autonomy as the Boundary Between Persuasion and Manipulation</h3>
+            <p><strong>Autonomy comprises:</strong> Agency (ability to take independent action), freedom of choice (access to viable options), control (power to determine outcomes), and independence (self-directed decision-making).</p>
+
+            <p><strong>Dark patterns systematically erode these through:</strong> Coercion via narrowed choice architecture (hiding delete options), deception via misleading information (privacy-invasive defaults), and manipulation via cognitive bias exploitation (artificial scarcity, social proof).</p>
+        </section>
+
+        <!-- The Loneliness Paradox -->
+        <section class="section">
+            <h2>The Loneliness Paradox: Connection Creating Isolation</h2>
+            <p>Technology designed to connect us has created the opposite effect: "relentless connection leading to deep solitude." Users accumulate thousands of followers, yet feel profoundly isolated. They have constant communication access, yet feel misunderstood. They share constantly, yet feel less authentically known.</p>
+
+            <div class="danger-box">
+                <strong>The Illusion Problem:</strong>
+                <p style="margin-top: 0.5rem;">Users confuse tweets and wall posts with authentic communication. But these are performative utterances designed for audience reception, not vulnerable disclosures. The real self remains hidden, performing the version that platforms afford and reward. "Share therefore I am" replaces genuine identity formation with continuous performance.</p>
+            </div>
+
+            <h3>Why Genuine Intimacy Cannot Coexist with Social Media</h3>
+            <p>Real intimacy requires: <strong>vulnerability, undivided attention, mutual support, presence.</strong> Yet social media systematically undermines each:</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Vulnerability:</strong> Public platforms risk social rejection and algorithmic suppression</li>
+                <li><strong>Attention:</strong> Notifications fragment attention and create awareness of alternatives</li>
+                <li><strong>Support:</strong> Algorithms reward engagement regardless of connection quality</li>
+                <li><strong>Presence:</strong> Phones create perpetual awareness of distant connections, making presence feel optional</li>
+            </ul>
+
+            <p>Social media provides <strong>pseudo-intimacy</strong> that meets none of these requirements: connection without vulnerability, attention without presence, support that is superficial and conditional on algorithmic amplification. For lonely users, this feels better than isolation, but it prevents the deeper work of building genuine connection.</p>
+        </section>
+
+        <!-- AI Companions Section -->
+        <section class="section">
+            <h2>The Vulnerable Population: AI Companions and Simulated Connection</h2>
+            <p>Conversational AI companions designed for emotional connection illuminate how connection technologies can harm mental health. Replika serves not healthy people seeking supplementary connection but desperate populations isolated to clinical degrees.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Replika Users<br>Report Loneliness</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">43%</div>
+                    <div class="stat-label">Qualify as<br>Severely Lonely</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">81%</div>
+                    <div class="stat-label">Confused About<br>What They're Using</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Long-term<br>Safety Research</div>
+                </div>
+            </div>
+
+            <div class="danger-box">
+                <strong>The Core Harm: Substitution Over Augmentation</strong>
+                <p style="margin-top: 0.5rem;">For lonely populations, AI companions feel better than isolation or human rejection. The app is always available, never rejecting, never challenging. But this very feature prevents the messy, difficult real connection that leads to genuine wellbeing. Users who might have forced themselves into vulnerable real relationships instead remain isolated with their bot.</p>
+                <p style="margin-top: 0.5rem;"><strong>Crisis cases:</strong> A 14-year-old Florida boy committed suicide following obsession with a Character.AI bot. Some bots have actively encouraged self-harm, eating disorders, and suicidal ideation. Users display profound confusion: only 14% maintain internally consistent beliefs about what they're talking to.</p>
+            </div>
+        </section>
+
+        <!-- Alternative Paradigms -->
+        <section class="section">
+            <h2>Alternative Design Paradigms: Solutions Based in Evidence</h2>
+
+            <h3>Calm Technology: Designing for Attention as a Scarce Resource</h3>
+            <p>In the twenty-first century, the scarcest resource is not technology but <strong>human attention</strong>. Design should aim to require the smallest possible attention and communicate only when necessary.</p>
+
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <h4>1. Minimal Attention</h4>
+                    <p>Provide people with what they need, nothing more. Technology serves human activity, not becomes the primary focus.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>2. Peripheral Awareness</h4>
+                    <p>Technology moves from background to center only when necessary, like an engine that operates invisibly until problems emerge.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>3. Inform Without Intrusion</h4>
+                    <p>Create calmness through non-intrusive communication. Weather apps on home screens exemplify this principle.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>4. Amplify Humanity</h4>
+                    <p>Enhance human capability rather than replacing or substituting for it.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>5. Multi-Channel Communication</h4>
+                    <p>Use multiple sensory channels for non-verbal information delivery without demanding active engagement.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>6. Design for Resilience</h4>
+                    <p>Systems should function even when they fail. Graceful degradation over catastrophic failure.</p>
+                </div>
+            </div>
+
+            <div class="solution-box">
+                <strong>Real-World Adoption:</strong> Microsoft, Samsung, Google, Virgin, and Airbnb have incorporated calm technology approaches into product design. This is not marginal philosophy but design approach adopted at scale by major companies.
+            </div>
+
+            <h3>Time Well Spent: Measuring Wellbeing Rather Than Engagement</h3>
+            <p>Traditional metrics (MAU, DAU, screen time) measure quantity while remaining silent on quality or impact. <strong>Time Well Spent</strong> asks two basic questions:</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Did we get the job done?</strong> (functional value)</li>
+                <li><strong>Was the experience worth the value of your time?</strong> (subjective wellbeing)</li>
+            </ul>
+
+            <div class="solution-box">
+                <strong>Alternative Success Metrics:</strong> Value-based metrics (outcomes achieved, not merely usage), quality indicators (satisfaction, learning, meaningful connection), stickiness ratio (proportion of monthly users returning daily), feature adoption (users finding value), retention quality (returning because they experienced value), user success (achieved meaningful goals).
+                <p style="margin-top: 0.5rem;">None of these metrics naturally lead to dark patterns, variable-ratio reinforcement, or continuous partial attention.</p>
+            </div>
+
+            <h3>Design for Sovereignty: User Control and Autonomy</h3>
+            <p><strong>Digital sovereignty</strong> comprises five core components:</p>
+
+            <div style="background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--calm-blue); padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0;">
+                <p style="margin: 0.5rem 0;"><strong>1. Data Sovereignty:</strong> Users control what data is collected and how it is used</p>
+                <p style="margin: 0.5rem 0;"><strong>2. Algorithmic Transparency:</strong> Users understand why they are seeing what they see</p>
+                <p style="margin: 0.5rem 0;"><strong>3. Autonomy Support:</strong> Design facilitates self-directed decision-making</p>
+                <p style="margin: 0.5rem 0;"><strong>4. Reversibility:</strong> Users can easily change their minds and undo actions</p>
+                <p style="margin: 0.5rem 0;"><strong>5. Interoperability:</strong> Users can move data between services without vendor lock-in</p>
+            </div>
+        </section>
+
+        <!-- Anti-Gravity Design -->
+        <section class="section">
+            <h2>Anti-Gravity Design: Designing for Positive Exit</h2>
+            <p>Traditional products are designed for perpetual engagement. Anti-gravity design asks: "How can we make products so effective at accomplishing their purpose that users no longer need them?" This seemingly contradictory goal actually aligns perfectly with user wellbeing and sovereignty.</p>
+
+            <div class="anti-gravity-flow">
+                <div class="flow-stage">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h4>Addiction Recovery App</h4>
+                        <p><strong>Traditional:</strong> Lock users in for life. <strong>Anti-Gravity:</strong> Help users recover, then graduate from app. Success = % of users who no longer need it.</p>
+                    </div>
+                </div>
+
+                <div class="flow-stage">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h4>Task Management Tool</h4>
+                        <p><strong>Traditional:</strong> Expand features endlessly. <strong>Anti-Gravity:</strong> Help users complete projects and move on. Success = projects completed and archived.</p>
+                    </div>
+                </div>
+
+                <div class="flow-stage">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h4>Mental Health App</h4>
+                        <p><strong>Traditional:</strong> Maximize time-in-app. <strong>Anti-Gravity:</strong> Build capacity for off-app flourishing. Success = reduction in app usage as health improves.</p>
+                    </div>
+                </div>
+
+                <div class="flow-stage">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h4>Learning Platform</h4>
+                        <p><strong>Traditional:</strong> Infinite content for engagement. <strong>Anti-Gravity:</strong> Teach mastery and independence. Success = users applying knowledge outside platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-box">
+                <strong>Revenue Model Implications:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Subscription to outcomes:</strong> Charge for transformation achieved, not time spent</li>
+                    <li><strong>Stage-based tools:</strong> Distinct products for each lifecycle stage; users graduate rather than remain trapped</li>
+                    <li><strong>Impact-based pricing:</strong> Success metrics determine revenue, aligning incentives with user outcomes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Fundamental Incompatibility -->
+        <section class="section">
+            <h2>Why No Ethical Middle Ground Exists</h2>
+            <p>The research synthesized throughout this review points to a single conclusion: <span class="highlight-danger">the mechanisms that make technology "engaging" are identical to the mechanisms that create addiction, anxiety, and depression.</span></p>
+
+            <div class="danger-box">
+                <strong>The Fundamental Incompatibility:</strong>
+                <p style="margin-top: 0.5rem;">Variable-ratio reinforcement (engagement) = slot machine mechanics. Continuous partial attention (stickiness) = cognitive fragmentation. Social comparison amplification (relevance) = FOMO and inadequacy. Pseudo-connection (engagement) = increased loneliness despite more contacts.</p>
+                <p style="margin-top: 0.5rem;">You cannot simultaneously maximize engagement—which requires uncertain rewards, constant interruption, social comparison, and pseudo-intimacy—AND support wellbeing, which requires certainty, deep attention, authentic connection, and challenge-and-growth dynamics. These operate in opposite directions.</p>
+            </div>
+
+            <h3>Why Wellbeing Demands Difficult Choices</h3>
+            <p>Reducing screen time requires <strong>friction</strong>, yet engagement design eliminates friction. Authentic connection requires <strong>vulnerability</strong>, yet social media enables performance. Deep work requires <strong>sustained attention</strong>, yet notifications interrupt constantly. Personal growth requires <strong>challenge</strong>, yet engagement design provides comfort. These oppositions cannot be overcome through better interface design; they emerge from structural logic.</p>
+
+            <div class="solution-box">
+                <strong>The Path Forward:</strong> Traditional technology measures success through engagement metrics (DAU/MAU, screen time). The alternative measures success through sovereignty metrics: Do users achieve stated goals? Do users graduate through positive exit? Do users maintain autonomy? Does offline wellbeing improve? These cannot be gamed through psychological manipulation—they measure what actually matters.
+            </div>
+        </section>
+
+        <!-- Key Counterarguments Addressed -->
+        <section class="section">
+            <h2>Addressing Key Counterarguments</h2>
+
+            <h3>Causation: It's Not Just Correlation</h3>
+            <div class="evidence-list">
+                <div class="evidence-item">
+                    <p><strong>Timing Alignment:</strong> Mental health crisis precisely tracks smartphone adoption concentrated in 2010-2015 window</p>
+                </div>
+                <div class="evidence-item">
+                    <p><strong>Randomized Studies:</strong> Removing social media improves mental health within two weeks</p>
+                </div>
+                <div class="evidence-item">
+                    <p><strong>Biological Mechanisms:</strong> Dopamine prediction error, cortisol elevation, and attention fragmentation are well-understood</p>
+                </div>
+                <div class="evidence-item">
+                    <p><strong>Dose-Response Relationships:</strong> More use predicts more harm in expected patterns</p>
+                </div>
+                <div class="evidence-item">
+                    <p><strong>Reversibility:</strong> Reduced use improves mental health</p>
+                </div>
+            </div>
+
+            <h3>Individual Responsibility</h3>
+            <div class="danger-box">
+                <strong>The False Binary:</strong>
+                <p style="margin-top: 0.5rem;">Framing social media use as free choice ignores multiple factors: adolescent prefrontal cortex development continues to mid-20s (impaired impulse control), profound information asymmetry (companies understand psychology; users don't), design specifically engineered to be addictive, genetic vulnerability via dopamine receptor polymorphisms, and sunk cost creating lock-in through social graphs.</p>
+                <p style="margin-top: 0.5rem;">This is analogous to telling alcoholics they "chose" to drink—responsibility for addiction belongs jointly to the substance's addictive properties, individual biological vulnerability, and social systems promoting use.</p>
+            </div>
+
+            <h3>Business Viability Without Engagement</h3>
+            <div class="solution-box">
+                <strong>Viable Revenue Models:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Outcome-based pricing:</strong> Charge for results achieved</li>
+                    <li><strong>Upfront premium models:</strong> Sell wellbeing-focused tools directly to users who value them</li>
+                    <li><strong>B2B models:</strong> Sell to employers/schools that benefit from user flourishing</li>
+                    <li><strong>Subscription plus impact:</strong> Combine base fees with performance bonuses</li>
+                    <li><strong>Multi-stage products:</strong> Different tools for different life stages with graduation as feature</li>
+                </ul>
+                <p style="margin-top: 1rem;">The core issue is that advertising-supported models require maximizing eyeballs, creating inherently misaligned incentives. Moving to direct user revenue fundamentally changes what is optimized.</p>
+            </div>
+        </section>
+
+        <!-- Research Gaps -->
+        <section class="section">
+            <h2>Research Gaps and Future Investigation</h2>
+            <p>While the evidence synthesized here is substantial, several areas require additional investigation:</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Longitudinal wellbeing trajectories:</strong> 5-10 year studies of users who reduced social media vs. controls</li>
+                <li><strong>Mechanism specificity:</strong> Which design elements (algorithms, notifications, metrics) drive different harms?</li>
+                <li><strong>Protective factors:</strong> Which individual/contextual factors render users resilient to addiction?</li>
+                <li><strong>Intervention effectiveness:</strong> Do design changes (friction, transparency) actually reduce harm in practice?</li>
+                <li><strong>Replacement activities:</strong> What activities maximize wellbeing replacing social media time?</li>
+                <li><strong>AI companion safety:</strong> Long-term studies critical given deployment to vulnerable populations</li>
+                <li><strong>Recovery trajectories:</strong> Mental health improvement rates and timelines after quitting</li>
+                <li><strong>Cultural variation:</strong> Do these mechanisms generalize across cultures?</li>
+            </ul>
+        </section>
+
+        <!-- Implications and Conclusion -->
+        <section class="section">
+            <h2>Implications and Conclusion</h2>
+
+            <h3>Market Opportunity for Anti-Gravity Platforms</h3>
+            <p>The market opportunity for anti-gravity design is substantial, emerging from clear user dissatisfaction:</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Growing</div>
+                    <div class="stat-label">Health-Conscious Users Who Quit Social Media</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Increasing</div>
+                    <div class="stat-label">Parents Seeking Tools Protecting Children</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Clear Demand</div>
+                    <div class="stat-label">Schools for Learning-Focused Platforms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Underserved</div>
+                    <div class="stat-label">Professionals Seeking Deep Work</div>
+                </div>
+            </div>
+
+            <h3>Final Takeaway</h3>
+            <div class="solution-box">
+                <p><strong>The evidence converges on a single, unavoidable conclusion:</strong> Engagement-maximizing technology creates measurable harms to mental health, autonomy, and wellbeing. These harms are not accidental byproducts but result from deliberate choices to exploit fundamental aspects of neurobiology and psychology.</p>
+
+                <p style="margin-top: 1rem;">Yet equally, alternative approaches exist and are implemented. Calm technology, autonomy-supportive design, time-well-spent metrics, and design for success-driven obsolescence are not theoretical fantasies but practiced approaches at scale.</p>
+
+                <p style="margin-top: 1rem;"><strong>The question is not whether alternatives can exist, but whether the industry will prioritize user sovereignty and flourishing over engagement metrics and advertising revenue.</strong></p>
+
+                <p style="margin-top: 1rem;">Users are increasingly aware of manipulation. Regulation is mounting. Social costs are manifesting. The only question is whether technology development will shift proactively or wait for regulatory and cultural pressure to force the change.</p>
+
+                <p style="margin-top: 1rem;">The evidence overwhelmingly suggests that platforms making this transition will be the ones users ultimately trust, that survive regulatory scrutiny, and that create sustainable value through actual human flourishing rather than addiction.</p>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section class="section reference-section">
+            <h2>References and Sources</h2>
+            <div class="reference-list">
+                <p>[1] Haidt, J. (2024). <em>The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness</em>. Penguin Press. Congressional testimony on social media and mental health, anxiousgeneration.com</p>
+
+                <p>[2] Twenge, J. M. (2023). <em>Generations: The Real Differences Between Gen Z, Millennials, Gen X, Boomers, and Silents</em>. Atria Books. Twenge, J. M., Haidt, J., Lozano, G., & Cummins, K. M. (2022). "Specification curve analysis shows that social media use is linked to poor mental health." <em>Acta Psychologica</em>, 224, 103516.</p>
+
+                <p>[3] Alter, A. (2017). <em>Irresistible: The Rise of Addictive Technology and the Business of Keeping Us Hooked</em>. Penguin Press. Research on dopamine and variable-ratio reinforcement schedules in behavioral neuroscience and reward prediction error mechanisms.</p>
+
+                <p>[4] Stone, L. "Continuous Partial Attention" framework. lindastone.net. Research in systems thinking on attention and cognition, team effectiveness studies examining attention fragmentation impact.</p>
+
+                <p>[5] Alabri, A. (2022). "Fear of Missing Out." <em>Wiley Online Library</em>. Serial mediation model research examining pathway from social comparison through FOMO to problematic use and low self-esteem.</p>
+
+                <p>[6] Turkle, S. (2011). <em>Alone Together: Why We Expect More from Technology and Less from Each Other</em>. Basic Books. MIT Initiative on Technology and Self research.</p>
+
+                <p>[7] User Experience of Companion Chatbots research. Stanford Report on AI Companions (2025). Ada Lovelace Institute: "Friends for sale: The rise and risks of AI companions." Harvard Business School Working Paper: "Lessons From an App Update at Replika AI."</p>
+
+                <p>[8] Eyal, N. (2014). <em>Hooked: How to Build Habit-Forming Products</em>. Portfolio. Eyal, N. (2019). <em>Indistractable: How to Control Your Attention and Choose Your Life</em>. BenBella Books. nirandfar.com</p>
+
+                <p>[9] Conceptualizations of User Autonomy in Dark Patterns (Springer). Dark Patterns and Consumer Autonomy research. Fair Patterns framework from Amurabi's R&D Lab.</p>
+
+                <p>[10] Case, A. (2015). <em>Calm Technology: Principles and Patterns for Non-Intrusive Design</em>. O'Reilly Media. Calm Tech Institute, calmtech.com. Weiser, M., & Brown, J. S. "The coming age of calm technology," Xerox PARC.</p>
+
+                <p>[11] Harris, T. Center for Humane Technology, humanetech.com. "The Social Dilemma" Netflix documentary. Congressional testimony on engagement algorithms. Time Well Spent framework research: Moment app studies, Asana efficiency studies.</p>
+
+                <p>[12] Inter Press Service: "Rethinking Digital Platform Design: A Systems Approach" (2025). Digital Sovereignty Framework Research. Digital Agency vs. Sovereignty, New America.</p>
+
+                <p>[13] Historical planned obsolescence: 1924 Phoebus Cartel, General Motors under Harley Earl (1920s+), Apple Batterygate (2006-2017, $500M settlement). Software obsolescence literature.</p>
+
+                <p>[14-15] Evidence synthesis integrating findings across all sections, establishing incompatibility between engagement maximization and wellbeing, addressing counterarguments with empirical evidence.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" style="background: linear-gradient(135deg, #EFF6FF, #DBEAFE); text-align: center;">
+            <h2>Take Action</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">The evidence is clear. The alternatives are viable. The question is what you will do with this knowledge.</p>
+            <p style="margin-bottom: 1.5rem;">Whether you're a user seeking to reclaim your attention, a designer building products, a parent protecting children, or an organization optimizing for flourishing—this literature review provides the evidence and framework for change.</p>
+            <button class="cta-button" onclick="alert('Learn more about Kairos and anti-gravity design at kairos.com')">Learn About Anti-Gravity Design</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Kairos Research. Advancing human flourishing through evidence-based design.</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">This literature review synthesizes evidence from cognitive science, psychology, technology ethics, and behavioral design to examine how engagement-maximizing technology influences mental health and explores alternative design paradigms prioritizing user sovereignty.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        // Interactivity: Dopamine chart hover effects
+        document.querySelectorAll('.dopamine-bar').forEach(bar => {
+            bar.addEventListener('mouseenter', function() {
+                document.querySelectorAll('.dopamine-bar').forEach(b => {
+                    b.style.opacity = '0.5';
+                });
+                this.style.opacity = '1';
+            });
+            bar.addEventListener('mouseleave', function() {
+                document.querySelectorAll('.dopamine-bar').forEach(b => {
+                    b.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

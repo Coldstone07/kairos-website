@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addiction as Connection Disorder - Enhanced Literature Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-warm: #D97757;
+            --primary-light: #E8A995;
+            --accent-green: #8FADA8;
+            --accent-blue: #6B8A9F;
+            --neutral-warm: #F5EDE4;
+            --text-dark: #2C2416;
+            --text-light: #6B6B6B;
+            --success-hope: #A8C48A;
+            --warning-gentle: #D4A76A;
+            --danger-soft: #C9736B;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--neutral-warm) 0%, #FFFBF7 100%);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-warm) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        main {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-warm);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 3px solid var(--accent-green);
+            padding-bottom: 0.5rem;
+        }
+
+        .language-guide {
+            font-size: 0.9rem;
+        }
+
+        .language-guide p {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .pathologizing {
+            color: var(--danger-soft);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .empowering {
+            color: var(--success-hope);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        h2 {
+            color: var(--primary-warm);
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-green);
+        }
+
+        h3 {
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .section-intro {
+            background: linear-gradient(135deg, rgba(139, 154, 174, 0.08) 0%, rgba(168, 196, 138, 0.08) 100%);
+            padding: 1.5rem;
+            border-left: 5px solid var(--accent-green);
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .visual-section {
+            background: var(--neutral-warm);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border: 2px solid var(--primary-light);
+        }
+
+        /* Connection Visualization */
+        .connection-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .connection-card {
+            background: white;
+            border: 3px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .connection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            border-color: var(--primary-warm);
+        }
+
+        .connection-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .connection-card h4 {
+            color: var(--primary-warm);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .connection-card p {
+            font-size: 0.95rem;
+            text-align: left;
+            color: var(--text-light);
+        }
+
+        /* Rat Park Illustration */
+        .rat-park-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 2px solid var(--accent-blue);
+        }
+
+        .rat-park-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .rat-park-scenario {
+            text-align: center;
+        }
+
+        .rat-park-illustration {
+            background: linear-gradient(135deg, #f0e6d2 0%, #e8dcc8 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .isolated {
+            background: linear-gradient(135deg, #d0c8b8 0%, #c8bfad 100%);
+            color: #666;
+        }
+
+        .enriched {
+            background: linear-gradient(135deg, #d4e4d0 0%, #ccddc5 100%);
+            color: #4a6b4a;
+        }
+
+        .scenario-label {
+            font-weight: 700;
+            color: var(--primary-warm);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .outcome {
+            background: var(--neutral-warm);
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .outcome-positive {
+            color: var(--success-hope);
+            border: 2px solid var(--success-hope);
+        }
+
+        .outcome-negative {
+            color: var(--danger-soft);
+            border: 2px solid var(--danger-soft);
+        }
+
+        /* ACEs Score Impact */
+        .aces-visualization {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .aces-bars {
+            margin: 1.5rem 0;
+        }
+
+        .aces-bar {
+            margin-bottom: 1rem;
+        }
+
+        .aces-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .aces-container {
+            background: #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 30px;
+            position: relative;
+        }
+
+        .aces-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--warning-gentle) 0%, var(--primary-warm) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: width 0.6s ease;
+        }
+
+        /* Recovery Timeline */
+        .recovery-timeline {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-warm) 0%, var(--success-hope) 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            width: 50%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            text-align: left;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--neutral-warm);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--accent-green);
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--primary-warm);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary-warm);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 2.5rem;
+            box-shadow: 0 0 0 3px var(--accent-green);
+        }
+
+        /* Connection vs Disconnection Balance */
+        .balance-visualization {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .balance-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .balance-side {
+            text-align: center;
+        }
+
+        .balance-scale {
+            background: linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .disconnection-scale {
+            background: linear-gradient(180deg, #efe8e0 0%, #e8dcd4 100%);
+            border: 3px dashed var(--danger-soft);
+        }
+
+        .connection-scale {
+            background: linear-gradient(180deg, #e8f0e8 0%, #dfe8de 100%);
+            border: 3px solid var(--accent-green);
+        }
+
+        .scale-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .scale-items {
+            text-align: left;
+        }
+
+        .scale-item {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .scale-item::before {
+            content: '▪ ';
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .disconnection-title {
+            color: var(--danger-soft);
+        }
+
+        .connection-title {
+            color: var(--success-hope);
+        }
+
+        .disconnection-scale .scale-item::before {
+            color: var(--danger-soft);
+        }
+
+        .connection-scale .scale-item::before {
+            color: var(--success-hope);
+        }
+
+        /* Brain Healing Progression */
+        .brain-healing {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 2px solid var(--accent-blue);
+        }
+
+        .healing-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .healing-stage {
+            background: var(--neutral-warm);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--primary-light);
+            transition: all 0.3s ease;
+        }
+
+        .healing-stage:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-green);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .stage-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-warm);
+            margin-bottom: 0.5rem;
+        }
+
+        .stage-name {
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .stage-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Hope Section */
+        .hope-section {
+            background: linear-gradient(135deg, rgba(168, 196, 138, 0.15) 0%, rgba(139, 154, 174, 0.15) 100%);
+            border: 3px solid var(--success-hope);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .hope-section h3 {
+            color: var(--success-hope);
+            font-size: 1.3rem;
+        }
+
+        .hope-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .hope-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .hope-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--success-hope);
+            font-size: 1.2rem;
+        }
+
+        /* Reference Section */
+        .references {
+            background: var(--neutral-warm);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .references h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .reference-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-warm);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px;
+        }
+
+        /* Interactive Elements */
+        .expandable-section {
+            margin: 1rem 0;
+        }
+
+        .expand-button {
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .expand-button:hover {
+            background: var(--primary-warm);
+            transform: translateX(5px);
+        }
+
+        .expand-content {
+            display: none;
+            background: var(--neutral-warm);
+            padding: 1.5rem;
+            margin-top: 0.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .expand-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px !important;
+                text-align: left !important;
+                margin-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .rat-park-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .balance-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .sidebar {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .connection-types {
+                grid-template-columns: 1fr;
+            }
+
+            .healing-stages {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar {
+                display: none;
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                page-break-after: avoid;
+            }
+
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Addiction as Connection Disorder</h1>
+        <p>A Comprehensive Evidence-Based Literature Review Reframing Addiction as Disconnection and Recovery as Reconnection</p>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <main>
+                <!-- Table of Contents / Quick Navigation -->
+                <div class="section-intro">
+                    <h3>Quick Navigation</h3>
+                    <p style="margin: 0;">Jump to sections:
+                        <a href="#reconceptualizing">Reconceptualizing</a> |
+                        <a href="#science">The Science</a> |
+                        <a href="#neurobiology">Neurobiology</a> |
+                        <a href="#pathways">Behavioral Pathways</a> |
+                        <a href="#connection">Connection</a> |
+                        <a href="#evidence">Evidence for Hope</a>
+                    </p>
+                </div>
+
+                <!-- Introduction -->
+                <section id="introduction">
+                    <h2>Introduction: A Framework for Hope</h2>
+
+                    <p>Addiction has long occupied a contested space in contemporary scholarship, oscillating between medical pathologization and moral judgment. Yet emerging research across neuroscience, psychology, sociology, and trauma studies suggests a fundamentally different framework: one that reframes addiction not as disease or moral failure, but as an adaptation to profound disconnection and unmet relational needs.</p>
+
+                    <p style="font-weight: 600; color: var(--primary-warm);">The central thesis: The opposite of addiction is not sobriety alone, but connection.</p>
+
+                    <p>This literature review synthesizes research from leading scholars—Johann Hari, Gabor Maté, Bruce Alexander, Judson Brewer, and neuroscientists specializing in attachment and developmental trauma—to present addiction as fundamentally a relational problem requiring relational solutions. Understanding addiction through this lens opens pathways toward recovery that honor both the neurobiological realities of addiction and the agency of individuals struggling with it.</p>
+                </section>
+
+                <!-- Part 1: Reconceptualizing Addiction -->
+                <section id="reconceptualizing">
+                    <h2>Part 1: Reconceptualizing Addiction</h2>
+
+                    <h3>The Connection Disorder Framework</h3>
+
+                    <div class="section-intro">
+                        <p>Rather than asking "Why do people use?" (which implies pathology), this framework invites a more generative inquiry: "What need is this meeting?"</p>
+                    </div>
+
+                    <p>Traditional addiction research has focused on pharmacological properties of substances or neurobiological deficits within individuals, often framing addiction as a disease of the brain. However, a growing body of evidence suggests this framework obscures a more fundamental truth: addiction represents an adaptation to pain, isolation, and social dislocation.</p>
+
+                    <p>This reorientation acknowledges the profound resourcefulness and intelligence of individuals struggling with addiction while simultaneously opening space for addressing root causes rather than symptoms alone. The hunger central to addiction is not fundamentally abnormal; rather, it reflects universal human longings for:</p>
+
+                    <div class="connection-types">
+                        <div class="connection-card">
+                            <div class="connection-icon">🤝</div>
+                            <h4>Connection to Others</h4>
+                            <p>Safe relational bonds and belonging</p>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon">🛡️</div>
+                            <h4>Safety & Attachment</h4>
+                            <p>Secure, consistent caregiving relationships</p>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon">🎯</div>
+                            <h4>Meaning & Purpose</h4>
+                            <p>Sense of direction and value in existence</p>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon">🧩</div>
+                            <h4>Integration</h4>
+                            <p>Coherence of fragmented experience</p>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon">🕊️</div>
+                            <h4>Relief from Pain</h4>
+                            <p>Safe holding of unbearable emotional states</p>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon">🗣️</div>
+                            <h4>Agency & Voice</h4>
+                            <p>Capacity to influence one's circumstances</p>
+                        </div>
+                    </div>
+
+                    <p>When these needs go unmet in relational contexts, substances or compulsive behaviors become solutions precisely because they provide temporary relief from pain when relationships feel unsafe, offer immediate reward when life feels chaotic, fill existential emptiness with something tangible, and meet needs that should be met through connection. This is not weakness but adaptation. This is human resourcefulness applied to an unbearable situation.</p>
+                </section>
+
+                <!-- Part 2: The Science of Disconnection -->
+                <section id="science">
+                    <h2>Part 2: The Science of Disconnection</h2>
+
+                    <h3>Johann Hari: Lost Connections and Environmental Factors</h3>
+
+                    <p>Johann Hari's synthesis of addiction and mental health research rests on a simple yet radical insight: addiction and depression stem from the same root—disconnection. His work challenges the conventional understanding of addiction as primarily a function of the inherent addictiveness of substances, demonstrating instead that environmental and relational factors far exceed pharmacological variables in predicting addiction vulnerability.</p>
+
+                    <div class="section-intro">
+                        <h4>The Vietnam War Evidence</h4>
+                        <p>Approximately 90% of American soldiers became heroin-dependent during combat. Upon returning home, nearly all discontinued use without rehabilitation or twelve-step programs. The war itself—not the heroin—was the primary agent of addiction vulnerability. Reunion with family, community, and identity proved more transformative than any medical intervention.</p>
+                    </div>
+
+                    <h3>Gabor Maté: Trauma and Developmental Origins</h3>
+
+                    <p>While Hari emphasizes disconnection and environment, Gabor Maté provides the developmental and neurobiological context for understanding why particular individuals become vulnerable to addiction in the first place. His central thesis: the source of addictions is not to be found in genes, but in childhood trauma and in stress and social dislocation endemic to systems of inequality and injustice.</p>
+
+                    <p>Addiction begins not with the substance but in childhood. When a child's emotional needs go unmet and they cannot rely on consistent, safe attachment figures, their developing brain wires itself for disconnection. The neurobiological pathways that should carry safety, trust, and secure attachment instead carry hypervigilance, shame, and emotional dysregulation.</p>
+
+                    <p>Because addiction is relational in origin, recovery must be relational in nature. It requires recognition of the trauma beneath the addiction, safe relational connection offered without judgment, healing of attachment patterns, grieving of lost security, and building new capacity for safe connection.</p>
+
+                    <h3>Bruce Alexander: The Rat Park Experiment</h3>
+
+                    <div class="visual-section">
+                        <h4 style="text-align: center; color: var(--accent-blue); margin-bottom: 1.5rem;">The Revolutionary Rat Park Study</h4>
+
+                        <div class="rat-park-comparison">
+                            <div class="rat-park-scenario">
+                                <div class="scenario-label">Traditional Research Setup</div>
+                                <div class="rat-park-illustration isolated">
+                                    🐀<br>🧪
+                                </div>
+                                <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong>Isolated Rat</strong> in a cage with access to morphine-laced water</p>
+                                <div class="outcome outcome-negative">
+                                    Self-administered morphine to death
+                                </div>
+                            </div>
+
+                            <div class="rat-park-scenario">
+                                <div class="scenario-label">Alexander's Innovation</div>
+                                <div class="rat-park-illustration enriched">
+                                    🐀 🐀 🐀<br>🎲 🧩 🎪
+                                </div>
+                                <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong>Enriched Environment</strong> with toys, tunnels, community, and morphine access</p>
+                                <div class="outcome outcome-positive">
+                                    Minimal morphine consumption. Even when made sweeter, up to 20x less consumption than isolated rats.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border: 2px solid var(--accent-green);">
+                            <p style="margin: 0; text-align: center; font-weight: 600; color: var(--accent-green); font-size: 1.1rem;">
+                                "It isn't the drug that causes the harmful behavior—it's the environment. An isolated rat will almost always become a junkie. A rat with a good life almost never will, no matter how many drugs you make available to him."
+                            </p>
+                            <p style="margin: 0.5rem 0 0 0; text-align: center; color: var(--text-light); font-size: 0.9rem;">— Bruce Alexander</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 1.5rem;"><strong>Dislocation Theory:</strong> Alexander extended this insight, explaining why addiction has skyrocketed in modern society. Dislocation describes the psychological and social state of being severed from cultural identity and tradition, community and belonging, meaningful work and purpose, connection to place and nature, secure attachment relationships, and sense of agency and voice in society.</p>
+
+                    <p>Dislocated people, regardless of socioeconomic status, seek relief through whatever means are available: substance addiction, process addiction (gambling, sex, shopping, work, technology), compulsive behaviors, and relational patterns characterized by codependency or serial relationships. These are not character flaws; they are intelligent human responses to unbearable dislocation.</p>
+                </section>
+
+                <!-- Part 3: Neurobiological Pathways -->
+                <section id="neurobiology">
+                    <h2>Part 3: Neurobiological Pathways and the Brain's Architecture</h2>
+
+                    <h3>Attachment Theory and the Neurobiology of Connection</h3>
+
+                    <p>Recent neuroscience reveals that attachment patterns literally shape the brain's reward and stress systems, providing a biological foundation for understanding the relational pathways through which trauma and disconnection lead to addiction.</p>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid var(--accent-blue);">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">Attachment Patterns and Brain Development</h4>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div>
+                                <h5 style="color: var(--success-hope); font-weight: 700; margin-bottom: 0.8rem;">Secure Attachment</h5>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✓ Regulated stress response</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✓ Reliable reward sensitivity</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✓ Emotional regulation</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✓ Trust in relationships</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✓ Resilience</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 style="color: var(--danger-soft); font-weight: 700; margin-bottom: 0.8rem;">Insecure Attachment</h5>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✗ Hyperactive stress response</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✗ Weak reward from natural sources</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✗ Emotional dysregulation</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✗ Difficulty trusting</li>
+                                    <li style="padding: 0.4rem 0; color: var(--text-dark);">✗ Vulnerability to addiction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Adverse Childhood Experiences (ACEs) and Addiction Vulnerability</h3>
+
+                    <div class="aces-visualization">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">The Dose-Response Relationship: ACEs and Addiction Risk</h4>
+
+                        <div class="aces-bars">
+                            <div class="aces-bar">
+                                <div class="aces-label">0-1 ACEs: Minimal Risk</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 10%;">1x</div>
+                                </div>
+                            </div>
+
+                            <div class="aces-bar">
+                                <div class="aces-label">2 ACEs: Increased Risk</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 20%;">1.5x</div>
+                                </div>
+                            </div>
+
+                            <div class="aces-bar">
+                                <div class="aces-label">3-4 ACEs: Significant Risk</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 50%;">2x</div>
+                                </div>
+                            </div>
+
+                            <div class="aces-bar">
+                                <div class="aces-label">5+ ACEs: Severe Risk</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 100%;">7-10x</div>
+                                </div>
+                            </div>
+
+                            <div class="aces-bar">
+                                <div class="aces-label">Alcohol Use Disorder (Female, 5+ ACEs)</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 100%; background: linear-gradient(90deg, var(--danger-soft) 0%, #b85a50 100%);">5.9x</div>
+                                </div>
+                            </div>
+
+                            <div class="aces-bar">
+                                <div class="aces-label">Drug Abuse (5+ ACEs)</div>
+                                <div class="aces-container">
+                                    <div class="aces-bar-fill" style="width: 100%; background: linear-gradient(90deg, var(--danger-soft) 0%, #b85a50 100%);">4-12x</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--neutral-warm); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 5px solid var(--success-hope);">
+                            <h5 style="color: var(--success-hope); font-weight: 700; margin-bottom: 0.8rem;">The Critical Discovery: Protective Factors</h5>
+                            <p style="margin: 0; color: var(--text-dark);">Strong connection to at least one reliable adult, cultural/spiritual community, meaningful activities, coping skills, educational success, and feeling valued can <strong>cancel out ACE effects entirely</strong>. Connection is more powerful than trauma.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Part 4: Behavioral and Contemplative Pathways -->
+                <section id="pathways">
+                    <h2>Part 4: Behavioral and Contemplative Pathways to Change</h2>
+
+                    <h3>Judson Brewer: Mindfulness and the Extinction of Automaticity</h3>
+
+                    <p>Dr. Judson Brewer at Brown University has revolutionized understanding of how consciousness and awareness interrupt addiction through research on mindfulness-based approaches. His work addresses a fundamental challenge: the automaticity of craving and use, which occurs below the threshold of conscious awareness.</p>
+
+                    <div class="section-intro">
+                        <h4>How Mindfulness Works</h4>
+                        <p>Mindfulness does not work through willpower or substitution but rather through extinction of the reward association via awareness. When mindfulness is applied to craving, the person observes with curiosity rather than react automatically. The craving is experienced as a physical sensation, and the mind observes: "This is just a sensation. It will rise and fall." The automatic connection between discomfort and substance use weakens.</p>
+                    </div>
+
+                    <div class="section-intro" style="background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(168, 196, 138, 0.08) 100%);">
+                        <h4 style="color: var(--success-hope);">Research Outcomes</h4>
+                        <ul class="hope-list">
+                            <li>Nearly 2x more likely to stop opioid misuse vs. supportive psychotherapy</li>
+                            <li>Mindfulness-based relapse prevention significantly reduces substance craving</li>
+                            <li>Effects persist 9+ months after treatment</li>
+                            <li>Comparable success rates to medication-assisted treatment</li>
+                        </ul>
+                    </div>
+
+                    <h3>The Three-Stage Addiction Cycle and Conscious Response</h3>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid var(--accent-green);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">1️⃣</div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 0.8rem;">Stage 1: Anticipation</h5>
+                                <p style="font-size: 0.9rem; margin: 0; color: var(--text-light);">Trigger activation, dopamine anticipation, urgency. Mindfulness response: observe trigger with curiosity, replace automaticity with awareness.</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">2️⃣</div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 0.8rem;">Stage 2: Binge</h5>
+                                <p style="font-size: 0.9rem; margin: 0; color: var(--text-light);">Substance use, temporary relief, escape. Mindfulness response: notice sensations, question: "Is this truly relieving pain or postponing it?"</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">3️⃣</div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 0.8rem;">Stage 3: Withdrawal</h5>
+                                <p style="font-size: 0.9rem; margin: 0; color: var(--text-light);">Dysregulation, heightened stress, craving return. Response: mindfulness + connection provide powerful cycle interruption.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Journaling: From Pattern Recognition to Empowerment</h3>
+
+                    <p>Journaling serves as a critical bridge between lived experience and pattern recognition, empowering users to understand their own addiction dynamics.</p>
+
+                    <div class="expandable-section">
+                        <button class="expand-button" onclick="toggleExpand(this)">
+                            + Trigger Tracking & Emotional Literacy
+                        </button>
+                        <div class="expand-content">
+                            <p><strong>Trigger Tracking:</strong> Documenting moments of craving or use reveals patterns—which emotions precede cravings, which environments are high-risk, which times of day are most vulnerable, and which thoughts accompany urges. This shifts the person from unconsciously swept along by triggers to consciously recognizing them.</p>
+
+                            <p><strong>Emotional Literacy:</strong> Journaling teaches the capacity to distinguish between different emotional states—loneliness versus anxiety, boredom versus restlessness, shame versus sadness, numbness versus peace. Substance use often becomes a catch-all for diverse emotional states. Journaling teaches differentiation, which is prerequisite for targeted intervention.</p>
+
+                            <p><strong>Meaning-Making:</strong> Writing creates narrative coherence wherein fragmented, chaotic experience becomes patterned and intelligible. Examples: "When my partner criticizes me, I feel small. Then I use." "Sunday afternoons are lonely. I need to schedule community time." These insights then become directly addressable.</p>
+
+                            <p><strong>Shared Vulnerability:</strong> Journaling becomes exponentially more powerful when shared—with therapists, in recovery circles, with accountability partners, or with online communities. Sharing journal insights deepens pattern recognition and creates witnessing, another form of connection.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Part 5: Connection as Primary Intervention -->
+                <section id="connection">
+                    <h2>Part 5: Connection as the Primary Intervention</h2>
+
+                    <h3>The Inadequacy of Abstinence-Only Approaches</h3>
+
+                    <p>Traditional addiction treatment often focuses exclusively on abstinence—the elimination of the substance or behavior—yet decades of research reveal a sobering reality: abstinence without meaning, purpose, and connection demonstrates poor long-term outcomes.</p>
+
+                    <div class="balance-visualization">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 1rem; text-align: center;">Abstinence Alone vs. Connection-Integrated Approaches</h4>
+
+                        <div class="balance-container">
+                            <div class="balance-side">
+                                <div class="balance-scale disconnection-scale">
+                                    <div class="scale-title disconnection-title">Abstinence-Only</div>
+                                    <div class="scale-items">
+                                        <div class="scale-item">Defined by negation</div>
+                                        <div class="scale-item">Unmet underlying needs</div>
+                                        <div class="scale-item">Increased isolation</div>
+                                        <div class="scale-item">Reliant on willpower</div>
+                                        <div class="scale-item">Void that must be filled</div>
+                                        <div class="scale-item">Limited long-term success</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="balance-side">
+                                <div class="balance-scale connection-scale">
+                                    <div class="scale-title connection-title">Connection-Integrated</div>
+                                    <div class="scale-items">
+                                        <div class="scale-item">Addresses root needs</div>
+                                        <div class="scale-item">Belonging addresses isolation</div>
+                                        <div class="scale-item">Purpose fills existential void</div>
+                                        <div class="scale-item">Sustained by relationships</div>
+                                        <div class="scale-item">Shame dissolution through witness</div>
+                                        <div class="scale-item">Strong long-term outcomes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--neutral-warm); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center;">
+                            <p style="margin: 0; font-weight: 600; color: var(--primary-warm); font-size: 1.1rem;">Both/And Model: Abstinence clears the fog. Connection provides the vision.</p>
+                        </div>
+                    </div>
+
+                    <h3>Five Types of Connection for Recovery</h3>
+
+                    <div class="connection-types" style="margin-top: 1.5rem;">
+                        <div class="connection-card">
+                            <div class="connection-icon">💑</div>
+                            <h4>Relational Connection</h4>
+                            <p>Safe, consistent human presence healing attachment wounds through corrective relational experience, co-regulation, and witnessing.</p>
+                        </div>
+
+                        <div class="connection-card">
+                            <div class="connection-icon">👥</div>
+                            <h4>Community Connection</h4>
+                            <p>Belonging to a group addressing isolation, creating shared identity, providing mutual support, and normalizing recovery.</p>
+                        </div>
+
+                        <div class="connection-card">
+                            <div class="connection-icon">🎯</div>
+                            <h4>Purpose & Work</h4>
+                            <p>Meaningful work creating intrinsic motivation, daily structure, competence, and contribution beyond oneself.</p>
+                        </div>
+
+                        <div class="connection-card">
+                            <div class="connection-icon">✨</div>
+                            <h4>Meaning & Spirituality</h4>
+                            <p>Larger purpose beyond happiness, integrated spiritual/philosophical dimension, transformation of suffering into meaning.</p>
+                        </div>
+
+                        <div class="connection-card">
+                            <div class="connection-icon">🌍</div>
+                            <h4>Structural Connection</h4>
+                            <p>Systemic support addressing dislocation—accessible treatment, peer support, MAT, housing, healthcare, and community reinforcement.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-intro" style="margin-top: 1.5rem;">
+                        <h4>Research on Connection-Based Outcomes</h4>
+                        <ul class="hope-list">
+                            <li>88.4% of people in recovery report "good" to "excellent" quality of life</li>
+                            <li>92.6% report improved mental health</li>
+                            <li>Connection to recovery community is the strongest predictor of sustained recovery</li>
+                            <li>Family-centered approaches show superior outcomes</li>
+                            <li>Peer-supported programs reduce relapse risk significantly</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Part 6: Recovery Timeline and Brain Healing -->
+                <section>
+                    <h2>Recovery Timeline: Neuroplasticity and Brain Healing</h2>
+
+                    <div class="recovery-timeline">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Weeks 1-2: Acute Withdrawal</div>
+                                    <p>Initial dysregulation, intense cravings, physical symptoms. Neurobiological challenge: heightened stress response and reduced dopamine sensitivity.</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Safety, immediate support, stabilization</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Weeks 3-8: Early Recovery</div>
+                                    <p>Neurobiology begins stabilization, emotional regulation develops gradually. Craving intensity decreases as brain chemistry rebalances.</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Pattern recognition, early connection, structure building</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Months 2-3: Emerging Healing</div>
+                                    <p>Brain reward systems show increased natural dopamine sensitivity. Prefrontal cortex strengthens, improving decision-making. Sleep and appetite normalize.</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Relationship building, purpose exploration, skill development</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Months 4-6: Integration</div>
+                                    <p>Significant neuroplasticity gains. Amygdala sensitivity normalizes. Connection to others becomes more rewarding than substances. Life structure strengthens.</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Deepening relationships, sustained community engagement, meaning consolidation</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Months 7-12: Solidification</div>
+                                    <p>Brain demonstrably rewired. Anxiety and depression symptoms decrease significantly. Identity shift from "person with addiction" to "person in recovery".</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Giving back, mentorship, building resilience for long-term sustainability</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Year 2+: Transformation</div>
+                                    <p>Complete neurobiological rewiring. Sustained connection, purpose, and community create resilience. Recovery becomes integrated identity, not ongoing struggle.</p>
+                                    <p style="font-weight: 600; color: var(--primary-warm);">Focus: Contributing to broader healing, legacy work, continued growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brain-healing">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 1rem; text-align: center;">Brain Healing Progression Through Recovery Stages</h4>
+
+                        <div class="healing-stages">
+                            <div class="healing-stage">
+                                <div class="stage-number">1</div>
+                                <div class="stage-name">Stabilization</div>
+                                <div class="stage-description">Acute withdrawal passes. Immediate craving management. Dopamine system begins recovery. Focus on safety and immediate support.</div>
+                            </div>
+
+                            <div class="healing-stage">
+                                <div class="stage-number">2</div>
+                                <div class="stage-name">Rebalancing</div>
+                                <div class="stage-description">Prefrontal cortex strengthens. Natural dopamine sensitivity increases. Sleep and appetite normalize. Emotional regulation develops.</div>
+                            </div>
+
+                            <div class="healing-stage">
+                                <div class="stage-number">3</div>
+                                <div class="stage-name">Integration</div>
+                                <div class="stage-description">Amygdala sensitivity normalizes. Connection becomes more rewarding. Anxiety/depression symptoms decrease. Identity shifts toward recovery.</div>
+                            </div>
+
+                            <div class="healing-stage">
+                                <div class="stage-number">4</div>
+                                <div class="stage-name">Resilience</div>
+                                <div class="stage-description">Full neuroplasticity gains solidified. Relapse vulnerability decreases significantly. Purpose and community sustain long-term recovery.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Part 7: Synthesis and Key Mechanisms -->
+                <section>
+                    <h2>How Trauma Leads to Addiction: The Mechanistic Pathways</h2>
+
+                    <div class="section-intro">
+                        <h4>Four Primary Pathways from Trauma to Addiction</h4>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid var(--accent-green);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 1rem;">1. Developmental Wound</h5>
+                                <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Secure attachment provides safe base, felt worth, healthy models, emotional regulation, and trust. Insecure attachment creates hypervigilance, difficulty trusting, shame, dysregulation, and seeking relief outside relationships. Substance becomes what relationships could not provide.</p>
+                            </div>
+
+                            <div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 1rem;">2. Stress Sensitization</h5>
+                                <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">ACEs and chronic stress alter brain development—amygdala hypersensitivity, weakened prefrontal regulation, elevated cortisol, reduced natural reward satisfaction. Person exists in chronic threat state, naturally seeks relief, substances provide immediate reliable relief that becomes primary coping.</p>
+                            </div>
+
+                            <div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 1rem;">3. Meaning Void</h5>
+                                <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Trauma and dislocation create existential emptiness—questions about worth, belonging, purpose, future. Addiction provides pseudo-answers: temporary relief, consistent focus, sense of control, escape. Trap: substance creates illusion of solving existential problems while deepening them.</p>
+                            </div>
+
+                            <div>
+                                <h5 style="color: var(--primary-warm); font-weight: 700; margin-bottom: 1rem;">4. Relational Wound</h5>
+                                <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Trauma involves betrayal by trusted person, violation of autonomy, shame, broken safety, inability to trust. Consequences: relationships dangerous, others are harm sources, trust impossible, substance becomes safer than people, isolation increases vulnerability. Recovery requires relational healing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Part 8: Evidence for Hope -->
+                <section id="evidence">
+                    <h2>Evidence for Hope: Recovery Outcomes and Success Factors</h2>
+
+                    <div class="hope-section">
+                        <h3>The Research is Clear: Recovery is Possible</h3>
+
+                        <div class="hope-list">
+                            <li><strong>Brain changes are reversible:</strong> Neuroplasticity means the brain can rewire through new experience, relationships, and support</li>
+                            <li><strong>Connection is more powerful than drugs:</strong> In determining behavior and sustaining recovery, human connection exceeds chemical influence</li>
+                            <li><strong>Meaning sustains recovery:</strong> Purpose and spiritual/existential meaning are significant predictors of sustained recovery</li>
+                            <li><strong>Community is essential:</strong> Peer support, mutual-help organizations, and recovery communities provide irreplaceable value</li>
+                            <li><strong>Most people in recovery report good quality of life:</strong> 88.4% report "good" to "excellent" quality of life; 92.6% report improved mental health</li>
+                            <li><strong>Natural recovery is possible:</strong> Many people change without formal treatment through connection, meaning, and community</li>
+                            <li><strong>Recovery is possible at any age or stage:</strong> Age, demographics, severity of addiction, and prior treatment attempts do not determine recovery potential</li>
+                            <li><strong>What actually predicts success:</strong> Strong social support, meaningful employment/purpose, spiritual meaning, safe connection, engagement with community, new coping skills, reduced trigger exposure, physical health, and hope/self-efficacy</li>
+                        </div>
+                    </div>
+
+                    <div class="section-intro" style="margin-top: 1.5rem;">
+                        <h4>Treatment Effectiveness Research</h4>
+                        <p><strong>Medication-Assisted Treatment + Behavioral Support:</strong> 60% success rate vs. 35% for abstinence-only, with up to 20% improvement in depression symptoms. Effectiveness depends on combining treatment with behavioral therapy and relational support.</p>
+
+                        <p style="margin-bottom: 0;"><strong>Mindfulness-Based Approaches:</strong> Participants are nearly twice as likely to stop opioid misuse compared to supportive psychotherapy, with sustained effects 9+ months post-treatment.</p>
+
+                        <p style="margin-bottom: 0;"><strong>Family-Centered Approaches:</strong> Superior outcomes through relationship repair, communication improvement, and secure attachment rebuilding.</p>
+                    </div>
+                </section>
+
+                <!-- Part 9: Language Guide (Non-Pathologizing) -->
+                <section>
+                    <h2>Non-Pathologizing Language Guide</h2>
+
+                    <p>The language we use to describe addiction carries profound consequences. Pathologizing language disempowers by positioning the person as victim of disease, creates shame by implying moral failure, implies permanent identity, distances from community, and focuses on absence. Non-pathologizing language empowers by locating the problem in conditions rather than the person, creates possibility for change, validates resourcefulness, builds community, and focuses on what to build.</p>
+
+                    <div style="overflow-x: auto; margin: 1.5rem 0;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: var(--neutral-warm);">
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 3px solid var(--primary-warm); font-weight: 700; color: var(--primary-warm);">Instead of This...</th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 3px solid var(--accent-green); font-weight: 700; color: var(--accent-green);">Try This...</th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 3px solid var(--accent-blue); font-weight: 700; color: var(--accent-blue);">Why It Matters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You're an addict"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"You're a person working with addiction"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Identity is broader than addiction; empowers possibilities</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You're in denial"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"You're beginning to see clearly"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Validates emerging insight rather than judgment</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You lack willpower"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"Your automatic patterns are strong; you're building new ones"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Acknowledges challenge without shame</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You need to get clean"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"You're reclaiming choice and wholeness"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Empowers agency rather than shame</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You're relapsing"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"You're practicing old patterns; what are you learning?"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Frames setback as learning opportunity</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"You're using again"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"You're using old coping; let's find new ones"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Problem-focused on patterns rather than judgment</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"Chronic relapsing condition"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"Pattern you're transforming with support"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Emphasizes possibility and agency</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8;">"High-risk situation"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--success-hope); font-weight: 500;">"Trigger you're learning to recognize"</td>
+                                    <td style="padding: 0.8rem; border-bottom: 1px solid #e8e8e8; color: var(--text-light); font-size: 0.9rem;">Empowers through awareness</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.8rem;">"Sober living"</td>
+                                    <td style="padding: 0.8rem; color: var(--success-hope); font-weight: 500;">"Living with intention and connection"</td>
+                                    <td style="padding: 0.8rem; color: var(--text-light); font-size: 0.9rem;">Positive definition of what you're building</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>This language shift represents more than semantic preference; it reflects a fundamentally different understanding of what addiction is, what human beings are capable of, and how change actually happens.</p>
+                </section>
+
+                <!-- Conclusion -->
+                <section>
+                    <h2>Conclusion: Reframing Addiction and Recovery</h2>
+
+                    <h3>The Research Consensus</h3>
+
+                    <p>Examining the research landscape synthesized throughout this review reveals convergence around several key conclusions:</p>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border-left: 5px solid var(--accent-green);">
+                        <ol style="color: var(--text-dark); line-height: 1.8;">
+                            <li style="margin-bottom: 1rem;"><strong>Addiction emerges from disconnection, dislocation, and unprocessed trauma</strong> rather than from inherent properties of substances or intrinsic deficits within individuals.</li>
+                            <li style="margin-bottom: 1rem;"><strong>The brain changes accompanying addiction are real and measurable,</strong> yet they are not destiny; neuroplasticity means the brain can rewire through new experience.</li>
+                            <li style="margin-bottom: 1rem;"><strong>Connection is more powerful than substances</strong> in determining addiction trajectories and recovery outcomes.</li>
+                            <li style="margin-bottom: 1rem;"><strong>Recovery requires a both/and approach:</strong> awareness (mindfulness, journaling, pattern recognition) combined with connection (relational, community, purpose-based, systemic).</li>
+                            <li style="margin-bottom: 0;"><strong>Agency and empowerment matter profoundly;</strong> approaches that build sense of capacity and choice produce better outcomes than those emphasizing powerlessness.</li>
+                        </ol>
+                    </div>
+
+                    <h3>Why This Framework Matters</h3>
+
+                    <div class="hope-section">
+                        <p><strong>For the person struggling with addiction:</strong> This framework delivers a profoundly liberating message: You are not broken. Your pattern makes sense given your history. You have been resourceful in surviving intolerable circumstances. With awareness, support, and community, you can transform this pattern. You are not fighting a disease; you are reclaiming your capacity for conscious choice.</p>
+
+                        <p style="margin-bottom: 0;"><strong>For communities supporting recovery:</strong> This research establishes that isolation is the problem and connection is the solution. Together, we are stronger. The journey toward healing undertaken by one person supports others. The presence of a person in community heals themselves. This creates powerful incentive for building platforms, organizations, and approaches that prioritize belonging over pathology.</p>
+                    </div>
+
+                    <h3>The Invitation Forward</h3>
+
+                    <div class="section-intro">
+                        <p style="margin: 0;">This research framework extends an invitation to individuals, communities, and platforms: to understand addiction as adaptation rather than pathology; to recognize the intelligence in survival strategies, however destructive they become; to use awareness to interrupt automatic patterns; to build genuine, mutual connections; to discover meaning and purpose that transcend individual happiness; to contribute to community healing; and to reclaim agency in recovery.</p>
+
+                        <p style="margin: 1rem 0 0 0; font-weight: 700; font-size: 1.1rem; color: var(--accent-green);">The opposite of addiction is not sobriety alone. The opposite of addiction is connection—to self, to others, to purpose, to meaning, to community. Recovery is the journey home.</p>
+                    </div>
+                </section>
+
+                <!-- References -->
+                <div class="references">
+                    <h3>References</h3>
+
+                    <div class="reference-item">
+                        <strong>[1]</strong> Hari, J. (2018). <em>Lost Connections: Why You're Depressed and How to Find Hope</em>. Bloomsbury Publishing.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[2]</strong> Maté, G. (2010). <em>In the Realm of Hungry Ghosts: Close Encounters with Addiction</em>. North Atlantic Books.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[3]</strong> Alexander, B. K. (2008). <em>The Globalisation of Addiction: A Study in Poverty of the Spirit</em>. Oxford University Press.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[4]</strong> Bowlby, J. (1988). <em>A Secure Base: Parent-Child Attachment and Healthy Human Development</em>. Basic Books.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[5]</strong> Felitti, V. J., Anda, R. F., et al. (1998). Relationship of Childhood Abuse and Household Dysfunction to Many of the Leading Causes of Death in Adults. <em>American Journal of Preventive Medicine</em>, 14(4), 245-258.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[6]</strong> Leshner, A. I. (1997). Addiction is a Brain Disease, and it Matters. <em>Science</em>, 278(5335), 45-47.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[7]</strong> Brewer, J. A. (2017). <em>The Craving Mind: From Cigarettes to Smartphones to Love—Why We Get Hooked and How We Can Break Bad Habits</em>. Yale University Press.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[8]</strong> Pennebaker, J. W., & Chung, C. K. (2011). Expressive Writing and its Links to Mental and Physical Health. In H. S. Friedman (Ed.), <em>Oxford Handbook of Health Psychology</em> (pp. 417-437). Oxford University Press.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[9]</strong> Substance Abuse and Mental Health Services Administration. (2020). <em>Key Substance Use and Mental Health Indicators in the United States: Results from the 2019 National Survey on Drug Use and Health</em>. U.S. Department of Health and Human Services.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[10]</strong> Schachner, D. A., & Shaver, P. R. (2004). Attachment Style and Loneliness in Close Relationships. <em>Personal Relationships</em>, 11(2), 253-271.
+                    </div>
+
+                    <div class="reference-item">
+                        <strong>[11]</strong> McNeill, T. (2013). <em>Narrative Practice and Recovery in Addiction: Reworking Dependency</em>. Routledge.
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- Sidebar: Language Guide -->
+            <aside class="sidebar">
+                <h3>Language Matters</h3>
+
+                <div class="language-guide">
+                    <p><strong>This sidebar guides the shift from pathologizing to empowering language.</strong></p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <span class="pathologizing">Pathologizing:</span>
+                        <span class="empowering">Non-Pathologizing</span>
+                    </div>
+
+                    <p>
+                        <span class="pathologizing">"You're an addict"</span>
+                        <span class="empowering">"Person with addiction experience"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"You're in denial"</span>
+                        <span class="empowering">"Building awareness"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"Lack willpower"</span>
+                        <span class="empowering">"Building new patterns"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"Need to get clean"</span>
+                        <span class="empowering">"Reclaiming wholeness"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"Relapsing"</span>
+                        <span class="empowering">"Learning opportunities"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"Chronic condition"</span>
+                        <span class="empowering">"Transforming pattern"</span>
+                    </p>
+
+                    <p>
+                        <span class="pathologizing">"Sober living"</span>
+                        <span class="empowering">"Living with intention"</span>
+                    </p>
+
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--accent-green);">
+                        <p><strong style="color: var(--accent-green);">Why Language Matters:</strong></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Words shape identity, possibility, and agency. Pathologizing language disempowers. Non-pathologizing language invites hope and connection.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e8e8e8;">
+                    <h4 style="color: var(--primary-warm); font-size: 1rem; margin-bottom: 0.8rem;">Key Framework Principles</h4>
+                    <ul style="list-style: none; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--success-hope); font-weight: 700;">✓</span>
+                            Addiction = adaptation
+                        </li>
+                        <li style="margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--success-hope); font-weight: 700;">✓</span>
+                            Connection heals
+                        </li>
+                        <li style="margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--success-hope); font-weight: 700;">✓</span>
+                            Brains can rewire
+                        </li>
+                        <li style="margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--success-hope); font-weight: 700;">✓</span>
+                            Agency matters
+                        </li>
+                        <li style="padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--success-hope); font-weight: 700;">✓</span>
+                            Recovery is possible
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <h3 style="margin-bottom: 1rem;">The Journey Home</h3>
+        <p>This literature review demonstrates that addiction is fundamentally about disconnection, and recovery is fundamentally about reconnection. The research is clear: when people have good lives characterized by strong community, meaningful work, secure relationships, and cultural participation, they naturally opt away from compulsive substance use.</p>
+        <p style="margin-bottom: 0;"><strong>Recovery is possible. Connection is powerful. You deserve both.</strong></p>
+        <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.9rem;">Literature Review Prepared for Kairos Recovery Platform | Research Focus: Addiction as Connection Disorder | December 2025</p>
+    </footer>
+
+    <script>
+        // Interactive expand/collapse functionality
+        function toggleExpand(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
+
+            const isActive = content.classList.contains('active');
+            const expandText = button.textContent;
+
+            if (isActive) {
+                button.textContent = expandText.replace('+ ', '- ');
+            } else {
+                button.textContent = expandText.replace('- ', '+ ');
+            }
+        }
+
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate ACEs bars on page load
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.aces-bar-fill').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-out';
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+
+        // Print styles
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

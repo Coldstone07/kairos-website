@@ -1,0 +1,30 @@
+{
+  "name": "kairos-research-hub",
+  "version": "1.0.0",
+  "description": "Research hub for Kairos Path - Evidence-based transformation",
+  "main": "index.html",
+  "scripts": {
+    "convert": "node scripts/convert-research.js",
+    "convert:sample": "node scripts/convert-sample.js",
+    "build": "npm run convert",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "research",
+    "kairos",
+    "transformation",
+    "consciousness",
+    "evidence-based"
+  ],
+  "author": "Kairos Path",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^11.0.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.1.1",
+    "slugify": "^1.6.6"
+  }
+}

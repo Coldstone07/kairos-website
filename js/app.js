@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'call-gemini':
                 callGeminiTool(target.dataset.tool, target.dataset.input, target.dataset.output);
                 break;
+            case 'call-parts-two-llm':
+                callGeminiPartsTwoLLM();
+                break;
             case 'continue-gemini':
                 continueGeminiTool(target.dataset.tool, target.dataset.output);
                 break;
@@ -395,6 +398,198 @@ async function callGeminiTool(toolType, inputId, outputId) {
         outputDiv.textContent = "The lab is currently offline. Please try again.";
     }
 }
+
+// ============================================================================
+// TWO-LLM DIALOGUE SYSTEM FOR PARTS WORK
+// ============================================================================
+
+async function callGeminiPartsTwoLLM() {
+    // Reset State
+    labsState.parts.count = 0;
+    labsState.parts.context = "";
+
+    // Collect Part A data
+    const partA = {
+        name: document.getElementById('inputPartA').value,
+        description: document.getElementById('descPartA').value,
+        perspective: document.getElementById('perspPartA').value
+    };
+
+    // Collect Part B data
+    const partB = {
+        name: document.getElementById('inputPartB').value,
+        description: document.getElementById('descPartB').value,
+        perspective: document.getElementById('perspPartB').value
+    };
+
+    const scenario = document.getElementById('partsScenario').value;
+
+    // Validation
+    if (!partA.name || !partB.name) {
+        alert("Please name both parts to simulate the dialogue.");
+        return;
+    }
+
+    const outputDiv = document.getElementById('partsOutput');
+    outputDiv.innerHTML = '<div class="text-center py-8"><div class="loader mx-auto mb-4"></div><span class="text-moonlight-muted animate-pulse">Initializing Dialogue Between Parts...</span></div>';
+    outputDiv.classList.remove('hidden');
+
+    // Create dialogue container
+    const dialogueContainer = document.createElement('div');
+    dialogueContainer.className = 'space-y-4 bg-black/20 p-6 rounded-xl border border-white/10';
+    dialogueContainer.id = 'dialogue-container';
+    outputDiv.innerHTML = '';
+    outputDiv.appendChild(dialogueContainer);
+
+    // Dialogue orchestration
+    const NUM_EXCHANGES = 4; // 4 exchanges = 8 total messages
+    let conversationHistory = [];
+
+    try {
+        for (let turn = 0; turn < NUM_EXCHANGES * 2; turn++) {
+            const isPartA = turn % 2 === 0;
+            const currentPart = isPartA ? partA : partB;
+            const color = isPartA ? 'blue' : 'red';
+            const letter = isPartA ? 'A' : 'B';
+
+            // Show thinking indicator
+            const thinkingDiv = document.createElement('div');
+            thinkingDiv.className = `flex gap-4 animate-pulse thinking-indicator-${letter}`;
+            thinkingDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-${color}-500/20 flex items-center justify-center text-${color}-400 font-bold shrink-0">${letter}</div>
+                <div class="text-sm flex items-center gap-2">
+                    <span class="text-${color}-400 text-xs uppercase">${currentPart.name} is thinking...</span>
+                    <div class="loader w-3 h-3"></div>
+                </div>
+            `;
+            dialogueContainer.appendChild(thinkingDiv);
+
+            // Build system prompt for this part
+            const systemPrompt = buildPartSystemPrompt(currentPart, scenario, isPartA);
+
+            // Build user prompt (conversation context + instruction)
+            const userPrompt = buildDialoguePrompt(conversationHistory, turn, scenario);
+
+            // Call Gemini API
+            const response = await callGeminiForPart(systemPrompt, userPrompt);
+
+            // Remove thinking indicator
+            thinkingDiv.remove();
+
+            // Add response to UI
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex gap-4 fade-in';
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-${color}-500/20 flex items-center justify-center text-${color}-400 font-bold shrink-0">${letter}</div>
+                <div class="text-sm">
+                    <strong class="text-${color}-400 block text-xs uppercase mb-1">${currentPart.name}</strong>
+                    <span class="text-moonlight-secondary">"${response}"</span>
+                </div>
+            `;
+            dialogueContainer.appendChild(messageDiv);
+
+            // Update conversation history
+            conversationHistory.push({
+                part: currentPart.name,
+                message: response,
+                isPartA: isPartA
+            });
+
+            // Small delay for better UX (makes dialogue feel natural)
+            await sleep(800);
+        }
+
+        // Add completion footer
+        const footer = document.createElement('div');
+        footer.className = 'mt-4 pt-4 border-t border-white/10 text-xs text-moonlight-muted italic text-center';
+        footer.textContent = 'Simulation Complete • Resonance Detected';
+        dialogueContainer.appendChild(footer);
+
+        // Store context
+        labsState.parts.context = JSON.stringify({
+            scenario,
+            partA,
+            partB,
+            conversationHistory
+        });
+
+        // Add continue button
+        appendContinueButton('parts', 'partsOutput');
+
+    } catch (error) {
+        console.error("Dialogue Error:", error);
+        outputDiv.innerHTML = '<div class="text-center py-8"><span class="text-red-400">Dialogue failed. Please check your network and try again.</span></div>';
+    }
+}
+
+function buildPartSystemPrompt(part, scenario, isPartA) {
+    return `You are roleplaying as an internal psychological part in an IFS (Internal Family Systems) dialogue.
+
+SCENARIO: ${scenario || 'A general internal conflict'}
+
+YOUR IDENTITY:
+- Name: ${part.name}
+- Character Traits: ${part.description || 'Not specified'}
+- Core Desire/Goal: ${part.perspective || 'To be heard and understood'}
+
+INSTRUCTIONS:
+- Speak in first person as "${part.name}"
+- Stay completely in character with your defined traits and perspective
+- Express your viewpoint authentically and with emotion
+- Keep responses to 2-3 sentences maximum
+- Show conviction but also vulnerability where appropriate
+- Do NOT break character or add meta-commentary
+- Do NOT use quotation marks in your response
+- Output ONLY your spoken dialogue
+
+Remember: You are a real part of someone's psyche with genuine needs and fears. Speak truthfully from that place.`;
+}
+
+function buildDialoguePrompt(history, turnIndex, scenario) {
+    if (turnIndex === 0) {
+        return `This is the beginning of the dialogue about: "${scenario}"\n\nYou speak first. Express your perspective on this situation clearly and emotionally. What do you want? What do you fear?`;
+    }
+
+    const lastMessage = history[history.length - 1];
+    const contextMessages = history.length > 3 ? history.slice(-3) : history;
+
+    let prompt = "CONVERSATION SO FAR:\n";
+    contextMessages.forEach(h => {
+        prompt += `${h.part}: "${h.message}"\n`;
+    });
+
+    prompt += `\nThe other part just said: "${lastMessage.message}"\n\nRespond to what they said. Stay in character. Show how their words make you feel and what you need them to understand.`;
+
+    return prompt;
+}
+
+async function callGeminiForPart(systemPrompt, userPrompt) {
+    const response = await fetch('/.netlify/functions/gemini', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            contents: [{ parts: [{ text: userPrompt }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        })
+    });
+
+    if (!response.ok) throw new Error('API Error');
+    const data = await response.json();
+    let text = data.candidates[0].content.parts[0].text;
+
+    // Clean up response (remove quotes if LLM added them)
+    text = text.trim().replace(/^["']|["']$/g, '');
+
+    return text;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// ============================================================================
+// END TWO-LLM DIALOGUE SYSTEM
+// ============================================================================
 
 // New Markdown Parser Utility (Sanitized logic wrapper)
 function parseMarkdown(text) {

@@ -186,6 +186,11 @@ body {
     }
 }
 
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
 /* Particles */
 #particles {
     position: fixed;

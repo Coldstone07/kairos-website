@@ -449,16 +449,19 @@ async function callGeminiPartsTwoLLM() {
         for (let turn = 0; turn < NUM_EXCHANGES * 2; turn++) {
             const isPartA = turn % 2 === 0;
             const currentPart = isPartA ? partA : partB;
-            const color = isPartA ? 'blue' : 'red';
             const letter = isPartA ? 'A' : 'B';
+
+            // Use static class names for Tailwind compatibility
+            const bgClass = isPartA ? 'bg-blue-500/20' : 'bg-red-500/20';
+            const textClass = isPartA ? 'text-blue-400' : 'text-red-400';
 
             // Show thinking indicator
             const thinkingDiv = document.createElement('div');
             thinkingDiv.className = `flex gap-4 animate-pulse thinking-indicator-${letter}`;
             thinkingDiv.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-${color}-500/20 flex items-center justify-center text-${color}-400 font-bold shrink-0">${letter}</div>
+                <div class="w-8 h-8 rounded-full ${bgClass} flex items-center justify-center ${textClass} font-bold shrink-0">${letter}</div>
                 <div class="text-sm flex items-center gap-2">
-                    <span class="text-${color}-400 text-xs uppercase">${currentPart.name} is thinking...</span>
+                    <span class="${textClass} text-xs uppercase">${currentPart.name} is thinking...</span>
                     <div class="loader w-3 h-3"></div>
                 </div>
             `;
@@ -480,9 +483,9 @@ async function callGeminiPartsTwoLLM() {
             const messageDiv = document.createElement('div');
             messageDiv.className = 'flex gap-4 fade-in';
             messageDiv.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-${color}-500/20 flex items-center justify-center text-${color}-400 font-bold shrink-0">${letter}</div>
+                <div class="w-8 h-8 rounded-full ${bgClass} flex items-center justify-center ${textClass} font-bold shrink-0">${letter}</div>
                 <div class="text-sm">
-                    <strong class="text-${color}-400 block text-xs uppercase mb-1">${currentPart.name}</strong>
+                    <strong class="${textClass} block text-xs uppercase mb-1">${currentPart.name}</strong>
                     <span class="text-moonlight-secondary">"${response}"</span>
                 </div>
             `;

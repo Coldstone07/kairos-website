@@ -275,3 +275,128 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Gene Keys Page Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Frequency band colors */
+.gk-shadow { color: #e07a5f; }
+.gk-gift { color: #81b29a; }
+.gk-siddhi { color: #b8a9e8; }
+
+.gk-gate-num {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #f5d5a0, #e8a87c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gk-line-num { color: rgba(255, 255, 255, 0.4); }
+
+/* Location autocomplete */
+.gk-autocomplete-list {
+    position: absolute;
+    top: 100%; left: 0; right: 0; z-index: 50;
+    margin-top: 4px;
+    background: rgba(30, 28, 60, 0.97);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.gk-autocomplete-list.show { display: block; }
+
+.gk-autocomplete-item {
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: #e0e0e0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.12s;
+}
+
+.gk-autocomplete-item:last-child { border-bottom: none; }
+.gk-autocomplete-item:hover,
+.gk-autocomplete-item.active { background: rgba(212, 175, 55, 0.15); }
+
+.gk-loc-main { font-weight: 500; }
+.gk-loc-detail { font-size: 0.75rem; color: rgba(255, 255, 255, 0.35); margin-top: 2px; }
+
+.gk-autocomplete-loading {
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+}
+
+/* Overview table rows */
+#gkOverviewBody td {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#gkOverviewBody tr:hover td { background: rgba(255, 255, 255, 0.03); }
+
+/* Sequence sections */
+.gk-sequence { margin-bottom: 36px; }
+
+.gk-sequence-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 3px solid;
+}
+
+.seq-activation .gk-sequence-title { border-color: #e07a5f; color: #e07a5f; }
+.seq-venus .gk-sequence-title { border-color: #d4a0d4; color: #d4a0d4; }
+.seq-pearl .gk-sequence-title { border-color: #f5d5a0; color: #f5d5a0; }
+
+.gk-sphere-cards { display: grid; gap: 16px; }
+
+.gk-sphere-card { padding: 24px 28px; }
+
+.gk-sphere-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.gk-sphere-name { font-size: 1rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); }
+
+.gk-sphere-gate {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f5d5a0, #e8a87c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gk-sphere-line { font-size: 0.85rem; color: rgba(255, 255, 255, 0.35); font-weight: 400; }
+
+.gk-freq-bands { display: grid; gap: 12px; }
+
+.gk-freq-band { display: grid; grid-template-columns: 80px 1fr; gap: 8px; align-items: start; }
+
+.gk-freq-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 2px;
+}
+
+.gk-freq-content { font-size: 0.88rem; line-height: 1.5; }
+.gk-freq-keyword { font-weight: 600; color: rgba(255, 255, 255, 0.85); }
+.gk-freq-desc { color: rgba(255, 255, 255, 0.45); margin-top: 2px; font-size: 0.82rem; }
+
+@media (max-width: 600px) {
+    .gk-sphere-card { padding: 18px 20px; }
+    .gk-freq-band { grid-template-columns: 1fr; gap: 2px; }
+}

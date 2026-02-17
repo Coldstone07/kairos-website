@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com https://nominatim.openstreetmap.org https://timeapi.io;">
+    <title>Gene Keys | Kairos Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/astronomy-engine/astronomy.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3/dist/jspdf.plugin.autotable.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moonlight: {
+                            primary: '#F7F3E9',
+                            secondary: '#EDE7D3',
+                            muted: '#D4CDB7',
+                            accent: '#A5968A'
+                        },
+                        cosmic: {
+                            base: '#0F0C29',
+                            mid: '#302B63',
+                            end: '#24243E'
+                        },
+                        accent: {
+                            primary: '#D4AF37',
+                            secondary: '#C5A028',
+                            interactive: '#F3E5AB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Lora"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-accent-primary selection:text-cosmic-base">
+
+    <!-- Ambient Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="index.html" class="font-serif text-2xl tracking-[0.2em] text-white">KAIROS<span
+                            class="text-accent-primary">.</span>PATH</a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Framework</a>
+                        <a href="methodology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Methodology</a>
+                        <a href="technology.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Technology</a>
+                        <a href="labs.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Labs</a>
+                        <a href="genekeys.html"
+                            class="text-xs font-bold tracking-widest text-accent-primary uppercase transition-colors">Gene Keys</a>
+                        <a href="research.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">Research</a>
+                        <a href="about.html"
+                            class="text-xs font-bold tracking-widest text-moonlight-muted hover:text-accent-primary uppercase transition-colors">About</a>
+                        <a href="begin.html"
+                            class="ml-4 px-6 py-2 border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-black transition-all rounded-sm text-xs tracking-widest uppercase font-semibold">Begin
+                            Application</a>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button data-action="toggle-mobile-menu" class="text-moonlight-muted"><i
+                            data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0F0C29] border-b border-white/10 absolute w-full">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Framework</a>
+                <a href="methodology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Methodology</a>
+                <a href="technology.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Technology</a>
+                <a href="labs.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Labs</a>
+                <a href="genekeys.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase">Gene Keys</a>
+                <a href="research.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">Research</a>
+                <a href="about.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-white uppercase">About</a>
+                <a href="begin.html"
+                    class="block w-full text-left py-3 text-sm font-bold text-accent-primary uppercase border-t border-white/10 mt-2">Begin
+                    Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- ════════════ FORM VIEW ════════════ -->
+        <div id="gkFormView" class="page-section min-h-screen flex items-center justify-center">
+            <div class="w-full max-w-xl px-4 py-12">
+                <div class="text-center mb-8">
+                    <span class="text-accent-primary tracking-[0.2em] text-xs uppercase font-bold">Hologenetic Profile</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-white mt-4 mb-4">Gene Keys</h2>
+                    <p class="text-moonlight-muted text-lg max-w-md mx-auto">
+                        Discover your unique hologenetic profile based on the exact position of celestial bodies at the moment of your birth.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 md:p-10 rounded-xl">
+                    <form id="gkProfileForm">
+                        <div class="mb-5">
+                            <label for="gkName" class="block text-xs font-bold tracking-widest text-moonlight-muted/60 uppercase mb-2">Name</label>
+                            <input type="text" id="gkName" name="name" placeholder="e.g. Kailash" required
+                                class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary transition-colors">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-5">
+                            <div>
+                                <label for="gkDate" class="block text-xs font-bold tracking-widest text-moonlight-muted/60 uppercase mb-2">Birth Date</label>
+                                <input type="date" id="gkDate" name="date" required
+                                    class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white focus:outline-none focus:border-accent-primary transition-colors [color-scheme:dark]">
+                            </div>
+                            <div>
+                                <label for="gkTime" class="block text-xs font-bold tracking-widest text-moonlight-muted/60 uppercase mb-2">Birth Time</label>
+                                <input type="time" id="gkTime" name="time" value="12:00"
+                                    class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white focus:outline-none focus:border-accent-primary transition-colors [color-scheme:dark]">
+                                <p class="text-xs text-moonlight-muted/40 mt-1">Default 12:00 if unknown</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="gkLocation" class="block text-xs font-bold tracking-widest text-moonlight-muted/60 uppercase mb-2">Birth Location</label>
+                            <div class="gk-autocomplete-wrap relative">
+                                <input type="text" id="gkLocation" name="location" placeholder="Start typing a city..." required autocomplete="off"
+                                    class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder-moonlight-muted/50 focus:outline-none focus:border-accent-primary transition-colors">
+                                <div class="gk-autocomplete-list" id="gkLocDropdown"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="gkSubmitBtn"
+                            class="w-full px-8 py-4 bg-accent-primary text-cosmic-base font-bold tracking-widest uppercase hover:bg-white transition-all rounded-sm">
+                            <span id="gkBtnText">Generate Profile</span>
+                            <div id="gkSpinner" class="loader mx-auto" style="display:none;"></div>
+                        </button>
+
+                        <div id="gkErrorMsg" class="mt-4 p-4 bg-red-500/15 border border-red-500/30 rounded-lg text-red-300 text-sm" style="display:none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ════════════ RESULTS VIEW ════════════ -->
+        <div id="gkResultsView" style="display:none;">
+            <div class="text-center py-12 px-4">
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-2" id="gkResultName"></h2>
+                <p class="text-moonlight-muted text-lg" id="gkResultInfo"></p>
+                <div class="flex justify-center gap-4 mt-6 flex-wrap">
+                    <button id="gkBackBtn"
+                        class="px-6 py-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 transition-all">
+                        &#8592; New Profile
+                    </button>
+                    <button id="gkPdfBtn"
+                        class="px-6 py-3 bg-accent-primary text-cosmic-base rounded-lg text-sm font-bold uppercase tracking-widest hover:bg-white transition-all">
+                        &#8595; Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 pb-16">
+                <!-- Overview Table -->
+                <div class="glass-panel rounded-xl overflow-hidden mb-10">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Sphere</th>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Key</th>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Line</th>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Shadow</th>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Gift</th>
+                                <th class="bg-white/5 px-4 py-3 text-left text-xs font-bold tracking-widest text-moonlight-muted/50 uppercase">Siddhi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gkOverviewBody" class="text-moonlight-secondary text-sm"></tbody>
+                    </table>
+                </div>
+
+                <!-- Detail Sections -->
+                <div id="gkDetailSections"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/5 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h4 class="font-serif text-2xl text-white mb-6">KAIROS.PATH</h4>
+            <p class="text-moonlight-muted text-sm max-w-md mx-auto mb-8">
+                Evolution is not a destination. It is a moment-by-moment choice to remain conscious.
+            </p>
+            <div class="text-xs text-white/20">
+                &copy; 2024 Kairos Path. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/genekeys.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+
+</html>

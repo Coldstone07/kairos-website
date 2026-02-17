@@ -290,15 +290,15 @@ body {
     position: absolute;
     top: 100%; left: 0; right: 0; z-index: 50;
     margin-top: 4px;
-    background: var(--glass-primary);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    background: rgba(15, 12, 41, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     overflow: hidden;
     overflow-y: auto;
     max-height: 280px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     display: none;
 }
 
@@ -307,18 +307,18 @@ body {
 .gk-autocomplete-item {
     padding: 12px 16px;
     font-size: 0.88rem;
-    color: var(--moonlight-secondary);
+    color: rgba(255, 255, 255, 0.95);
     cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: background 0.15s ease;
 }
 
 .gk-autocomplete-item:last-child { border-bottom: none; }
 .gk-autocomplete-item:hover,
-.gk-autocomplete-item.active { background: rgba(212, 175, 55, 0.12); }
+.gk-autocomplete-item.active { background: rgba(212, 175, 55, 0.18); }
 
-.gk-loc-main { font-weight: 500; color: rgba(255, 255, 255, 0.9); }
-.gk-loc-detail { font-size: 0.75rem; color: var(--moonlight-muted); margin-top: 2px; }
+.gk-loc-main { font-weight: 500; color: #ffffff; }
+.gk-loc-detail { font-size: 0.75rem; color: rgba(255, 255, 255, 0.6); margin-top: 2px; }
 
 .gk-autocomplete-loading {
     padding: 12px 16px;
